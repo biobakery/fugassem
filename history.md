@@ -1,7 +1,8 @@
 
-# Template History #
+# FUGAsseM History #
 
-## v0.0.9 01-04-2020 ##
+## v0.1.1 2021-12-10 ##
+* Added parameters for taking vector-based and matrix-based evidence files
 
-* Short decription on the patch or the feature released in this version. 
-
+## v0.1.0 2021-12-06 ##
+* Added initial preprocessing module, prediction module and utilitites of FUGAsseM
