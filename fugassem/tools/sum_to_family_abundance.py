@@ -159,7 +159,7 @@ def main():
 	
 	### get arguments ###
 	values = get_args()
-	myfamily = config.protein_family
+	myfamily = None
 	if values.cluster:
 		myfamily = values.cluster
 

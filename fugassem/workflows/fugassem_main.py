@@ -33,17 +33,11 @@ import logging
 
 # import the workflow class from anadama2
 from anadama2 import Workflow
+from anadama2.tracked import TrackedExecutable, TrackedDirectory
 
-# import the library of FUGAsseM tasks
 try:
-	from fugassem.tasks import preprocessing
-	from fugassem.tasks import prediction
-except ImportError:
-	sys.exit("CRITICAL ERROR: Unable to find the FUGAsseM python package." +
-		         " Please check your install.")
-
-# import the utilities functions and config settings from FUGAsseM
-try:
+	from fugassem.tasks import fugassem_preprocessing
+	from fugassem.tasks import fugassem_process 
 	from fugassem import utilities, config
 except ImportError:
 	sys.exit("CRITICAL ERROR: Unable to find the FUGAsseM python package." +
@@ -80,6 +74,9 @@ def parse_cli_arguments ():
 	workflow.add_argument("minimum-coverage",
 	                      desc = "minimum fraction of annotated genes per taxon [ Default: 0.1 ]",
 	                      default = 0.1)
+	workflow.add_argument("minimum-number",
+	                      desc = "minimum number of total genes per taxon [ Default: 500 ]",
+	                      default = 500)
 	workflow.add_argument("filtering-zero",
 	                      desc = "method for pre-filtering zeros in normalized-abund MTX [ Default: lenient ]",
 	                      choices = ["lenient", "semi-strict", "strict", "None"],
@@ -196,8 +193,7 @@ def get_method_config (config_file):
 	return family_conf, domain_motif_conf, abundance_conf, integration_conf
 
 
-
-def main(workflow):
+def fugassem_main (workflow):
 	'''
 	Function prediction for novel gene products from microbial communities
 	'''
@@ -260,10 +256,18 @@ def main(workflow):
 		try:
 			args.minimum_coverage = float(args.minimum_coverage)
 		except:
-			config.logger.info ("Please provide valid number of minimum abundance by --minimum-coverage! Otherwise, will set it as 0")
-			args.minimum_coverage = 0
+			config.logger.info ("Please provide valid number of minimum coverage by --minimum-coverage! Otherwise, will set it as 0.01")
+			args.minimum_coverage = 0.01
 	else:
-		args.minimum_coverage = 0
+		args.minimum_coverage = 0.01
+	if args.minimum_number:
+		try:
+			args.minimum_number = int(args.minimum_number)
+		except:
+			config.logger.info ("Please provide valid number of minimum number by --minimum-number! Otherwise, will set it as 10")
+			args.minimum_number = 10
+	else:
+		args.minimum_number = 10
 
 	## get all input files
 	go_obo = config.go_obo
@@ -283,6 +287,8 @@ def main(workflow):
 
 	## prepare outputs
 	output_dir = os.getcwd()
+	if args.covariate_taxon:
+		args.covariate_taxon = os.path.abspath(args.covariate_taxon)
 	if args.output:
 		output_dir = os.path.abspath(args.output)
 	if not os.path.isdir(output_dir):
@@ -293,70 +299,82 @@ def main(workflow):
 	## split MTX into individual taxon
 	if not args.bypass_preparing_taxa:
 		config.logger.info("Start to run split-taxa module......")
-		taxa_file, taxa = preprocessing.preprocess_taxa (mtx_file, ann_file, args.taxon_level,
-	                                args.minimum_prevalence, args.minimum_abundance, args.minimum_coverage, output_dir,
+		taxa_file, taxa = fugassem_preprocessing.preprocess_taxa (mtx_file, ann_file, args.taxon_level,
+	                                args.minimum_prevalence, args.minimum_abundance, args.minimum_coverage, args.minimum_number, output_dir,
 	                                args.threads, args.time, args.memory)
 	else:
 		config.logger.info("WARNING! Bypass module: preparing-taxa module is skipped......")
 		if not os.path.isfile(taxa_file):
 			sys.exit("ERROR! Taxon-specific MTX files are not available. Please run preprocess_taxa module......")
 		taxa = utilities.file_to_dict (taxa_file)
-
-	## add tasks to the workflow
-	for mytaxa in sorted(taxa.keys()):
-		config.logger.info("####---------- Process " + mytaxa + " -------------####")
-		mybasename = basename + "." + mytaxa
-		myoutput_dir = os.path.join(output_dir, mytaxa)
-		preprocess_dir = os.path.join(myoutput_dir, "preprocessing")
-		predict_dir = os.path.join(myoutput_dir, "prediction")
-		abund_file = os.path.join(myoutput_dir, mytaxa + config.c_abund_extension)
-		gene_file = os.path.join(myoutput_dir, mytaxa + config.c_gene_extension)
-		func_file = os.path.join(myoutput_dir, mytaxa + config.c_ann_extension)
-
-		# run preprocessing module
-		final_func_file = os.path.join(preprocess_dir, mybasename + ".final_funcs.tsv")
-		final_func_smp_file = os.path.join(preprocess_dir, mybasename + ".final_simplified_funcs.tsv")
-		final_funclist_file = os.path.join(preprocess_dir, mybasename + ".final_funclist.txt")
-		feature_list_file = os.path.join(preprocess_dir, basename + ".feature_list.txt")
-		if not args.bypass_preprocessing:
-			config.logger.info ("Start to run preprocessing module for " + mytaxa + "......")
-			feature_list = {}
-			feature_list, final_func_smp_file, final_func_file, final_funclist_file = preprocessing.preprocessing_task (abund_file, gene_file, func_file,
-		                                                                                              args.go_level, args.func_type, go_obo,
-		                                                                                              args.minimum_prevalence,
-		                                                                                              args.minimum_abundance,
-		                                                                                              args.minimum_detected,
-		                                                                                              args.filtering_zero,
-		                                                                                              args.covariate_taxon,
-		                                                                                              args.correlation_method,
-		                                                                                              args.vector_list, args.matrix_list,
-		                                                                                              preprocess_dir, mybasename, feature_list, feature_list_file,
-		                                                                                              workflow, args.threads, args.time, args.memory)
-		else:
-			config.logger.info("WARNING! Bypass module: preprocessing module is skipped......")
-			if not os.path.isfile(feature_list_file):
-				sys.exit("ERROR! List file of evidence-feature files is not available. Please run preprocessing module......")
-			feature_list = utilities.file_to_dict(feature_list_file)
-
-		# run prediction module
-		if not args.bypass_prediction:
-			config.logger.info("Start to run prediction module for " + mytaxa + "......")
-			prediction_list = {}
+	
+	if args.bypass_preprocessing and args.bypass_prediction:
+		config.logger.info("WARNING! Bypass module: main fugassem modules is skipped......")
+	else:
+		## add tasks to the workflow
+		for mytaxa in sorted(taxa.keys()):
+			config.logger.info("####---------- Process " + mytaxa + " -------------####")
+			mybasename = basename + "." + mytaxa
+			myoutput_dir = os.path.join(output_dir, mytaxa)
+			preprocess_dir = os.path.join(myoutput_dir, "preprocessing")
+			predict_dir = os.path.join(myoutput_dir, "prediction")
+			abund_file = os.path.join(myoutput_dir, mytaxa + config.c_abund_extension)
+			gene_file = os.path.join(myoutput_dir, mytaxa + config.c_gene_extension)
+			func_file = os.path.join(myoutput_dir, mytaxa + config.c_ann_extension)
+			mylog = os.path.join(myoutput_dir, mytaxa + ".fugassem.log")
+			final_func_file = os.path.join(preprocess_dir, mybasename + ".final_funcs.tsv")
+			final_func_smp_file = os.path.join(preprocess_dir, mybasename + ".final_funcs.simple.tsv")
+			final_funclist_file = os.path.join(preprocess_dir, mybasename + ".final_funclist.txt")
+			feature_list_file = os.path.join(preprocess_dir, mybasename + ".feature_list.txt")
 			final_pred_file = os.path.join(predict_dir, "finalized", mybasename + ".finalized_ML.prediction.tsv")
-			prediction_list, final_pred_file = prediction.prediction_task (final_func_file, final_funclist_file, feature_list,
-		                                                    args.ml_type, args.func_type,
-		                                                    predict_dir, mybasename, prediction_list,
-		                                                    workflow, args.threads, args.time, args.memory)
 
-		else:
-			config.logger.info("WARNING! Bypass module: prediction module is skipped......")
+			args_list = [mytaxa,
+		               mybasename,
+		               args.minimum_prevalence,
+		               args.minimum_abundance,
+		               args.minimum_detected,
+		               args.filtering_zero,
+		               args.covariate_taxon,
+		               args.correlation_method,
+		               args.go_level,
+		               args.func_type,
+		               args.ml_type,
+		               args.vector_list,
+		               args.matrix_list,
+		               args.bypass_preprocessing,
+		               args.bypass_prediction,
+		               args.threads,
+		               args.memory,
+		               args.time,
+		               myoutput_dir,
+		               mylog]
+			target_list = [final_func_file, final_func_smp_file, final_funclist_file, feature_list_file, final_pred_file]
+			workflow.add_task_gridable(
+				"fugassem_process --input [depends[0]] --gene [depends[1]] --function [depends[2]] "
+				"--taxon [args[0]] --basename [args[1]] "
+				"--minimum-prevalence [args[2]] --minimum-abundance [args[3]] --minimum-detected [args[4]] --filtering-zero [args[5]] --covariate-taxon [args[6]] "
+				"--correlation-method [args[7]] --go-level [args[8]] --func-type [args[9]] --ml-type [args[10]] "
+				"--vector-list [args[11]] --matrix-list [args[12]] "
+				"--bypass-preprocessing [args[13]] --bypass-prediction [args[14]] "
+				"--threads [args[15]] --memory [args[16]] --time [args[17]] "
+				"--output [args[18]] > [args[19]] 2>&1",
+				depends = [abund_file, gene_file, func_file, TrackedExecutable("fugassem_process")],
+				targets = target_list,
+				args = args_list,
+				cores = args.threads,
+				time = args.time,
+				mem = args.memory,
+				name = "fugassem_process")
+		# foreach taxon
+	# if run process module
 
 	## start the workflow
 	workflow.go()
 
 
+def main():
+	fugassem_main (parse_cli_arguments())
+
+
 if __name__ == "__main__":
-	main(parse_cli_arguments())
-
-
-
+	main()

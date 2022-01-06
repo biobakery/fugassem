@@ -110,7 +110,7 @@ def precess_ML (feature_file, func_file, funclist_file, ml_type, feature_suffix,
 	if vector:
 		workflow.add_task (
 			"fugassem_machine_learning -f [depends[0]] -l [depends[1]] -t [args[0]] -s [args[1]] --vector -c [args[2]] -o [args[3]] > [args[4]] 2>&1",
-			depends = [feature_file, funclist_file, TrackedExecutable("fugassem_machine_learning")],
+			depends = [feature_file, funclist_file, func_file, TrackedExecutable("fugassem_machine_learning")],
 			targets = [prediction_list],
 			args = [ml_type, feature_suffix, threads, prediction_folder, prediction_log],
 			cores = threads,
@@ -120,7 +120,7 @@ def precess_ML (feature_file, func_file, funclist_file, ml_type, feature_suffix,
 	else:
 		workflow.add_task (
 			"fugassem_machine_learning -f [depends[0]] -l [depends[1]] -t [args[0]] -s [args[1]] -c [args[2]] -o [args[3]] > [args[4]] 2>&1",
-			depends = [feature_file, funclist_file, TrackedExecutable("fugassem_machine_learning")],
+			depends = [feature_file, funclist_file, func_file, TrackedExecutable("fugassem_machine_learning")],
 			targets = [prediction_list],
 			args = [ml_type, feature_suffix, threads, prediction_folder, prediction_log],
 			cores = threads,
@@ -310,7 +310,7 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 	preds = []
 	for i in sorted(prediction_list.keys()):
 		preds.append(prediction_list[i])
-	feature_file = prediction_list["coexp"]
+	feature_file = feature_list["coexp"]
 	pred_folder = os.path.join(main_folder, "finalized")
 	combined_feature_file = os.path.join(pred_folder, basename + ".integrated.features.trans.tsv")
 	final_pred_file = os.path.join(pred_folder, basename + ".finalized_ML.prediction.tsv")

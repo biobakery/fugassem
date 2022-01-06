@@ -57,7 +57,7 @@ def parse_cli_arguments():
 	# add the custom arguments to the workflow
 	workflow.add_argument("extension-paired",
 	                      desc = "provide the extension for paired fastq files using comma to separate, e.g. .R1.fastq.gz,.R2.fastq.gz | .R1.fastq,.R2.fastq",
-	                      default = None)
+	                      default = ".R1.fastq.gz,.R2.fastq.gz")
 	workflow.add_argument("extension",
 	                      desc = "provide the extension for all fastq files",
 	                      choices = [".fastq.gz", ".fastq"],
@@ -69,7 +69,7 @@ def parse_cli_arguments():
 	workflow.add_argument("taxon-prevalence",
 	                      desc = "minimum prevalence of each taxon [ Default: None ]",
 	                      default = None)
-	workflow.add_argument("normalized-methode",
+	workflow.add_argument("normalized-method",
 	                      desc = "normalization scheme: copies per million [cpm], relative abundance [relab]; [ Default: cpm ]",
 	                      default = "cpm")
 	workflow.add_argument("gene-catalog",
@@ -156,7 +156,9 @@ def get_gene_abundance(input_dir, extension, extension_paired, gene_catalog, gen
 	if not os.path.isdir(main_folder):
 		os.system("mkdir -p " + main_folder)
 	gene_catalog_count = os.path.join(main_folder, os.path.basename(gene_catalog_count))
-	gene_catalog_saf = gene_catalog_nuc + ".saf.gtf"
+	gene_catalog_saf = re.sub(".fna$", ".saf.gtf", gene_catalog_nuc)
+	gene_catalog_saf = re.sub(".fasta$", ".saf.gtf", gene_catalog_saf)
+	#gene_catalog_saf = gene_catalog_nuc + ".saf.gtf"
 	base_name = os.path.basename(gene_catalog_nuc)
 	if re.search("\.([^\.]+)$", base_name):
 		tmp = re.search("\.([^\.]+)$", base_name)
@@ -246,7 +248,7 @@ def get_gene_abundance(input_dir, extension, extension_paired, gene_catalog, gen
 
 def stratify_mtx_abundance (input_dir, extension, extension_paired, gene_catalog_file, gene_catalog_nuc,
                            protein_family_file, protein_family_tax_file,
-                           taxon_level, taxon_presence, normalized_method,
+                           taxon_level, taxon_prevalence, normalized_method,
                            output_folder, gene_catalog_count, stratified_abund_file,
                            workflow, threads, time_equation, mem_equation):
 	"""
@@ -261,7 +263,7 @@ def stratify_mtx_abundance (input_dir, extension, extension_paired, gene_catalog
 		proterin_clust_file: cluster file formatted in extended-fasta of protein families that are clustered from non-redundant gene catalogs.
 		proterin_family_tax_file: taxonomy file for protein families that are clustered from non-redundant gene catalogs.
 		taxon_level: stratified taxnomic level, [choices: "Species", "MPS"] [ Default: Species]
-		taxon_presence: threshold for taxon presence (e.g. >X% of genes non-zero values) [ Default: None]
+		taxon_prevalence: threshold for taxon prevalence (e.g. >X% of genes non-zero values) [ Default: None]
 		normalized_method: normalization scheme: copies per million [cpm], relative abundance [relab]; default=[cpm]
 		output_folder: folder name for outputs.
 		gene_catalog_count: count file for gene non-redundant gene catalogs.
@@ -290,7 +292,7 @@ def stratify_mtx_abundance (input_dir, extension, extension_paired, gene_catalog
 		stratified_mtx_file = stratify_mtx_abundance (
 							input_dir, extension, extension_paired, gene_catalog_file, gene_catalog_nuc,
                             protein_family_file, protein_family_tax_file,
-                            taxon_level, taxon_presence, normalized_method,
+                            taxon_level, taxon_prevalence, normalized_method,
 							output_folder, gene_catalog_count, stratified_abund_file,
                             workflow, threads, time_equation, mem_equation)
 		# run the workflow
@@ -340,7 +342,7 @@ def stratify_mtx_abundance (input_dir, extension, extension_paired, gene_catalog
 		"fugassem_stratified_abundance -i [depends[0]] -m [depends[1]] -r [args[0]] -t [args[1]] -o [targets[0]] >[args[2]] 2>&1",
 		depends=[family_rpk, protein_family_tax_file, TrackedExecutable("fugassem_stratified_abundance")],
 		targets=[family_stratify],
-		args=[taxon_level, taxon_presence, mylog],
+		args=[taxon_level, taxon_prevalence, mylog],
 		cores=1,
 		name="fugassem_stratified_abundance")
 
@@ -357,7 +359,7 @@ def stratify_mtx_abundance (input_dir, extension, extension_paired, gene_catalog
 	return stratified_abund_file
 
 
-def main(workflow):
+def generate_stratified_mtx_input (workflow):
 	'''
 	Prepare stratified MTX abundance used as input for FUGAsseM
 	'''
@@ -418,6 +420,9 @@ def main(workflow):
 		output_dir = os.path.abspath(args.output)
 	if not os.path.isdir(output_dir):
 		os.system("mkdir -p " + output_dir)
+	gene_catalog_seq_raw = gene_catalog_seq
+	gene_catalog_seq = os.path.join(output_dir, os.path.basename(gene_catalog_seq_raw))
+	os.system("cp " + gene_catalog_seq_raw + " " + gene_catalog_seq)
 	gene_catalog_count = os.path.join(output_dir, basename + ".genecatalogs.counts.tsv")
 	stratified_abund_file = os.path.join(output_dir, basename + ".proteinfamilies.nrm.tsv")
 
@@ -425,7 +430,7 @@ def main(workflow):
 	config.logger.info("Start to run stratified-mtx-abundance module......")
 	stratify_mtx_abundance (input_dir, args.extension, args.extension_paired, gene_catalog, gene_catalog_seq,
 	                           protein_family, family_taxonomy,
-	                           args.taxon_level, args.taxon_presence, args.normalized_method,
+	                           args.taxon_level, args.taxon_prevalence, args.normalized_method,
 	                           output_dir, gene_catalog_count, stratified_abund_file,
 	                           workflow, args.threads, args.time, args.memory)
 
@@ -433,5 +438,10 @@ def main(workflow):
 	workflow.go()
 
 
+def main():
+	workflow = parse_cli_arguments()
+	generate_stratified_mtx_input (workflow)
+
+
 if __name__ == "__main__":
-	main(parse_cli_arguments())
+	main()

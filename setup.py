@@ -76,7 +76,7 @@ import re
 import time
 
 
-VERSION = "0.1.1"
+VERSION = "0.2.0"
 AUTHOR = "FUGAsseM Development Team"
 MAINTAINER = "Yancong Zhang"
 MAINTAINER_EMAIL = "zhangyc201211@gmail.com"
@@ -231,6 +231,7 @@ setuptools.setup(
 		'console_scripts': [
 			'fugassem = fugassem.fugassem:main',
 			'fugassem_main = fugassem.workflows.fugassem_main:main',
+			'fugassem_process = fugassem.tasks.fugassem_process:main',
 			'fugassem_calculate_correlation = fugassem.preprocess.calculate_correlation:main',
 			'fugassem_collect_features = fugassem.preprocess.collect_features:main',
 			'fugassem_convert_DDI = fugassem.preprocess.convert_DDI:main',
@@ -269,6 +270,7 @@ setuptools.setup(
 		'fugassem': [
 			'workflows/*.py',
 			'tasks/*.py',
+			'tools/generate_*.py',
 			'data/GO/*'
 		]},
 	scripts=glob('fugassem/workflows/*.py'),

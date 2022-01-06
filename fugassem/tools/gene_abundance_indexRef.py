@@ -53,8 +53,12 @@ def get_args ():
 def bowtie2_index (ref_seq, base_name):
 	config.logger.info (">>Running botwie2 to index reference...")
 	# Index reference sequences
+	mydir = os.path.dirname(ref_seq)
+	myraw = os.getcwd()
+	os.chdir(mydir)
 	config.logger.info ("Run command: " + "bowtie2-build " + ref_seq + " " + base_name + "\n")
 	os.system("bowtie2-build " + ref_seq + " " + base_name)
+	os.chdir(myraw)
 # function bowtie2_index
 
 

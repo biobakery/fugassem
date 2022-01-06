@@ -137,6 +137,11 @@ def write_ML_results (type, results, funcs, outfile):
 		# foreach line
 		open_out.close()
 	if type == "xval":
+		if len(results.keys()) == 0:
+			 outfile1 = re.sub(".tsv", ".yes.tsv", outfile)
+			 outfile2 = re.sub(".tsv", ".no.tsv", outfile)
+			 os.system("touch " + outfile1)
+			 os.system("touch " + outfile2)
 		for myc in results.keys():
 			outfile1 = re.sub(".tsv", "." + myc + ".tsv", outfile)
 			open_out = open(outfile1, "w")
@@ -150,7 +155,7 @@ def write_ML_results (type, results, funcs, outfile):
 					mystr = mystr + "\t" + str(myv)
 				open_out.write(mystr + "\n")
 			open_out.close()
-
+		
 # write_ML_results
 
 

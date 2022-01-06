@@ -424,7 +424,7 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 	return ann_files, func_files
 
 
-def main(workflow):
+def generate_annotation_input (workflow):
 	'''
 	Prepare annotations used as inputs for FUGAsseM
 	'''
@@ -484,5 +484,10 @@ def main(workflow):
 	workflow.go()
 
 
+def main():
+	workflow = parse_cli_arguments()
+	generate_annotation_input (workflow)
+
+
 if __name__ == "__main__":
-	main(parse_cli_arguments())
+	main()

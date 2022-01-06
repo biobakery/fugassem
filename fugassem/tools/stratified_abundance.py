@@ -123,6 +123,10 @@ def collect_taxa_info (taxa_file, taxa_level):
 		mylevel = "NA"
 		mylineage = info[titles["taxa_lineage"]]
 		mylineage = re.sub("\.", "", mylineage)
+		mylineage = re.sub("\/", "_", mylineage)
+		mylineage = re.sub("\:", "_", mylineage)
+		mylineage = re.sub("\[", "", mylineage)
+		mylineage = re.sub("\]", "", mylineage)
 		mylineage = re.sub("\|", utilities.c_taxon_delim, mylineage)
 		if taxa_level == "MSP":
 			if "msp_name" in titles:
@@ -221,7 +225,7 @@ def sum_abundance (taxa, taxa_num, flt_presence, infile, outfile):
 
 	# threshold for species presence (e.g. >X% of genes non-zero values)
 	refined_taxa = {}
-	if flt_presence:
+	if flt_presence and flt_presence != "None":
 		try:
 			flt_presence = float(flt_presence)
 			for mytaxa in taxa_presence:

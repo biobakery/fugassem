@@ -39,7 +39,7 @@ except ImportError:
 		         " Please check your install.")
 
 
-def preprocess_taxa (abunds, anns, taxa_level, min_prev, min_abund, min_cov, output_folder, threads, time_equation, mem_equation):
+def preprocess_taxa (abunds, anns, taxa_level, min_prev, min_abund, min_cov, min_num, output_folder, threads, time_equation, mem_equation):
 	"""
 	This set of tasks will split MTX into stratified taxa
 
@@ -50,6 +50,7 @@ def preprocess_taxa (abunds, anns, taxa_level, min_prev, min_abund, min_cov, out
 		min_prev: the minimum prevalence per gene [ Default: None ].
 		min_abund: the minimum detected abundance for each gene [ Default: 0 ].
 		min_cov: the minimum fraction of annotated genes per taxon [ Default: 0.1 ].
+		min_num: the minimum number of total genes per taxon [ Default: 500 ].
 		output_folder (string): The path of the output folder.
 		threads (int): The number of threads/cores for clustering to use.
 
@@ -71,10 +72,11 @@ def preprocess_taxa (abunds, anns, taxa_level, min_prev, min_abund, min_cov, out
 		# add preprocess_taxa tasks
 		taxa_file, taxa = preprocess_taxa (abunds,
 						anns,
-						taxa_level = Species",
-						min_prev = 0.01,
-						min_abund = 0,
-						min_cov = 0.1,
+						taxa_level,
+						min_prev,
+						min_abund,
+						min_cov,
+						min_num,
 						output_dir,
                         args.threads,
                         time_equation,
@@ -95,10 +97,10 @@ def preprocess_taxa (abunds, anns, taxa_level, min_prev, min_abund, min_cov, out
 
 	# run tasks to preprocess taxa
 	utilities.run_task (
-		"fugassem_split_taxa -i [depends[0]] -a [depends[1]] -t [args[0]] -p [args[1]] -c [args[2]] -d [args[3]] -o [args[4]] > [args[5]] 2>&1",
+		"fugassem_split_taxa -i [depends[0]] -a [depends[1]] -t [args[0]] -p [args[1]] -c [args[2]] -n [args[3]] -d [args[4]] -o [args[5]] > [args[6]] 2>&1",
 		depends = [abunds, anns, TrackedExecutable("fugassem_split_taxa")],
 		targets = [taxa_file],
-		args = [taxa_level, min_prev, min_cov, min_abund, main_folder, output_log],
+		args = [taxa_level, min_prev, min_cov, min_num, min_abund, main_folder, output_log],
 		cores = threads,
 		name = "fugassem_split_taxa")
 
@@ -189,6 +191,7 @@ def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, 
 	refining_log = final_abund_file + ".refining.log"
 
 	# add tasks to workflow
+	"""
 	workflow.add_task ("mv -f [depends[0]] [targets[0]]",
 			depends = [gene_file_raw],
 	        targets = [raw_gene],
@@ -200,10 +203,11 @@ def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, 
 	        targets = [raw_file],
 	        cores = 1,
 	        name = "mv__backup_abundance")
+	"""
 
 	workflow.add_task (
 		"fugassem_abundance_smoothing -i [depends[0]] -t log -o [targets[0]] > [args[0]] 2>&1",
-		depends = [raw_file, TrackedExecutable("fugassem_abundance_smoothing")],
+		depends = [abund_file_raw, TrackedExecutable("fugassem_abundance_smoothing")],
 		targets = [abund_file, refined_file, transformed_file],
 		args = [smoothing_log],
 		cores = threads,
@@ -225,7 +229,7 @@ def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, 
 	workflow.add_task (
 		"fugassem_refine_abunds -i [depends[0]] -r [depends[1]] -c [args[0]] -m [args[1]] "
 		"-p [args[2]] -a [args[3]] -d [args[4]] -o [targets[0]] > [args[5]] 2>&1",
-		depends = [transformed_file, raw_file, TrackedExecutable("fugassem_refine_abunds")],
+		depends = [transformed_file, abund_file_raw, TrackedExecutable("fugassem_refine_abunds")],
 		targets = [final_abund_file],
 		args = [taxa_abund_file, zero_flt, min_prev, min_abund, min_detected, refining_log],
 		cores = 1,
@@ -823,9 +827,10 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 	if vector_list and vector_list != "None":
 		vectors = vector_list.split(",")
 		for vector_file in vectors:
+			vector_file = os.path.abspath(vector_file)
 			mynum = mynum + 1
 			evidence_type = "vector" + str(mynum)
-			config.logger.info("Preprocess vector evidence: " + evidence_type + "\t" + vector_file)
+			config.logger.info("Preprocess vector evidence: " + evidence_type + "\t" + os.path.basename(vector_file))
 			final_evidence_file = os.path.join(main_folder, basename + "." + evidence_type + ".tsv")
 			preprocess_evidence (vector_file, final_gene_file, "yes", main_folder, final_evidence_file,
 		                 evidence_list, evidence_type,
@@ -856,9 +861,10 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 	if matrix_list and matrix_list != "None":
 		matrixs = matrix_list.split(",")
 		for matrix_file in matrixs:
+			matrix_file = os.path.abspath(matrix_file)
 			mynum = mynum + 1
 			evidence_type = "matrix" + str(mynum)
-			config.logger.info("Preprocess matrix evidence: " + evidence_type + "\t" + matrix_file)
+			config.logger.info("Preprocess matrix evidence: " + evidence_type + "\t" + os.path.basename(matrix_file))
 			final_evidence_file = os.path.join(main_folder, basename + "." + evidence_type + ".tsv")
 			preprocess_evidence (matrix_file, final_gene_file, "no", main_folder, final_evidence_file,
 		                        evidence_list, evidence_type,

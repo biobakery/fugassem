@@ -69,6 +69,10 @@ def parse_arguments():
 		help = "[REQUIRED] the minimum fraction of annotated genes per taxon [Default: 0.1]\n",
 		default = 0.1)
 	parser.add_argument(
+		"-n", "--number",
+		help = "[REQUIRED] the minimum number of total genes per taxon [Default: 500]\n",
+		default = 500)
+	parser.add_argument(
 		"-d", "--abund",
 		help = "[OPTIONAL] the minimum detected abundance for each gene [ Default: 0 ] \n",
 		default = 0)
@@ -232,7 +236,7 @@ def write_genelist (genes, outfile):
 	out_file.close()
 
 
-def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, taxon_level, out_path):
+def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, min_num, taxon_level, out_path):
 	"""
 	Split abundance and annotation information per taxon
 	Input:
@@ -241,7 +245,8 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, taxon_
 		abunds - a dictionary of abundance table
 		min_abund - minimum detected abundance for each gene in each sample
 		min_prev - cutoff for minimum prevalence
-		min_cov - cutoff for minimum coverage of annotated gene in each taxon
+		min_cov - cutoff for minimum coverage of annotated genes in each taxon
+		min_num - cutoff for minimum number of total genes in each taxon
 		taxon_level - taxonomic level
 		out_path - path of output directory
 	Output: batches of abundance and annotation files per taxon
@@ -267,6 +272,10 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, taxon_
 				mytaxon = re.sub("^" + taxon_level, "", i)
 		if mytaxon == "NA":
 			continue
+		mytaxon = re.sub("\:", "_", mytaxon)
+		mytaxon = re.sub("\[", "", mytaxon)
+		mytaxon = re.sub("\]", "", mytaxon)
+		mytaxon = re.sub("\/", "_", mytaxon)
 		if not mytaxon in taxa_info:
 			taxa_info[mytaxon] = {}
 		taxa_info[mytaxon][myid] = myline
@@ -281,7 +290,9 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, taxon_
 			try:
 				min_cov = float(min_cov)
 				mycov = check_ann_cov (funcs, myabunds)
-				if mycov >= min_cov:
+				min_num = int(min_num)
+				mynum = len(myabunds.keys())
+				if mycov >= min_cov and mynum >= min_num:
 					mypath = os.path.join(out_path, mytaxon)
 					if not os.path.isdir(mypath):
 						os.system("mkdir -p " + mypath)
@@ -295,8 +306,9 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, taxon_
 					write_genelist (genes, myout3)
 					taxa_list[mytaxon] = ""
 			except:
-				config.logger.info ("Error! Please provide valid value for annotation coverage.")
+				config.logger.info ("Error! Please provide valid values for annotation coverage and gene number.")
 				continue
+					
 
 	# write file list
 	outfile = os.path.join(out_path, config.taxa_abund_list)
@@ -316,8 +328,7 @@ def main():
 	## Get info ##
 	abunds, header = utilities.read_data_from_file (args_value.input)
 	funcs = collect_ann_func (args_value.annotation)
-	split_taxa_info(funcs, header, abunds, args_value.abund, args_value.prev, args_value.coverage, args_value.taxon, args_value.output)
-
+	split_taxa_info(funcs, header, abunds, args_value.abund, args_value.prev, args_value.coverage, args_value.number, args_value.taxon, args_value.output)
 
 	config.logger.info ("Successfully finish split_taxa process!")
 

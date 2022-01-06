@@ -1,6 +1,9 @@
 
 # FUGAsseM History #
 
+## v0.2.0 2021-12-14 ##
+* Added multi-tasking module for processing taxa in parallel
+
 ## v0.1.1 2021-12-10 ##
 * Added parameters for taking vector-based and matrix-based evidence files
 
