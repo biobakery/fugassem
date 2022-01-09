@@ -1,6 +1,9 @@
 
 # FUGAsseM History #
 
+## v0.2.1 2022-01-08 ##
+* Fixed issues of utilities for preparing input files
+
 ## v0.2.0 2021-12-14 ##
 * Added multi-tasking module for processing taxa in parallel
 

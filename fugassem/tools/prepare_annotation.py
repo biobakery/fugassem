@@ -63,6 +63,7 @@ def parse_arguments():
 		"-t", "--type",
 		help = "[REQUIRED] annotation type\n",
 		choices = ["UniRef90_GO", "UniRef90_GO_BP", "UniRef90_GO_CC", "UniRef90_GO_MF", "UniRef90_COG", "UniRef90_eggNOG", "UniRef90_KEGG-KOs",
+					"BP", "MF", "CC",
 		           "InterProScan_PfamDomain", "Denovo_transmembrane", "Denovo_signaling", "DOMINE_interaction"],
 		required = True)
 	parser.add_argument(
@@ -71,6 +72,36 @@ def parse_arguments():
 		required = True)
 
 	return parser.parse_args()
+
+
+def collect_go_map (go_file):
+	"""
+	Collect GO terms for different categories
+	Input: GO obo file
+	Output: GO = {bp{...}, mf{...}, cc{...}}
+	"""
+	GO = {}
+	myterm = ""
+	namespace = ""
+	for line in utilities.gzip_bzip2_biom_open_readlines (go_file):
+		line = line.strip()
+		if not len(line):
+			continue
+		if re.search("^id\:\s+GO", line):
+			mym = re.search("(GO[\S+]+)", line)
+			myterm = mym.group(1)
+		if re.search("^namespace\:\s+", line):
+			if re.search("biological_process", line):
+				namespace = "BP"
+			if re.search("molecular_function", line):
+				namespace = "MF"
+			if re.search("cellular_component", line):
+				namespace = "CC"
+			if not namespace in GO:
+				GO[namespace] = {}
+			GO[namespace][myterm] = ""
+	
+	return GO
 
 
 def collect_name_map (map_file):
@@ -90,13 +121,20 @@ def collect_name_map (map_file):
 	return names
 
 
-def collect_function_info (ann_file, func_type, names, outfile):
+def collect_function_info (GO, ann_file, func_type, names, outfile):
 	"""
 	Collect the white list of functions
 	Input: the file name of the function list
 	Output: output feature2function info file
 	"""
-
+	
+	# collect annotation
+	if func_type == "BP":
+		func_type = "UniRef90_GO_BP"
+	if func_type == "MF":
+		func_type = "UniRef90_GO_MF"
+	if func_type == "CC":
+		func_type = "UniRef90_GO_CC"
 	outfile1 = re.sub(".tsv", ".simple.tsv", outfile)
 	open_out = open(outfile, "w")
 	open_out1 = open(outfile1, "w")
@@ -122,23 +160,38 @@ def collect_function_info (ann_file, func_type, names, outfile):
 			if myann == "good":
 				hits[myid] = ""
 			continue
-		if mytype != func_type:
-			continue
 		if myann == "NA":
 			continue
 		if not myid in hits:
 			continue
+		if not re.search(mytype, func_type):
+			continue	
+		#if mytype != func_type:
+		#	continue
 		tmp = myann.split(";")
 		for item in tmp:
 			if re.search("GO\:", item):
 				mym = re.search("(GO\:[^\]]+)", item)
 				item = mym.group(1)
 			myname = item
-			open_out1.write(myid + "\t" + myname + "\n")
-			if item in names:
-				myname = myname + ":" + names[item]
-			myname = myname + "__" + func_type
-			open_out.write(myid + "\t" + myname + "\n")
+			flag = 1
+			if mytype == "UniRef90_GO":
+				flag = 0
+				if re.search("BP", func_type):
+					if myname in GO["BP"]:
+						flag = 1
+				if re.search("MF", func_type):
+					if myname in GO["MF"]:
+						flag = 1
+				if re.search("CC", func_type):
+					if myname in GO["CC"]:
+						flag = 1
+			if flag == 1:
+				open_out1.write(myid + "\t" + myname + "\n")
+				if item in names:
+					myname = myname + ":" + names[item]
+				myname = myname + "__" + func_type
+				open_out.write(myid + "\t" + myname + "\n")
 
 	open_out.close()
 	open_out1.close()
@@ -152,11 +205,12 @@ def main():
 	config.logger.info ("Start prepare_annotation process......")
 
 	## get info ##
-	if args_value.mapping:
+	if args_value.mapping and args_value.mapping != "None":
 		names = collect_name_map (args_value.mapping)
 	else:
 		names = {}
-	collect_function_info (args_value.annotation, args_value.type, names, args_value.output)
+	GO = collect_go_map (config.go_obo_all)
+	collect_function_info (GO, args_value.annotation, args_value.type, names, args_value.output)
 
 	config.logger.info("Successfully finished prepare_annotation process!")
 

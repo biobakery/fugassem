@@ -234,7 +234,7 @@ def get_item(config_items, section, name, type=None):
 
 
 ## default option for MetaWIBELE ##
-version = '0.2.0'
+version = '0.2.1'
 log_level_choices = ["DEBUG","INFO","WARNING","ERROR","CRITICAL"]
 log_level = log_level_choices[1]
 verbose = 'DEBUG'
@@ -275,6 +275,7 @@ basename = "fugassem"
 #go_database_dir = get_item (config_items, "database", "go_db", "string")
 go_database_dir = os.path.join(database_directory, "GO")
 go_obo = None
+go_obo_all = None
 if os.path.exists (go_database_dir):
 	if not go_database_dir.lower() == "none" and not go_database_dir == "":
 		files = [os.path.abspath(x) for x in os.listdir(go_database_dir)]
@@ -282,6 +283,8 @@ if os.path.exists (go_database_dir):
 			myname = os.path.basename(i)
 			if myname == "go-basic.obo":
 				go_obo  = os.path.join(go_database_dir, myname)
+			if myname == "go.obo.gz":
+				go_obo_all  = os.path.join(go_database_dir, myname)
 
 ## Computing resources ##
 #threads = get_item (config_items, "computation", "threads", "int")

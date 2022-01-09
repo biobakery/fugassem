@@ -404,7 +404,11 @@ def write_importance_results(ml_type, features, funcs, X1, y1, outdir, prefix):
 
 	# with balancing
 	index = a(balance_train(range(len(y1)), features, funcs))
-	r.fit(X1[index], y1[index])
+	try:
+		r.fit(X1[index], y1[index])
+	except:
+		config.logger.info ("Error for fitting model for overall functions")
+		return None
 
 	# output
 	myfile = os.path.join(outdir, prefix + ".importance.tsv")

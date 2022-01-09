@@ -57,9 +57,8 @@ def parse_arguments():
 		required = True)
 	parser.add_argument(
 		"-t", "--type",
-		help = "[OPTIONAL] type of sequence similarity info [Default: pfam]\n",
-		choices = ['pfam', "uniref50", "contig", "DDI"],
-		default = "pfam")
+		help = "[OPTIONAL] type of sequence similarity info [Default: homology]\n",
+		default = "homology")
 	parser.add_argument(
 		"-s", "--similarity",
 		help = "[REQUIRED] sequence similarity info file\n",
@@ -214,7 +213,7 @@ def build_function_matrix (families, pairs, funcs, outfile):
 # function build_function_matrix
 
 
-def _main():
+def main():
 	args_value = parse_arguments()
 
 	config.logger.info ("Start prepare_seqSimilarity process......")
@@ -223,13 +222,13 @@ def _main():
 	families = collect_families (args_value.family)
 	funcs = collect_function (args_value.function)
 
-	units = ["pfam", "uniref50", "contig", "DDI"]
+	#units = ["pfam", "uniref50", "contig", "DDI", "homology"]
 	paris = {}
-	if args_value.type in units:
-		pairs = collect_similarity_unit (args_value.similarity)
+	#if args_value.type in units:
+	pairs = collect_similarity_unit (args_value.similarity)
 	build_function_matrix(families, pairs, funcs, args_value.output)
 
 	config.logger.info("Successfully finished prepare_seqSimilarity process!")
 
 if __name__ == '__main__':
-	_main()
+	main()
