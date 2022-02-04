@@ -179,7 +179,7 @@ def filter_low_prev_gene (abunds, min_abund, min_prev):
 				myv = float(i)
 				if myv > float(min_abund):
 					mynum += 1
-		myprev = mynum / len(myabund)
+		myprev = mynum * 1.0 / len(myabund)
 		if myprev < float (min_prev):
 			continue
 		abunds_new[mykey] = myline
