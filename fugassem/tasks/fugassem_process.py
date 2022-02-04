@@ -121,6 +121,8 @@ def get_args():
 	                      desc = "do not run the module for preprocessing evidences and functions for prediction")
 	workflow.add_argument("bypass-prediction",
 	                      desc = "do not run the module for predicting functions")
+	workflow.add_argument("bypass-mtx",
+	                      desc = "do not integrate MTX for finalized predicting functions")
 	workflow.add_argument("threads",
 	                      desc = "number of threads/cores for each task to use",
 	                      default = 1)
@@ -214,6 +216,10 @@ def process (workflow, vector_list, matrix_list):
 
 	# run prediction module
 	if not args.bypass_prediction or args.bypass_prediction == "False":
+		if args.bypass_mtx == "False" or not args.bypass_mtx:
+			args.bypass_mtx = False
+		else:
+			args.bypass_mtx = True
 		config.logger.info("Start to run prediction module for " + args.taxon + "......")
 		prediction_list = {}
 		final_pred_file = os.path.join(predict_dir, "finalized", mybasename + ".finalized_ML.prediction.tsv")
@@ -221,7 +227,7 @@ def process (workflow, vector_list, matrix_list):
 		                                                              feature_list,
 		                                                              args.ml_type, args.func_type,
 		                                                              predict_dir, mybasename, prediction_list,
-		                                                              workflow, args.threads, args.time, args.memory)
+		                                                              workflow, args.threads, args.time, args.memory, args.bypass_mtx)
 
 	else:
 		config.logger.info("WARNING! Bypass module: prediction module is skipped......")

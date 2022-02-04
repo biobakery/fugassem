@@ -228,7 +228,7 @@ def integrate_base_learning (feature_file, learnlist_file, learning_list,
 
 def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
                      output_folder, basename, prediction_list,
-                     workflow, threads, time_equation, mem_equation):
+                     workflow, threads, time_equation, mem_equation, bypass_mtx):
 	"""
 	Prediction function using machine learning approaches
 
@@ -245,6 +245,7 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 		threads (int): The number of threads/cores for clustering to use.
 		time_equation (int): requred number of hours defined in the workflow.
 		mem_equation (int): requred number of GB defined in the workflow.
+		prediction_task: whether to skip MTX for final prediction
 
 	Requires:
 		function file for one taxon
@@ -274,7 +275,8 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 						workflow,
                         args.threads,
                         args.time_equation,
-                        args.mem_equation)
+                        args.mem_equation,
+						bypass_mtx)
 		# run the workflow
 		workflow.go()
 	"""
@@ -306,6 +308,12 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 
 	## process the 2nd layer of ML
 	pred_list_file = os.path.join(main_folder, basename + ".predfile_list.tsv")
+	if bypass_mtx:
+		myindex = os.path.join(main_folder, "coexp", "coexp_ML_results")
+		try:
+			del pred_folder_list[myindex]
+		except:
+			pass
 	utilities.dict_to_file(pred_folder_list, pred_list_file)
 	preds = []
 	for i in sorted(prediction_list.keys()):

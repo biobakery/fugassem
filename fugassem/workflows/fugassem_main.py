@@ -124,6 +124,9 @@ def parse_cli_arguments ():
 	workflow.add_argument("bypass-prediction",
 	                      desc = "do not run the module for predicting functions",
 	                      action = "store_true")
+	workflow.add_argument("bypass-mtx",
+	                      desc = "do not integrate MTX for finalized predicting functions",
+	                      action = "store_true")
 	workflow.add_argument("threads",
 	                      desc = "number of threads/cores for each task to use",
 	                      default = 1)
@@ -343,6 +346,7 @@ def fugassem_main (workflow):
 		               args.matrix_list,
 		               args.bypass_preprocessing,
 		               args.bypass_prediction,
+		               args.bypass_mtx,
 		               args.threads,
 		               args.memory,
 		               args.time,
@@ -355,9 +359,9 @@ def fugassem_main (workflow):
 				"--minimum-prevalence [args[2]] --minimum-abundance [args[3]] --minimum-detected [args[4]] --filtering-zero [args[5]] --covariate-taxon [args[6]] "
 				"--correlation-method [args[7]] --go-level [args[8]] --func-type [args[9]] --ml-type [args[10]] "
 				"--vector-list [args[11]] --matrix-list [args[12]] "
-				"--bypass-preprocessing [args[13]] --bypass-prediction [args[14]] "
-				"--threads [args[15]] --memory [args[16]] --time [args[17]] "
-				"--output [args[18]] > [args[19]] 2>&1",
+				"--bypass-preprocessing [args[13]] --bypass-prediction [args[14]] --bypass-mtx [args[15]] "
+				"--threads [args[16]] --memory [args[17]] --time [args[18]] "
+				"--output [args[19]] > [args[20]] 2>&1",
 				depends = [abund_file, gene_file, func_file, TrackedExecutable("fugassem_process")],
 				targets = target_list,
 				args = args_list,
