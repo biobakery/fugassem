@@ -12,7 +12,7 @@ import argparse
 import logging
 
 try:
-	from fugassem import config
+	from fugassem import config,utilities
 except ImportError:
 	sys.exit("CRITICAL ERROR: Unable to find FUGAsseM python package." +
 	" Please check your install.")
@@ -37,6 +37,9 @@ def get_args ():
 						help = '[OPTIONAL] whether include header or not', 
 						choices = ["yes", "no"],
 						default = "yes")
+	parser.add_argument('--pair', 
+						help = 'If speficied, input file including gene pair evidence and should check both of them',
+						action = "store_true")
 	parser.add_argument('-c', 
 						help = '[OPTIONAL] input subset list of coldict file', 
 						default = None)    
@@ -52,7 +55,7 @@ def get_args ():
 #==============================================================
 # collect cluster ID
 #==============================================================
-def collect_subset_info (total_file, sub_row, sub_col, header_flag):
+def collect_subset_info (total_file, sub_row, sub_col, header_flag, pair_flag):
 	rows = {}
 	if not os.path.isfile(sub_row):
 		config.logger.info("Error! Subset list file for rowdict doesn't exist.")
@@ -82,23 +85,29 @@ def collect_subset_info (total_file, sub_row, sub_col, header_flag):
 
 	cluster = {}
 	titles = {}
-	open_file = open(total_file, "r")
-	if header_flag == "yes":
-		title = open_file.readline()
-		title = title.strip()
-		info = title.split("\t")
-		for i in info:
-			titles[info.index(i)] = i
-	else:
-		title = "NA"
-	for line in open_file.readlines():
+	flag_t = 0
+	for line in utilities.gzip_bzip2_biom_open_readlines(total_file):
 		line = line.strip()
 		if not len(line):
 			continue
 		info = line.split("\t")
+		if flag_t == 0:
+			flag_t = 1
+			if header_flag == "yes":
+				title = line
+				for i in info:
+					titles[info.index(i)] = i
+				continue
+			else:
+				title = "NA"
 		myname = info[0].split("|")
 		myname = myname[0]
 		if myname in rows:
+			if pair_flag:
+				if len(info) > 1:
+					myid2 = info[1].split("|")[0]
+					if not myid2 in rows:
+						continue
 			if len(titles.keys()) > 0:
 				if sub_col:
 					title = titles[0]
@@ -147,7 +156,7 @@ def main():
 	config.logger.info("Start extract_feature_subset.py")
 
 	config.logger.info("Get cluster info ......starting")
-	ids, cluster, title = collect_subset_info (values.i, values.l, values.c, values.t)
+	ids, cluster, title = collect_subset_info (values.i, values.l, values.c, values.t, values.pair)
 	config.logger.info("Get cluster info ......done")
 	
 	config.logger.info("Output info ......starting")
