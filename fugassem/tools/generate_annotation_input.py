@@ -74,6 +74,9 @@ def parse_cli_arguments():
 	workflow.add_argument("gene-info",
 	                      desc = "input gene info file including the contig info of each member in protein families [ Default: None ]",
 	                      default = None)
+	workflow.add_argument("coann-list",
+	                      desc = "specify which typs of data will converted into coann pairs as matrix evidence (pfam|ddi|contig), use comma to seprate [ Default: None ]",
+	                      default = None)
 	workflow.add_argument("homology",
 	                      desc = "If specified, will extract co-homology annotation",
 	                      action = "store_true")
@@ -120,10 +123,10 @@ def prepare_annotation (ann_file, ann_type, ann_map_file,
 		mem_equation (int): required number of GB defined in the workflow.
 
 	Requires:
-		annotation file
+		MetaWIBELE characterization file.
 
 	Returns:
-		string: the file of MetaWIBELE characterization file.
+		string: Annotation file
 
 	Example:
 		from anadama2 import Workflow
@@ -138,7 +141,8 @@ def prepare_annotation (ann_file, ann_type, ann_map_file,
 						ann_type,
 						ann_map_file,
 						output_folder,
-						extracted_ann_file,
+						extracted_ann_file1,
+						extracted_ann_file2,
 						workflow,
                         args.threads,
                         args.time_equation,
@@ -165,6 +169,70 @@ def prepare_annotation (ann_file, ann_type, ann_map_file,
 		time = time_equation,
 		mem = mem_equation,
 		name = "fugassem_prepare_annotation")
+
+	return extracted_ann_file
+
+
+def prepare_coann_pairs (ann_file,
+                output_folder, extracted_ann_file,
+                workflow, threads, time_equation, mem_equation):
+
+	"""
+	Prepare co-annotation pairs for specific type
+
+	Args:
+		ann_file: Raw annotation file.
+		output_folder (string): The path of the output folder.
+		extracted_ann_file: output file name for co-annotation pairs.
+		workflow (anadama2.workflow): An instance of the workflow class.
+		threads (int): The number of threads/cores for clustering to use.
+		time_equation (int): required number of hours defined in the workflow.
+		mem_equation (int): required number of GB defined in the workflow.
+
+	Requires:
+		Raw annotation file
+
+	Returns:
+		string: the file of co-annotation file.
+
+	Example:
+		from anadama2 import Workflow
+		from fugassem.tools.generate_annotation_input import prepare_annotation
+
+		# create an anadama2 workflow instance
+		workflow=Workflow()
+
+		# add prepare_function tasks
+		coann_file = prepare_coann_pairs (
+						ann_file,
+						output_folder,
+						extracted_ann_file,
+						workflow,
+                        args.threads,
+                        args.time_equation,
+                        args.mem_equation)
+		# run the workflow
+		workflow.go()
+	"""
+
+	config.logger.info("###### Start prepare_coann_pairs module #####")
+
+	# prep I/O files
+	main_folder = output_folder
+	if not os.path.isdir(main_folder):
+		os.system("mkdir -p " + main_folder)
+	extracted_ann_file = os.path.join(main_folder, os.path.basename(extracted_ann_file))
+	extracted_log = extracted_ann_file + ".log"
+
+	workflow.add_task(
+		"fugassem_prepare_coann_pairs -i [depends[0]] -o [targets[0]] > [args[0]] 2>&1",
+		depends = [ann_file, TrackedExecutable("fugassem_prepare_coann_pairs")],
+		targets = [extracted_ann_file],
+		args = [extracted_log],
+		cores = 1,
+		time = time_equation,
+		mem = mem_equation,
+		name = "fugassem_prepare_coann_pairs")
 
 	return extracted_ann_file
 
@@ -310,7 +378,7 @@ def prepare_co_unit (ann_file, ann_type,
 
 def prepare_annotation_task (ann_file, go_types, pfam, ddi,
                              contig, clust_file, gene_info_file,
-							 homology, homology_ann_file,
+							 homology, homology_ann_file, coanns,
                              output_folder, basename,
                              workflow, threads, time_equation, mem_equation):
 	"""
@@ -326,6 +394,7 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 		gene_info_file: gene info file including the contig info of each member in protein families [ Default: None ]
 		homology: if specified, will extract co-homology annotation, [ Default: None ]
 		homology_ann_file: homology-based annotation file [ Default: None ]
+		coanns: a list of data types which are converted into co-annotation pairs
 		output_folder (string): The path of the output folder.
 		basename: basename for output files.
 		workflow (anadama2.workflow): An instance of the workflow class.
@@ -357,6 +426,7 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
                         gene_info_file,
 						homology,
 						homology_ann_file,
+						coanns,
                         output_folder,
                         basename
 						workflow,
@@ -393,6 +463,12 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 		prepare_annotation(ann_file, pfam, None,
 		                   main_folder, myann1, myann2,
 		                   workflow, threads, time_equation, mem_equation)
+		if "pfam" in coanns:
+			myann2_raw = myann2
+			myann2 = os.path.join(main_folder, basename + ".pfam.simple.pairs.tsv")
+			prepare_coann_pairs (myann2_raw,
+			                    main_folder, myann2,
+			                    workflow, threads, time_equation, mem_equation)
 		ann_files.append(myann2)
 
 	# ddi
@@ -402,6 +478,12 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 		prepare_annotation(ann_file, ddi, None,
 		                   main_folder, myann1, myann2,
 		                   workflow, threads, time_equation, mem_equation)
+		if "ddi" in coanns:
+			myann2_raw = myann2
+			myann2 = os.path.join(main_folder, basename + ".DDI.simple.pairs.tsv")
+			prepare_coann_pairs (myann2_raw,
+			                    main_folder, myann2,
+			                    workflow, threads, time_equation, mem_equation)
 		ann_files.append(myann2)
 
 	# contig
@@ -411,6 +493,12 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 		prepare_contig(clust_file, gene_info_file,
 		               output_folder, myann1, myann2,
 		               workflow, threads, time_equation, mem_equation)
+		if "contig" in coanns:
+			myann2_raw = myann2
+			myann2 = os.path.join(main_folder, basename + ".contig.simple.pairs.tsv")
+			prepare_coann_pairs (myann2_raw,
+			                    main_folder, myann2,
+			                    workflow, threads, time_equation, mem_equation)
 		ann_files.append(myann2)
 
 	# homology
@@ -461,6 +549,10 @@ def generate_annotation_input (workflow):
 			args.time = 600
 	else:
 		args.time = 600
+	if args.coann_list:
+		coanns = args.coann_list.split(",")
+	else:
+		coanns = []
 
 	## get all input files
 	ann_file = os.path.abspath(args.input)
@@ -482,7 +574,7 @@ def generate_annotation_input (workflow):
 	config.logger.info("Start to run prepare_annotation_task module......")
 	prepare_annotation_task (ann_file, args.go_types, args.pfam, args.ddi,
 	                        args.contig, args.clust_file, args.gene_info,
-	                        args.homology, args.homology_ann,
+	                        args.homology, args.homology_ann, coanns,
 	                        output_dir, basename,
 	                        workflow, args.threads, args.time, args.memory)
 
