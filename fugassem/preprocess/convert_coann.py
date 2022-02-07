@@ -33,7 +33,7 @@ import logging
 import math
 
 try:
-	from fugassem import config
+	from fugassem import config,utilities
 except ImportError:
 	sys.exit("CRITICAL ERROR: Unable to find FUGAsseM python package." +
 		" Please check your install.")
@@ -53,7 +53,7 @@ def get_args ():
 	                    required = True)
 	parser.add_argument('-f', "--format",
 	                    help = '[OPTIONAL] format type of the input annotation file [Default: matrix]',
-	                    choices = ['matrix', 'vector'],
+	                    choices = ['matrix', 'vector', 'pair'],
 	                    default = "matrix")
 	parser.add_argument('-t', "--header",
 	                    help = '[OPTIONAL] whether include header or not in the input annotation file [Default: yes]',
@@ -75,19 +75,22 @@ def get_args ():
 # collect annotation info
 #==============================================================
 def collect_annotation_matrix (raw_file):
-	open_file = open(raw_file, "r")
-	info = open_file.readline().strip().split("\t")
+	#open_file = open(raw_file, "r")
+	flag_t = 0
 	titles = {}
-	for item in info:
-		titles[info.index(item)] = item
 	anns = {}
 	funcs = {}
 	families = {}
-	for line in open_file:
+	for line in utilities.gzip_bzip2_biom_open_readlines(raw_file):
 		line = line.strip()
 		if not len(line):
 			continue
 		info = line.split("\t")
+		if flag_t == 0:
+			flag_t = 1
+			for item in info:
+				titles[info.index(item)] = item
+			continue
 		myid = info[0]
 		families[myid] = ""
 		myindex = 1
@@ -102,7 +105,7 @@ def collect_annotation_matrix (raw_file):
 				else:
 					config.logger.info("Warning! Invalid value: " + myv)
 					myv = float("NaN")
-			if not math.isnan(myv) and myv > 0:
+			if not math.isnan(myv): #and myv > 0:
 				if not myid in anns:
 					anns[myid] = {}
 				anns[myid][myf] = myv
@@ -111,26 +114,28 @@ def collect_annotation_matrix (raw_file):
 				funcs[myf][myid] = ""
 			myindex = myindex + 1
 	# foreach line
-	open_file.close()
 
 	return families, funcs, anns
 
 
 def collect_annotation_vector (raw_file, header):
-	open_file = open(raw_file, "r")
-	if header == "yes":
-		info = open_file.readline().strip().split("\t")
-		titles = {}
-		for item in info:
-			titles[info.index(item)] = item
+	#open_file = open(raw_file, "r")
 	anns = {}
 	funcs = {}
 	families = {}
-	for line in open_file:
+	titles = {}
+	flag_t = 0
+	for line in utilities.gzip_bzip2_biom_open_readlines(raw_file):
 		line = line.strip()
 		if not len(line):
 			continue
 		info = line.split("\t")
+		if flag_t == 0:
+			flag_t = 1
+			if header == "yes":
+				for item in info:
+					titles[info.index(item)] = item
+				continue
 		myid = info[0]
 		myf = info[-1]
 		families[myid] = ""
@@ -141,32 +146,68 @@ def collect_annotation_vector (raw_file, header):
 			funcs[myf] = {}
 		funcs[myf][myid] = ""
 	# foreach line
-	open_file.close()
 
 	return families, funcs, anns
+
+
+def collect_annotation_pair (raw_file, header):
+	coann = {}
+	families = {}
+	titles = {}
+	flag_t = 0
+	for line in utilities.gzip_bzip2_biom_open_readlines(raw_file):
+		line = line.strip()
+		if not len(line):
+			continue
+		info = line.split("\t")
+		if flag_t == 0:
+			flag_t = 1
+			if header == "yes":
+				for item in info:
+					titles[info.index(item)] = item
+				continue
+		myid1 = info[0]
+		myid2 = info[1]
+		myv = 1
+		if len(info) > 2:
+			myv = info[-1]
+		families[myid1] = ""
+		families[myid2] = ""
+		mynew1 = myid1 + "\t" + myid2
+		mynew2 = myid2 + "\t" + myid1
+		coann[mynew1] = myv
+		if not mynew2 in coann:
+			coann[mynew2] = myv
+	# foreach line
+
+	return families, coann
 
 
 #==============================================================
 # get co-annotation info
 #==============================================================
-def co_annotation (families, funcs, anns, suffix, outfile):
-	# get co-annotation info
-	coann = {}
-	for myid1 in families.keys():
-		if myid1 in anns:
-			for myf in anns[myid1].keys():
-				myv = anns[myid1][myf]
-				if myf in funcs:
-					for myid2 in funcs[myf].keys():
-						if myid1 != myid2:
-							mynew = myid1 + "\t" + myid2
-							if not mynew in coann:
-								coann[mynew] = {}
-							coann[mynew][myf] = myv
-					# foreach annotated gene for a given function
-			# foreach annotated item for a given gene
-		# if gene is annotated
-	# foreach gene
+def co_annotation (families, funcs, anns, suffix, co_ann, outfile):
+	if co_ann:
+		coann = anns
+	else:
+		# get co-annotation info
+		coann = {}
+		for myid1 in families.keys():
+			if myid1 in anns:
+				for myf in anns[myid1].keys():
+					myv = anns[myid1][myf]
+					if myf in funcs:
+						for myid2 in funcs[myf].keys():
+							if myid1 != myid2:
+								mynew = myid1 + "\t" + myid2
+								coann[mynew] = myv
+								#if not mynew in coann:
+								#	coann[mynew] = {}
+								#coann[mynew][myf] = myv
+						# foreach annotated gene for a given function
+				# foreach annotated item for a given gene
+			# if gene is annotated
+		# foreach gene
 
 	# write co-annotation into file
 	open_out = open(outfile, "w")
@@ -184,8 +225,7 @@ def co_annotation (families, funcs, anns, suffix, outfile):
 			else:
 				mynew = myid1 + "\t" + myid2
 				if mynew in coann:
-					#myv = len(coann[mynew].keys())
-					myv = 1
+					myv = coann[mynew]
 				else:
 					myv = 0
 			mystr = mystr + "\t" + str(myv)
@@ -203,12 +243,17 @@ def main():
 	values = get_args ()
 
 	config.logger.info ("Start convert_coann process")
-	
+
+	pair_flag = False
 	if values.format == "matrix":
 		families, funcs, anns = collect_annotation_matrix (values.input)
 	if values.format == "vector":
 		families, funcs, anns = collect_annotation_vector (values.input, values.header)
-	co_annotation (families, funcs, anns, values.suffix, values.output)
+	if values.format == "pair":
+		families, anns = collect_annotation_pair(values.input, values.header)
+		funcs = {}
+		pair_flag = True
+	co_annotation (families, funcs, anns, values.suffix, pair_flag, values.output)
 
 	config.logger.info ("Successfully finish convert_coann process")
 
