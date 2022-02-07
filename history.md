@@ -1,6 +1,9 @@
 
 # FUGAsseM History #
 
+## v0.3.0 2022-02-05 ##
+* Accepted input matrix evidence with connection weights
+
 ## v0.2.1 2022-01-08 ##
 * Fixed issues of utilities for preparing input files
 * Added option for skipping to integrate mtx into finalized prediction 

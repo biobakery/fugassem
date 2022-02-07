@@ -76,7 +76,7 @@ import re
 import time
 
 
-VERSION = "0.2.1"
+VERSION = "0.3.0"
 AUTHOR = "FUGAsseM Development Team"
 MAINTAINER = "Yancong Zhang"
 MAINTAINER_EMAIL = "zhangyc201211@gmail.com"
@@ -260,6 +260,7 @@ setuptools.setup(
 			'fugassem_prepare_annotation = fugassem.tools.prepare_annotation:main',
 			'fugassem_prepare_contig = fugassem.tools.prepare_contig:main',
 			'fugassem_prepare_seqSimilarity = fugassem.tools.prepare_seqSimilarity:main',
+			'fugassem_prepare_coann_pairs = fugassem.tools.prepare_coann_pairs:main',
 			'fugassem_stratified_abundance = fugassem.tools.stratified_abundance:main',
 			'fugassem_sum_to_family_abundance = fugassem.tools.sum_to_family_abundance:main',
 
