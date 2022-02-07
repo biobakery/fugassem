@@ -350,7 +350,7 @@ def calculate_covariation (abund_file, corr_method, output_folder, final_corr_fi
 	return final_corr_file, final_abund_file
 
 
-def preprocess_evidence (evi_file, gene_file, header, output_folder, final_evidence_file, evidence_list, evidence_type,
+def preprocess_evidence (evi_file, gene_file, header, pair, output_folder, final_evidence_file, evidence_list, evidence_type,
                       workflow, threads, time_equation, mem_equation):
 	"""
 	Preprocess evidence for a list of genes
@@ -359,6 +359,7 @@ def preprocess_evidence (evi_file, gene_file, header, output_folder, final_evide
 		evi_file: raw function file for one taxon.
 		gene_file: gene list file
 		header: whether raw function file includes header
+		pair: whether raw evidence file includes gene pairs
 		output_folder (string): The path of the output folder.
 		final_evidence_file: finalized function file for one taxon.
 		evidence_list: a dictionary recording files of evidences
@@ -387,6 +388,7 @@ def preprocess_evidence (evi_file, gene_file, header, output_folder, final_evide
 						evi_file,
 						gene_file,
 						header,
+						pair,
 						output_dir,
 						final_evidence_file,
 						evidence_list,
@@ -407,16 +409,19 @@ def preprocess_evidence (evi_file, gene_file, header, output_folder, final_evide
 		os.system("mkdir -p " + main_folder)
 	final_evidence_file = os.path.join(main_folder, os.path.basename(final_evidence_file))
 	evidence_log = final_evidence_file + ".prep_evidence.log"
-
-	workflow.add_task (
-		"fugassem_extract_feature_subset -i [depends[0]] -l [depends[1]] -t [args[0]] -o [targets[0]] > [args[1]] 2>&1",
-		depends = [evi_file, gene_file, TrackedExecutable("fugassem_extract_feature_subset")],
-		targets = [final_evidence_file],
-		args = [header, evidence_log],
-		cores = 1,
-		time = time_equation,
-		mem = mem_equation,
-		name = "fugassem_extract_feature_subset")
+	
+	if pair == "yes":
+		mycmd = "fugassem_extract_feature_subset -i [depends[0]] -l [depends[1]] -t [args[0]] -o [targets[0]] --pair > [args[1]] 2>&1"
+	else:
+		mycmd = "fugassem_extract_feature_subset -i [depends[0]] -l [depends[1]] -t [args[0]] -o [targets[0]] > [args[1]] 2>&1"	
+	workflow.add_task (mycmd,
+			depends = [evi_file, gene_file, TrackedExecutable("fugassem_extract_feature_subset")],
+			targets = [final_evidence_file],
+			args = [header, evidence_log],
+			cores = 1,
+			time = time_equation,
+			mem = mem_equation,
+			name = "fugassem_extract_feature_subset")
 
 	if not evidence_type in evidence_list:
 		evidence_list[evidence_type] = final_evidence_file
@@ -832,7 +837,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 			evidence_type = "vector" + str(mynum)
 			config.logger.info("Preprocess vector evidence: " + evidence_type + "\t" + os.path.basename(vector_file))
 			final_evidence_file = os.path.join(main_folder, basename + "." + evidence_type + ".tsv")
-			preprocess_evidence (vector_file, final_gene_file, "yes", main_folder, final_evidence_file,
+			preprocess_evidence (vector_file, final_gene_file, "yes", "no", main_folder, final_evidence_file,
 		                 evidence_list, evidence_type,
 		                 workflow, threads, time_equation, mem_equation)
 
@@ -866,7 +871,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 			evidence_type = "matrix" + str(mynum)
 			config.logger.info("Preprocess matrix evidence: " + evidence_type + "\t" + os.path.basename(matrix_file))
 			final_evidence_file = os.path.join(main_folder, basename + "." + evidence_type + ".tsv")
-			preprocess_evidence (matrix_file, final_gene_file, "no", main_folder, final_evidence_file,
+			preprocess_evidence (matrix_file, final_gene_file, "no", "yes", main_folder, final_evidence_file,
 		                        evidence_list, evidence_type,
 		                        workflow, threads, time_equation, mem_equation)
 
@@ -876,7 +881,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 				"fugassem_convert_coann -i [depends[0]] -s [args[0]] -f [args[1]] -t [args[2]] -o [targets[0]] > [args[3]] 2>&1",
 				depends = [final_evidence_file, TrackedExecutable("fugassem_convert_coann")],
 				targets = [final_evidence_matrix],
-				args = [evidence_type, "vector", "no", convert_log],
+				args = [evidence_type, "pair", "no", convert_log],
 				cores = 1,
 				time = time_equation,
 				mem = mem_equation,
