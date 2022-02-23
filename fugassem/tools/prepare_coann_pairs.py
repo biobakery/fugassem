@@ -89,9 +89,9 @@ def collect_anno_info (raw_file, header):
 		if not myid in anns:
 			anns[myid] = {}
 		anns[myid][myf] = 1
-		if not myf in funcs:
-			funcs[myf] = {}
-		funcs[myf][myid] = ""
+		#if not myf in funcs:
+		#	funcs[myf] = {}
+		#funcs[myf][myid] = ""
 	# foreach line
 
 	return families, funcs, anns
@@ -100,6 +100,7 @@ def collect_anno_info (raw_file, header):
 def prep_coann_pair (families, funcs, anns, outfile):
 	# get co-annotation info
 	coann = {}
+	'''
 	for myid1 in families.keys():
 		if myid1 in anns:
 			for myf in anns[myid1].keys():
@@ -114,6 +115,21 @@ def prep_coann_pair (families, funcs, anns, outfile):
 							coann[mynew] = myv
 					# foreach annotated gene for a given function
 			# foreach annotated item for a given gene
+		# if gene is annotated
+	# foreach gene
+	'''
+	for myid1 in sorted(families.keys()):
+		if myid1 in anns:
+			myf1 = sorted(anns[myid1].keys())
+			for myid2 in sorted(anns.keys()):
+				if myid1 == myid2:
+					continue
+				myf2 = anns[myid2]
+				mytmp = list(set(myf1) & set(myf2))
+				if len(mytmp) > 0:
+					mynew = myid1 + "\t" + myid2
+					coann[mynew] = 1
+			# foreach annotated gene
 		# if gene is annotated
 	# foreach gene
 
@@ -135,7 +151,7 @@ def prep_coann_pair (families, funcs, anns, outfile):
 	open_out.close()
 	
 	if os.path.isfile(outfile):
-		os.system("gzip " + outfile)
+		os.system("gzip -f " + outfile)
 
 # prep_coann_pair
 
