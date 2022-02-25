@@ -105,6 +105,9 @@ def get_args():
 	workflow.add_argument("matrix-list",
 	                      desc = "[string] a comma separated list of matrix-based evidence files (e.g. gene-by-gene network type of file) [ Default: None ]",
 	                      default = None)
+	workflow.add_argument("pair-flag",
+	                      desc = "[Boolean] whether matrix-based evidence is paired or not [ Default: yes ]",
+	                      default = "yes")
 	workflow.add_argument("taxon",
 	                      desc = '[REQUIRED] specify taxon name',
 	                      required = True)
@@ -202,7 +205,7 @@ def process (workflow, vector_list, matrix_list):
 				args.filtering_zero,
 				args.covariate_taxon,
 				args.correlation_method,
-				vector_list, matrix_list,
+				vector_list, matrix_list, args.pair_flag,
 				preprocess_dir, mybasename, feature_list, feature_list_file,
 				workflow, args.threads, args.time, args.memory)
 		else:

@@ -136,6 +136,18 @@ def collect_annotation_vector (raw_file, header):
 				for item in info:
 					titles[info.index(item)] = item
 				continue
+		if len(info) == 3:
+			myid1 = info[0]
+			myid2 = info[1]
+			myv = info[-1]
+			families[myid1] = ""
+			families[myid2] = ""
+			mynew1 = myid1 + "\t" + myid2
+			mynew2 = myid2 + "\t" + myid1
+			anns[mynew1] = myv
+			if not mynew2 in anns:
+				anns[mynew2] = myv
+			continue
 		myid = info[0]
 		myf = info[-1]
 		families[myid] = ""

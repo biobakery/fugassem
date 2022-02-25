@@ -693,7 +693,7 @@ def preprocess_feature (raw_file, new_file, header, feature_type, output_folder,
 
 def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, go_obo,
                 min_prev, min_abund, min_detected, zero_flt, taxa_abund_file, corr_method,
-                vector_list, matrix_list,
+                vector_list, matrix_list, pair_flag,
                 output_folder, basename, feature_list, feature_list_file,
                 workflow, threads, time_equation, mem_equation):
 	"""
@@ -760,6 +760,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 						corr_method = "Pearson_SE",
 						vector_list,
 						matrix_list,
+						pair_flag,
 						output_dir,
 						basename,
 						feature_list,
@@ -871,7 +872,11 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 			evidence_type = "matrix" + str(mynum)
 			config.logger.info("Preprocess matrix evidence: " + evidence_type + "\t" + os.path.basename(matrix_file))
 			final_evidence_file = os.path.join(main_folder, basename + "." + evidence_type + ".tsv")
-			preprocess_evidence (matrix_file, final_gene_file, "no", "yes", main_folder, final_evidence_file,
+			if pair_flag == "yes":
+				coann_flag = "pair"
+			else:
+				coann_flag = "vector"
+			preprocess_evidence (matrix_file, final_gene_file, "no", pair_flag, main_folder, final_evidence_file,
 		                        evidence_list, evidence_type,
 		                        workflow, threads, time_equation, mem_equation)
 
@@ -881,7 +886,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 				"fugassem_convert_coann -i [depends[0]] -s [args[0]] -f [args[1]] -t [args[2]] -o [targets[0]] > [args[3]] 2>&1",
 				depends = [final_evidence_file, TrackedExecutable("fugassem_convert_coann")],
 				targets = [final_evidence_matrix],
-				args = [evidence_type, "pair", "no", convert_log],
+				args = [evidence_type, coann_flag, "no", convert_log],
 				cores = 1,
 				time = time_equation,
 				mem = mem_equation,

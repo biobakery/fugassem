@@ -100,12 +100,12 @@ def collect_subset_info (total_file, sub_row, sub_col, header_flag, pair_flag):
 				continue
 			else:
 				title = "NA"
-		myname = info[0].split("|")
+		myname = info[0].split(utilities.c_strat_delim)
 		myname = myname[0]
 		if myname in rows:
 			if pair_flag:
-				if len(info) > 1:
-					myid2 = info[1].split("|")[0]
+				if len(info) > 2:
+					myid2 = info[1].split(utilities.c_strat_delim)[0]
 					if not myid2 in rows:
 						continue
 			if len(titles.keys()) > 0:
