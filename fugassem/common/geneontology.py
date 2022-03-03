@@ -228,6 +228,10 @@ class Ontology:
                 if term.replaced_by is not None:
                     self.idmap[term.goid] = term.replaced_by
             else:
+                # YZ
+				#self.terms[term.goid] = term
+                if type(term) is list:
+                    term = tuple(term)				
                 self.terms[term.goid] = term
                 self.idmap[term.goid] = term.goid
                 for alt_id in term.alt_ids:
@@ -277,6 +281,9 @@ class Ontology:
             for goid in goids:
                 # handle updated/aliased ids
                 goid = self.idmap.get( goid, goid )
+                # YZ
+                if type(goid) is list:
+                    goid = tuple(goid)				
                 if goid in self.terms:
                     self.terms[goid].add_gene( gene )
 
