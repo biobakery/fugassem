@@ -65,8 +65,8 @@ def get_args():
 	workflow = Workflow(version = config.version, description = "Process the main tasks of FUGAsseM for each taxon", remove_options=["output"])
 	# add the custom arguments to the workflow
 	workflow.add_argument("minimum-prevalence",
-	                      desc = "minimum prevalence of each gene/protein family in normalized-abund MTX [ Default: 0.01 ]",
-	                      default = 0.01)
+	                      desc = "minimum prevalence of each gene/protein family in normalized-abund MTX [ Default: 0 ]",
+	                      default = 0)
 	workflow.add_argument("minimum-abundance",
 	                      desc = "minimum abundance of each gene/protein family in normalized-abund MTX [ Default: 0 ]",
 	                      default = 0)

@@ -119,7 +119,7 @@ def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, 
 	Args:
 		abund_file: MTX abundance file for one taxon.
 		gene_file: gene list file
-		min_prev: the minimum prevalence per gene [ Default: 0.01 ].
+		min_prev: the minimum prevalence per gene [ Default: 0 ].
 		min_abund: the minimum detected abundance for each gene [ Default: 0 ].
 		min_detected: the minimum detected value for each covariate feature [ Default: 0 ]
 		zero_flt: pre-filtering approach [ Default: None ], choices: ["lenient", "semi-strict", "strict", "None"]
@@ -152,7 +152,7 @@ def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, 
 		abund_file, gene_file = refine_abundance (
 						abund_file,
 						gene_file,
-						min_prev = 0.01,
+						min_prev = 0,
 						min_abund = 0,
 						min_detected = 0,
 						zero_flt = None,
@@ -709,7 +709,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 				[all]: keep all terms
 		func_type: function category, e.g. BP | CC | MF
 		go_obo: go-basic obo file
-		min_prev: the minimum prevalence per gene [ Default: 0.01 ].
+		min_prev: the minimum prevalence per gene [ Default: 0 ].
 		min_abund: the minimum detected abundance for each gene [ Default: 0 ].
 		min_detected: the minimum detected value for each covariate feature [ Default: 0 ]
 		zero_flt: pre-filtering approach [ Default: None ], choices: ["lenient", "semi-strict", "strict", "None"]
@@ -752,7 +752,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 						go_level = 50,
 						func_type = "BP",
 						go_obo,
-						min_prev = 0.01,
+						min_prev = 0,
 						min_abund = 0,
 						min_detected = 0,
 						zero_flt = None,

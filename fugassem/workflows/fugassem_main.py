@@ -63,8 +63,8 @@ def parse_cli_arguments ():
 	                      choices = ["MSP", "Species", "Genus", "Family", "Order", "Class", "Phylum"],
 	                      default = "Species")
 	workflow.add_argument("minimum-prevalence",
-	                      desc = "minimum prevalence of each gene/protein family in normalized-abund MTX [ Default: 0.01 ]",
-	                      default = 0.01)
+	                      desc = "minimum prevalence of each gene/protein family in normalized-abund MTX [ Default: 0 ]",
+	                      default = 0)
 	workflow.add_argument("minimum-abundance",
 	                      desc = "minimum abundance of each gene/protein family in normalized-abund MTX [ Default: 0 ]",
 	                      default = 0)
