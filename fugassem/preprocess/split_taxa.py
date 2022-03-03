@@ -272,10 +272,7 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, min_nu
 				mytaxon = re.sub("^" + taxon_level, "", i)
 		if mytaxon == "NA":
 			continue
-		mytaxon = re.sub("\:", "_", mytaxon)
-		mytaxon = re.sub("\[", "", mytaxon)
-		mytaxon = re.sub("\]", "", mytaxon)
-		mytaxon = re.sub("\/", "_", mytaxon)
+		mytaxon = utilities.refine_taxon(mytaxon)
 		if not mytaxon in taxa_info:
 			taxa_info[mytaxon] = {}
 		taxa_info[mytaxon][myid] = myline

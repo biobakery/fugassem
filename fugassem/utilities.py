@@ -745,3 +745,16 @@ def remove_duplicate(duplicate):
 		if num not in final_list:
 			final_list.append(num)
 	return final_list
+
+
+def refine_taxon (myt):
+	myt = re.sub("\.", "", myt)
+	myt = re.sub("\(", "", myt)
+	myt = re.sub("\)", "", myt)
+	myt = re.sub("\[", "", myt)
+	myt = re.sub("\]", "", myt)
+	myt = re.sub("\:", "_", myt)
+	myt = re.sub("\/", "_", myt)
+	myt = re.sub("\s+", "_", myt)
+
+	return myt
