@@ -569,17 +569,19 @@ def refine_function (func_file, gene_file, header, go_level, func_type, go_obo, 
 	func_log1 = final_func_file + ".geneontology.log"
 	func_log2 = final_func_file + ".refined_func.log"
 
-	if not go_obo or go_level == "none":
+	if go_level == "none":
+		func_log1 = final_func_file + ".format_func.log"
 		workflow.add_task("ln -s [depends[0]] [targets[0]]",
 		                  depends = [func_file],
 		                  targets = [final_func_file],
 		                  cores = 1,
-		                  name = "lm__final_function_file")
-		workflow.add_task("ln -s [depends[0]] [targets[0]]",
-		                  depends = [func_file],
+		                  name = "ln__final_function_file")
+		workflow.add_task("fugassem_format_function -i [depends[0]] -o [targets[0]] > [args[0]] 2>&1",
+		                  depends = [func_file, TrackedExecutable("fugassem_format_function")],
 		                  targets = [final_func_smp_file],
+						  args = [func_log1],
 		                  cores = 1,
-		                  name = "lm__final_simplified_function_file")
+		                  name = "fugassem_format_function")
 	else:
 		if go_level == "all":
 			workflow.add_task (
