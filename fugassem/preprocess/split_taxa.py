@@ -187,7 +187,7 @@ def filter_low_prev_gene (abunds, min_abund, min_prev):
 	return abunds_new
 
 
-def write_abunds (abunds, header, outfile):
+def write_abunds (nrm_info, abunds, header, outfile):
 	"""
 	Write refined abundance table
 	Input: refined abundance dictionary
@@ -200,9 +200,10 @@ def write_abunds (abunds, header, outfile):
 	out_file.write(header + "\n")
 	for myid in sorted(abunds.keys()):
 		info = abunds[myid].split("\t")
-		info[0] = myid
+		if myid in nrm_info:
+			info[0] = myid + utilities.c_strat_delim + nrm_info[myid] 
 		myline = "\t".join(info)
-		out_file.write(myline + "\n")
+		out_file.write (myline + "\n")
 
 
 def write_funcs (funcs, outfile):
@@ -260,6 +261,7 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, min_nu
 
 	## collect info
 	taxa_info = {}
+	nrm_info = {}
 	for mykey in abunds.keys():
 		myline = abunds[mykey]
 		info = myline.split("\t")
@@ -272,7 +274,11 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, min_nu
 				mytaxon = re.sub("^" + taxon_level, "", i)
 		if mytaxon == "NA":
 			continue
-		mytaxon = utilities.refine_taxon(mytaxon)
+		mynrm_level = tmp[-1]
+		mynrm_level = re.sub("[\S]*__", "", mynrm_level)
+		mytaxon = utilities.refine_taxon (mytaxon)
+		mynrm_level = utilities.refine_taxon (mynrm_level)
+		nrm_info[myid] = mynrm_level
 		if not mytaxon in taxa_info:
 			taxa_info[mytaxon] = {}
 		taxa_info[mytaxon][myid] = myline
@@ -281,32 +287,53 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, min_nu
 	taxa_list = {}
 	for mytaxon in taxa_info.keys():
 		myabunds = taxa_info[mytaxon]
+		pass_flag = True
 		if min_prev:
 			myabunds = filter_low_prev_gene (myabunds, min_cov, min_prev)
+		if min_num:
+			try:
+				min_num = float(min_num)
+				mynum = len(myabunds.keys())
+				if mynum >= min_num:
+					if pass_flag:
+						pass_flag = True
+				else:
+					pass_flag = False
+					continue
+			except:
+				config.logger.info ("Error! Please provide valid values for minimum number of genes.")
+				continue
+		else:
+			pass_flag = True
 		if min_cov:
 			try:
 				min_cov = float(min_cov)
 				mycov = check_ann_cov (funcs, myabunds)
-				min_num = int(min_num)
-				mynum = len(myabunds.keys())
-				if mycov >= min_cov and mynum >= min_num:
-					mypath = os.path.join(out_path, mytaxon)
-					if not os.path.isdir(mypath):
-						os.system("mkdir -p " + mypath)
-					myout1 = os.path.join(mypath, mytaxon + config.c_abund_extension)
-					myout2 = os.path.join(mypath, mytaxon + config.c_ann_extension)
-					myout3 = os.path.join(mypath, mytaxon + config.c_gene_extension)
-					genes = sorted(myabunds.keys())
-					myfuncs = extract_ann_cov (funcs, genes)
-					write_abunds (myabunds, header, myout1)
-					write_funcs (myfuncs, myout2)
-					write_genelist (genes, myout3)
-					taxa_list[mytaxon] = ""
+				if mycov >= min_cov:
+					if pass_flag:
+						pass_flag = True
+				else:
+					pass_flag = False
+					continue
 			except:
-				config.logger.info ("Error! Please provide valid values for annotation coverage and gene number.")
+				config.logger.info ("Error! Please provide valid values for annotation coverage.")
 				continue
+		else:
+			pass_flag = True
+		if pass_flag:
+			mypath = os.path.join(out_path, mytaxon)
+			if not os.path.isdir(mypath):
+				os.system("mkdir -p " + mypath)
+			myout1 = os.path.join(mypath, mytaxon + config.c_abund_extension)
+			myout2 = os.path.join(mypath, mytaxon + config.c_ann_extension)
+			myout3 = os.path.join(mypath, mytaxon + config.c_gene_extension)
+			genes = sorted(myabunds.keys())
+			myfuncs = extract_ann_cov (funcs, genes)
+			write_abunds (nrm_info, myabunds, header, myout1)
+			write_funcs (myfuncs, myout2)
+			write_genelist (genes, myout3)
+			taxa_list[mytaxon] = ""
 					
-
 	# write file list
 	outfile = os.path.join(out_path, config.taxa_abund_list)
 	open_out = open(outfile, "w")
