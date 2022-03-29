@@ -186,12 +186,12 @@ def filter_non_detected_sample (header, abunds, abunds_raw, abunds_cov, min_abun
 						refined_feature[myid[0]][mys] = ""
 		if flt_method == "lenient":
 			if mynum > 0 and mynum_cov > 0:
-				if not mykey in refined_feature:
+				if not myid[0] in refined_feature:
 					refined_feature[myid[0]] = {}
 				for mys in raw_info[mykey].keys():
 					refined_feature[myid[0]][mys] = ""
 		if flt_method == "None" or not flt_method:	
-			if not mykey in refined_feature:
+			if not myid[0] in refined_feature:
 				refined_feature[myid[0]] = {}
 			for mys in raw_info[mykey].keys():
 				refined_feature[myid[0]][mys] = ""
