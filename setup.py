@@ -76,7 +76,7 @@ import re
 import time
 
 
-VERSION = "0.3.0"
+VERSION = "0.3.1"
 AUTHOR = "FUGAsseM Development Team"
 MAINTAINER = "Yancong Zhang"
 MAINTAINER_EMAIL = "zhangyc201211@gmail.com"
@@ -253,7 +253,6 @@ setuptools.setup(
 			'fugassem_abundance_normalization = fugassem.tools.abundance_normalization:main',
 			'fugassem_abundance_smoothing = fugassem.tools.abundance_smoothing:main',
 			'fugassem_collect_seqSimilarity_results = fugassem.tools.collect_seqSimilarity_results:main',
-			'fugassem_extract_feature_subset = fugassem.tools.extract_feature_subset:main',
 			'fugassem_gene_abundance = fugassem.tools.gene_abundance:main',
 			'fugassem_gene_abundance_indexRef = fugassem.tools.gene_abundance_indexRef:main',
 			'fugassem_gene_catalog_abundance = fugassem.tools.gene_catalog_abundance:main',
@@ -264,6 +263,8 @@ setuptools.setup(
 			'fugassem_stratified_abundance = fugassem.tools.stratified_abundance:main',
 			'fugassem_sum_to_family_abundance = fugassem.tools.sum_to_family_abundance:main',
 
+			'fugassem_extract_feature_subset = fugassem.common.extract_feature_subset:main',
+			'fugassem_format_function = fugassem.common.format_function:main',
 			'fugassem_geneontology = fugassem.common.geneontology:main',
 			'fugassem_transpose = fugassem.common.transpose:main',
 		]},

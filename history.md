@@ -1,10 +1,16 @@
 
 # FUGAsseM History #
 
+## v0.3.1 2022-03-02 ##
+* Fixed small issue from geneontology.py
+* Added function for detailed annotation when '--go-level none'
+* Tweaked stratified_abundance.py for accepting compressed input files
+* Added format_function module for formatting input file
+* Fixed issue when using different zero-filtering approach
+
 ## v0.3.0 2022-02-05 ##
 * Accepted input matrix evidence with connection weights
 * Added options to accept either pair- or unpair-based matrix evidence
-* Fixed small issue from geneontology.py
 
 ## v0.2.1 2022-01-08 ##
 * Fixed issues of utilities for preparing input files
