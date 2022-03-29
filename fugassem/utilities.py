@@ -753,8 +753,10 @@ def refine_taxon (myt):
 	myt = re.sub("\)", "", myt)
 	myt = re.sub("\[", "", myt)
 	myt = re.sub("\]", "", myt)
+	myt = re.sub("=", "", myt)
 	myt = re.sub("\:", "_", myt)
 	myt = re.sub("\/", "_", myt)
 	myt = re.sub("\s+", "_", myt)
+	myt = re.sub("__", "_", myt)
 
 	return myt
