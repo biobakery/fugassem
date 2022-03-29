@@ -86,6 +86,10 @@ def parse_arguments():
 		help = "[OPTIONAL] specify the maximum threshold score for testing [0-1] [Default: 1]\n",
 		default = 1)
 	parser.add_argument(
+		"-c", "--category",
+		help = "[OPTIONAL] specify function category\n",
+		default = "GO")
+	parser.add_argument(
 		"-o", "--output",
 		help = "[REQUIRED] output file\n",
 		required = True)
@@ -118,7 +122,7 @@ def collect_function_list (func_file):
 	return myfuncs
 
 
-def collect_annotation (ann_file, myfuncs):
+def collect_annotation (ann_file, myfuncs, func_type):
 	"""
 	Collect the annotations of features
 	Input:
@@ -143,6 +147,9 @@ def collect_annotation (ann_file, myfuncs):
 			myid_new = myid_new[0]
 		myid_new2 = myid.split("__")[0]
 		myid = re.sub("__", "\t", myid)
+		tmp = myid.split("\t")
+		if len(tmp) < 2:
+			myid = myid + "\t" + func_type
 		if len(myfuncs.keys()) > 0:
 			if not myid_new in myfuncs and not myid_new2 in myfuncs:
 					continue
@@ -424,7 +431,7 @@ def main():
 		myfuncs = collect_function_list (args_value.list)
 	else:
 		myfuncs = {}
-	anns = collect_annotation (args_value.annotation, myfuncs)
+	anns = collect_annotation (args_value.annotation, myfuncs, args_value.category)
 	features, score = collect_score (args_value.score)
 
 	## perform prediction ##
