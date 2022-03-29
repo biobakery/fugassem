@@ -125,6 +125,7 @@ def collect_annotation_vector (raw_file, header):
 	families = {}
 	titles = {}
 	flag_t = 0
+	pair_flag = False
 	for line in utilities.gzip_bzip2_biom_open_readlines(raw_file):
 		line = line.strip()
 		if not len(line):
@@ -145,6 +146,7 @@ def collect_annotation_vector (raw_file, header):
 			mynew1 = myid1 + "\t" + myid2
 			mynew2 = myid2 + "\t" + myid1
 			anns[mynew1] = myv
+			pair_flag = True
 			if not mynew2 in anns:
 				anns[mynew2] = myv
 			continue
@@ -159,7 +161,7 @@ def collect_annotation_vector (raw_file, header):
 		funcs[myf][myid] = ""
 	# foreach line
 
-	return families, funcs, anns
+	return families, funcs, anns, pair_flag
 
 
 def collect_annotation_pair (raw_file, header):
@@ -260,7 +262,7 @@ def main():
 	if values.format == "matrix":
 		families, funcs, anns = collect_annotation_matrix (values.input)
 	if values.format == "vector":
-		families, funcs, anns = collect_annotation_vector (values.input, values.header)
+		families, funcs, anns, pair_flag = collect_annotation_vector (values.input, values.header)
 	if values.format == "pair":
 		families, anns = collect_annotation_pair(values.input, values.header)
 		funcs = {}
