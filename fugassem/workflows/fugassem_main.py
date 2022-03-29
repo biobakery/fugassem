@@ -89,11 +89,11 @@ def parse_cli_arguments ():
 	                      choices = ["Pearson", "Spearman", "Kendall", "Pearson_SE"],
 	                      default = "Pearson_SE")
 	workflow.add_argument("go-level",
-	                      desc = "GO informative level used for trimming terms that are informative at a given level [ Default: 50 ]:\n"
+	                      desc = "GO informative level used for trimming terms that are informative at a given level [ Default: none ]:\n"
 	                             "<number OR fraction of genes>: spcify numeric level for triming\n"
 	                             "<none>: skip trimming\n" 
 	                             "<all>: keep all terms",
-	                      default = 50)
+	                      default = "none")
 	workflow.add_argument("func-type",
 	                      desc = "GO catgeroy used for prediction [ Default: BP ]",
 	                      choices = ["BP", "CC", "MF"],
