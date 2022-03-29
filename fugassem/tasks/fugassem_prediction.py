@@ -42,7 +42,8 @@ except ImportError:
 
 def precess_ML (feature_file, func_file, funclist_file, ml_type, feature_suffix, vector,
                 output_folder, pred_prefix, prediction_file,
-                workflow, threads, time_equation, mem_equation):
+                workflow, threads, time_equation, mem_equation,
+				func_type):
 	"""
 	Train and predict for each function using machine learner
 
@@ -60,6 +61,7 @@ def precess_ML (feature_file, func_file, funclist_file, ml_type, feature_suffix,
 		threads (int): The number of threads/cores for clustering to use.
 		time_equation (int): required number of hours defined in the workflow.
 		mem_equation (int): required number of GB defined in the workflow.
+		func_type: function type
 
 	Requires:
 		feature file for ML
@@ -88,7 +90,8 @@ def precess_ML (feature_file, func_file, funclist_file, ml_type, feature_suffix,
 						workflow,
                         args.threads,
                         args.time_equation,
-                        args.mem_equation)
+                        args.mem_equation,
+						func_type)
 		# run the workflow
 		workflow.go()
 	"""
@@ -143,10 +146,10 @@ def precess_ML (feature_file, func_file, funclist_file, ml_type, feature_suffix,
 
 	predict_log = os.path.join(output_folder, "predict_function.log")
 	workflow.add_task(
-		"fugassem_predict_function -a [depends[0]] -l [depends[1]] -b [depends[2]] -m ML -f no -s 0 -e 1 -o [targets[0]] > [args[0]] 2>&1",
+		"fugassem_predict_function -a [depends[0]] -l [depends[1]] -b [depends[2]] -m ML -f no -s 0 -e 1 -c [args[0]] -o [targets[0]] > [args[1]] 2>&1",
 		depends = [func_file, funclist_file, xval_yes_file, TrackedExecutable("fugassem_predict_function")],
 		targets = [prediction_file],
-		args = [predict_log],
+		args = [func_type, predict_log],
 		cores = 1,
 		time = time_equation,
 		mem = mem_equation,
@@ -276,7 +279,8 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
                         args.threads,
                         args.time_equation,
                         args.mem_equation,
-						bypass_mtx)
+						bypass_mtx,
+						func_type)
 		# run the workflow
 		workflow.go()
 	"""
@@ -298,11 +302,11 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 		if re.search("^vector", mytype):
 			precess_ML(feature_file, func_file, funclist_file, ml_type, "vector", "yes",
 		           pred_folder, pred_prefix, final_pred_file,
-		           workflow, threads, time_equation, mem_equation)
+		           workflow, threads, time_equation, mem_equation, func_type)
 		else:
 			precess_ML(feature_file, func_file, funclist_file, ml_type, None, None,
 			           pred_folder, pred_prefix, final_pred_file,
-			           workflow, threads, time_equation, mem_equation)
+			           workflow, threads, time_equation, mem_equation, func_type)
 		prediction_list[mytype] = final_pred_file
 		pred_folder_list[os.path.join(pred_folder, pred_prefix + "_results")] = ""
 
@@ -327,6 +331,6 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 	                         workflow, threads, time_equation, mem_equation)
 	precess_ML(combined_feature_file, func_file, funclist_file, ml_type, "all", "yes",
 		        pred_folder, "integrated_ML", final_pred_file,
-		        workflow, threads, time_equation, mem_equation)
+		        workflow, threads, time_equation, mem_equation, func_type)
 
 	return prediction_list, final_pred_file
