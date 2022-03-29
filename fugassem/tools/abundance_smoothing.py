@@ -33,7 +33,7 @@ import argparse
 import math
 
 try:
-	from fugassem import config
+	from fugassem import config,utilities
 except ImportError:
 	sys.exit("CRITICAL ERROR: Unable to find FUGAsseM python package." +
 	         " Please check your install.")
@@ -96,7 +96,8 @@ def collect_cluster_abundance (abufile):
 		if not len(line):
 			continue
 		info = line.split("\t")
-		myid = info[0]
+		#myid = info[0]
+		myid = info[0].split(utilities.c_strat_delim)[0]
 		myindex = 1
 		feature_tmp = []
 		while myindex < len(info):
@@ -172,7 +173,8 @@ def smooth_abundance (smooth_method, trans_method, prevalence_flt, abufile, fixe
 		if not len(line):
 			continue
 		info = line.split("\t")
-		myid = info[0]
+		#myid = info[0]
+		myid = info[0].split(utilities.c_strat_delim)[0]
 		mystr = myid
 		mystr2 = myid
 		myindex = 1

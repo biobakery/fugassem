@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
 """
-MetaWIBELE: abundance_RPK module
+FUGAsseM: abundance_RPK module
 Normalize family abundance to RPK (read counts divided by the length of genes in kilobase to normlized for gene/protein length)
 
-Copyright (c) 2019 Harvard School of Public Health
+Copyright (c) 2021 Harvard School of Public Health
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

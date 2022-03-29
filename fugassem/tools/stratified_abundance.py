@@ -107,17 +107,17 @@ def collect_taxa_info (taxa_file, taxa_level):
 	taxa_num = {}
 	titles = {}
 	taxa_levels = ["Terminal", "Species", "Genus", "Family", "Order", "Class", "Phylum", "Kingdom"]
-	open_file = open(taxa_file, "r")
-	line = open_file.readline()
-	line = line.strip()
-	info = line.split("\t")
-	for item in info:
-		titles[item] = info.index(item)
-	for line in open_file:
+	flag_t = 0
+	for line in utilities.gzip_bzip2_biom_open_readlines (taxa_file):
 		line = line.strip()
 		if not len(line):
 			continue
 		info = line.split("\t")
+		if flag_t == 0:
+			flag_t = 1
+			for i in info:
+				titles[i] = info.index(i)
+			continue
 		myid = info[0]
 		mytaxa = "NA"
 		mylevel = "NA"
@@ -167,7 +167,6 @@ def collect_taxa_info (taxa_file, taxa_level):
 			taxa_num[mytaxa] = {}
 		taxa_num[mytaxa][myid] = ""
 	# foreach line
-	open_file.close()
 
 	return taxa, taxa_num
 # collect_taxa_info
@@ -181,22 +180,21 @@ def sum_abundance (taxa, taxa_num, flt_presence, infile, outfile):
 	samples = []
 	taxa_presence = {}
 	outs = {}
-	open_file = open(infile, "r")
-	line = open_file.readline()
-	line = line.strip()
-	info = line.split("\t")
-	myindex = 1
-	while myindex < len(info):
-		item = info[myindex]
-		titles[myindex] = item
-		samples.append(item)
-		myindex = myindex + 1
-	# foreach item
-	for line in open_file:
+	flag_t = 0
+	for line in utilities.gzip_bzip2_biom_open_readlines (infile):
 		line = line.strip()
 		if not len(line):
 			continue
 		info = line.split("\t")
+		if flag_t == 0:
+			flag_t = 1
+			myindex = 1
+			while myindex < len(info):
+				item = info[myindex]
+				titles[myindex] = item
+				samples.append(item)
+				myindex = myindex + 1
+			continue
 		myid = info[0]
 		if myid in taxa:
 			mytaxa = taxa[myid]
@@ -221,7 +219,6 @@ def sum_abundance (taxa, taxa_num, flt_presence, infile, outfile):
 			myindex = myindex + 1
 		# foreach sample
 	# foreach line
-	open_file.close()
 
 	# threshold for species presence (e.g. >X% of genes non-zero values)
 	refined_taxa = {}
