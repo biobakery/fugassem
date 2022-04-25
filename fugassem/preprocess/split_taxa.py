@@ -62,16 +62,16 @@ def parse_arguments():
 		required = True)
 	parser.add_argument(
 		"-p", "--prev",
-		help = "[OPTIONAL] the minimum prevalence per feature [ Default: 0.01 ]\n",
-		default = 0.01)
+		help = "[OPTIONAL] the minimum prevalence per feature [ Default: None ]\n",
+		default = None)
 	parser.add_argument(
 		"-c", "--coverage",
-		help = "[REQUIRED] the minimum fraction of annotated genes per taxon [Default: 0.1]\n",
-		default = 0.1)
+		help = "[REQUIRED] the minimum fraction of annotated genes per taxon [ Default: None ]\n",
+		default = None)
 	parser.add_argument(
 		"-n", "--number",
-		help = "[REQUIRED] the minimum number of total genes per taxon [Default: 500]\n",
-		default = 500)
+		help = "[REQUIRED] the minimum number of total genes per taxon [ Default: None ]\n",
+		default = None)
 	parser.add_argument(
 		"-d", "--abund",
 		help = "[OPTIONAL] the minimum detected abundance for each gene [ Default: 0 ] \n",
@@ -253,7 +253,7 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, min_nu
 	Output: batches of abundance and annotation files per taxon
 	"""
 
-	config.logger.info ('filter_non_detected_sample')
+	config.logger.info ('split_taxa_info')
 
 	# taxa maps
 	taxa = {"MSP": "msp__", "Species": "s__", "Genus": "g__", "Family": "f__", "Order": "o__", "Class": "c__", "Phylum": "p__"}
