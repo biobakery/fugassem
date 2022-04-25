@@ -89,11 +89,15 @@ def get_args():
 	                             "<number OR fraction of genes>: spcify numeric level for triming\n"
 	                             "<none>: skip trimming\n" 
 	                             "<all>: keep all terms",
-	                      default = 50)
+	                      default = "none")
+	workflow.add_argument("go-set",
+	                      desc = "type of GO set used for prediction: [bug-specific] bug-specific informative terms, [universal] universal informative terms, [global] combined bug informative terms for overall prediction",
+	                      choices = ["bug-specific", "universal", "global"],
+	                      default = "bug-specific")
 	workflow.add_argument("func-type",
-	                      desc = "GO catgeroy used for prediction [ Default: BP ]",
-	                      choices = ["BP", "CC", "MF"],
-	                      default = "BP")
+	                      desc = "GO catgeroy used for prediction [ Default: GO ]",
+	                      choices = ["GO", "BP", "CC", "MF"],
+	                      default = "GO")
 	workflow.add_argument("ml-type",
 	                      desc = "machine learning method for function prediction [ Default: RF ]:\n"
 	                             "[RF]: Random Forest, [NB] Naive Bayes, [DT] Decision Tree",

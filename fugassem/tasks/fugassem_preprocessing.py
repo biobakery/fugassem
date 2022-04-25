@@ -63,12 +63,6 @@ def preprocess_taxa (abunds, anns, taxa_level, min_prev, min_abund, min_cov, min
 		string: the file of stratified-taxon abunds files.
 
 	Example:
-		from anadama2 import Workflow
-		from fugassem.tasks.preprocessing import preprocess_taxa
-
-		# create an anadama2 workflow instance
-		workflow=Workflow()
-
 		# add preprocess_taxa tasks
 		taxa_file, taxa = preprocess_taxa (abunds,
 						anns,
@@ -81,8 +75,6 @@ def preprocess_taxa (abunds, anns, taxa_level, min_prev, min_abund, min_cov, min
                         args.threads,
                         time_equation,
                         mem_equation)
-		# run the workflow
-		workflow.go()
 	"""
 
 	config.logger.info("###### Start preprocess_taxa module #####")
@@ -108,6 +100,238 @@ def preprocess_taxa (abunds, anns, taxa_level, min_prev, min_abund, min_cov, min
 	taxa = utilities.file_to_dict (taxa_file)
 
 	return taxa_file, taxa
+
+
+def retrieve_function (func_file, header, go_level, func_type, go_obo, output_folder, final_func_file, final_func_smp_file,
+                      threads, time_equation, mem_equation):
+	"""
+	Retrieve functional annotations
+
+	Args:
+		func_file: raw function file
+		header: whether raw function file includes header
+		go_level: trimming option, only terms that are informative at a given level
+				[number OR fraction of genes]: Default: 20
+				[none]: skip trimming
+				[all]: keep all terms
+		func_type: function category, e.g. GO | BP | CC | MF
+		go_obo: go-basic obo file
+		output_folder (string): The path of the output folder.
+		final_func_file: finalized function file for one taxon.
+		final_func_file: finalized simplified function file for one taxon.
+		threads (int): The number of threads/cores for clustering to use.
+		time_equation (int): required number of hours defined in the workflow.
+		mem_equation (int): required number of GB defined in the workflow.
+
+	Requires:
+		raw function file
+
+	Returns:
+		string: the file of refined function file.
+		string: the file of refined simplified function file.
+
+	Example:
+		# add retrieve_function tasks
+		final_func_file, final_func_smp_file = refine_function (
+						func_file,
+						header = "no,
+						go_level = 20,
+						func_type = "GO",
+						go_obo,
+						output_dir,
+						final_func_file,
+						final_func_smp_file,
+						final_funclist_file,
+                        args.threads,
+                        args.time_equation,
+                        args.mem_equation)
+	"""
+
+	config.logger.info("###### Start retrieve_function module #####")
+
+	# prep I/O files
+	main_folder = output_folder
+	if not os.path.isdir(main_folder):
+		os.system("mkdir -p " + main_folder)
+	func_info_file = re.sub(".tsv$", "." + func_type + "_list.tsv", func_file)
+	final_func_file = os.path.join(main_folder, os.path.basename(final_func_file))
+	final_func_smp_file = os.path.join(main_folder, os.path.basename(final_func_smp_file))
+	func_log1 = final_func_file + ".geneontology.log"
+	func_log2 = final_func_file + ".refined_func.log"
+
+	if go_level == "none":
+		func_log1 = final_func_file + ".format_func.log"
+		utilities.run_task ("ln -fs [depends[0]] [targets[0]]",
+		                  depends = [func_file],
+		                  targets = [final_func_file],
+		                  cores = 1,
+		                  name = "ln__final_function_file")
+		utilities.run_task ("fugassem_format_function -i [depends[0]] -o [targets[0]] > [args[0]] 2>&1",
+		                  depends = [func_file, TrackedExecutable("fugassem_format_function")],
+		                  targets = [final_func_smp_file],
+						  args = [func_log1],
+		                  cores = 1,
+		                  name = "fugassem_format_function")
+	else:
+		if go_level == "all":
+			if func_type == "GO":
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --outfile [targets[0]] > [args[1]] 2>&1"
+			else:
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --namespace [args[0]] --outfile [targets[0]] > [args[1]] 2>&1"
+			utilities.run_task (mycmd,	
+				depends = [go_obo, func_file, TrackedExecutable("fugassem_geneontology")],
+				targets = [func_info_file],
+				args = [func_type, func_log1],
+				cores = threads,
+				time = time_equation,
+				mem = mem_equation,
+				name = "fugassem_geneontology")
+		else:
+			if func_type == "GO":
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --informative [args[1]] --outfile [targets[0]] > [args[2]] 2>&1"
+			else:
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --namespace [args[0]] --informative [args[1]] --outfile [targets[0]] > [args[2]] 2>&1"
+			utilities.run_task (mycmd,
+				depends = [go_obo, func_file, TrackedExecutable("fugassem_geneontology")],
+				targets = [func_info_file],
+				args = [func_type, go_level, func_log1],
+				cores = threads,
+				time = time_equation,
+				mem = mem_equation,
+				name = "fugassem_geneontology")
+
+		utilities.run_task (
+			"fugassem_refine_anns -a [depends[0]] -l [depends[1]] -t [args[0]] -o [targets[0]] > [args[1]] 2>&1",
+			depends = [func_file, func_info_file, TrackedExecutable("fugassem_refine_anns")],
+			targets =[final_func_file, final_func_smp_file],
+			args = [func_type, func_log2],
+			cores = 1,
+			time = time_equation,
+			mem = mem_equation,
+			name = "fugassem_refine_anns")
+
+	return final_func_file, final_func_smp_file
+
+
+def retrieve_global_function (abunds_file, func_file, header, go_level, func_type, go_obo,
+							taxa_level, min_prev, min_abund, min_cov, min_num,
+                            output_folder, final_func_file, final_func_smp_file,
+                            threads, time_equation, mem_equation):
+	"""
+	Retrieve global function annotations
+
+	Args:
+		abunds_file: stratified MTX file
+		func_file: raw function file
+		header: whether raw function file includes header
+		go_level: trimming option, only terms that are informative at a given level
+				[number OR fraction of genes]: Default: 20
+				[none]: skip trimming
+				[all]: keep all terms
+		func_type: function category, e.g. GO | BP | CC | MF
+		go_obo: go-basic obo file
+		taxa_level: taxonomic level for stratification.
+		min_prev: the minimum prevalence per gene [ Default: None ].
+		min_abund: the minimum detected abundance for each gene [ Default: 0 ].
+		min_cov: the minimum fraction of annotated genes per taxon [ Default: 0.1 ].
+		min_num: the minimum number of total genes per taxon [ Default: 500 ].
+		output_folder (string): The path of the output folder.
+		final_func_file: finalized function file for one taxon.
+		final_func_file: finalized simplified function file for one taxon.
+		threads (int): The number of threads/cores for clustering to use.
+		time_equation (int): required number of hours defined in the workflow.
+		mem_equation (int): required number of GB defined in the workflow.
+
+	Requires:
+		raw function file
+		stratified MTX file
+
+	Returns:
+		string: the file of refined function file.
+		string: the file of refined simplified function file.
+
+	Example:
+		# add retrieve_global_function tasks
+		final_func_file, final_func_smp_file = retrieve_global_function (
+						abunds_file,
+						func_file,
+						header = "no,
+						go_level = 20,
+						func_type = "GO",
+						go_obo,
+						taxa_level, min_prev, min_abund, min_cov, min_num,
+						output_dir,
+						final_func_file,
+						final_func_smp_file,
+						final_funclist_file,
+                        args.threads,
+                        args.time_equation,
+                        args.mem_equation)
+	"""
+
+	config.logger.info("###### Start retrieve_global_function module #####")
+
+	# prep I/O files
+	main_folder = output_folder
+	if not os.path.isdir(main_folder):
+		os.system("mkdir -p " + main_folder)
+	func_info_file = re.sub(".tsv$", "." + func_type + "_list.tsv", func_file)
+	final_func_file = os.path.join(main_folder, os.path.basename(final_func_file))
+	final_func_smp_file = os.path.join(main_folder, os.path.basename(final_func_smp_file))
+	func_log1 = final_func_file + ".geneontology.log"
+	func_log2 = final_func_file + ".refined_func.log"
+
+	if go_level == "none":
+		func_log1 = final_func_file + ".format_func.log"
+		utilities.run_task ("ln -fs [depends[0]] [targets[0]]",
+		                  depends = [func_file],
+		                  targets = [final_func_file],
+		                  cores = 1,
+		                  name = "ln__final_function_file")
+		utilities.run_task ("fugassem_format_function -i [depends[0]] -o [targets[0]] > [args[0]] 2>&1",
+		                  depends = [func_file, TrackedExecutable("fugassem_format_function")],
+		                  targets = [final_func_smp_file],
+						  args = [func_log1],
+		                  cores = 1,
+		                  name = "fugassem_format_function")
+	else:
+		if go_level == "all":
+			if func_type == "GO":
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --outfile [targets[0]] > [args[1]] 2>&1"
+			else:
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --namespace [args[0]] --outfile [targets[0]] > [args[1]] 2>&1"
+			utilities.run_task (mycmd,
+				depends = [go_obo, func_file, TrackedExecutable("fugassem_geneontology")],
+				targets = [func_info_file],
+				args = [func_type, func_log1],
+				cores = threads,
+				time = time_equation,
+				mem = mem_equation,
+				name = "fugassem_geneontology")
+			utilities.run_task(
+				"fugassem_refine_anns -a [depends[0]] -l [depends[1]] -t [args[0]] -o [targets[0]] > [args[1]] 2>&1",
+				depends=[func_file, func_info_file, TrackedExecutable("fugassem_refine_anns")],
+				targets=[final_func_file, final_func_smp_file],
+				args=[func_type, func_log2],
+				cores=1,
+				time=time_equation,
+				mem=mem_equation,
+				name="fugassem_refine_anns")
+		else:
+			if func_type == "GO":
+				mycmd = "fugassem_build_global_terms --input [depends[0]] --annotation [depends[1]] --taxon [args[0]] --prev [args[1]] --abund [args[2]] --coverage [args[3]] --number [args[4]] --obo [depends[2]] --informative [args[6]] --output [targets[0]] > [args[7]] 2>&1"
+			else:
+				mycmd = "fugassem_build_global_terms --input [depends[0]] --annotation [depends[1]] --taxon [args[0]] --prev [args[1]] --abund [args[2]] --coverage [args[3]] --number [args[4]] --obo [depends[2]] --namespace [args[5]] --informative [args[6]] --output [targets[0]] > [args[7]] 2>&1"
+			utilities.run_task (mycmd,
+				depends = [abunds_file, func_file, go_obo, TrackedExecutable("fugassem_build_global_terms")],
+				targets = [final_func_file, final_func_smp_file],
+				args = [taxa_level, min_prev, min_abund, min_cov, min_num, func_type, go_level, func_log2],
+				cores = threads,
+				time = time_equation,
+				mem = mem_equation,
+				name = "fugassem_build_global_terms")
+
+	return final_func_file, final_func_smp_file
 
 
 def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, zero_flt, taxa_abund_file,
@@ -496,20 +720,19 @@ def preprocess_function (func_file, gene_file, header, output_folder, final_func
 	return final_func_file
 
 
-def refine_function (func_file, gene_file, header, go_level, func_type, go_obo, output_folder, final_func_file, final_func_smp_file, final_funclist_file,
+def refine_function (func_file, header, go_level, func_type, go_obo, output_folder, final_func_file, final_func_smp_file, final_funclist_file,
                      workflow, threads, time_equation, mem_equation):
 	"""
-	Refine function for a list of genes
+	Refine raw functional annotation
 
 	Args:
 		func_file: raw function file for one taxon.
-		gene_file: gene list file
 		header: whether raw function file includes header
 		go_level: trimming option, only terms that are informative at a given level
-				[number OR fraction of genes]: Default: 50
+				[number OR fraction of genes]: Default: 20
 				[none]: skip trimming
 				[all]: keep all terms
-		func_type: function category, e.g. BP | CC | MF
+		func_type: function category, e.g. GO | BP | CC | MF
 		go_obo: go-basic obo file
 		output_folder (string): The path of the output folder.
 		final_func_file: finalized function file for one taxon.
@@ -522,7 +745,7 @@ def refine_function (func_file, gene_file, header, go_level, func_type, go_obo, 
 
 	Requires:
 		raw function file for one taxon
-		raw gene list file for one taxon
+
 
 	Returns:
 		string: the file of refined function file.
@@ -539,10 +762,9 @@ def refine_function (func_file, gene_file, header, go_level, func_type, go_obo, 
 		# add preprocess_function tasks
 		final_func_file, final_func_smp_file, final_funclist_file = refine_function (
 						func_file,
-						gene_file,
 						header = "no,
-						go_level = 50,
-						func_type = "BP",
+						go_level = 20,
+						func_type = "GO",
 						go_obo,
 						output_dir,
 						final_func_file,
@@ -571,7 +793,7 @@ def refine_function (func_file, gene_file, header, go_level, func_type, go_obo, 
 
 	if go_level == "none":
 		func_log1 = final_func_file + ".format_func.log"
-		workflow.add_task("ln -s [depends[0]] [targets[0]]",
+		workflow.add_task("ln -fs [depends[0]] [targets[0]]",
 		                  depends = [func_file],
 		                  targets = [final_func_file],
 		                  cores = 1,
@@ -584,8 +806,11 @@ def refine_function (func_file, gene_file, header, go_level, func_type, go_obo, 
 		                  name = "fugassem_format_function")
 	else:
 		if go_level == "all":
-			workflow.add_task (
-				"fugassem_geneontology [depends[0]] --mapping [depends[1]] --namespace [args[0]] --outfile [targets[0]] > [args[1]] 2>&1",
+			if func_type == "GO":
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --outfile [targets[0]] > [args[1]] 2>&1"
+			else:
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --namespace [args[0]] --outfile [targets[0]] > [args[1]] 2>&1"
+			workflow.add_task (mycmd,
 				depends = [go_obo, func_file, TrackedExecutable("fugassem_geneontology")],
 				targets = [func_info_file],
 				args = [func_type, func_log1],
@@ -594,8 +819,11 @@ def refine_function (func_file, gene_file, header, go_level, func_type, go_obo, 
 				mem = mem_equation,
 				name = "fugassem_geneontology")
 		else:
-			workflow.add_task (
-				"fugassem_geneontology [depends[0]] --mapping [depends[1]] --namespace [args[0]] --informative [args[1]] --outfile [targets[0]] > [args[2]] 2>&1",
+			if func_type == "GO":
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --informative [args[1]] --outfile [targets[0]] > [args[2]] 2>&1"
+			else:
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --namespace [args[0]] --informative [args[1]] --outfile [targets[0]] > [args[2]] 2>&1"
+			workflow.add_task (mycmd,
 				depends = [go_obo, func_file, TrackedExecutable("fugassem_geneontology")],
 				targets = [func_info_file],
 				args = [func_type, go_level, func_log1],
@@ -622,6 +850,7 @@ def refine_function (func_file, gene_file, header, go_level, func_type, go_obo, 
 		name = "collect__function_list")
 
 	return final_func_file, final_func_smp_file, final_funclist_file
+
 
 
 def preprocess_feature (raw_file, new_file, header, feature_type, output_folder, final_feature_file,
@@ -706,10 +935,10 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 		gene_file: gene list file for one taxon.
 		func_file: raw function file for one taxon.
 		go_level: trimming option, only terms that are informative at a given level
-				[number OR fraction of genes]: Default: 50
+				[number OR fraction of genes]: Default: 20
 				[none]: skip trimming
 				[all]: keep all terms
-		func_type: function category, e.g. BP | CC | MF
+		func_type: function category, e.g. GO | BP | CC | MF
 		go_obo: go-basic obo file
 		min_prev: the minimum prevalence per gene [ Default: 0 ].
 		min_abund: the minimum detected abundance for each gene [ Default: 0 ].
@@ -751,8 +980,8 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 						abund_file,
 						gene_file,
 						func_file,
-						go_level = 50,
-						func_type = "BP",
+						go_level = 20,
+						func_type = "GO",
 						go_obo,
 						min_prev = 0,
 						min_abund = 0,
@@ -809,7 +1038,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 	#	feature_list[evidence_type] = final_corr_file
 
 	## refine annotated function
-	refine_function (func_file, final_gene_file, "no", go_level, func_type, go_obo, main_folder,
+	refine_function (func_file, "no", go_level, func_type, go_obo, main_folder,
 	                final_func_file, final_func_smp_file, final_funclist_file,
 	                workflow, threads, time_equation, mem_equation)
 
