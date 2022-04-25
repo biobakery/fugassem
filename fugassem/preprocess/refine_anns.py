@@ -88,11 +88,18 @@ def collect_function_list (func_file, func_type):
 			continue
 		info = line.split("\t")
 		info2 = info[0].split(":")
+		mytype = func_type
 		if info2[0] == "GO":
 			myid = ":".join(info2[0:2])
 			info[0] = re.sub("\s+\[BP\]", "[BP]", info[0])
 			info[0] = re.sub("\s+\[MF\]", "[MF]", info[0])
 			info[0] = re.sub("\s+\[CC\]", "[CC]", info[0])
+			if re.search("\[BP\]", info[0]):
+				mytype = "BP"
+			if re.search("\[MF\]", info[0]):
+				mytype = "MF"
+			if re.search("\[CC\]", info[0]):
+				mytype = "CC"
 		else:
 			myid = info2[0]
 		if len(info) > 1:
@@ -101,7 +108,7 @@ def collect_function_list (func_file, func_type):
 				myv = info[myindex]
 				if not myv in myfuncs:
 					myfuncs[myv] = {}
-				myfuncs[myv][myid] = myv + "\t" + info[0] + "__" + func_type
+				myfuncs[myv][myid] = myv + "\t" + info[0] + "__" + mytype
 				myindex = myindex + 1
 
 	return myfuncs

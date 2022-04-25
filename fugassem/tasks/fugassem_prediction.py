@@ -240,7 +240,7 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 		funclist_file: function list file for prediction.
 				feature_list: a directory of feature files.
 		ml_type: specify type of ML method, [RF]: Random Forest, [NB] Naive Bayes, [DT] Decision Tree; [ Default: RF ]
-		func_type: function category, e.g. BP | CC | MF
+		func_type: function category, e.g. GO | BP | CC | MF
 		output_folder (string): The path of the output folder.
 		basename: basename for output files.
 		prediction_list: a directory of individual prediction file.
