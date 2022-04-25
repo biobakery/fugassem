@@ -57,8 +57,9 @@ def parse_cli_arguments():
 
 	# add the custom arguments to the workflow
 	workflow.add_argument("go-types",
-	                      desc = "types of GO using comma to separate, [Default: BP,CC,MF ]",
-	                      default = "BP,CC,MF")
+	                      desc = "types of GO using comma to separate, [ Default: GO ]",
+						  choices = ["GO", "BP", "MF", "CC"],
+	                      default = "GO")
 	workflow.add_argument("pfam",
 	                      desc = "if specified, will extract pfam annotation of that type, [ Default: InterProScan_PfamDomain",
 	                      default = "InterProScan_PfamDomain")
@@ -225,10 +226,10 @@ def prepare_coann_pairs (ann_file,
 	extracted_log = extracted_ann_file + ".log"
 
 	workflow.add_task(
-		"fugassem_prepare_coann_pairs -i [depends[0]] -o [targets[0]] > [args[0]] 2>&1",
+		"fugassem_prepare_coann_pairs -i [depends[0]] -o [args[0]] > [args[1]] 2>&1",
 		depends = [ann_file, TrackedExecutable("fugassem_prepare_coann_pairs")],
-		targets = [extracted_ann_file],
-		args = [extracted_log],
+		targets = [extracted_ann_file + ".gz"],
+		args = [extracted_ann_file, extracted_log],
 		cores = 1,
 		time = time_equation,
 		mem = mem_equation,
@@ -386,7 +387,7 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 
 	Args:
 		ann_file: MetaWIBELE finalized characterization file.
-		go_types: types of GO using comma to separate, [Default: "BP,CC,MF" ]
+		go_types: types of GO, [Default: GO ]
 		pfam: if specified, will extract pfam annotation of that type, [ Default: "InterProScan_PfamDomain" ]
 		ddi: if specified, will extract DDI annotation of that type, [ Default: "DOMINE_interaction" ]
 		contig: if specified, will extract contig annotation, [ Default: None ]
@@ -504,7 +505,7 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 	# homology
 	if homology:
 		for myfunc in func_files:
-			mym= os.path.basename(myfunc)
+			mym = os.path.basename(myfunc)
 			mygo = mym.split(".")[-3]
 			myann = os.path.join(main_folder, basename + "." + mygo + ".homology.tsv")
 			prepare_co_unit(ann_file, "homology",

@@ -34,7 +34,6 @@ import re
 import numpy as np
 import logging
 
-
 try:
 	from fugassem import utilities
 	from fugassem import config
@@ -62,9 +61,9 @@ def parse_arguments():
 	parser.add_argument(
 		"-t", "--type",
 		help = "[REQUIRED] annotation type\n",
-		choices = ["UniRef90_GO", "UniRef90_GO_BP", "UniRef90_GO_CC", "UniRef90_GO_MF", "UniRef90_COG", "UniRef90_eggNOG", "UniRef90_KEGG-KOs",
-					"BP", "MF", "CC",
-		           "InterProScan_PfamDomain", "Denovo_transmembrane", "Denovo_signaling", "DOMINE_interaction"],
+        choices = ["GO", "BP", "MF", "CC",
+				"UniRef90_GO", "UniRef90_GO_BP", "UniRef90_GO_CC", "UniRef90_GO_MF", "UniRef90_COG", "UniRef90_eggNOG",
+          		"UniRef90_KEGG-KOs", "InterProScan_PfamDomain", "Denovo_transmembrane", "Denovo_signaling", "DOMINE_interaction"],
 		required = True)
 	parser.add_argument(
 		"-o", "--output",
@@ -97,9 +96,9 @@ def collect_go_map (go_file):
 				namespace = "MF"
 			if re.search("cellular_component", line):
 				namespace = "CC"
-			if not namespace in GO:
-				GO[namespace] = {}
-			GO[namespace][myterm] = ""
+			if not myterm in GO:
+				GO[myterm] = []
+			GO[myterm].append(namespace)
 	
 	return GO
 
@@ -129,6 +128,7 @@ def collect_function_info (GO, ann_file, func_type, names, outfile):
 	"""
 	
 	# collect annotation
+	go_ann = ["UniRef90_GO_BP", "UniRef90_GO_MF", "UniRef90_GO_CC", "UniRef90_GO"]
 	if func_type == "BP":
 		func_type = "UniRef90_GO_BP"
 	if func_type == "MF":
@@ -164,35 +164,40 @@ def collect_function_info (GO, ann_file, func_type, names, outfile):
 			continue
 		if not myid in hits:
 			continue
-		if not re.search(mytype, func_type):
-			continue	
-		#if mytype != func_type:
-		#	continue
+		if func_type == "GO":
+			if not mytype in go_ann:
+				continue
+		else:
+			if not re.search(mytype, func_type):
+				continue	
 		tmp = myann.split(";")
 		for item in tmp:
 			if re.search("GO\:", item):
 				mym = re.search("(GO\:[^\]]+)", item)
 				item = mym.group(1)
 			myname = item
+			mynamespace = func_type
+			if mytype in go_ann:
+				if item in GO:
+					mynamespace = "_".join(GO[item])
 			flag = 1
 			if mytype == "UniRef90_GO":
 				flag = 0
 				if re.search("BP", func_type):
-					if myname in GO["BP"]:
+					if mynamespace == "BP":
 						flag = 1
 				if re.search("MF", func_type):
-					if myname in GO["MF"]:
+					if mynamespace == "MF":
 						flag = 1
 				if re.search("CC", func_type):
-					if myname in GO["CC"]:
+					if mynamespace == "CC":
 						flag = 1
 			if flag == 1:
 				open_out1.write(myid + "\t" + myname + "\n")
-				if item in names:
-					myname = myname + ":" + names[item]
-				myname = myname + "__" + func_type
+				if myname in names:
+					myname = myname + ":" + names[myname]
+				myname = myname + "__" + mynamespace
 				open_out.write(myid + "\t" + myname + "\n")
-
 	open_out.close()
 	open_out1.close()
 
