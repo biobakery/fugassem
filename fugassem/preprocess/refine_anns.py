@@ -154,7 +154,7 @@ def refine_annotation (raw_ann, new_ann, outfile):
 
 	config.logger.debug('refine_annotation')
 	
-	outfile1 = re.sub(".tsv", ".simple.tsv", outfile)
+	outfile1 = re.sub(".tsv$", ".simple.tsv", outfile)
 	open_out = open(outfile, "w")
 	open_out1 = open(outfile1, "w")
 	

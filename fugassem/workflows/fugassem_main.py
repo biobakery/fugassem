@@ -271,16 +271,19 @@ def fugassem_main (workflow):
 	if not args.bypass_preparing_taxa:
 		config.logger.info("Start to run split-taxa module......")
 		if universal_flag != "no":
-			raw_func_file = ann_file + ".raw"
-			new_func_file = ann_file
-			new_func_sim_file = ann_file + ".simple.tsv"
-			os.system ("mv " + ann_file + " " + raw_func_file)
+			raw_func_file = ann_file
 			if universal_flag == "universal":
+				new_func_file = os.path.join(output_dir, os.path.basename(ann_file) + ".universal.tsv")
+				new_func_sim_file = os.path.join(output_dir, os.path.basename(ann_file) + ".universal.simple.tsv")
+				ann_file = new_func_file
 				final_func_file, final_func_smp_file = fugassem_preprocessing.retrieve_function (raw_func_file, "no",
 			                                                                                 args.go_level, args.func_type, go_obo,
 	                                                                                         output_dir, new_func_file, new_func_sim_file,
 	                                                                                         args.threads, args.time, args.memory)
 			if universal_flag == "global":
+				new_func_file = os.path.join(output_dir, os.path.basename(ann_file) + ".global.tsv")
+				new_func_sim_file = os.path.join(output_dir, os.path.basename(ann_file) + ".global.simple.tsv")
+				ann_file = new_func_file
 				final_func_file, final_func_smp_file = fugassem_preprocessing.retrieve_global_function (mtx_file, raw_func_file, "no",
 			                                                                                args.go_level, args.func_type, go_obo,
 			                                                                                args.taxon_level, args.minimum_prevalence, args.minimum_abundance, args.minimum_coverage, args.minimum_number,

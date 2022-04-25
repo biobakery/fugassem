@@ -182,7 +182,8 @@ def process (workflow, vector_list, matrix_list):
 				config.logger.info("ERROR! Valid abundance file is not available: " + abund_file)
 				flag = flag + 1
 		except:
-			tmp_file = re.sub(".tsv", ".raw.tsv", abund_file)
+			#tmp_file = re.sub(".tsv$", ".raw.tsv", abund_file)
+			tmp_file = abund_file + ".raw.tsv"
 			if os.stat(tmp_file).st_size == 0:
 				config.logger.info("ERROR! Valid abundance file is not available: " + tmp_file)
 				flag = flag + 1
@@ -191,7 +192,8 @@ def process (workflow, vector_list, matrix_list):
 				config.logger.info("ERROR! Valid gene-list file is not available: " + gene_file)
 				flag = flag + 1
 		except:
-			tmp_file = re.sub(".txt", ".raw.txt", gene_file)
+			#tmp_file = re.sub(".txt$", ".raw.txt", gene_file)
+			tmp_file = gene_file + ".raw.txt"
 			if os.stat(tmp_file).st_size == 0:
 				config.logger.info("ERROR! Valid gene-list file is not available: " + tmp_file)
 				flag = flag + 1

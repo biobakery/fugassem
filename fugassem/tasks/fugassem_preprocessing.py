@@ -153,7 +153,7 @@ def retrieve_function (func_file, header, go_level, func_type, go_obo, output_fo
 	main_folder = output_folder
 	if not os.path.isdir(main_folder):
 		os.system("mkdir -p " + main_folder)
-	func_info_file = re.sub(".tsv$", "." + func_type + "_list.tsv", func_file)
+	func_info_file = os.path.join(main_folder, os.path.basename(func_file)) + "." + func_type + "_list.tsv" 
 	final_func_file = os.path.join(main_folder, os.path.basename(final_func_file))
 	final_func_smp_file = os.path.join(main_folder, os.path.basename(final_func_smp_file))
 	func_log1 = final_func_file + ".geneontology.log"
@@ -275,7 +275,7 @@ def retrieve_global_function (abunds_file, func_file, header, go_level, func_typ
 	main_folder = output_folder
 	if not os.path.isdir(main_folder):
 		os.system("mkdir -p " + main_folder)
-	func_info_file = re.sub(".tsv$", "." + func_type + "_list.tsv", func_file)
+	func_info_file = os.path.join(main_folder, os.path.basename(func_file)) + "." + func_type + "_list.tsv" 
 	final_func_file = os.path.join(main_folder, os.path.basename(final_func_file))
 	final_func_smp_file = os.path.join(main_folder, os.path.basename(final_func_smp_file))
 	func_log1 = final_func_file + ".geneontology.log"
@@ -784,7 +784,7 @@ def refine_function (func_file, header, go_level, func_type, go_obo, output_fold
 	main_folder = output_folder
 	if not os.path.isdir(main_folder):
 		os.system("mkdir -p " + main_folder)
-	func_info_file = re.sub(".tsv$", "." + func_type + "_list.tsv", func_file)
+	func_info_file = os.path.join(main_folder, os.path.basename(func_file)) + "." + func_type + "_list.tsv" 
 	final_func_file = os.path.join(main_folder, os.path.basename(final_func_file))
 	final_func_smp_file = os.path.join(main_folder, os.path.basename(final_func_smp_file))
 	final_funclist_file = os.path.join(main_folder, os.path.basename(final_funclist_file))

@@ -261,7 +261,7 @@ def write_funcs_final (funcs, outfile):
 
 	config.logger.info ('write_funcs_final')
 
-	outfile2 = re.sub(".tsv", ".simple.tsv", outfile)
+	outfile2 = re.sub(".tsv$", ".simple.tsv", outfile)
 	out_file1 = open(outfile, 'w')
 	out_file2 = open(outfile2, 'w')
 	for myid in sorted(funcs.keys()):
@@ -455,42 +455,10 @@ def main():
 	for map_file in map_list:
 		config.logger.info("Process " + map_file)
 		obo = geneontology.Ontology (args_value.obo)
-		myout = re.sub(".tsv", ".term_list.tsv", map_file)
-		select_bug_term (obo, map_file, args_value.informative, basename, myterms, myout, None)
+		myout = re.sub(".tsv$", ".term_list.tsv", map_file)
+		select_bug_term (obo, map_file, args_value.informative, args_value.namespace, myterms, myout, None)
 
 	# Combined bug-specific terms
-	"""
-	<<TEST
-	out_path = os.path.dirname (args_value.output)
-	map_path = os.path.join(out_path, "tmp")
-	map_list = glob.glob(map_path + "/*.genemap.tsv")
-	myterms = {}
-	for map_file in map_list:
-		myout = re.sub(".tsv", ".term_list.tsv", map_file)
-		if not os.path.isfile(myout):
-			config.logger.info("Error! File doesn't exist: " + myout)
-		open_file = open(myout, "r")
-		for line in open_file:
-			line = line.strip()
-			if not len(line):
-				continue
-			info = line.split("\t")
-			myid = info[0].split(":")
-			if len(myid) > 1:
-				myid = ":".join(myid[0:2])
-			else:
-				myid = myid[0]
-			i = 1
-			while i < len(info):
-				myv = info[i]
-				if not myv in myterms:
-					myterms[myv] = {}
-				myterms[myv][myid] = ""
-				i = i + 1
-		open_file.close()
-	TEST
-	"""
-	
 	all_map_file = os.path.join (map_path, "combined.all_bugs." + basename + ".genemap.tsv")
 	if os.path.isfile(all_map_file):
 		os.system("rm -f " + all_map_file)
@@ -503,17 +471,8 @@ def main():
 	raw_file = os.path.join (map_path, "combined.bug_specific_informative." + basename + ".genemap.tsv")
 	write_funcs_combined (func_all, myterms, raw_file)
 
-	"""
-	<<TEST
-	term_list = re.sub(".tsv", ".term_list.tsv", args_value.output)
-	out_path = os.path.dirname (args_value.output)
-	map_path = os.path.join(out_path, "tmp")
-	raw_file = os.path.join (map_path, "combined.bug_specific_informative." + basename + ".genemap.tsv")
-	TEST
-	"""
-
 	final_terms = {}
-	term_list = re.sub(".tsv", ".term_list.tsv", args_value.output)
+	term_list = re.sub(".tsv$", ".term_list.tsv", args_value.output)
 	obo = geneontology.Ontology (args_value.obo)
 	select_bug_term (obo, raw_file, args_value.informative, args_value.namespace, final_terms, term_list, True)
 	write_funcs_final (final_terms, args_value.output)
