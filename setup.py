@@ -76,7 +76,7 @@ import re
 import time
 
 
-VERSION = "0.3.1"
+VERSION = "0.3.2"
 AUTHOR = "FUGAsseM Development Team"
 MAINTAINER = "Yancong Zhang"
 MAINTAINER_EMAIL = "zhangyc201211@gmail.com"
@@ -240,12 +240,13 @@ setuptools.setup(
 			'fugassem_refine_abunds = fugassem.preprocess.refine_abunds:main',
 			'fugassem_refine_anns = fugassem.preprocess.refine_anns:main',
 			'fugassem_split_taxa = fugassem.preprocess.split_taxa:main',
+			'fugassem_build_global_terms = fugassem.preprocess.build_global_terms:main',
 
 			'fugassem_collect_ml_results = fugassem.predict.collect_ml_results:main',
 			'fugassem_machine_learning= fugassem.predict.machine_learning:main',
 			'fugassem_predict_function = fugassem.predict.predict_function:main',
 			'fugassem_prepare_nextlayer_ml = fugassem.predict.prepare_nextlayer_ml:main',
-			#'fugassem_select_feature = fugassem.predict.select_feature:main',
+			'fugassem_select_feature = fugassem.predict.select_feature:main',
 
 			'fugassem_generate_stratified_mtx_input = fugassem.tools.generate_stratified_mtx_input:main',
 			'fugassem_generate_annotation_input= fugassem.tools.generate_annotation_input:main',

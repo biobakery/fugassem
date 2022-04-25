@@ -1,6 +1,12 @@
 
 # FUGAsseM History #
 
+## v0.3.2 2022-04-08 ##
+* Updated GO-obo files
+* Added option for predition using universal GO set 
+* Added option for prediction using global GO set
+* Added option for predicting terms from all GO ontologies
+
 ## v0.3.1 2022-03-02 ##
 * Fixed small issue from geneontology.py
 * Added function for detailed annotation when '--go-level none'

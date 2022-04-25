@@ -4,3 +4,16 @@ pandas
 multiprocessing
 sklearn
 scipy
+goatools
+statistics
+math
+typing
+collections
+textwrap
+gzip
+bz2
+csv
+ctypes
+itertools
+tempfile
+glob
