@@ -136,7 +136,10 @@ def collect_list(list_file):
 def prepare_data(p_features, perm, func_name, vector_name):
 	# feature loading
 	features = table2.table(p_features)
-	funcs = features.rowdict(func_name)
+	try:
+		funcs = features.rowdict(func_name)
+	except:
+		return None, None, None, None	
 	features.delete_row(func_name)
 	if vector_name:
 		myvec_table = features.grep("ID", vector_name, in_place = False)
@@ -438,6 +441,9 @@ def process_function (ml_type, myfunc, vector, suffix, imppath, p_features, perm
 	else:
 		imp_file = None
 	features, funcs, X1, y1 = prepare_data(p_features, perm, myfunc, myvector)
+	if not features:
+		config.logger.info("WARNING: skip this function since no data available! " + myfunc)
+		return None
 	config.logger.info("Learning by cross validation")
 	conf, roc, imp = learning(ml_type, myfunc, features, funcs, X1, y1, redu_level, corr_method, cores, imp_level, imp_file)
 	config.logger.info("Write out cross-validation results")
