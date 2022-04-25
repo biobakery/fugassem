@@ -141,15 +141,18 @@ def collect_annotation (ann_file, myfuncs, func_type):
 		info = line.split("\t")
 		myid = info[-1]
 		myid_new = myid.split(":")
-		if (len(myid_new) > 1):
+		if len(myid_new) > 1:
 			myid_new = ":".join(myid_new[0:2])
 		else:
 			myid_new = myid_new[0]
+		myid_new = myid_new.split("__")[0]
 		myid_new2 = myid.split("__")[0]
 		myid = re.sub("__", "\t", myid)
 		tmp = myid.split("\t")
 		if len(tmp) < 2:
 			myid = myid + "\t" + func_type
+		elif len(tmp) > 2:
+			myid = "\t".join(tmp[0:2])
 		if len(myfuncs.keys()) > 0:
 			if not myid_new in myfuncs and not myid_new2 in myfuncs:
 					continue
@@ -230,6 +233,7 @@ def assign_hit (anns, score):
 			myid_new = ":".join(myid_new[0:2])
 		else:
 			myid_new = myid_new[0]
+		myid_new = myid_new.split("__")[0]
 		myid_new2 = myf.split("__")[0]
 		myid2 = "NA"
 		if myid_new in funcs:
