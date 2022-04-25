@@ -89,7 +89,7 @@ def collect_feature_matrix (new_file, header):
 		if not len(line):
 			continue
 		if header:
-			if header != "no":
+			if header != "no" and header != "None":
 				if flag == 0:
 					flag = 1
 					info = line.split("\t")
@@ -123,7 +123,7 @@ def collect_feature_hom (new_file, header):
 		if not len(line):
 			continue
 		if header:
-			if header != "no":
+			if header != "no" and header != "None":
 				if flag == 0:
 					flag = 1
 					continue
@@ -150,7 +150,7 @@ def collect_feature_func (new_file, header):
 		if not len(line):
 			continue
 		if header:
-			if header != "no":
+			if header != "no" and header != "None":
 				if flag == 0:
 					flag = 1
 					continue
