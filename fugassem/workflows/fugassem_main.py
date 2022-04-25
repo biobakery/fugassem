@@ -75,8 +75,8 @@ def parse_cli_arguments ():
 	                      desc = "minimum fraction of annotated genes per taxon [ Default: 0.1 ]",
 	                      default = 0.1)
 	workflow.add_argument("minimum-number",
-	                      desc = "minimum number of total genes per taxon [ Default: 500 ]",
-	                      default = 500)
+	                      desc = "minimum number of total genes per taxon [ Default: 100 ]",
+	                      default = 100)
 	workflow.add_argument("filtering-zero",
 	                      desc = "method for pre-filtering zeros in normalized-abund MTX [ Default: lenient ]",
 	                      choices = ["lenient", "semi-strict", "strict", "None"],
@@ -94,10 +94,14 @@ def parse_cli_arguments ():
 	                             "<none>: skip trimming\n" 
 	                             "<all>: keep all terms",
 	                      default = "none")
+	workflow.add_argument("go-set",
+	                      desc = "type of GO set used for prediction: [bug-specific] bug-specific informative terms, [universal] universal informative terms, [global] combined bug informative terms for overall prediction",
+	                      choices = ["bug-specific", "universal", "global"],
+	                      default = "bug-specific")
 	workflow.add_argument("func-type",
-	                      desc = "GO catgeroy used for prediction [ Default: BP ]",
-	                      choices = ["BP", "CC", "MF"],
-	                      default = "BP")
+	                      desc = "GO catgeroy used for prediction [ Default: GO ]",
+	                      choices = ["GO", "BP", "CC", "MF"],
+	                      default = "GO")
 	workflow.add_argument("ml-type",
 	                      desc = "machine learning method for function prediction [ Default: RF ]:\n"
 	                             "[RF]: Random Forest, [NB] Naive Bayes, [DT] Decision Tree",
@@ -143,60 +147,7 @@ def parse_cli_arguments ():
 	                      desc = "provide an output folder which the workflow database and log is written. "
 	                             "By default, that be written to the anadama2 folder of users' working directory",
 	                      default = working_dir)
-
 	return workflow
-
-
-def get_method_config (config_file):
-	'''
-	:param config_file:
-	:return: config info for each analysis
-	'''
-	config.logger.info ("###### Start get_method_config module ######")
-
-	config_items = config.read_user_edit_config_file(config_file)
-	family_conf = {}
-	domain_motif_conf = {}
-	abundance_conf = {}
-	integration_conf = {}
-	values = ["yes", "no", "Yes", "No"]
-
-	if "global_homology" in config_items:
-		for name in config_items["global_homology"].keys():
-			myvalue = config_items["global_homology"][name]
-			if not myvalue in values:
-				config.logger.info ('ERROR! The config value can not be recognized. Please check your config file!')
-				continue
-			family_conf[name] = myvalue
-		# for each method
-
-	if "domain_motif" in config_items:
-		for name in config_items["domain_motif"].keys():
-			myvalue = config_items["domain_motif"][name]
-			if not myvalue in values:
-				config.logger.info ('ERROR! The config value can not be recognized. Please check your config file!')
-				continue
-			domain_motif_conf[name] = myvalue
-		# for each method
-
-	if "abundance" in config_items:
-		for name in config_items["abundance"].keys():
-			myvalue = config_items["abundance"][name]
-			abundance_conf[name] = myvalue
-		# for each method
-
-	if "integration" in config_items:
-		for name in config_items["integration"].keys():
-			myvalue = config_items["integration"][name]
-			if not myvalue in values:
-				config.logger.info ('ERROR! The config value can not be recognized. Please check your config file!')
-				continue
-			integration_conf[name] = myvalue
-		# for each method
-
-	config.logger.info("###### Finish get_method_config module ######")
-
-	return family_conf, domain_motif_conf, abundance_conf, integration_conf
 
 
 def fugassem_main (workflow):
@@ -280,6 +231,15 @@ def fugassem_main (workflow):
 	else:
 		pair_flag = "no"
 
+	if args.go_set == "bug-specific":
+		universal_flag = "no"
+		go_level_flag = args.go_level
+	else:
+		universal_flag = args.go_set
+		go_level_flag = "none"
+		if args.go_level == "none":
+			config.logger.info ("Warning! No informative-level was specified for building universal/global GO set")
+
 	## get all input files
 	go_obo = config.go_obo
 	basename = config.basename
@@ -310,9 +270,27 @@ def fugassem_main (workflow):
 	## split MTX into individual taxon
 	if not args.bypass_preparing_taxa:
 		config.logger.info("Start to run split-taxa module......")
-		taxa_file, taxa = fugassem_preprocessing.preprocess_taxa (mtx_file, ann_file, args.taxon_level,
-	                                args.minimum_prevalence, args.minimum_abundance, args.minimum_coverage, args.minimum_number, output_dir,
-	                                args.threads, args.time, args.memory)
+		if universal_flag != "no":
+			raw_func_file = ann_file + ".raw"
+			new_func_file = ann_file
+			new_func_sim_file = ann_file + ".simple.tsv"
+			os.system ("mv " + ann_file + " " + raw_func_file)
+			if universal_flag == "universal":
+				final_func_file, final_func_smp_file = fugassem_preprocessing.retrieve_function (raw_func_file, "no",
+			                                                                                 args.go_level, args.func_type, go_obo,
+	                                                                                         output_dir, new_func_file, new_func_sim_file,
+	                                                                                         args.threads, args.time, args.memory)
+			if universal_flag == "global":
+				final_func_file, final_func_smp_file = fugassem_preprocessing.retrieve_global_function (mtx_file, raw_func_file, "no",
+			                                                                                args.go_level, args.func_type, go_obo,
+			                                                                                args.taxon_level, args.minimum_prevalence, args.minimum_abundance, args.minimum_coverage, args.minimum_number,
+			                                                                                output_dir, new_func_file, new_func_sim_file,
+	                                                                                        args.threads, args.time, args.memory)
+		taxa_file, taxa = fugassem_preprocessing.preprocess_taxa(mtx_file, ann_file, args.taxon_level,
+			                                                    args.minimum_prevalence, args.minimum_abundance,
+			                                                    args.minimum_coverage, args.minimum_number,
+			                                                    output_dir,
+			                                                    args.threads, args.time, args.memory)
 	else:
 		config.logger.info("WARNING! Bypass module: preparing-taxa module is skipped......")
 		if not os.path.isfile(taxa_file):
@@ -347,7 +325,7 @@ def fugassem_main (workflow):
 		               args.filtering_zero,
 		               args.covariate_taxon,
 		               args.correlation_method,
-		               args.go_level,
+		               go_level_flag,
 		               args.func_type,
 		               args.ml_type,
 		               args.vector_list,
@@ -360,13 +338,14 @@ def fugassem_main (workflow):
 		               args.time,
 		               myoutput_dir,
 		               mylog,
-					   pair_flag]
+					   pair_flag,
+			           args.go_set]
 			target_list = [final_func_file, final_func_smp_file, final_funclist_file, feature_list_file, final_pred_file]
 			workflow.add_task_gridable(
 				"fugassem_process --input [depends[0]] --gene [depends[1]] --function [depends[2]] "
 				"--taxon [args[0]] --basename [args[1]] "
 				"--minimum-prevalence [args[2]] --minimum-abundance [args[3]] --minimum-detected [args[4]] --filtering-zero [args[5]] --covariate-taxon [args[6]] "
-				"--correlation-method [args[7]] --go-level [args[8]] --func-type [args[9]] --ml-type [args[10]] "
+				"--correlation-method [args[7]] --go-level [args[8]] --go-set [args[22]] --func-type [args[9]] --ml-type [args[10]] "
 				"--vector-list [args[11]] --matrix-list [args[12]] --pair-flag [args[21]] "
 				"--bypass-preprocessing [args[13]] --bypass-prediction [args[14]] --bypass-mtx [args[15]] "
 				"--threads [args[16]] --memory [args[17]] --time [args[18]] "
