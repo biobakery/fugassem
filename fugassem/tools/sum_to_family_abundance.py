@@ -4,7 +4,7 @@
 FUGAsseM: sum_to_family_abundance module
 Sum over protein families based on reads mapped to gene catalog of nucleotide representatives
 
-Copyright (c) 2019 Harvard School of Public Health
+Copyright (c) 2021 Harvard School of Public Health
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

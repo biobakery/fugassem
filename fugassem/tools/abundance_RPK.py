@@ -32,9 +32,9 @@ import re
 import argparse
 
 try:
-	from metawibele import config
+	from fugassem import config
 except ImportError:
-	sys.exit("CRITICAL ERROR: Unable to find the MetaWIBELE python package." +
+	sys.exit("CRITICAL ERROR: Unable to find the FUGAsseM python package." +
 	         " Please check your install.")
 
 # ---------------------------------------------------------------
