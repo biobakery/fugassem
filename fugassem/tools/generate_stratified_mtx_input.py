@@ -33,7 +33,7 @@ import re
 from anadama2.tracked import TrackedExecutable, TrackedDirectory
 from anadama2 import Workflow
 
-# import the utilities functions and config settings from MetaWIBELE
+# import the utilities functions and config settings from FUGAsseM
 try:
 	from fugassem import utilities, config
 except ImportError:
