@@ -77,6 +77,10 @@ def parse_arguments():
 		help = "[OPTIONAL] the minimum prevalence per feature [ Default: None ]\n",
 		default = None)
 	parser.add_argument(
+		"-q", "--coverage",
+		help = "[OPTIONAL] the minimum detection coverage per sample [ Default: None ]\n",
+		default = None)
+	parser.add_argument(
 		"-o", "--output",
 		help = "[REQUIRED] the output file\n",
 		required = True)
@@ -84,7 +88,7 @@ def parse_arguments():
 	return parser.parse_args()
 
 
-def filter_non_detected_sample (header, abunds, abunds_raw, abunds_cov, min_abund, min_detect, flt_method):
+def filter_non_detected_sample (header1, header2, header3, abunds, abunds_raw, abunds_cov, min_abund, min_detect, flt_method):
 	"""
 	Exclude samples that are likely to have technical zeros
 	Input:
@@ -103,10 +107,18 @@ def filter_non_detected_sample (header, abunds, abunds_raw, abunds_cov, min_abun
 	## collect info
 	raw_info = {}
 	cov_info = {}
-	titles = {}
-	info = header.split("\t")
+	titles1 = {}
+	titles2 = {}
+	titles3 = {}
+	info = header1.split("\t")
 	for item in info:
-		titles[info.index(item)] = item
+		titles1[info.index(item)] = item
+	info = header2.split("\t")
+	for item in info:
+		titles2[info.index(item)] = item
+	info = header3.split("\t")
+	for item in info:
+		titles3[info.index(item)] = item
 	if len(abunds_cov.keys()) > 0:
 		for mykey in abunds_cov:
 			myline = abunds_cov[mykey]
@@ -114,7 +126,7 @@ def filter_non_detected_sample (header, abunds, abunds_raw, abunds_cov, min_abun
 			myid = info[0].split(utilities.c_strat_delim)[0]
 			myindex = 1
 			while myindex < len(info):
-				mys = titles[myindex]
+				mys = titles3[myindex]
 				myv = info[myindex]
 				flag = 0
 				if myv != "NA" and myv != "NaN" and myv != "nan":
@@ -136,7 +148,7 @@ def filter_non_detected_sample (header, abunds, abunds_raw, abunds_cov, min_abun
 		myid = info[0]
 		myindex = 1
 		while myindex < len(info):
-			mys = titles[myindex]
+			mys = titles2[myindex]
 			myv = info[myindex]
 			flag = 0
 			if myv != "NA" and myv != "NaN" and myv != "nan":
@@ -206,7 +218,7 @@ def filter_non_detected_sample (header, abunds, abunds_raw, abunds_cov, min_abun
 		mystr = []
 		myindex = 1
 		while myindex < len(info):
-			mys = titles[myindex]
+			mys = titles1[myindex]
 			myv = info[myindex]
 			flag = 0
 			if myid in refined_feature:
@@ -258,6 +270,70 @@ def filter_low_prevalent_feature (abunds, abunds_raw, min_abund, min_prev):
 	return abunds_new
 
 
+def filter_low_coverage_sample (header1, header2, abunds, abunds_raw, min_cov, min_abund):
+	"""
+	Filter samples with detection coverage less than the cutoff
+	Input: a dictionary of abundance info
+	Output: abunds_new = {Cluster_XYZ: abunds, ...}
+	"""
+
+	config.logger.info ('filter_low_coverage_sample')
+
+	# select samples
+	samples = []
+	features = {}
+	cov_info = {}
+	titles2 = {}
+	samples_raw = header2.split("\t")
+	for item in samples_raw:
+		titles2[samples_raw.index(item)] = item
+	for mykey in abunds_raw:
+		myline = abunds_raw[mykey]
+		info = myline.split("\t")
+		myid = info[0]
+		features[myid] = ""
+		myindex = 1
+		while myindex < len(info):
+			mys = titles2[myindex]
+			myv = info[myindex]
+			if myv != "NA" and myv != "NaN" and myv != "nan":
+				myv = float(myv)
+				if myv > float(min_abund):
+					if not mys in cov_info:
+						cov_info[mys] = {}
+					cov_info[mys][myid] = ""
+			myindex = myindex + 1
+	# foreach feature
+	mytotal = len(features.keys())
+	for mys in samples_raw:
+		if mys in cov_info:
+			myper = len(cov_info[mys].keys()) * 1.0 / mytotal
+			if myper >= float(min_cov):
+				samples.append(mys)
+	header_new = "ID\t" + "\t".join(samples)
+
+	# collect new abunds info
+	titles1 = {}
+	info = header1.split("\t")
+	for item in info:
+		titles1[item] = info.index(item)
+	abunds_new = {}
+	for mykey in abunds:
+		myline = abunds[mykey]
+		info = myline.split("\t")
+		mystr = info[0]
+		for mys in samples:
+			if mys in titles1:
+				myindex = titles1[mys]
+				myv = info[myindex]
+				mystr = mystr + "\t" + myv
+			else:
+				mystr = mystr + "\tNaN"
+		abunds_new[info[0]] = mystr
+
+	return abunds_new, header_new
+
+
 def output_abunds (abunds, header, outfile):
 	"""
 	Output refined abundance table
@@ -289,7 +365,12 @@ def main():
 		else:
 			config.logger.info ("WARNING! No covariate file is provied, so skip filtering genes based on covariate abundance.")
 			abunds_cov = {}
-		abunds = filter_non_detected_sample(header1, abunds, abunds_raw, abunds_cov, args_value.abund, args_value.detected, args_value.method)
+			header3 = ""
+		abunds = filter_non_detected_sample(header1, header2, header3, abunds, abunds_raw, abunds_cov, args_value.abund, args_value.detected, args_value.method)
+	if args_value.coverage:
+		if float(args_value.coverage) > 1 or float(args_value.coverage) < 0:
+			sys.exit ("Error! Please provide valide detection coverage per sample scaling in [0, 1] via --coverage.")
+		abunds, header1 = filter_low_coverage_sample(header1, header2, abunds, abunds_raw, args_value.coverage, args_value.abund)
 
 	## output info ##
 	output_abunds (abunds, header1, args_value.output)
