@@ -54,6 +54,7 @@ def format_func_info (infile, outfile):
 				tmp = info[-1].split(":")
 				if len(tmp) >= 2:
 					info[-1] = ":".join(tmp[0:2])
+				info[-1] = info[-1].split("__")[0]
 			mystr = "\t".join(info)
 			open_out.write(mystr + "\n")
 		open_out.close()
