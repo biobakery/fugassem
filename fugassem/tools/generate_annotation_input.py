@@ -56,9 +56,11 @@ def parse_cli_arguments():
 	                    remove_options=["output"])
 
 	# add the custom arguments to the workflow
-	workflow.add_argument("go-types",
-	                      desc = "types of GO using comma to separate, [ Default: GO ]",
-						  choices = ["GO", "BP", "MF", "CC"],
+	workflow.add_argument("func-type",
+	                      desc = "type of function, [ Default: GO ]",
+						  choices = ["GO", "BP", "MF", "CC",
+							"UniRef90_GO", "UniRef90_GO_BP", "UniRef90_GO_CC", "UniRef90_GO_MF", "UniRef90_COG", "UniRef90_eggNOG",
+                			"UniRef90_KEGG-KOs", "InterProScan_PfamDomain", "Denovo_transmembrane", "Denovo_signaling", "DOMINE_interaction"],
 	                      default = "GO")
 	workflow.add_argument("pfam",
 	                      desc = "if specified, will extract pfam annotation of that type, [ Default: InterProScan_PfamDomain",
@@ -307,7 +309,7 @@ def prepare_contig (clust_file, gene_info_file,
 def prepare_co_unit (ann_file, ann_type,
                       unit_file, func_file,
                       output_folder, extracted_ann_file,
-                      workflow, threads, time_equation, mem_equation):
+                      workflow, threads, time_equation, mem_equation, func_type):
 
 	"""
 	Extract co-unit info, e.g. co-homology
@@ -323,6 +325,7 @@ def prepare_co_unit (ann_file, ann_type,
 		threads (int): The number of threads/cores for clustering to use.
 		time_equation (int): required number of hours defined in the workflow.
 		mem_equation (int): required number of GB defined in the workflow.
+		func_type: function type 
 
 	Requires:
 		annotation file
@@ -350,7 +353,8 @@ def prepare_co_unit (ann_file, ann_type,
 						workflow,
                         args.threads,
                         args.time_equation,
-                        args.mem_equation)
+                        args.mem_equation,
+						func_type)
 		# run the workflow
 		workflow.go()
 	"""
@@ -365,10 +369,10 @@ def prepare_co_unit (ann_file, ann_type,
 	extracted_log = extracted_ann_file + ".log"
 
 	workflow.add_task(
-		"fugassem_prepare_seqSimilarity -a [depends[0]] -s [depends[1]] -f [depends[2]] -t [args[0]] -o [targets[0]] > [args[1]] 2>&1",
+		"fugassem_prepare_seqSimilarity -a [depends[0]] -s [depends[1]] -f [depends[2]] -t [args[0]] -m [args[1]] -o [targets[0]] > [args[2]] 2>&1",
 		depends = [ann_file, unit_file, func_file, TrackedExecutable("fugassem_prepare_seqSimilarity")],
 		targets = [extracted_ann_file],
-		args = [ann_type, extracted_log],
+		args = [ann_type, func_type, extracted_log],
 		cores = 1,
 		time = time_equation,
 		mem = mem_equation,
@@ -377,7 +381,7 @@ def prepare_co_unit (ann_file, ann_type,
 	return extracted_ann_file
 
 
-def prepare_annotation_task (ann_file, go_types, pfam, ddi,
+def prepare_annotation_task (ann_file, func_type, pfam, ddi,
                              contig, clust_file, gene_info_file,
 							 homology, homology_ann_file, coanns,
                              output_folder, basename,
@@ -387,7 +391,7 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 
 	Args:
 		ann_file: MetaWIBELE finalized characterization file.
-		go_types: types of GO, [Default: GO ]
+		func_type: function type, [Default: GO ]
 		pfam: if specified, will extract pfam annotation of that type, [ Default: "InterProScan_PfamDomain" ]
 		ddi: if specified, will extract DDI annotation of that type, [ Default: "DOMINE_interaction" ]
 		contig: if specified, will extract contig annotation, [ Default: None ]
@@ -419,7 +423,7 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 		# add prepare_function tasks
 		 prepare_annotation_task (
 						ann_file,
-						go_types,
+						func_type,
 						pfam,
 						ddi,
                         contig,
@@ -446,16 +450,18 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 		os.system("mkdir -p " + main_folder)
 
 	# function annotations
-	gos = go_types.split(",")
+	funcs = func_type.split(",")
 	ann_files = []
 	func_files = []
-	for mytype in gos:
+	func_types = []
+	for mytype in funcs:
 		myfunc1 = os.path.join(main_folder, basename + "." + mytype + ".tsv")
 		myfunc2 = os.path.join(main_folder, basename + "." + mytype + ".simple.tsv")
 		prepare_annotation(ann_file, mytype, None,
 		                   main_folder, myfunc1, myfunc2,
 		                   workflow, threads, time_equation, mem_equation)
 		func_files.append(myfunc2)
+		func_types.append(mytype)
 
 	# pfam
 	if pfam:
@@ -505,13 +511,14 @@ def prepare_annotation_task (ann_file, go_types, pfam, ddi,
 	# homology
 	if homology:
 		for myfunc in func_files:
+			mytype = func_types[func_files.index(myfunc)]
 			mym = os.path.basename(myfunc)
 			mygo = mym.split(".")[-3]
 			myann = os.path.join(main_folder, basename + "." + mygo + ".homology.tsv")
 			prepare_co_unit(ann_file, "homology",
 		                homology_ann_file, myfunc,
 		                output_folder, myann,
-		                workflow, threads, time_equation, mem_equation)
+		                workflow, threads, time_equation, mem_equation, mytype)
 			ann_files.append(myann)
 
 	return ann_files, func_files
@@ -573,7 +580,7 @@ def generate_annotation_input (workflow):
 
 	## run prepare-annotation_info module
 	config.logger.info("Start to run prepare_annotation_task module......")
-	prepare_annotation_task (ann_file, args.go_types, args.pfam, args.ddi,
+	prepare_annotation_task (ann_file, args.func_type, args.pfam, args.ddi,
 	                        args.contig, args.clust_file, args.gene_info,
 	                        args.homology, args.homology_ann, coanns,
 	                        output_dir, basename,

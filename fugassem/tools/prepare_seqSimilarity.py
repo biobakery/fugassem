@@ -33,6 +33,8 @@ import tempfile
 import re
 import numpy as np
 import logging
+from goatools.base import get_godag
+from goatools.gosubdag.gosubdag import GoSubDag
 
 
 try:
@@ -59,6 +61,10 @@ def parse_arguments():
 		"-t", "--type",
 		help = "[OPTIONAL] type of sequence similarity info [Default: homology]\n",
 		default = "homology")
+	parser.add_argument(
+		"-m", "--method",
+		help = "[OPTIONAL] function type [Default: GO]\n",
+		default = "GO")
 	parser.add_argument(
 		"-s", "--similarity",
 		help = "[REQUIRED] sequence similarity info file\n",
@@ -136,12 +142,19 @@ def collect_similarity_unit (simi_file):
 	return pairs
 
 
-def collect_function (func_file):
+def collect_function (func_file, func_type):
 	"""
 	Collect function maps
 	Input: the file name of function annotation
 	Output: func = {{f1: c1, c2}, ...}
 	"""
+	go_types = ["GO", "BP", "MF", "CC"]
+	if func_type in go_types:
+		try:
+			godag = get_godag(config.go_obo)
+		except:
+			godag = None
+			config.logger.info("Error! Failed to fetch GO file.")
 	funcs = {}
 	for line in utilities.gzip_bzip2_biom_open_readlines (func_file):
 		line = line.strip()
@@ -150,9 +163,20 @@ def collect_function (func_file):
 		info = line.split("\t")
 		myid = info[0]
 		myf = info[1]
+		if func_type in go_types and godag is not None:
+			gosubdag = GoSubDag([myf], godag)
+			try:
+				go_id, go_term = max(gosubdag.go2obj.items(), key=lambda t: t[1].depth)
+				go_ids_chosen = list(go_term.get_all_parents())
+				go_ids_chosen.append(myf)
+			except:
+				continue
+		else:
+			go_ids_chosen = [myf] 
 		if not myid in funcs:
 			funcs[myid] = {}
-		funcs[myid][myf] = ""
+		for i in go_ids_chosen:
+			funcs[myid][i] = ""
 
 	return funcs
 
@@ -220,7 +244,7 @@ def main():
 
 	## get info ##
 	families = collect_families (args_value.family)
-	funcs = collect_function (args_value.function)
+	funcs = collect_function (args_value.function, args_value.method)
 
 	#units = ["pfam", "uniref50", "contig", "DDI", "homology"]
 	paris = {}

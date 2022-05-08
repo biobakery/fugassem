@@ -128,7 +128,7 @@ def collect_function_info (GO, ann_file, func_type, names, outfile):
 	"""
 	
 	# collect annotation
-	go_ann = ["UniRef90_GO_BP", "UniRef90_GO_MF", "UniRef90_GO_CC", "UniRef90_GO"]
+	go_ann = ["UniRef90_GO_BP", "UniRef90_GO_MF", "UniRef90_GO_CC", "UniRef90_GO", "GO", "BP", "MF", "CC"]
 	if func_type == "BP":
 		func_type = "UniRef90_GO_BP"
 	if func_type == "MF":
@@ -180,6 +180,8 @@ def collect_function_info (GO, ann_file, func_type, names, outfile):
 			if mytype in go_ann:
 				if item in GO:
 					mynamespace = "_".join(GO[item])
+				else:
+					continue
 			flag = 1
 			if mytype == "UniRef90_GO":
 				flag = 0
