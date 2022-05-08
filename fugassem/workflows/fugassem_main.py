@@ -72,11 +72,11 @@ def parse_cli_arguments ():
 	                      desc = "minimum detected value for each covariate taxon [ Default: 0 ]",
 	                      default = 0)
 	workflow.add_argument("minimum-coverage",
-	                      desc = "minimum fraction of annotated genes per taxon [ Default: 0.1 ]",
-	                      default = 0.1)
+	                      desc = "minimum fraction of annotated genes per taxon [ Default: 0 ]",
+	                      default = 0)
 	workflow.add_argument("minimum-number",
-	                      desc = "minimum number of total genes per taxon [ Default: 100 ]",
-	                      default = 100)
+	                      desc = "minimum number of total genes per taxon [ Default: 0 ]",
+	                      default = 0)
 	workflow.add_argument("filtering-zero",
 	                      desc = "method for pre-filtering zeros in normalized-abund MTX [ Default: lenient ]",
 	                      choices = ["lenient", "semi-strict", "strict", "None"],
@@ -94,9 +94,9 @@ def parse_cli_arguments ():
 	                             "<none>: skip trimming\n" 
 	                             "<all>: keep all terms",
 	                      default = "none")
-	workflow.add_argument("go-set",
-	                      desc = "type of GO set used for prediction: [bug-specific] bug-specific informative terms, [universal] universal informative terms, [global] combined bug informative terms for overall prediction",
-	                      choices = ["bug-specific", "universal", "global"],
+	workflow.add_argument("go-mode",
+	                      desc = "mode of GO set used for prediction: [bug-specific] bug-specific informative terms, [universal] universal informative terms, [union] merged bug informative terms for overall prediction",
+	                      choices = ["bug-specific", "universal", "union"],
 	                      default = "bug-specific")
 	workflow.add_argument("func-type",
 	                      desc = "GO catgeroy used for prediction [ Default: GO ]",
@@ -231,14 +231,14 @@ def fugassem_main (workflow):
 	else:
 		pair_flag = "no"
 
-	if args.go_set == "bug-specific":
+	if args.go_mode == "bug-specific":
 		universal_flag = "no"
 		go_level_flag = args.go_level
 	else:
-		universal_flag = args.go_set
+		universal_flag = args.go_mode
 		go_level_flag = "none"
 		if args.go_level == "none":
-			config.logger.info ("Warning! No informative-level was specified for building universal/global GO set")
+			config.logger.info ("Warning! No informative-level was specified for building universal or union GO set")
 
 	## get all input files
 	go_obo = config.go_obo
@@ -280,11 +280,11 @@ def fugassem_main (workflow):
 			                                                                                 args.go_level, args.func_type, go_obo,
 	                                                                                         output_dir, new_func_file, new_func_sim_file,
 	                                                                                         args.threads, args.time, args.memory)
-			if universal_flag == "global":
-				new_func_file = os.path.join(output_dir, os.path.basename(ann_file) + ".global.tsv")
-				new_func_sim_file = os.path.join(output_dir, os.path.basename(ann_file) + ".global.simple.tsv")
+			if universal_flag == "union":
+				new_func_file = os.path.join(output_dir, os.path.basename(ann_file) + ".union.tsv")
+				new_func_sim_file = os.path.join(output_dir, os.path.basename(ann_file) + ".union.simple.tsv")
 				ann_file = new_func_file
-				final_func_file, final_func_smp_file = fugassem_preprocessing.retrieve_global_function (mtx_file, raw_func_file, "no",
+				final_func_file, final_func_smp_file = fugassem_preprocessing.retrieve_union_function (mtx_file, raw_func_file, "no",
 			                                                                                args.go_level, args.func_type, go_obo,
 			                                                                                args.taxon_level, args.minimum_prevalence, args.minimum_abundance, args.minimum_coverage, args.minimum_number,
 			                                                                                output_dir, new_func_file, new_func_sim_file,
@@ -342,13 +342,13 @@ def fugassem_main (workflow):
 		               myoutput_dir,
 		               mylog,
 					   pair_flag,
-			           args.go_set]
+			           args.go_mode]
 			target_list = [final_func_file, final_func_smp_file, final_funclist_file, feature_list_file, final_pred_file]
 			workflow.add_task_gridable(
 				"fugassem_process --input [depends[0]] --gene [depends[1]] --function [depends[2]] "
 				"--taxon [args[0]] --basename [args[1]] "
 				"--minimum-prevalence [args[2]] --minimum-abundance [args[3]] --minimum-detected [args[4]] --filtering-zero [args[5]] --covariate-taxon [args[6]] "
-				"--correlation-method [args[7]] --go-level [args[8]] --go-set [args[22]] --func-type [args[9]] --ml-type [args[10]] "
+				"--correlation-method [args[7]] --go-level [args[8]] --go-mode [args[22]] --func-type [args[9]] --ml-type [args[10]] "
 				"--vector-list [args[11]] --matrix-list [args[12]] --pair-flag [args[21]] "
 				"--bypass-preprocessing [args[13]] --bypass-prediction [args[14]] --bypass-mtx [args[15]] "
 				"--threads [args[16]] --memory [args[17]] --time [args[18]] "

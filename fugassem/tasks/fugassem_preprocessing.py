@@ -213,12 +213,12 @@ def retrieve_function (func_file, header, go_level, func_type, go_obo, output_fo
 	return final_func_file, final_func_smp_file
 
 
-def retrieve_global_function (abunds_file, func_file, header, go_level, func_type, go_obo,
+def retrieve_union_function (abunds_file, func_file, header, go_level, func_type, go_obo,
 							taxa_level, min_prev, min_abund, min_cov, min_num,
                             output_folder, final_func_file, final_func_smp_file,
                             threads, time_equation, mem_equation):
 	"""
-	Retrieve global function annotations
+	Retrieve union function annotations
 
 	Args:
 		abunds_file: stratified MTX file
@@ -251,8 +251,8 @@ def retrieve_global_function (abunds_file, func_file, header, go_level, func_typ
 		string: the file of refined simplified function file.
 
 	Example:
-		# add retrieve_global_function tasks
-		final_func_file, final_func_smp_file = retrieve_global_function (
+		# add retrieve_union_function tasks
+		final_func_file, final_func_smp_file = retrieve_union_function (
 						abunds_file,
 						func_file,
 						header = "no,
@@ -269,7 +269,7 @@ def retrieve_global_function (abunds_file, func_file, header, go_level, func_typ
                         args.mem_equation)
 	"""
 
-	config.logger.info("###### Start retrieve_global_function module #####")
+	config.logger.info("###### Start retrieve_union_function module #####")
 
 	# prep I/O files
 	main_folder = output_folder
@@ -319,17 +319,17 @@ def retrieve_global_function (abunds_file, func_file, header, go_level, func_typ
 				name="fugassem_refine_anns")
 		else:
 			if func_type == "GO":
-				mycmd = "fugassem_build_global_terms --input [depends[0]] --annotation [depends[1]] --taxon [args[0]] --prev [args[1]] --abund [args[2]] --coverage [args[3]] --number [args[4]] --obo [depends[2]] --informative [args[6]] --output [targets[0]] > [args[7]] 2>&1"
+				mycmd = "fugassem_build_union_terms --input [depends[0]] --annotation [depends[1]] --taxon [args[0]] --prev [args[1]] --abund [args[2]] --coverage [args[3]] --number [args[4]] --obo [depends[2]] --informative [args[6]] --output [targets[0]] > [args[7]] 2>&1"
 			else:
-				mycmd = "fugassem_build_global_terms --input [depends[0]] --annotation [depends[1]] --taxon [args[0]] --prev [args[1]] --abund [args[2]] --coverage [args[3]] --number [args[4]] --obo [depends[2]] --namespace [args[5]] --informative [args[6]] --output [targets[0]] > [args[7]] 2>&1"
+				mycmd = "fugassem_build_union_terms --input [depends[0]] --annotation [depends[1]] --taxon [args[0]] --prev [args[1]] --abund [args[2]] --coverage [args[3]] --number [args[4]] --obo [depends[2]] --namespace [args[5]] --informative [args[6]] --output [targets[0]] > [args[7]] 2>&1"
 			utilities.run_task (mycmd,
-				depends = [abunds_file, func_file, go_obo, TrackedExecutable("fugassem_build_global_terms")],
+				depends = [abunds_file, func_file, go_obo, TrackedExecutable("fugassem_build_union_terms")],
 				targets = [final_func_file, final_func_smp_file],
 				args = [taxa_level, min_prev, min_abund, min_cov, min_num, func_type, go_level, func_log2],
 				cores = threads,
 				time = time_equation,
 				mem = mem_equation,
-				name = "fugassem_build_global_terms")
+				name = "fugassem_build_union_terms")
 
 	return final_func_file, final_func_smp_file
 

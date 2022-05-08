@@ -90,9 +90,9 @@ def get_args():
 	                             "<none>: skip trimming\n" 
 	                             "<all>: keep all terms",
 	                      default = "none")
-	workflow.add_argument("go-set",
-	                      desc = "type of GO set used for prediction: [bug-specific] bug-specific informative terms, [universal] universal informative terms, [global] combined bug informative terms for overall prediction",
-	                      choices = ["bug-specific", "universal", "global"],
+	workflow.add_argument("go-mode",
+	                      desc = "type of GO set used for prediction: [bug-specific] bug-specific informative terms, [universal] universal informative terms, [union] merged bug informative terms for overall prediction",
+	                      choices = ["bug-specific", "universal", "union"],
 	                      default = "bug-specific")
 	workflow.add_argument("func-type",
 	                      desc = "GO catgeroy used for prediction [ Default: GO ]",
