@@ -6,6 +6,8 @@
 * Added option for predition using universal GO set 
 * Added option for prediction using global GO set
 * Added option for predicting terms from all GO ontologies
+* Refined generate_annotation_input module to prepare co-homology evidence 
+* Added function for visualization
 
 ## v0.3.1 2022-03-02 ##
 * Fixed small issue from geneontology.py

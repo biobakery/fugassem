@@ -3,6 +3,7 @@ numpy
 pandas
 multiprocessing
 sklearn
+matplotlib
 scipy
 goatools
 statistics

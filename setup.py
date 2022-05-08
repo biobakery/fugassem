@@ -240,7 +240,7 @@ setuptools.setup(
 			'fugassem_refine_abunds = fugassem.preprocess.refine_abunds:main',
 			'fugassem_refine_anns = fugassem.preprocess.refine_anns:main',
 			'fugassem_split_taxa = fugassem.preprocess.split_taxa:main',
-			'fugassem_build_global_terms = fugassem.preprocess.build_global_terms:main',
+			'fugassem_build_union_terms = fugassem.preprocess.build_union_terms:main',
 
 			'fugassem_collect_ml_results = fugassem.predict.collect_ml_results:main',
 			'fugassem_machine_learning= fugassem.predict.machine_learning:main',
@@ -263,6 +263,7 @@ setuptools.setup(
 			'fugassem_prepare_coann_pairs = fugassem.tools.prepare_coann_pairs:main',
 			'fugassem_stratified_abundance = fugassem.tools.stratified_abundance:main',
 			'fugassem_sum_to_family_abundance = fugassem.tools.sum_to_family_abundance:main',
+			'fugassem_performance_vis = fugassem.tools.performance_vis:main',
 
 			'fugassem_extract_feature_subset = fugassem.common.extract_feature_subset:main',
 			'fugassem_format_function = fugassem.common.format_function:main',
