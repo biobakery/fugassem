@@ -15,7 +15,7 @@ TBD
 [http://huttenhower.sph.harvard.edu/fugassem](http://huttenhower.sph.harvard.edu/fugassem)
 
 
-**For additional information, read the [FUGAsseM Tutorial](https://github.com/biobakery/biobakery/wiki/fugassem)**
+**For additional information, read the [FUGAsseM Tutorial](https://github.com/biobakery/fugassem/wiki)**
 
 
 If you have questions about FUGAsseM, please direct it to [the FUGAsseM channel](https://forum.biobakery.org/c/Microbial-community-profiling/fugassem) of the bioBakery Support Forum.
