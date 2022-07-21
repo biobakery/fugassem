@@ -329,7 +329,7 @@ def collect_taxa_ann (funcs, header, abunds, min_abund, min_prev, min_cov, min_n
 		myabunds = taxa_info[mytaxon]
 		pass_flag = True
 		if min_prev:
-			myabunds = filter_low_prev_gene(myabunds, min_cov, min_prev)
+			myabunds = filter_low_prev_gene(myabunds, min_abund, min_prev)
 		if min_num:
 			try:
 				min_num = float(min_num)
