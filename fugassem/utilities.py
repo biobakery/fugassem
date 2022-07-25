@@ -62,7 +62,7 @@ c_depth = 10
 def read_data_from_file(infile, header_flag="yes"):
 	data = {}
 	open_file = open(infile, "r")
-	if header_flag:
+	if header_flag == "yes":
 		header = open_file.readline().strip()
 	else:
 		header = None
