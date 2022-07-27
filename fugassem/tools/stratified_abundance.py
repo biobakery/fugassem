@@ -122,13 +122,16 @@ def collect_taxa_info (taxa_file, taxa_level):
 		mytaxa = "NA"
 		mylevel = "NA"
 		mylineage = info[titles["taxa_lineage"]]
-		#mylineage = re.sub("\.", "", mylineage)
-		#mylineage = re.sub("\/", "_", mylineage)
-		#mylineage = re.sub("\:", "_", mylineage)
-		#mylineage = re.sub("\[", "", mylineage)
-		#mylineage = re.sub("\]", "", mylineage)
-		#mylineage = re.sub("\|", utilities.c_taxon_delim, mylineage)
-		mylineage = utilities.refine_taxon (mylineage)
+		mylineage = re.sub("\(", "", mylineage)
+		mylineage = re.sub("\)", "", mylineage)
+		mylineage = re.sub("\[", "", mylineage)
+		mylineage = re.sub("\]", "", mylineage)
+		mylineage = re.sub("=", "", mylineage)
+		mylineage = re.sub("\:", "_", mylineage)
+		mylineage = re.sub("\/", "_", mylineage)
+		mylineage = re.sub("\.", "", mylineage)
+		mylineage = re.sub("\s+", "_", mylineage)
+		mylineage = re.sub("\|", utilities.c_taxon_delim, mylineage)
 		if taxa_level == "MSP":
 			if "msp_name" in titles:
 				if info[titles["msp_name"]] == utilities.c_msp_unknown or info[titles["msp_name"]] == "NA" or info[titles["msp_name"]] == "Unclassified":
