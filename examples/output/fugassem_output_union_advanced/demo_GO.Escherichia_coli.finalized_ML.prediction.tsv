@@ -1,0 +1,951 @@
+feature	func	category	score	raw_ann
+Cluster_100559	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
+Cluster_100559	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_100559	GO:0005737:[CC] cytoplasm	CC	0.37	0
+Cluster_100559	GO:0005886:[CC] plasma membrane	CC	0.39	0
+Cluster_100559	GO:0006793:[BP] phosphorus metabolic process	BP	0.13	0
+Cluster_100559	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_100559	GO:0006855:[BP] drug transmembrane transport	BP	0.32	0
+Cluster_100559	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.16	0
+Cluster_100559	GO:0009279:[CC] cell outer membrane	CC	0.1	0
+Cluster_100559	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_100559	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_100559	GO:0016787:[MF] hydrolase activity	MF	0.83	1
+Cluster_100559	GO:0016836:[MF] hydro-lyase activity	MF	0.38	0
+Cluster_100559	GO:0016854:[MF] racemase and epimerase activity	MF	0.83	0
+Cluster_100559	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.33	0
+Cluster_100559	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.89	0
+Cluster_100559	GO:0046930:[CC] pore complex	CC	0.0	0
+Cluster_100559	GO:0051287:[MF] NAD binding	MF	0.04	0
+Cluster_100559	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.55	0
+Cluster_100569	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.14	0
+Cluster_100569	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Cluster_100569	GO:0005737:[CC] cytoplasm	CC	0.41	0
+Cluster_100569	GO:0005886:[CC] plasma membrane	CC	0.28	0
+Cluster_100569	GO:0006793:[BP] phosphorus metabolic process	BP	0.16	0
+Cluster_100569	GO:0006811:[BP] ion transport	BP	0.04	0
+Cluster_100569	GO:0006855:[BP] drug transmembrane transport	BP	0.08	0
+Cluster_100569	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.1	0
+Cluster_100569	GO:0009279:[CC] cell outer membrane	CC	0.0	0
+Cluster_100569	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_100569	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.05	0
+Cluster_100569	GO:0016787:[MF] hydrolase activity	MF	0.13	0
+Cluster_100569	GO:0016836:[MF] hydro-lyase activity	MF	0.45	0
+Cluster_100569	GO:0016854:[MF] racemase and epimerase activity	MF	0.86	0
+Cluster_100569	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.23	0
+Cluster_100569	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.79	0
+Cluster_100569	GO:0046930:[CC] pore complex	CC	0.02	0
+Cluster_100569	GO:0051287:[MF] NAD binding	MF	0.02	0
+Cluster_100569	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.37	0
+Cluster_1008935	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
+Cluster_1008935	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Cluster_1008935	GO:0005737:[CC] cytoplasm	CC	0.56	1
+Cluster_1008935	GO:0005886:[CC] plasma membrane	CC	0.16	0
+Cluster_1008935	GO:0006793:[BP] phosphorus metabolic process	BP	0.15	0
+Cluster_1008935	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_1008935	GO:0006855:[BP] drug transmembrane transport	BP	0.02	0
+Cluster_1008935	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.1	0
+Cluster_1008935	GO:0009279:[CC] cell outer membrane	CC	0.1	0
+Cluster_1008935	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_1008935	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_1008935	GO:0016787:[MF] hydrolase activity	MF	0.89	1
+Cluster_1008935	GO:0016836:[MF] hydro-lyase activity	MF	0.4	0
+Cluster_1008935	GO:0016854:[MF] racemase and epimerase activity	MF	0.83	0
+Cluster_1008935	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.11	0
+Cluster_1008935	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.84	1
+Cluster_1008935	GO:0046930:[CC] pore complex	CC	0.0	0
+Cluster_1008935	GO:0051287:[MF] NAD binding	MF	0.04	0
+Cluster_1008935	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.58	0
+Cluster_101048	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.88	1
+Cluster_101048	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.98	1
+Cluster_101048	GO:0005737:[CC] cytoplasm	CC	0.37	0
+Cluster_101048	GO:0005886:[CC] plasma membrane	CC	0.34	0
+Cluster_101048	GO:0006793:[BP] phosphorus metabolic process	BP	0.87	0
+Cluster_101048	GO:0006811:[BP] ion transport	BP	0.05	0
+Cluster_101048	GO:0006855:[BP] drug transmembrane transport	BP	0.43	0
+Cluster_101048	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.99	0
+Cluster_101048	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_101048	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_101048	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_101048	GO:0016787:[MF] hydrolase activity	MF	0.14	0
+Cluster_101048	GO:0016836:[MF] hydro-lyase activity	MF	0.4716666666666666	0
+Cluster_101048	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
+Cluster_101048	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.89	0
+Cluster_101048	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.8	0
+Cluster_101048	GO:0046930:[CC] pore complex	CC	0.0	0
+Cluster_101048	GO:0051287:[MF] NAD binding	MF	0.94	1
+Cluster_101048	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.21	0
+Cluster_1011278	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.14	0
+Cluster_1011278	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_1011278	GO:0005737:[CC] cytoplasm	CC	0.61	1
+Cluster_1011278	GO:0005886:[CC] plasma membrane	CC	0.29	0
+Cluster_1011278	GO:0006793:[BP] phosphorus metabolic process	BP	0.22	0
+Cluster_1011278	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_1011278	GO:0006855:[BP] drug transmembrane transport	BP	0.09	0
+Cluster_1011278	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
+Cluster_1011278	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_1011278	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_1011278	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.04	0
+Cluster_1011278	GO:0016787:[MF] hydrolase activity	MF	0.85	1
+Cluster_1011278	GO:0016836:[MF] hydro-lyase activity	MF	0.47	0
+Cluster_1011278	GO:0016854:[MF] racemase and epimerase activity	MF	0.78	0
+Cluster_1011278	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.09	0
+Cluster_1011278	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.72	1
+Cluster_1011278	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_1011278	GO:0051287:[MF] NAD binding	MF	0.04	0
+Cluster_1011278	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.65	0
+Cluster_101968	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.04	0
+Cluster_101968	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_101968	GO:0005737:[CC] cytoplasm	CC	0.11	0
+Cluster_101968	GO:0005886:[CC] plasma membrane	CC	0.35	0
+Cluster_101968	GO:0006793:[BP] phosphorus metabolic process	BP	0.15	0
+Cluster_101968	GO:0006811:[BP] ion transport	BP	0.5	1
+Cluster_101968	GO:0006855:[BP] drug transmembrane transport	BP	0.86	0
+Cluster_101968	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.06	0
+Cluster_101968	GO:0009279:[CC] cell outer membrane	CC	0.98	1
+Cluster_101968	GO:0015288:[MF] porin activity	MF	0.97	1
+Cluster_101968	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_101968	GO:0016787:[MF] hydrolase activity	MF	0.19	0
+Cluster_101968	GO:0016836:[MF] hydro-lyase activity	MF	0.4133333333333333	0
+Cluster_101968	GO:0016854:[MF] racemase and epimerase activity	MF	0.11	0
+Cluster_101968	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.14	0
+Cluster_101968	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.17	0
+Cluster_101968	GO:0046930:[CC] pore complex	CC	0.95	1
+Cluster_101968	GO:0051287:[MF] NAD binding	MF	0.04	0
+Cluster_101968	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.04	0
+Cluster_10199	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.08	0
+Cluster_10199	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_10199	GO:0005737:[CC] cytoplasm	CC	0.04	0
+Cluster_10199	GO:0005886:[CC] plasma membrane	CC	0.77	1
+Cluster_10199	GO:0006793:[BP] phosphorus metabolic process	BP	0.15	0
+Cluster_10199	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_10199	GO:0006855:[BP] drug transmembrane transport	BP	0.81	1
+Cluster_10199	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.1	0
+Cluster_10199	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_10199	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_10199	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.88	1
+Cluster_10199	GO:0016787:[MF] hydrolase activity	MF	0.27	0
+Cluster_10199	GO:0016836:[MF] hydro-lyase activity	MF	0.4016666666666666	0
+Cluster_10199	GO:0016854:[MF] racemase and epimerase activity	MF	0.19	0
+Cluster_10199	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.09	0
+Cluster_10199	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.33	0
+Cluster_10199	GO:0046930:[CC] pore complex	CC	0.0	0
+Cluster_10199	GO:0051287:[MF] NAD binding	MF	0.04	0
+Cluster_10199	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.37	0
+Cluster_1022788	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.96	1
+Cluster_1022788	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.99	1
+Cluster_1022788	GO:0005737:[CC] cytoplasm	CC	0.17	0
+Cluster_1022788	GO:0005886:[CC] plasma membrane	CC	0.34	0
+Cluster_1022788	GO:0006793:[BP] phosphorus metabolic process	BP	0.86	0
+Cluster_1022788	GO:0006811:[BP] ion transport	BP	0.04	0
+Cluster_1022788	GO:0006855:[BP] drug transmembrane transport	BP	0.56	0
+Cluster_1022788	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.99	0
+Cluster_1022788	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_1022788	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_1022788	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_1022788	GO:0016787:[MF] hydrolase activity	MF	0.19	0
+Cluster_1022788	GO:0016836:[MF] hydro-lyase activity	MF	0.36	0
+Cluster_1022788	GO:0016854:[MF] racemase and epimerase activity	MF	0.12	0
+Cluster_1022788	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.75	0
+Cluster_1022788	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.9	0
+Cluster_1022788	GO:0046930:[CC] pore complex	CC	0.0	0
+Cluster_1022788	GO:0051287:[MF] NAD binding	MF	1.0	1
+Cluster_1022788	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.07	0
+Cluster_1022791	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.02	0
+Cluster_1022791	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.05	0
+Cluster_1022791	GO:0005737:[CC] cytoplasm	CC	0.09	0
+Cluster_1022791	GO:0005886:[CC] plasma membrane	CC	0.16	0
+Cluster_1022791	GO:0006793:[BP] phosphorus metabolic process	BP	0.15	0
+Cluster_1022791	GO:0006811:[BP] ion transport	BP	0.04	0
+Cluster_1022791	GO:0006855:[BP] drug transmembrane transport	BP	0.32	0
+Cluster_1022791	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.14	0
+Cluster_1022791	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_1022791	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_1022791	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_1022791	GO:0016787:[MF] hydrolase activity	MF	0.27	0
+Cluster_1022791	GO:0016836:[MF] hydro-lyase activity	MF	0.4	1
+Cluster_1022791	GO:0016854:[MF] racemase and epimerase activity	MF	0.82	0
+Cluster_1022791	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.09	0
+Cluster_1022791	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.91	0
+Cluster_1022791	GO:0046930:[CC] pore complex	CC	0.0	0
+Cluster_1022791	GO:0051287:[MF] NAD binding	MF	0.05	0
+Cluster_1022791	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.38	0
+Cluster_1022793	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.02	0
+Cluster_1022793	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Cluster_1022793	GO:0005737:[CC] cytoplasm	CC	0.09	0
+Cluster_1022793	GO:0005886:[CC] plasma membrane	CC	0.16	0
+Cluster_1022793	GO:0006793:[BP] phosphorus metabolic process	BP	0.26	0
+Cluster_1022793	GO:0006811:[BP] ion transport	BP	0.05	0
+Cluster_1022793	GO:0006855:[BP] drug transmembrane transport	BP	0.56	0
+Cluster_1022793	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.97	1
+Cluster_1022793	GO:0009279:[CC] cell outer membrane	CC	0.0	0
+Cluster_1022793	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_1022793	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_1022793	GO:0016787:[MF] hydrolase activity	MF	0.25	0
+Cluster_1022793	GO:0016836:[MF] hydro-lyase activity	MF	0.4	0
+Cluster_1022793	GO:0016854:[MF] racemase and epimerase activity	MF	0.9	1
+Cluster_1022793	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.28	0
+Cluster_1022793	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.9	0
+Cluster_1022793	GO:0046930:[CC] pore complex	CC	0.0	0
+Cluster_1022793	GO:0051287:[MF] NAD binding	MF	0.05	0
+Cluster_1022793	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.26	0
+Cluster_1023215	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.04	0
+Cluster_1023215	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Cluster_1023215	GO:0005737:[CC] cytoplasm	CC	0.04	0
+Cluster_1023215	GO:0005886:[CC] plasma membrane	CC	0.1	0
+Cluster_1023215	GO:0006793:[BP] phosphorus metabolic process	BP	0.13	0
+Cluster_1023215	GO:0006811:[BP] ion transport	BP	0.0	0
+Cluster_1023215	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
+Cluster_1023215	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.14	0
+Cluster_1023215	GO:0009279:[CC] cell outer membrane	CC	0.73	1
+Cluster_1023215	GO:0015288:[MF] porin activity	MF	0.03	0
+Cluster_1023215	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
+Cluster_1023215	GO:0016787:[MF] hydrolase activity	MF	0.13	0
+Cluster_1023215	GO:0016836:[MF] hydro-lyase activity	MF	0.26	0
+Cluster_1023215	GO:0016854:[MF] racemase and epimerase activity	MF	0.18	0
+Cluster_1023215	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.18	0
+Cluster_1023215	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.91	0
+Cluster_1023215	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_1023215	GO:0051287:[MF] NAD binding	MF	0.04	0
+Cluster_1023215	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.28	0
+Cluster_102328	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.14	0
+Cluster_102328	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.12	0
+Cluster_102328	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_102328	GO:0005886:[CC] plasma membrane	CC	0.31	0
+Cluster_102328	GO:0006793:[BP] phosphorus metabolic process	BP	0.22	0
+Cluster_102328	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_102328	GO:0006855:[BP] drug transmembrane transport	BP	0.27	0
+Cluster_102328	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
+Cluster_102328	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_102328	GO:0015288:[MF] porin activity	MF	0.03	0
+Cluster_102328	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
+Cluster_102328	GO:0016787:[MF] hydrolase activity	MF	0.41	0
+Cluster_102328	GO:0016836:[MF] hydro-lyase activity	MF	0.51	0
+Cluster_102328	GO:0016854:[MF] racemase and epimerase activity	MF	0.2	0
+Cluster_102328	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.09	1
+Cluster_102328	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.12	0
+Cluster_102328	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_102328	GO:0051287:[MF] NAD binding	MF	0.07	0
+Cluster_102328	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.37	1
+Cluster_1025619	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.14	0
+Cluster_1025619	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Cluster_1025619	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_1025619	GO:0005886:[CC] plasma membrane	CC	0.24	0
+Cluster_1025619	GO:0006793:[BP] phosphorus metabolic process	BP	0.78	1
+Cluster_1025619	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_1025619	GO:0006855:[BP] drug transmembrane transport	BP	0.14	0
+Cluster_1025619	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
+Cluster_1025619	GO:0009279:[CC] cell outer membrane	CC	0.07	0
+Cluster_1025619	GO:0015288:[MF] porin activity	MF	0.02	0
+Cluster_1025619	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.04	0
+Cluster_1025619	GO:0016787:[MF] hydrolase activity	MF	0.41	0
+Cluster_1025619	GO:0016836:[MF] hydro-lyase activity	MF	0.41	1
+Cluster_1025619	GO:0016854:[MF] racemase and epimerase activity	MF	0.35	1
+Cluster_1025619	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.57	0
+Cluster_1025619	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.12	0
+Cluster_1025619	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_1025619	GO:0051287:[MF] NAD binding	MF	0.02	0
+Cluster_1025619	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.91	1
+Cluster_1027272	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.14	0
+Cluster_1027272	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Cluster_1027272	GO:0005737:[CC] cytoplasm	CC	0.25	0
+Cluster_1027272	GO:0005886:[CC] plasma membrane	CC	0.31	1
+Cluster_1027272	GO:0006793:[BP] phosphorus metabolic process	BP	0.15	0
+Cluster_1027272	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_1027272	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
+Cluster_1027272	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.12	0
+Cluster_1027272	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_1027272	GO:0015288:[MF] porin activity	MF	0.02	0
+Cluster_1027272	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.04	0
+Cluster_1027272	GO:0016787:[MF] hydrolase activity	MF	0.35	0
+Cluster_1027272	GO:0016836:[MF] hydro-lyase activity	MF	0.47	0
+Cluster_1027272	GO:0016854:[MF] racemase and epimerase activity	MF	0.2	0
+Cluster_1027272	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.57	0
+Cluster_1027272	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.13	0
+Cluster_1027272	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_1027272	GO:0051287:[MF] NAD binding	MF	0.0	0
+Cluster_1027272	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.36	0
+Cluster_1029475	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.14	0
+Cluster_1029475	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Cluster_1029475	GO:0005737:[CC] cytoplasm	CC	0.32	1
+Cluster_1029475	GO:0005886:[CC] plasma membrane	CC	0.24	0
+Cluster_1029475	GO:0006793:[BP] phosphorus metabolic process	BP	0.22	0
+Cluster_1029475	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_1029475	GO:0006855:[BP] drug transmembrane transport	BP	0.14	0
+Cluster_1029475	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
+Cluster_1029475	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_1029475	GO:0015288:[MF] porin activity	MF	0.02	0
+Cluster_1029475	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.04	0
+Cluster_1029475	GO:0016787:[MF] hydrolase activity	MF	0.41	0
+Cluster_1029475	GO:0016836:[MF] hydro-lyase activity	MF	0.51	0
+Cluster_1029475	GO:0016854:[MF] racemase and epimerase activity	MF	0.27	0
+Cluster_1029475	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.63	0
+Cluster_1029475	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.2	0
+Cluster_1029475	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_1029475	GO:0051287:[MF] NAD binding	MF	0.0	0
+Cluster_1029475	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.36	0
+Cluster_1063175	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.14	0
+Cluster_1063175	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Cluster_1063175	GO:0005737:[CC] cytoplasm	CC	0.16	0
+Cluster_1063175	GO:0005886:[CC] plasma membrane	CC	0.97	1
+Cluster_1063175	GO:0006793:[BP] phosphorus metabolic process	BP	0.15	0
+Cluster_1063175	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_1063175	GO:0006855:[BP] drug transmembrane transport	BP	0.92	1
+Cluster_1063175	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.13	0
+Cluster_1063175	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_1063175	GO:0015288:[MF] porin activity	MF	0.03	0
+Cluster_1063175	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.91	1
+Cluster_1063175	GO:0016787:[MF] hydrolase activity	MF	0.2	0
+Cluster_1063175	GO:0016836:[MF] hydro-lyase activity	MF	0.47	0
+Cluster_1063175	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
+Cluster_1063175	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.39	0
+Cluster_1063175	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.09	0
+Cluster_1063175	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_1063175	GO:0051287:[MF] NAD binding	MF	0.06	0
+Cluster_1063175	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.33	0
+Cluster_1125377	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.06	0
+Cluster_1125377	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
+Cluster_1125377	GO:0005737:[CC] cytoplasm	CC	0.29	0
+Cluster_1125377	GO:0005886:[CC] plasma membrane	CC	0.1	0
+Cluster_1125377	GO:0006793:[BP] phosphorus metabolic process	BP	0.15	0
+Cluster_1125377	GO:0006811:[BP] ion transport	BP	0.04	0
+Cluster_1125377	GO:0006855:[BP] drug transmembrane transport	BP	0.13	0
+Cluster_1125377	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.91	1
+Cluster_1125377	GO:0009279:[CC] cell outer membrane	CC	0.06	0
+Cluster_1125377	GO:0015288:[MF] porin activity	MF	0.03	0
+Cluster_1125377	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.08	0
+Cluster_1125377	GO:0016787:[MF] hydrolase activity	MF	0.48	0
+Cluster_1125377	GO:0016836:[MF] hydro-lyase activity	MF	0.51	0
+Cluster_1125377	GO:0016854:[MF] racemase and epimerase activity	MF	0.61	1
+Cluster_1125377	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.28	0
+Cluster_1125377	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.27	0
+Cluster_1125377	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_1125377	GO:0051287:[MF] NAD binding	MF	0.0	0
+Cluster_1125377	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.19	0
+Cluster_114268	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
+Cluster_114268	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.08	0
+Cluster_114268	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_114268	GO:0005886:[CC] plasma membrane	CC	0.24	0
+Cluster_114268	GO:0006793:[BP] phosphorus metabolic process	BP	0.22	0
+Cluster_114268	GO:0006811:[BP] ion transport	BP	0.99	1
+Cluster_114268	GO:0006855:[BP] drug transmembrane transport	BP	0.03	1
+Cluster_114268	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
+Cluster_114268	GO:0009279:[CC] cell outer membrane	CC	0.99	1
+Cluster_114268	GO:0015288:[MF] porin activity	MF	0.99	1
+Cluster_114268	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.08	0
+Cluster_114268	GO:0016787:[MF] hydrolase activity	MF	0.25	0
+Cluster_114268	GO:0016836:[MF] hydro-lyase activity	MF	0.17	0
+Cluster_114268	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
+Cluster_114268	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.57	0
+Cluster_114268	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.23	0
+Cluster_114268	GO:0046930:[CC] pore complex	CC	0.98	1
+Cluster_114268	GO:0051287:[MF] NAD binding	MF	0.0	0
+Cluster_114268	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.32	0
+Cluster_1204487	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.12	0
+Cluster_1204487	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Cluster_1204487	GO:0005737:[CC] cytoplasm	CC	0.64	0
+Cluster_1204487	GO:0005886:[CC] plasma membrane	CC	0.09	0
+Cluster_1204487	GO:0006793:[BP] phosphorus metabolic process	BP	0.22	0
+Cluster_1204487	GO:0006811:[BP] ion transport	BP	0.92	0
+Cluster_1204487	GO:0006855:[BP] drug transmembrane transport	BP	0.36	0
+Cluster_1204487	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.08	0
+Cluster_1204487	GO:0009279:[CC] cell outer membrane	CC	0.87	0
+Cluster_1204487	GO:0015288:[MF] porin activity	MF	0.95	1
+Cluster_1204487	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
+Cluster_1204487	GO:0016787:[MF] hydrolase activity	MF	0.18	0
+Cluster_1204487	GO:0016836:[MF] hydro-lyase activity	MF	0.08	0
+Cluster_1204487	GO:0016854:[MF] racemase and epimerase activity	MF	0.12	0
+Cluster_1204487	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.18	0
+Cluster_1204487	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.09	0
+Cluster_1204487	GO:0046930:[CC] pore complex	CC	1.0	0
+Cluster_1204487	GO:0051287:[MF] NAD binding	MF	0.14	0
+Cluster_1204487	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.28	0
+Cluster_12531	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.14	0
+Cluster_12531	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.12	0
+Cluster_12531	GO:0005737:[CC] cytoplasm	CC	0.11	0
+Cluster_12531	GO:0005886:[CC] plasma membrane	CC	0.89	1
+Cluster_12531	GO:0006793:[BP] phosphorus metabolic process	BP	0.25	0
+Cluster_12531	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_12531	GO:0006855:[BP] drug transmembrane transport	BP	0.97	1
+Cluster_12531	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.14	0
+Cluster_12531	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_12531	GO:0015288:[MF] porin activity	MF	0.03	0
+Cluster_12531	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.96	1
+Cluster_12531	GO:0016787:[MF] hydrolase activity	MF	0.21	0
+Cluster_12531	GO:0016836:[MF] hydro-lyase activity	MF	0.51	0
+Cluster_12531	GO:0016854:[MF] racemase and epimerase activity	MF	0.24	0
+Cluster_12531	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.24	0
+Cluster_12531	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.1	0
+Cluster_12531	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_12531	GO:0051287:[MF] NAD binding	MF	0.14	0
+Cluster_12531	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.33	0
+Cluster_129010	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.03	0
+Cluster_129010	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Cluster_129010	GO:0005737:[CC] cytoplasm	CC	0.69	0
+Cluster_129010	GO:0005886:[CC] plasma membrane	CC	0.2	0
+Cluster_129010	GO:0006793:[BP] phosphorus metabolic process	BP	0.62	0
+Cluster_129010	GO:0006811:[BP] ion transport	BP	0.01	0
+Cluster_129010	GO:0006855:[BP] drug transmembrane transport	BP	0.08	0
+Cluster_129010	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
+Cluster_129010	GO:0009279:[CC] cell outer membrane	CC	0.02	0
+Cluster_129010	GO:0015288:[MF] porin activity	MF	0.01	0
+Cluster_129010	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.04	0
+Cluster_129010	GO:0016787:[MF] hydrolase activity	MF	0.3	0
+Cluster_129010	GO:0016836:[MF] hydro-lyase activity	MF	0.41	0
+Cluster_129010	GO:0016854:[MF] racemase and epimerase activity	MF	0.07	0
+Cluster_129010	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.24	0
+Cluster_129010	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.19	0
+Cluster_129010	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_129010	GO:0051287:[MF] NAD binding	MF	0.14	0
+Cluster_129010	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
+Cluster_1291294	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.03	0
+Cluster_1291294	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_1291294	GO:0005737:[CC] cytoplasm	CC	0.91	1
+Cluster_1291294	GO:0005886:[CC] plasma membrane	CC	0.1	0
+Cluster_1291294	GO:0006793:[BP] phosphorus metabolic process	BP	0.62	0
+Cluster_1291294	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_1291294	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
+Cluster_1291294	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.21	0
+Cluster_1291294	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_1291294	GO:0015288:[MF] porin activity	MF	0.02	0
+Cluster_1291294	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.07	0
+Cluster_1291294	GO:0016787:[MF] hydrolase activity	MF	0.94	1
+Cluster_1291294	GO:0016836:[MF] hydro-lyase activity	MF	0.38	0
+Cluster_1291294	GO:0016854:[MF] racemase and epimerase activity	MF	0.29	0
+Cluster_1291294	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.21	0
+Cluster_1291294	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.35	1
+Cluster_1291294	GO:0046930:[CC] pore complex	CC	0.09	0
+Cluster_1291294	GO:0051287:[MF] NAD binding	MF	0.04	0
+Cluster_1291294	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.33	0
+Cluster_1420011	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.03	0
+Cluster_1420011	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.06	0
+Cluster_1420011	GO:0005737:[CC] cytoplasm	CC	0.44	0
+Cluster_1420011	GO:0005886:[CC] plasma membrane	CC	0.89	1
+Cluster_1420011	GO:0006793:[BP] phosphorus metabolic process	BP	0.25	0
+Cluster_1420011	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_1420011	GO:0006855:[BP] drug transmembrane transport	BP	0.96	1
+Cluster_1420011	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.15	0
+Cluster_1420011	GO:0009279:[CC] cell outer membrane	CC	0.03	0
+Cluster_1420011	GO:0015288:[MF] porin activity	MF	0.01	0
+Cluster_1420011	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.96	1
+Cluster_1420011	GO:0016787:[MF] hydrolase activity	MF	0.45	0
+Cluster_1420011	GO:0016836:[MF] hydro-lyase activity	MF	0.35	0
+Cluster_1420011	GO:0016854:[MF] racemase and epimerase activity	MF	0.23	0
+Cluster_1420011	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.39	0
+Cluster_1420011	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
+Cluster_1420011	GO:0046930:[CC] pore complex	CC	0.01	0
+Cluster_1420011	GO:0051287:[MF] NAD binding	MF	0.16	0
+Cluster_1420011	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.35	0
+Cluster_149291	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.04	0
+Cluster_149291	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Cluster_149291	GO:0005737:[CC] cytoplasm	CC	0.41	0
+Cluster_149291	GO:0005886:[CC] plasma membrane	CC	0.61	0
+Cluster_149291	GO:0006793:[BP] phosphorus metabolic process	BP	0.6	1
+Cluster_149291	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_149291	GO:0006855:[BP] drug transmembrane transport	BP	0.18	0
+Cluster_149291	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.13	0
+Cluster_149291	GO:0009279:[CC] cell outer membrane	CC	0.03	0
+Cluster_149291	GO:0015288:[MF] porin activity	MF	0.02	0
+Cluster_149291	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_149291	GO:0016787:[MF] hydrolase activity	MF	0.23	0
+Cluster_149291	GO:0016836:[MF] hydro-lyase activity	MF	0.58	1
+Cluster_149291	GO:0016854:[MF] racemase and epimerase activity	MF	0.72	1
+Cluster_149291	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.61	0
+Cluster_149291	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.18	0
+Cluster_149291	GO:0046930:[CC] pore complex	CC	0.03	0
+Cluster_149291	GO:0051287:[MF] NAD binding	MF	0.14	0
+Cluster_149291	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.81	1
+Cluster_164544	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.92	1
+Cluster_164544	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.93	1
+Cluster_164544	GO:0005737:[CC] cytoplasm	CC	0.27	0
+Cluster_164544	GO:0005886:[CC] plasma membrane	CC	0.11	0
+Cluster_164544	GO:0006793:[BP] phosphorus metabolic process	BP	0.68	1
+Cluster_164544	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_164544	GO:0006855:[BP] drug transmembrane transport	BP	0.0	0
+Cluster_164544	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.87	1
+Cluster_164544	GO:0009279:[CC] cell outer membrane	CC	0.04	0
+Cluster_164544	GO:0015288:[MF] porin activity	MF	0.01	0
+Cluster_164544	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.07	0
+Cluster_164544	GO:0016787:[MF] hydrolase activity	MF	0.27	0
+Cluster_164544	GO:0016836:[MF] hydro-lyase activity	MF	0.11	0
+Cluster_164544	GO:0016854:[MF] racemase and epimerase activity	MF	0.05	0
+Cluster_164544	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.58	1
+Cluster_164544	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.8	1
+Cluster_164544	GO:0046930:[CC] pore complex	CC	0.09	0
+Cluster_164544	GO:0051287:[MF] NAD binding	MF	0.97	1
+Cluster_164544	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.54	0
+Cluster_1647061	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.02	0
+Cluster_1647061	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Cluster_1647061	GO:0005737:[CC] cytoplasm	CC	0.35	0
+Cluster_1647061	GO:0005886:[CC] plasma membrane	CC	0.24	0
+Cluster_1647061	GO:0006793:[BP] phosphorus metabolic process	BP	0.75	1
+Cluster_1647061	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_1647061	GO:0006855:[BP] drug transmembrane transport	BP	0.13	0
+Cluster_1647061	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.14	0
+Cluster_1647061	GO:0009279:[CC] cell outer membrane	CC	0.02	0
+Cluster_1647061	GO:0015288:[MF] porin activity	MF	0.01	0
+Cluster_1647061	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.06	0
+Cluster_1647061	GO:0016787:[MF] hydrolase activity	MF	0.29	0
+Cluster_1647061	GO:0016836:[MF] hydro-lyase activity	MF	0.89	1
+Cluster_1647061	GO:0016854:[MF] racemase and epimerase activity	MF	0.56	1
+Cluster_1647061	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.28	0
+Cluster_1647061	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.19	0
+Cluster_1647061	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_1647061	GO:0051287:[MF] NAD binding	MF	0.16	0
+Cluster_1647061	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.82	1
+Cluster_17929	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.98	1
+Cluster_17929	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.9	1
+Cluster_17929	GO:0005737:[CC] cytoplasm	CC	0.41	0
+Cluster_17929	GO:0005886:[CC] plasma membrane	CC	0.45	0
+Cluster_17929	GO:0006793:[BP] phosphorus metabolic process	BP	0.74	0
+Cluster_17929	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_17929	GO:0006855:[BP] drug transmembrane transport	BP	0.13	0
+Cluster_17929	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.79	0
+Cluster_17929	GO:0009279:[CC] cell outer membrane	CC	0.03	0
+Cluster_17929	GO:0015288:[MF] porin activity	MF	0.01	0
+Cluster_17929	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_17929	GO:0016787:[MF] hydrolase activity	MF	0.49	0
+Cluster_17929	GO:0016836:[MF] hydro-lyase activity	MF	0.14	0
+Cluster_17929	GO:0016854:[MF] racemase and epimerase activity	MF	0.25	0
+Cluster_17929	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.76	0
+Cluster_17929	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.26	0
+Cluster_17929	GO:0046930:[CC] pore complex	CC	0.03	0
+Cluster_17929	GO:0051287:[MF] NAD binding	MF	1.0	1
+Cluster_17929	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.75	0
+Cluster_188439	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
+Cluster_188439	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_188439	GO:0005737:[CC] cytoplasm	CC	0.48	0
+Cluster_188439	GO:0005886:[CC] plasma membrane	CC	0.07	0
+Cluster_188439	GO:0006793:[BP] phosphorus metabolic process	BP	0.44	0
+Cluster_188439	GO:0006811:[BP] ion transport	BP	0.03	0
+Cluster_188439	GO:0006855:[BP] drug transmembrane transport	BP	0.03	0
+Cluster_188439	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.73	1
+Cluster_188439	GO:0009279:[CC] cell outer membrane	CC	0.02	0
+Cluster_188439	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_188439	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.07	0
+Cluster_188439	GO:0016787:[MF] hydrolase activity	MF	0.45	0
+Cluster_188439	GO:0016836:[MF] hydro-lyase activity	MF	0.15	0
+Cluster_188439	GO:0016854:[MF] racemase and epimerase activity	MF	0.77	1
+Cluster_188439	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.26	0
+Cluster_188439	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.29	0
+Cluster_188439	GO:0046930:[CC] pore complex	CC	0.09	0
+Cluster_188439	GO:0051287:[MF] NAD binding	MF	0.04	0
+Cluster_188439	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.52	0
+Cluster_196258	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
+Cluster_196258	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Cluster_196258	GO:0005737:[CC] cytoplasm	CC	0.43	0
+Cluster_196258	GO:0005886:[CC] plasma membrane	CC	0.23	0
+Cluster_196258	GO:0006793:[BP] phosphorus metabolic process	BP	0.58	0
+Cluster_196258	GO:0006811:[BP] ion transport	BP	0.0	0
+Cluster_196258	GO:0006855:[BP] drug transmembrane transport	BP	0.18	0
+Cluster_196258	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
+Cluster_196258	GO:0009279:[CC] cell outer membrane	CC	0.02	0
+Cluster_196258	GO:0015288:[MF] porin activity	MF	0.04	0
+Cluster_196258	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.07	0
+Cluster_196258	GO:0016787:[MF] hydrolase activity	MF	0.29	0
+Cluster_196258	GO:0016836:[MF] hydro-lyase activity	MF	0.27	0
+Cluster_196258	GO:0016854:[MF] racemase and epimerase activity	MF	0.7	0
+Cluster_196258	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.53	0
+Cluster_196258	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.43	0
+Cluster_196258	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_196258	GO:0051287:[MF] NAD binding	MF	0.07	0
+Cluster_196258	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.74	0
+Cluster_208492	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.06	0
+Cluster_208492	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Cluster_208492	GO:0005737:[CC] cytoplasm	CC	0.43	0
+Cluster_208492	GO:0005886:[CC] plasma membrane	CC	0.64	0
+Cluster_208492	GO:0006793:[BP] phosphorus metabolic process	BP	0.25	0
+Cluster_208492	GO:0006811:[BP] ion transport	BP	0.82	1
+Cluster_208492	GO:0006855:[BP] drug transmembrane transport	BP	0.07	0
+Cluster_208492	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.09	0
+Cluster_208492	GO:0009279:[CC] cell outer membrane	CC	0.99	1
+Cluster_208492	GO:0015288:[MF] porin activity	MF	0.98	1
+Cluster_208492	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.07	0
+Cluster_208492	GO:0016787:[MF] hydrolase activity	MF	0.49	0
+Cluster_208492	GO:0016836:[MF] hydro-lyase activity	MF	0.47	0
+Cluster_208492	GO:0016854:[MF] racemase and epimerase activity	MF	0.24	0
+Cluster_208492	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.21	0
+Cluster_208492	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.27	0
+Cluster_208492	GO:0046930:[CC] pore complex	CC	1.0	1
+Cluster_208492	GO:0051287:[MF] NAD binding	MF	0.14	0
+Cluster_208492	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.41	0
+Cluster_213820	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.03	0
+Cluster_213820	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Cluster_213820	GO:0005737:[CC] cytoplasm	CC	0.52	0
+Cluster_213820	GO:0005886:[CC] plasma membrane	CC	0.28	0
+Cluster_213820	GO:0006793:[BP] phosphorus metabolic process	BP	0.32	0
+Cluster_213820	GO:0006811:[BP] ion transport	BP	0.1	0
+Cluster_213820	GO:0006855:[BP] drug transmembrane transport	BP	0.0	0
+Cluster_213820	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.13	0
+Cluster_213820	GO:0009279:[CC] cell outer membrane	CC	0.06	0
+Cluster_213820	GO:0015288:[MF] porin activity	MF	0.03	0
+Cluster_213820	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.08	0
+Cluster_213820	GO:0016787:[MF] hydrolase activity	MF	0.61	0
+Cluster_213820	GO:0016836:[MF] hydro-lyase activity	MF	0.28	0
+Cluster_213820	GO:0016854:[MF] racemase and epimerase activity	MF	0.35	0
+Cluster_213820	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.43	0
+Cluster_213820	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.3	0
+Cluster_213820	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_213820	GO:0051287:[MF] NAD binding	MF	0.16	0
+Cluster_213820	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.34	0
+Cluster_26001	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Cluster_26001	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_26001	GO:0005737:[CC] cytoplasm	CC	0.56	0
+Cluster_26001	GO:0005886:[CC] plasma membrane	CC	0.23	0
+Cluster_26001	GO:0006793:[BP] phosphorus metabolic process	BP	0.24	0
+Cluster_26001	GO:0006811:[BP] ion transport	BP	0.0	0
+Cluster_26001	GO:0006855:[BP] drug transmembrane transport	BP	0.18	0
+Cluster_26001	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.31	0
+Cluster_26001	GO:0009279:[CC] cell outer membrane	CC	0.07	0
+Cluster_26001	GO:0015288:[MF] porin activity	MF	0.04	0
+Cluster_26001	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
+Cluster_26001	GO:0016787:[MF] hydrolase activity	MF	0.79	0
+Cluster_26001	GO:0016836:[MF] hydro-lyase activity	MF	0.68	0
+Cluster_26001	GO:0016854:[MF] racemase and epimerase activity	MF	0.68	0
+Cluster_26001	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.38	0
+Cluster_26001	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.33	0
+Cluster_26001	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_26001	GO:0051287:[MF] NAD binding	MF	0.09	0
+Cluster_26001	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.67	0
+Cluster_27624	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Cluster_27624	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.12	0
+Cluster_27624	GO:0005737:[CC] cytoplasm	CC	0.56	0
+Cluster_27624	GO:0005886:[CC] plasma membrane	CC	0.49	0
+Cluster_27624	GO:0006793:[BP] phosphorus metabolic process	BP	0.06	0
+Cluster_27624	GO:0006811:[BP] ion transport	BP	0.09	0
+Cluster_27624	GO:0006855:[BP] drug transmembrane transport	BP	0.25	0
+Cluster_27624	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.31	0
+Cluster_27624	GO:0009279:[CC] cell outer membrane	CC	0.04	0
+Cluster_27624	GO:0015288:[MF] porin activity	MF	0.03	0
+Cluster_27624	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
+Cluster_27624	GO:0016787:[MF] hydrolase activity	MF	0.79	0
+Cluster_27624	GO:0016836:[MF] hydro-lyase activity	MF	0.32	1
+Cluster_27624	GO:0016854:[MF] racemase and epimerase activity	MF	0.61	0
+Cluster_27624	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.29	0
+Cluster_27624	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.83	0
+Cluster_27624	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_27624	GO:0051287:[MF] NAD binding	MF	0.01	0
+Cluster_27624	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.79	0
+Cluster_276414	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Cluster_276414	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_276414	GO:0005737:[CC] cytoplasm	CC	0.56	0
+Cluster_276414	GO:0005886:[CC] plasma membrane	CC	0.49	0
+Cluster_276414	GO:0006793:[BP] phosphorus metabolic process	BP	0.14	0
+Cluster_276414	GO:0006811:[BP] ion transport	BP	0.1	0
+Cluster_276414	GO:0006855:[BP] drug transmembrane transport	BP	0.16	0
+Cluster_276414	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.23	0
+Cluster_276414	GO:0009279:[CC] cell outer membrane	CC	0.79	1
+Cluster_276414	GO:0015288:[MF] porin activity	MF	0.03	0
+Cluster_276414	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.04	0
+Cluster_276414	GO:0016787:[MF] hydrolase activity	MF	0.23	0
+Cluster_276414	GO:0016836:[MF] hydro-lyase activity	MF	0.73	0
+Cluster_276414	GO:0016854:[MF] racemase and epimerase activity	MF	0.33	0
+Cluster_276414	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.42	0
+Cluster_276414	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.33	0
+Cluster_276414	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_276414	GO:0051287:[MF] NAD binding	MF	0.01	0
+Cluster_276414	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.82	0
+Cluster_30007	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Cluster_30007	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_30007	GO:0005737:[CC] cytoplasm	CC	0.53	0
+Cluster_30007	GO:0005886:[CC] plasma membrane	CC	0.5	0
+Cluster_30007	GO:0006793:[BP] phosphorus metabolic process	BP	0.09	0
+Cluster_30007	GO:0006811:[BP] ion transport	BP	0.0	0
+Cluster_30007	GO:0006855:[BP] drug transmembrane transport	BP	0.1	0
+Cluster_30007	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.42	0
+Cluster_30007	GO:0009279:[CC] cell outer membrane	CC	0.87	1
+Cluster_30007	GO:0015288:[MF] porin activity	MF	0.06	0
+Cluster_30007	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
+Cluster_30007	GO:0016787:[MF] hydrolase activity	MF	0.29	0
+Cluster_30007	GO:0016836:[MF] hydro-lyase activity	MF	0.68	0
+Cluster_30007	GO:0016854:[MF] racemase and epimerase activity	MF	0.57	0
+Cluster_30007	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.43	0
+Cluster_30007	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.41	0
+Cluster_30007	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_30007	GO:0051287:[MF] NAD binding	MF	0.12	0
+Cluster_30007	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.73	0
+Cluster_30066	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Cluster_30066	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_30066	GO:0005737:[CC] cytoplasm	CC	0.56	0
+Cluster_30066	GO:0005886:[CC] plasma membrane	CC	0.71	0
+Cluster_30066	GO:0006793:[BP] phosphorus metabolic process	BP	0.25	0
+Cluster_30066	GO:0006811:[BP] ion transport	BP	0.0	0
+Cluster_30066	GO:0006855:[BP] drug transmembrane transport	BP	0.41	0
+Cluster_30066	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.4	0
+Cluster_30066	GO:0009279:[CC] cell outer membrane	CC	0.07	0
+Cluster_30066	GO:0015288:[MF] porin activity	MF	0.04	0
+Cluster_30066	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
+Cluster_30066	GO:0016787:[MF] hydrolase activity	MF	0.75	0
+Cluster_30066	GO:0016836:[MF] hydro-lyase activity	MF	0.68	0
+Cluster_30066	GO:0016854:[MF] racemase and epimerase activity	MF	0.62	0
+Cluster_30066	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.43	0
+Cluster_30066	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.69	0
+Cluster_30066	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_30066	GO:0051287:[MF] NAD binding	MF	0.09	0
+Cluster_30066	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.73	0
+Cluster_439334	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Cluster_439334	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.0	0
+Cluster_439334	GO:0005737:[CC] cytoplasm	CC	0.35	0
+Cluster_439334	GO:0005886:[CC] plasma membrane	CC	0.31	0
+Cluster_439334	GO:0006793:[BP] phosphorus metabolic process	BP	0.25	0
+Cluster_439334	GO:0006811:[BP] ion transport	BP	0.56	1
+Cluster_439334	GO:0006855:[BP] drug transmembrane transport	BP	0.63	0
+Cluster_439334	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.31	0
+Cluster_439334	GO:0009279:[CC] cell outer membrane	CC	0.95	1
+Cluster_439334	GO:0015288:[MF] porin activity	MF	0.98	1
+Cluster_439334	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
+Cluster_439334	GO:0016787:[MF] hydrolase activity	MF	0.24	0
+Cluster_439334	GO:0016836:[MF] hydro-lyase activity	MF	0.13	0
+Cluster_439334	GO:0016854:[MF] racemase and epimerase activity	MF	0.63	0
+Cluster_439334	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.22	0
+Cluster_439334	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.67	0
+Cluster_439334	GO:0046930:[CC] pore complex	CC	0.99	1
+Cluster_439334	GO:0051287:[MF] NAD binding	MF	0.01	0
+Cluster_439334	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.43	0
+Cluster_46096	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Cluster_46096	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_46096	GO:0005737:[CC] cytoplasm	CC	0.71	0
+Cluster_46096	GO:0005886:[CC] plasma membrane	CC	0.54	0
+Cluster_46096	GO:0006793:[BP] phosphorus metabolic process	BP	0.12	0
+Cluster_46096	GO:0006811:[BP] ion transport	BP	0.1	0
+Cluster_46096	GO:0006855:[BP] drug transmembrane transport	BP	0.16	0
+Cluster_46096	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.21	0
+Cluster_46096	GO:0009279:[CC] cell outer membrane	CC	0.06	0
+Cluster_46096	GO:0015288:[MF] porin activity	MF	0.03	0
+Cluster_46096	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
+Cluster_46096	GO:0016787:[MF] hydrolase activity	MF	0.65	0
+Cluster_46096	GO:0016836:[MF] hydro-lyase activity	MF	0.72	0
+Cluster_46096	GO:0016854:[MF] racemase and epimerase activity	MF	0.33	0
+Cluster_46096	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.28	0
+Cluster_46096	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.69	0
+Cluster_46096	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_46096	GO:0051287:[MF] NAD binding	MF	0.01	0
+Cluster_46096	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.82	0
+Cluster_49870	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Cluster_49870	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_49870	GO:0005737:[CC] cytoplasm	CC	0.48	0
+Cluster_49870	GO:0005886:[CC] plasma membrane	CC	0.72	0
+Cluster_49870	GO:0006793:[BP] phosphorus metabolic process	BP	0.24	0
+Cluster_49870	GO:0006811:[BP] ion transport	BP	0.12	0
+Cluster_49870	GO:0006855:[BP] drug transmembrane transport	BP	0.14	0
+Cluster_49870	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.77	1
+Cluster_49870	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_49870	GO:0015288:[MF] porin activity	MF	0.02	0
+Cluster_49870	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.12	0
+Cluster_49870	GO:0016787:[MF] hydrolase activity	MF	0.79	0
+Cluster_49870	GO:0016836:[MF] hydro-lyase activity	MF	0.67	0
+Cluster_49870	GO:0016854:[MF] racemase and epimerase activity	MF	0.77	1
+Cluster_49870	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.12	0
+Cluster_49870	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.5	0
+Cluster_49870	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_49870	GO:0051287:[MF] NAD binding	MF	0.01	0
+Cluster_49870	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.76	0
+Cluster_51361	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Cluster_51361	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.12	0
+Cluster_51361	GO:0005737:[CC] cytoplasm	CC	0.35	0
+Cluster_51361	GO:0005886:[CC] plasma membrane	CC	0.65	0
+Cluster_51361	GO:0006793:[BP] phosphorus metabolic process	BP	0.07	0
+Cluster_51361	GO:0006811:[BP] ion transport	BP	0.99	1
+Cluster_51361	GO:0006855:[BP] drug transmembrane transport	BP	0.71	0
+Cluster_51361	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.22	0
+Cluster_51361	GO:0009279:[CC] cell outer membrane	CC	0.94	1
+Cluster_51361	GO:0015288:[MF] porin activity	MF	0.99	1
+Cluster_51361	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.12	0
+Cluster_51361	GO:0016787:[MF] hydrolase activity	MF	0.34	0
+Cluster_51361	GO:0016836:[MF] hydro-lyase activity	MF	0.13	0
+Cluster_51361	GO:0016854:[MF] racemase and epimerase activity	MF	0.63	0
+Cluster_51361	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.12	0
+Cluster_51361	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.67	0
+Cluster_51361	GO:0046930:[CC] pore complex	CC	0.57	1
+Cluster_51361	GO:0051287:[MF] NAD binding	MF	0.01	0
+Cluster_51361	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.38	0
+Cluster_533836	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.09	0
+Cluster_533836	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.06	0
+Cluster_533836	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_533836	GO:0005886:[CC] plasma membrane	CC	0.11	0
+Cluster_533836	GO:0006793:[BP] phosphorus metabolic process	BP	0.29	0
+Cluster_533836	GO:0006811:[BP] ion transport	BP	1.0	1
+Cluster_533836	GO:0006855:[BP] drug transmembrane transport	BP	0.58	0
+Cluster_533836	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.13	0
+Cluster_533836	GO:0009279:[CC] cell outer membrane	CC	0.98	0
+Cluster_533836	GO:0015288:[MF] porin activity	MF	0.99	1
+Cluster_533836	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.09	0
+Cluster_533836	GO:0016787:[MF] hydrolase activity	MF	0.47	0
+Cluster_533836	GO:0016836:[MF] hydro-lyase activity	MF	0.13	0
+Cluster_533836	GO:0016854:[MF] racemase and epimerase activity	MF	0.35	0
+Cluster_533836	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.12	0
+Cluster_533836	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
+Cluster_533836	GO:0046930:[CC] pore complex	CC	0.98	1
+Cluster_533836	GO:0051287:[MF] NAD binding	MF	0.03	0
+Cluster_533836	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.45	0
+Cluster_55131	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.95	1
+Cluster_55131	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.95	1
+Cluster_55131	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_55131	GO:0005886:[CC] plasma membrane	CC	0.13	0
+Cluster_55131	GO:0006793:[BP] phosphorus metabolic process	BP	0.82	1
+Cluster_55131	GO:0006811:[BP] ion transport	BP	0.12	0
+Cluster_55131	GO:0006855:[BP] drug transmembrane transport	BP	0.23	0
+Cluster_55131	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.87	1
+Cluster_55131	GO:0009279:[CC] cell outer membrane	CC	0.0	0
+Cluster_55131	GO:0015288:[MF] porin activity	MF	0.02	0
+Cluster_55131	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.19	0
+Cluster_55131	GO:0016787:[MF] hydrolase activity	MF	0.13	0
+Cluster_55131	GO:0016836:[MF] hydro-lyase activity	MF	0.15	0
+Cluster_55131	GO:0016854:[MF] racemase and epimerase activity	MF	0.43	0
+Cluster_55131	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.73	1
+Cluster_55131	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.17	1
+Cluster_55131	GO:0046930:[CC] pore complex	CC	0.03	0
+Cluster_55131	GO:0051287:[MF] NAD binding	MF	0.93	1
+Cluster_55131	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.16	0
+Cluster_614647	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.11	0
+Cluster_614647	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.06	0
+Cluster_614647	GO:0005737:[CC] cytoplasm	CC	0.36	0
+Cluster_614647	GO:0005886:[CC] plasma membrane	CC	0.27	0
+Cluster_614647	GO:0006793:[BP] phosphorus metabolic process	BP	0.74	0
+Cluster_614647	GO:0006811:[BP] ion transport	BP	0.0	0
+Cluster_614647	GO:0006855:[BP] drug transmembrane transport	BP	0.12	0
+Cluster_614647	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.2	0
+Cluster_614647	GO:0009279:[CC] cell outer membrane	CC	0.11	0
+Cluster_614647	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_614647	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.08	0
+Cluster_614647	GO:0016787:[MF] hydrolase activity	MF	0.97	1
+Cluster_614647	GO:0016836:[MF] hydro-lyase activity	MF	0.66	0
+Cluster_614647	GO:0016854:[MF] racemase and epimerase activity	MF	0.37	0
+Cluster_614647	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.08	0
+Cluster_614647	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
+Cluster_614647	GO:0046930:[CC] pore complex	CC	0.02	0
+Cluster_614647	GO:0051287:[MF] NAD binding	MF	0.1	0
+Cluster_614647	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.37	0
+Cluster_62081	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.97	1
+Cluster_62081	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.98	1
+Cluster_62081	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_62081	GO:0005886:[CC] plasma membrane	CC	0.2	0
+Cluster_62081	GO:0006793:[BP] phosphorus metabolic process	BP	0.82	1
+Cluster_62081	GO:0006811:[BP] ion transport	BP	0.12	0
+Cluster_62081	GO:0006855:[BP] drug transmembrane transport	BP	0.23	0
+Cluster_62081	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.95	1
+Cluster_62081	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_62081	GO:0015288:[MF] porin activity	MF	0.02	0
+Cluster_62081	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.19	0
+Cluster_62081	GO:0016787:[MF] hydrolase activity	MF	0.16	0
+Cluster_62081	GO:0016836:[MF] hydro-lyase activity	MF	0.15	0
+Cluster_62081	GO:0016854:[MF] racemase and epimerase activity	MF	0.39	0
+Cluster_62081	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.58	1
+Cluster_62081	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.17	1
+Cluster_62081	GO:0046930:[CC] pore complex	CC	0.03	0
+Cluster_62081	GO:0051287:[MF] NAD binding	MF	0.91	1
+Cluster_62081	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.16	0
+Cluster_62157	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.11	0
+Cluster_62157	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Cluster_62157	GO:0005737:[CC] cytoplasm	CC	0.36	0
+Cluster_62157	GO:0005886:[CC] plasma membrane	CC	0.16	0
+Cluster_62157	GO:0006793:[BP] phosphorus metabolic process	BP	0.78	0
+Cluster_62157	GO:0006811:[BP] ion transport	BP	0.04	0
+Cluster_62157	GO:0006855:[BP] drug transmembrane transport	BP	0.05	0
+Cluster_62157	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.2	0
+Cluster_62157	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_62157	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_62157	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Cluster_62157	GO:0016787:[MF] hydrolase activity	MF	0.4	0
+Cluster_62157	GO:0016836:[MF] hydro-lyase activity	MF	0.67	0
+Cluster_62157	GO:0016854:[MF] racemase and epimerase activity	MF	0.37	0
+Cluster_62157	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.19	0
+Cluster_62157	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
+Cluster_62157	GO:0046930:[CC] pore complex	CC	0.02	0
+Cluster_62157	GO:0051287:[MF] NAD binding	MF	0.02	0
+Cluster_62157	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.21	0
+Cluster_646479	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.09	0
+Cluster_646479	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.06	0
+Cluster_646479	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_646479	GO:0005886:[CC] plasma membrane	CC	0.6	0
+Cluster_646479	GO:0006793:[BP] phosphorus metabolic process	BP	0.23	0
+Cluster_646479	GO:0006811:[BP] ion transport	BP	0.98	1
+Cluster_646479	GO:0006855:[BP] drug transmembrane transport	BP	0.96	0
+Cluster_646479	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.04	0
+Cluster_646479	GO:0009279:[CC] cell outer membrane	CC	1.0	1
+Cluster_646479	GO:0015288:[MF] porin activity	MF	0.99	1
+Cluster_646479	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.19	0
+Cluster_646479	GO:0016787:[MF] hydrolase activity	MF	0.34	0
+Cluster_646479	GO:0016836:[MF] hydro-lyase activity	MF	0.03	0
+Cluster_646479	GO:0016854:[MF] racemase and epimerase activity	MF	0.4	0
+Cluster_646479	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.06	0
+Cluster_646479	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
+Cluster_646479	GO:0046930:[CC] pore complex	CC	0.99	1
+Cluster_646479	GO:0051287:[MF] NAD binding	MF	0.21	0
+Cluster_646479	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.39	0
+Cluster_715116	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.11	0
+Cluster_715116	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
+Cluster_715116	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_715116	GO:0005886:[CC] plasma membrane	CC	0.11	0
+Cluster_715116	GO:0006793:[BP] phosphorus metabolic process	BP	0.74	0
+Cluster_715116	GO:0006811:[BP] ion transport	BP	0.01	0
+Cluster_715116	GO:0006855:[BP] drug transmembrane transport	BP	0.12	0
+Cluster_715116	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.21	0
+Cluster_715116	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_715116	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_715116	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.05	0
+Cluster_715116	GO:0016787:[MF] hydrolase activity	MF	0.47	0
+Cluster_715116	GO:0016836:[MF] hydro-lyase activity	MF	0.66	0
+Cluster_715116	GO:0016854:[MF] racemase and epimerase activity	MF	0.59	0
+Cluster_715116	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.26	0
+Cluster_715116	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
+Cluster_715116	GO:0046930:[CC] pore complex	CC	0.04	0
+Cluster_715116	GO:0051287:[MF] NAD binding	MF	0.03	0
+Cluster_715116	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.15	0
+Cluster_727946	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.11	0
+Cluster_727946	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Cluster_727946	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_727946	GO:0005886:[CC] plasma membrane	CC	0.11	0
+Cluster_727946	GO:0006793:[BP] phosphorus metabolic process	BP	0.23	0
+Cluster_727946	GO:0006811:[BP] ion transport	BP	0.98	1
+Cluster_727946	GO:0006855:[BP] drug transmembrane transport	BP	0.84	0
+Cluster_727946	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.04	0
+Cluster_727946	GO:0009279:[CC] cell outer membrane	CC	0.94	0
+Cluster_727946	GO:0015288:[MF] porin activity	MF	0.98	1
+Cluster_727946	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.15	0
+Cluster_727946	GO:0016787:[MF] hydrolase activity	MF	0.45	0
+Cluster_727946	GO:0016836:[MF] hydro-lyase activity	MF	0.22	0
+Cluster_727946	GO:0016854:[MF] racemase and epimerase activity	MF	0.63	0
+Cluster_727946	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.08	0
+Cluster_727946	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
+Cluster_727946	GO:0046930:[CC] pore complex	CC	0.98	1
+Cluster_727946	GO:0051287:[MF] NAD binding	MF	0.02	0
+Cluster_727946	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.39	0
+Cluster_7792	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.11	0
+Cluster_7792	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.06	0
+Cluster_7792	GO:0005737:[CC] cytoplasm	CC	0.26	0
+Cluster_7792	GO:0005886:[CC] plasma membrane	CC	0.97	1
+Cluster_7792	GO:0006793:[BP] phosphorus metabolic process	BP	0.75	0
+Cluster_7792	GO:0006811:[BP] ion transport	BP	0.01	0
+Cluster_7792	GO:0006855:[BP] drug transmembrane transport	BP	0.96	1
+Cluster_7792	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.04	0
+Cluster_7792	GO:0009279:[CC] cell outer membrane	CC	0.09	0
+Cluster_7792	GO:0015288:[MF] porin activity	MF	0.0	0
+Cluster_7792	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.99	1
+Cluster_7792	GO:0016787:[MF] hydrolase activity	MF	0.07	0
+Cluster_7792	GO:0016836:[MF] hydro-lyase activity	MF	0.32	0
+Cluster_7792	GO:0016854:[MF] racemase and epimerase activity	MF	0.37	0
+Cluster_7792	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.08	0
+Cluster_7792	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.03	0
+Cluster_7792	GO:0046930:[CC] pore complex	CC	0.02	0
+Cluster_7792	GO:0051287:[MF] NAD binding	MF	0.21	0
+Cluster_7792	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.1	0
+Cluster_917127	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.09	0
+Cluster_917127	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.06	0
+Cluster_917127	GO:0005737:[CC] cytoplasm	CC	0.26	1
+Cluster_917127	GO:0005886:[CC] plasma membrane	CC	0.4	1
+Cluster_917127	GO:0006793:[BP] phosphorus metabolic process	BP	0.79	0
+Cluster_917127	GO:0006811:[BP] ion transport	BP	0.12	0
+Cluster_917127	GO:0006855:[BP] drug transmembrane transport	BP	0.23	0
+Cluster_917127	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.24	0
+Cluster_917127	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Cluster_917127	GO:0015288:[MF] porin activity	MF	0.02	0
+Cluster_917127	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.19	0
+Cluster_917127	GO:0016787:[MF] hydrolase activity	MF	0.78	1
+Cluster_917127	GO:0016836:[MF] hydro-lyase activity	MF	0.32	0
+Cluster_917127	GO:0016854:[MF] racemase and epimerase activity	MF	0.37	0
+Cluster_917127	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.12	1
+Cluster_917127	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
+Cluster_917127	GO:0046930:[CC] pore complex	CC	0.03	0
+Cluster_917127	GO:0051287:[MF] NAD binding	MF	0.21	0
+Cluster_917127	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.25	1
