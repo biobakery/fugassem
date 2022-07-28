@@ -85,7 +85,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
 **Option 2: Installing with pip**
 
 * `$ pip install fugassem`
-* If you do not have write permissions to `/usr/lib/`, then add the option --user to the install command. This will install the python package into subdirectories of `~/.local/`. Please note when using the --user install option on some platforms, you might need to add `~/.local/bin/` to your $PATH as it might not be included by default. You will know if it needs to be added if you see the following message `metawibele: command not found` when trying to run MetaWIBELE after installing with the --user option.
+* If you do not have write permissions to `/usr/lib/`, then add the option --user to the install command. This will install the python package into subdirectories of `~/.local/`. Please note when using the --user install option on some platforms, you might need to add `~/.local/bin/` to your $PATH as it might not be included by default. You will know if it needs to be added if you see the following message `fugassem: command not found` when trying to run FUGAsseM after installing with the --user option.
 
 **Option 3: Installing from source**
 
@@ -108,7 +108,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
 
 3. Install FUGAsseM package
 	* `$ python setup.py install`
-	* If you do not have write permissions to '/usr/lib/', then add the option --user to the install command. This will install the python package into subdirectories of '\~/.local'. Please note when using the '--user' install option on some platforms, you might need to add '\~/.local/bin/' to your $PATH as it might not be included by default. You will know if it needs to be added if you see the following message `fugassem: command not found` when trying to run MetaWIBELE after installing with the '--user' option.
+	* If you do not have write permissions to '/usr/lib/', then add the option --user to the install command. This will install the python package into subdirectories of '\~/.local'. Please note when using the '--user' install option on some platforms, you might need to add '\~/.local/bin/' to your $PATH as it might not be included by default. You will know if it needs to be added if you see the following message `fugassem: command not found` when trying to run FUGAsseM after installing with the '--user' option.
  
 
 ## How to run
