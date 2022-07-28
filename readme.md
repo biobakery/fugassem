@@ -15,7 +15,7 @@ TBD
 [http://huttenhower.sph.harvard.edu/fugassem](http://huttenhower.sph.harvard.edu/fugassem)
 
 
-**For additional information, read the [FUGAsseM Tutorial](https://github.com/biobakery/fugassem/wiki)**
+**For additional information, read the [FUGAsseM Tutorial](https://github.com/biobakery/fugassem/wiki/fugassem)**
 
 
 If you have questions about FUGAsseM, please direct it to [the FUGAsseM channel](https://forum.biobakery.org/c/Microbial-community-profiling/fugassem) of the bioBakery Support Forum.
@@ -112,7 +112,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
  
 
 ## How to run
-### Bsic usages
+### Basic usages
 * For a list of command line options, run:
 
 	`$ fugassem --help`
@@ -157,16 +157,16 @@ You only need to do **any one** of the following options to install the FUGAsseM
 
 * **Option: --go-mode**
 	
-	Mode of Gene Ontolog (GO) set used for prediction [ Default: "bug-specific" ]:
+	Mode of Gene Ontolog (GO) set used for prediction:
 	
-	* "bug-specific": bug-specific informative terms
-	* "universal": universal informative terms, 
-	* "union": merged bug informative terms for overall prediction
+	* "bug-specific": bug-specific informative terms (where "informative" term is defined as a term that contains >X genes and all of its child terms contain < X genes)
+	* "universal": universal informative terms 
+	* "union": merged bug informative terms for overall prediction *[Recommended]*
                        
 
 * **Option: --go-level** 
 
-	GO informative level used for trimming terms that are informative at a given level [ Default: none ]:
+	GO informative level used for trimming terms that are informative at a given level:
 	
 	* \<number OR fraction of genes\>: spcify numeric level for triming
 	* \<all\>: keep all terms
@@ -174,24 +174,23 @@ You only need to do **any one** of the following options to install the FUGAsseM
                         
 * **Option: --vector-list**
 
-	\<string\> a comma separated list of vector-based evidence files, such as protein-over-function type of files [ Default: None ].
-  --matrix-list MATRIX_LIST
+	\<string\> a comma separated list of vector-based evidence files, such as protein-over-function type of files.
 	
 * **Option: --matrix-list**
 
-	\<string\> a comma separated list of matrix-based evidence files, such as protein-over-protein network type of file) [ Default: None ].
+	\<string\> a comma separated list of matrix-based evidence files, such as protein-over-protein network type of file).
 
 * **Option: --minimum-prevalence**
 
- 	\<fraction\> minimum prevalence of each protein family in normalized MTX stratified by taxa scaling to 1 [ Default: 0 ].
+ 	\<fraction\> minimum prevalence of each protein family in normalized MTX stratified by taxa scaling to 1.
 
 * **Option: --minimum-coverage**
 
-	\<fraction\> minimum fraction of annotated genes per taxon [ Default: 0 ].
+	\<fraction\> minimum fraction of annotated genes per taxon.
 
 * **Option: --minimum-number**
 
-	\<integral number\> minimum number of total genes per taxon [ Default: 0 ].
+	\<integral number\> minimum number of total genes per taxon.
 
 * **Parallelization Options**
 
@@ -257,7 +256,7 @@ When FUGAsseM is run, the prediction files will be created for each taxon in the
 	...
 	```
 	
-* File name: `$OUTPUT_DIR/$TAXONNAME/finalized/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`
+* File name: `$OUTPUT_DIR/$TAXONNAME/prediction/finalized/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`
 * This file includes the finalized predictions by integrating multiple machine learning (ML) classifier (TSV format file).
 * `$OUTPUT_DIR` = the output folder
 * `$BASENAME` = the basename of output files
@@ -291,7 +290,7 @@ When FUGAsseM is run, the prediction files will be created for each taxon in the
 	...
 	```
 	
-* File name: `$OUTPUT_DIR/$TAXONNAME/$EVIDENCE_TYPE/$BASENAME.$TAXONNAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
+* File name: `$OUTPUT_DIR/$TAXONNAME/prediction/$EVIDENCE_TYPE/$BASENAME.$TAXONNAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
 * This file includes the predictions based on individual type of evidence (TSV format file).
 * `$OUTPUT_DIR` = the output folder
 * `$BASENAME` = the basename of output files
@@ -319,7 +318,7 @@ FUGAsseM takes a MTX-based abundance (that is normalized within each taxon) tabl
 	
 * **Option 2: Assembled-based approach**
 
-	The second option relies on assembled protein families from MGX. We provide a utility in the FUGAsseM package called fugassem\_generate\_stratified\_mtx\_input to help generate the MTX abundance table. This utility (1) maps MTX shortgun reads against MGX-assembled gene catagologs, (2) sums up the quantified abundance of gene catalogs to protein families level, (3) normalize the protein-family-based MTX abundance within each stratified taxon. The output of this utility can be taken as FUGAsseM input.
+	The second option relies on assembled protein families from MGX. We provide a utility in the FUGAsseM package called fugassem\_generate\_stratified\_mtx\_input to help generate the MTX abundance table. This utility (1) maps MTX shortgun reads against MGX-assembled gene catagologs, (2) sums up the quantified abundance of gene catalogs to protein families level, (3) normalize the protein-family-based MTX abundance within each stratified taxon. The output of this utility can be taken as FUGAsseM's input.
 
 	#### Generating workflow
 	`$ fugassem_generate_stratified_mtx_input --help`
@@ -373,14 +372,15 @@ FUGAsseM takes a MTX-based abundance (that is normalized within each taxon) tabl
 	* `--output`: the output directory. 
 	
 	#### Input files of preparing MTX abundance utility
-	* QC'ed shotgun sequencing metagenome file (fastq, fastq.gz, fasta, or fasta.gz format), e.g. "raw_reads" folder including:
-		- [sample1_R1.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_reads/sample1_R1.fastq.gz)
-		- [sample1_R2.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_reads/sample1_R2.fastq.gz)
-		- [sample2_R1.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_reads/sample2_R1.fastq.gz)
-		- [sample2_R2.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_reads/sample2_R2.fastq.gz)
+	* QC'ed shotgun sequencing metatranscriptome file (fastq, fastq.gz, fasta, or fasta.gz format), e.g. "raw_input" folder including:
+		- [sample1_R1.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample1_R1.fastq.gz)
+		- [sample1_R2.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample1_R2.fastq.gz)
+		- [sample2_R1.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample2_R1.fastq.gz)
+		- [sample2_R2.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample2_R2.fastq.gz)
 	* clustering file of non-redundant gene catalogs (extended-fasta format): [demo_genecatalogs.clstr](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_genecatalogs.clstr)
 	* nucleotide sequences of representatives for non-redundant gene catalogs (fasta format): [demo_genecatalogs.centroid.fna](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_genecatalogs.centroid.fna)
 	* clustering file of protein families clustered by non-redundant gene catalogs (extended-fasta format): [demo_proteinfamilies.clstr](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_proteinfamilies.clstr)
+	* taxonomy file of protein families clustered by non-redundant gene catalogs (tsv format): [demo\_proteinfamilies\_annotation.taxonomy.tsv](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_proteinfamilies_annotation.taxonomy.tsv)
 	* See the section on parallelization options to optimize the workflow run based on your computing resources. 
 	* The workflow runs with the default settings for all main tool subtasks. If you need to customize your workflow settings for the preprocessing workflow to modify the default settings, you can change the parameter settings.
 		* For example, `--extension-paired "$R1_suffix,$R2_suffix"`, `--extension "$fastq_suffix"` (what are the following part after `$SAMPLE` in the input file names) will modify the default settings when running the assembly task.
@@ -469,7 +469,7 @@ usage: fugassem_generate_annotation_input [-h] [--version]
 #### Input files of preparing evidence utility
 * MetaWIBELE's annotationfile (TSV format): [demo_proteinfamilies_annotation.tsv](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_proteinfamilies_annotation.tsv)
 * clustering file of protein families clustered by non-redundant gene catalogs (extended-fasta format): [demo_proteinfamilies.clstr](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_proteinfamilies.clstr)
-* the source assembled contigs of each gene file (TSV format): [demo_gene_info.tsv](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_gene_info.tsv)
+* source assembled contigs of assembled genes file (TSV format): [demo_gene_info.tsv](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_gene_info.tsv)
 * UniRef50-like clustering annotation file (TSV format): [demo_map_proteinfamilies.ident50.tsv] (https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_map_proteinfamilies.ident50.tsv) 
 * See the section on parallelization options to optimize the workflow run based on your computing resources. 
 * The workflow runs with the default settings for all main tool subtasks. If you need to customize your workflow settings for the preprocessing workflow to modify the default settings, you can change the parameter settings.
@@ -586,7 +586,7 @@ Cluster_62081   PSM7J1BL_contig_k105_506
 	
 * This file provides the contig annotations of protein families that will be used to build co-contig network as one type of matrix evidence (TSV format). 
 
-**5. demo\_proteinfamilies.contig.simple.tsv**
+**5. demo\_proteinfamilies.GO.homology.tsv**
 
 ```
 ID      GO:0000155__seqSimilarity       GO:0000166__seqSimilarity       GO:0000271__seqSimilarity       GO:0003674__seqSimilarity
