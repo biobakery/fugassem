@@ -95,7 +95,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
 	
 	* Option 1: Latest Release (Recommended)
 	
-		Download [fugassem.tar.gz](https://pypi.org/project/fugassem/) and unpack the latested release of FUGAsseM.
+		Download [fugassem-master.zip](https://github.com/biobakery/fugassem/archive/master.zip) and unpack the latested release of FUGAsseM.
 	
 	* Option 2: Development Version
 	
