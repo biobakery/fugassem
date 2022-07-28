@@ -9,6 +9,7 @@
 * Refined generate_annotation_input module to prepare co-homology evidence 
 * Added function for visualization
 * Fixed issue on processing fugassem_stratified_abundance module
+* Added example data
 
 ## v0.3.1 2022-03-02 ##
 * Fixed small issue from geneontology.py
