@@ -2,7 +2,6 @@
 # FUGAsseM History #
 
 ## v0.3.2 2022-04-08 ##
-* Updated GO-obo files
 * Added option for prediction using universal GO set 
 * Added option for prediction using global GO set
 * Added option for predicting terms from all GO ontologies
