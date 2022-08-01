@@ -1,10 +1,10 @@
-AnADAMA2
+anadama2
 numpy
 pandas
 multiprocessing
 sklearn
-matplotlib
 scipy
+matplotlib
 goatools
 statistics
 math
