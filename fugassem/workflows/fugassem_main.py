@@ -250,13 +250,13 @@ def fugassem_main (workflow):
 	if args.basename:
 		basename = args.basename
 	if not os.path.isfile(go_obo):
-		config.logger.info ("Error: please provide go-basic.obo file in the installed folder!")
+		config.logger.info ("Error: go-basic.obo doesn't exist: " + go_obo)
 		sys.exit("Please provide go-basic.obo file in the installed folder!")
 	if not os.path.isfile(mtx_file):
-		config.logger.info ("Error: please provide taxon-stratified MTX file!")
+		config.logger.info ("Error: taxon-stratified MTX file doesn't exist: " + mtx_file)
 		sys.exit("Please provide taxon-stratified MTX file!")
 	if not os.path.isfile(ann_file):
-		config.logger.info ("Error: please provide raw function annotation file") 
+		config.logger.info ("Error: original function annotation file doesn't exist: " + ann_file) 
 		sys.exit("Please provide raw function annotation file!")
 
 	## prepare outputs
