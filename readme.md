@@ -95,7 +95,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
 	
 	* Option 1: Latest Release (Recommended)
 	
-		Download [fugassem-master.zip](https://github.com/biobakery/fugassem/archive/master.zip) and unpack the latested release of FUGAsseM.
+		Download [fugassem.tar.gz](https://pypi.org/project/fugassem/) and unpack the latested release of FUGAsseM.
 	
 	* Option 2: Development Version
 	
@@ -121,7 +121,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
 
 	```
 	usage: fugassem_main.py [-h] [--version]
-                        [--taxon-level {MSP,Species,Genus,Family,Order,Class,Phylum}]
+                        [--taxon-level {MSP,Terminal,Species,Genus,Family,Order,Class,Phylum}]
                         [--minimum-prevalence MINIMUM_PREVALENCE]
                         [--minimum-abundance MINIMUM_ABUNDANCE]
                         [--minimum-detected MINIMUM_DETECTED]
@@ -228,82 +228,56 @@ You only need to do **any one** of the following options to install the FUGAsseM
 
 
 ### Output files
-When FUGAsseM is run, the prediction files will be created for each taxon in the `$OUTPUT_DIR`:
+When FUGAsseM is run, the merged prediction files of all taxa will be created at `$OUTPUT_DIR/merged`:
 
 **1. Finalized prediction file**
 		
 	```
-	feature func    category        score   raw_ann
-	Cluster_100559  GO:0000271      GO      0.34    0
-	Cluster_100559  GO:0003677      GO      0.31    0
-	Cluster_100559  GO:0003700      GO      0.68    0
-	Cluster_100559  GO:0003979      GO      0.9645  0
-	Cluster_100559  GO:0004564      GO      0.9625  0
-	Cluster_100559  GO:0005215      GO      0.19    0
-	Cluster_100559  GO:0005216      GO      0.19    0
-	Cluster_100559  GO:0005524      GO      0.11    0
-	Cluster_100559  GO:0005737      GO      0.8     0
-	Cluster_100559  GO:0005829      GO      0.08    0
-	Cluster_100559  GO:0005886      GO      0.11    0
-	Cluster_100559  GO:0005887      GO      0.46    0
-	Cluster_100559  GO:0005985      GO      0.75    0
-	Cluster_100559  GO:0006065      GO      0.08666666666666668     0
-	Cluster_100559  GO:0006811      GO      0.15816666666666665     0
-	Cluster_100559  GO:0006855      GO      0.03    0
-	Cluster_100559  GO:0008460      GO      0.06    0
-	Cluster_100559  GO:0008830      GO      0.41    0
-	Cluster_100559  GO:0009058      GO      0.73    1
+	taxon   feature func    category        score   raw_ann
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0000155      GO      0.97    1
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003700      GO      0.97    1
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.29    0
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.77    1
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0005887      GO      0.85    1
 	...
 	```
 	
-* File name: `$OUTPUT_DIR/$TAXONNAME/prediction/finalized/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`
+* File name: `$$OUTPUT_DIR/merged/$BASENAME.finalized_ML.prediction.tsv`
 * This file includes the finalized predictions by integrating multiple machine learning (ML) classifier (TSV format file).
 * `$OUTPUT_DIR` = the output folder
 * `$BASENAME` = the basename of output files
-* `$TAXONNAME` = the basename of each taxon
-* This file details the prediction of each protein family per each function.
+* This file details the prediction of each protein family per each function per taxon.
 * The predictions for each protein family combined by multiple information sources, e.g. coexpression from MTX, co-localization from MGX, sequence similarity, interactions, etc.
 			
 **2. Prediction file for each type of evidence**
 		
 	```
-	feature func    category        score   raw_ann
-	Cluster_100559  GO:0000271      GO      0.45    0
-	Cluster_100559  GO:0003677      GO      0.35    0
-	Cluster_100559  GO:0003700      GO      0.61    0
-	Cluster_100559  GO:0003979      GO      0.34    0
-	Cluster_100559  GO:0004564      GO      0.52    0
-	Cluster_100559  GO:0005215      GO      0.52    0
-	Cluster_100559  GO:0005216      GO      0.35    0
-	Cluster_100559  GO:0005524      GO      0.63    0
-	Cluster_100559  GO:0005737      GO      0.38    0
-	Cluster_100559  GO:0005829      GO      0.28    0
-	Cluster_100559  GO:0005886      GO      0.09    0
-	Cluster_100559  GO:0005887      GO      0.3     0
-	Cluster_100559  GO:0005985      GO      0.62    0
-	Cluster_100559  GO:0006065      GO      0.38    0
-	Cluster_100559  GO:0006811      GO      0.37    0
-	Cluster_100559  GO:0006855      GO      0.04    0
-	Cluster_100559  GO:0008460      GO      0.77    0
-	Cluster_100559  GO:0008830      GO      0.45    0
-	Cluster_100559  GO:0009058      GO      0.4     1
+	taxon   feature func    category        score   raw_ann
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0000155      GO      0.75    1
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003700      GO      0.73    1
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.22    0
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.8     1
+	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0005887      GO      0.77    1
 	...
 	```
 	
-* File name: `$OUTPUT_DIR/$TAXONNAME/prediction/$EVIDENCE_TYPE/$BASENAME.$TAXONNAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
+* File name: `$OUTPUT_DIR/merged/$BASENAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
 * This file includes the predictions based on individual type of evidence (TSV format file).
 * `$OUTPUT_DIR` = the output folder
 * `$BASENAME` = the basename of output files
-* `$TAXONNAME` = the basename of each taxon
-* This file details the prediction of each protein family per each function.
+* This file details the prediction of each protein family per each function per taxon.
 * The predictions for each protein family using one type of evidence data to build the ML classifer.
 
 
 **2. Intermediate output files**
 	
-* Preprocessing feature tables for ML process
-	* FUGAsseM preprocesses input evidence data and prepare feature tables for machine learning. Each type of features will be used to build a ML classifier.
-	* All intermediate results are in the folder `$TAXONNAME/preprocessing/`.
+* Preprocessing features of each taxon
+	* FUGAsseM preprocesses input evidence data and prepare feature tables for machine learning per taxon. Each type of features will be used to build a ML classifier.
+	* All intermediate results are in the folder per taxon: `$OUTPUT_DIR/main/$TAXONNAME/preprocessing/`.
+* Predictions of each taxon
+	* FUGAsseM predicts functions based on input evidence data.
+	* The finalized prediction results using integrated evidence per taxon are in the file: `$OUTPUT_DIR/main/$TAXONNAME/prediction/finalized/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`.
+	* The prediction results by using individual evidence per taxon are in the file: `$OUTPUT_DIR/$TAXONNAME/prediction/$EVIDENCE_TYPE/$BASENAME.$TAXONNAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
 
 
 ## Guides to FUGAsseM Utilities
