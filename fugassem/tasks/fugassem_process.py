@@ -86,7 +86,7 @@ def get_args():
 	                      default = "Pearson_SE")
 	workflow.add_argument("go-level",
 	                      desc = "GO informative level used for trimming terms that are informative at a given level [ Default: 50 ]:\n"
-	                             "<number OR fraction of genes>: spcify numeric level for triming\n"
+	                             "<number OR fraction of genes>: specify numeric level for trimming\n"
 	                             "<none>: skip trimming\n" 
 	                             "<all>: keep all terms",
 	                      default = "none")
@@ -95,7 +95,7 @@ def get_args():
 	                      choices = ["bug-specific", "universal", "union"],
 	                      default = "bug-specific")
 	workflow.add_argument("func-type",
-	                      desc = "GO catgeroy used for prediction [ Default: GO ]",
+	                      desc = "GO category used for prediction [ Default: GO ]",
 	                      choices = ["GO", "BP", "CC", "MF"],
 	                      default = "GO")
 	workflow.add_argument("ml-type",
@@ -140,7 +140,7 @@ def get_args():
 	                      desc = 'The amount of time to use for each fugassem job. Provided in minute',
 	                      default = '600')
 	workflow.add_argument("output",
-	                      desc = '[REQUIRED] output directary name',
+	                      desc = '[REQUIRED] output folder name',
 	                      required = True)
 
 	return workflow
@@ -182,7 +182,6 @@ def process (workflow, vector_list, matrix_list):
 				config.logger.info("ERROR! Valid abundance file is not available: " + abund_file)
 				flag = flag + 1
 		except:
-			#tmp_file = re.sub(".tsv$", ".raw.tsv", abund_file)
 			tmp_file = abund_file + ".raw.tsv"
 			if os.stat(tmp_file).st_size == 0:
 				config.logger.info("ERROR! Valid abundance file is not available: " + tmp_file)
@@ -192,7 +191,6 @@ def process (workflow, vector_list, matrix_list):
 				config.logger.info("ERROR! Valid gene-list file is not available: " + gene_file)
 				flag = flag + 1
 		except:
-			#tmp_file = re.sub(".txt$", ".raw.txt", gene_file)
 			tmp_file = gene_file + ".raw.txt"
 			if os.stat(tmp_file).st_size == 0:
 				config.logger.info("ERROR! Valid gene-list file is not available: " + tmp_file)
@@ -231,11 +229,12 @@ def process (workflow, vector_list, matrix_list):
 			args.bypass_mtx = True
 		config.logger.info("Start to run prediction module for " + args.taxon + "......")
 		prediction_list = {}
-		final_pred_file = os.path.join(predict_dir, "finalized", mybasename + ".finalized_ML.prediction.tsv")
+		#final_pred_file = os.path.join(predict_dir, "finalized", mybasename + ".finalized_ML.prediction.tsv")
+		final_pred_file = os.path.join(myoutput_dir, mybasename + ".finalized_ML.prediction.tsv")
 		prediction_list, final_pred_file = fugassem_prediction.prediction_task(final_func_file, final_funclist_file,
 		                                                              feature_list,
 		                                                              args.ml_type, args.func_type,
-		                                                              predict_dir, mybasename, prediction_list,
+		                                                              myoutput_dir, predict_dir, mybasename, prediction_list,
 		                                                              workflow, args.threads, args.time, args.memory, args.bypass_mtx)
 
 	else:

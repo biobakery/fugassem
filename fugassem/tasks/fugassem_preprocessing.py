@@ -1057,7 +1057,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 			mem = mem_equation,
 			name = "fugassem_transpose")
 	if not evidence_type in feature_list:
-		feature_list[evidence_type] = final_feature_file_trans
+		feature_list[evidence_type] = evidence_type + "\t" + final_feature_file_trans
 
 	## vector-based evidence files (gene-over-function type of file)
 	mynum = 0
@@ -1089,7 +1089,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 				mem = mem_equation,
 				name = "fugassem_transpose")
 			if not evidence_type in feature_list:
-				feature_list[evidence_type] = final_feature_file_trans
+				feature_list[evidence_type] = os.path.basename(vector_file) + "\t" + final_feature_file_trans
 		# foreach vector file
 	# if exists vector list
 
@@ -1139,7 +1139,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 				mem = mem_equation,
 				name = "fugassem_transpose")
 			if not evidence_type in feature_list:
-				feature_list[evidence_type] = final_feature_file_trans
+				feature_list[evidence_type] = os.path.basename(matrix_file) + "\t" + final_feature_file_trans
 		# foreach matrix file
 	# if exists matrix list
 

@@ -230,7 +230,7 @@ def integrate_base_learning (feature_file, learnlist_file, learning_list,
 
 
 def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
-                     output_folder, basename, prediction_list,
+                     output_dir, output_folder, basename, prediction_list,
                      workflow, threads, time_equation, mem_equation, bypass_mtx):
 	"""
 	Prediction function using machine learning approaches
@@ -241,7 +241,8 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 				feature_list: a directory of feature files.
 		ml_type: specify type of ML method, [RF]: Random Forest, [NB] Naive Bayes, [DT] Decision Tree; [ Default: RF ]
 		func_type: function category, e.g. GO | BP | CC | MF
-		output_folder (string): The path of the output folder.
+		output_dir (string): The path of all output folder for each taxon.
+		output_folder (string): The path of prediction output folder for each taxon.
 		basename: basename for output files.
 		prediction_list: a directory of individual prediction file.
 		workflow (anadama2.workflow): An instance of the workflow class.
@@ -272,6 +273,7 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 						feature_list,
 						ml_type,
 						func_type,
+						output_dir,
 						output_folder,
 						basename,
 						prediction_list,
@@ -291,11 +293,17 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 	main_folder = output_folder
 	if not os.path.isdir(main_folder):
 		os.system("mkdir -p " + main_folder)
+	if not os.path.isdir(output_dir):
+		os.system("mkdir -p " + output_dir)
 
 	## process individual ML
 	pred_folder_list = {}
+	matches = []
 	for mytype in feature_list.keys():
-		feature_file = feature_list[mytype]
+		tmp = feature_list[mytype].split("\t")
+		myraw = tmp[0]
+		matches.append(mytype + "\t" + myraw)
+		feature_file = tmp[-1]
 		pred_folder = os.path.join(main_folder, mytype)
 		pred_prefix = mytype + "_ML"
 		final_pred_file = os.path.join(pred_folder, basename + "." + pred_prefix + ".prediction.tsv")
@@ -310,6 +318,20 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 		prediction_list[mytype] = final_pred_file
 		pred_folder_list[os.path.join(pred_folder, pred_prefix + "_results")] = ""
 
+		# write results into output folder
+		myout = os.path.join(output_dir, os.path.basename(final_pred_file))
+		workflow.add_task (
+			"cp -f [depends[0]] [targets[0]]",
+			depends = [final_pred_file],
+			targets = [myout],
+			cores = threads,
+			time = time_equation,
+			mem = mem_equation,
+			name = "organize_individual_prediction")
+
+	mymatch_file = os.path.join(output_dir, "feature_maps.txt")
+	utilities.array_to_file (matches, mymatch_file)
+
 	## process the 2nd layer of ML
 	pred_list_file = os.path.join(main_folder, basename + ".predfile_list.tsv")
 	if bypass_mtx:
@@ -322,15 +344,43 @@ def prediction_task (func_file, funclist_file, feature_list, ml_type, func_type,
 	preds = []
 	for i in sorted(prediction_list.keys()):
 		preds.append(prediction_list[i])
-	feature_file = feature_list["coexp"]
-	pred_folder = os.path.join(main_folder, "finalized")
-	combined_feature_file = os.path.join(pred_folder, basename + ".integrated.features.trans.tsv")
-	final_pred_file = os.path.join(pred_folder, basename + ".finalized_ML.prediction.tsv")
-	integrate_base_learning (feature_file, pred_list_file, preds,
+	tmp = list(prediction_list.keys())
+	if len(tmp) == 1: # skip integration since there is only one data type
+		mytype = tmp[0]
+		myfile = prediction_list[mytype]
+		pred_folder = os.path.join(main_folder, "finalized")
+		if not os.path.isdir(pred_folder):
+			os.system("mkdir -p " + pred_folder)
+		final_pred_file = os.path.join(pred_folder, basename + ".finalized_ML.prediction.tsv")
+		workflow.add_task(
+			"cp -f [depends[0]] [targets[0]]",
+			depends = [myfile],
+			targets = [final_pred_file],
+			cores = threads,
+			time = time_equation,
+			mem = mem_equation,
+			name = "copy_individual_prediction")
+	else:
+		feature_file = feature_list["coexp"].split("\t")[-1]
+		pred_folder = os.path.join(main_folder, "finalized")
+		combined_feature_file = os.path.join(pred_folder, basename + ".integrated.features.trans.tsv")
+		final_pred_file = os.path.join(pred_folder, basename + ".finalized_ML.prediction.tsv")
+		integrate_base_learning (feature_file, pred_list_file, preds,
 	                         pred_folder, combined_feature_file,
 	                         workflow, threads, time_equation, mem_equation)
-	precess_ML(combined_feature_file, func_file, funclist_file, ml_type, "all", "yes",
+		precess_ML(combined_feature_file, func_file, funclist_file, ml_type, "all", "yes",
 		        pred_folder, "integrated_ML", final_pred_file,
 		        workflow, threads, time_equation, mem_equation, func_type)
+
+	# write results into output folder
+	myout = os.path.join(output_dir, basename + ".finalized_ML.prediction.tsv")
+	workflow.add_task(
+		"cp -f [depends[0]] [targets[0]]",
+		depends = [final_pred_file],
+		targets = [myout],
+		cores = threads,
+		time = time_equation,
+		mem = mem_equation,
+		name = "organize_integrated_prediction")
 
 	return prediction_list, final_pred_file

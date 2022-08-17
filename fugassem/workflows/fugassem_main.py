@@ -60,7 +60,7 @@ def parse_cli_arguments ():
 	# add the custom arguments to the workflow
 	workflow.add_argument("taxon-level",
 	                      desc = "taxonomic level used for stratification [ Default: Species ]",
-	                      choices = ["MSP", "Species", "Genus", "Family", "Order", "Class", "Phylum"],
+	                      choices = ["MSP", "Terminal", "Species", "Genus", "Family", "Order", "Class", "Phylum"],
 	                      default = "Species")
 	workflow.add_argument("minimum-prevalence",
 	                      desc = "minimum prevalence of each gene/protein family in normalized-abund MTX [ Default: 0 ]",
@@ -90,7 +90,7 @@ def parse_cli_arguments ():
 	                      default = "Pearson_SE")
 	workflow.add_argument("go-level",
 	                      desc = "GO informative level used for trimming terms that are informative at a given level [ Default: none ]:\n"
-	                             "<number OR fraction of genes>: spcify numeric level for triming\n"
+	                             "<number OR fraction of genes>: specify numeric level for trimming\n"
 	                             "<none>: skip trimming\n" 
 	                             "<all>: keep all terms",
 	                      default = "none")
@@ -99,7 +99,7 @@ def parse_cli_arguments ():
 	                      choices = ["bug-specific", "universal", "union"],
 	                      default = "bug-specific")
 	workflow.add_argument("func-type",
-	                      desc = "GO catgeroy used for prediction [ Default: GO ]",
+	                      desc = "GO category used for prediction [ Default: GO ]",
 	                      choices = ["GO", "BP", "CC", "MF"],
 	                      default = "GO")
 	workflow.add_argument("ml-type",
@@ -123,7 +123,7 @@ def parse_cli_arguments ():
 	                      desc = "input the function annotation file for all gene/protein families",
 	                      required = True)
 	workflow.add_argument("bypass-preparing-taxa",
-	                      desc = "do not run the module for spliting stratified MTX into individual taxa",
+	                      desc = "do not run the module for splitting stratified MTX into individual taxa",
 	                      action = "store_true")
 	workflow.add_argument("bypass-preprocessing",
 	                      desc = "do not run the module for preprocessing evidences and functions for prediction",
@@ -250,10 +250,13 @@ def fugassem_main (workflow):
 	if args.basename:
 		basename = args.basename
 	if not os.path.isfile(go_obo):
+		config.logger.info ("Error: please provide go-basic.obo file in the installed folder!")
 		sys.exit("Please provide go-basic.obo file in the installed folder!")
 	if not os.path.isfile(mtx_file):
+		config.logger.info ("Error: please provide taxon-stratified MTX file!")
 		sys.exit("Please provide taxon-stratified MTX file!")
 	if not os.path.isfile(ann_file):
+		config.logger.info ("Error: please provide raw function annotation file") 
 		sys.exit("Please provide raw function annotation file!")
 
 	## prepare outputs
@@ -262,8 +265,13 @@ def fugassem_main (workflow):
 		args.covariate_taxon = os.path.abspath(args.covariate_taxon)
 	if args.output:
 		output_dir = os.path.abspath(args.output)
+	output_dir_raw = output_dir
+	output_dir = os.path.join(output_dir_raw, "main")
+	output_dir_merged = os.path.join(output_dir_raw, "merged")
 	if not os.path.isdir(output_dir):
 		os.system("mkdir -p " + output_dir)
+	if not os.path.isdir(output_dir_merged):
+		os.system("mkdir -p " + output_dir_merged)
 	taxa_file = os.path.join(output_dir, config.taxa_abund_list)
 	taxa = {}
 
@@ -303,6 +311,7 @@ def fugassem_main (workflow):
 	if args.bypass_preprocessing and args.bypass_prediction:
 		config.logger.info("WARNING! Bypass module: main fugassem modules is skipped......")
 	else:
+		merged_final_files = []
 		## add tasks to the workflow
 		for mytaxa in sorted(taxa.keys()):
 			config.logger.info("####---------- Process " + mytaxa + " -------------####")
@@ -310,15 +319,17 @@ def fugassem_main (workflow):
 			myoutput_dir = os.path.join(output_dir, mytaxa)
 			preprocess_dir = os.path.join(myoutput_dir, "preprocessing")
 			predict_dir = os.path.join(myoutput_dir, "prediction")
-			abund_file = os.path.join(myoutput_dir, mytaxa + config.c_abund_extension)
-			gene_file = os.path.join(myoutput_dir, mytaxa + config.c_gene_extension)
-			func_file = os.path.join(myoutput_dir, mytaxa + config.c_ann_extension)
+			abund_file = os.path.join(myoutput_dir, "data", mytaxa + config.c_abund_extension)
+			gene_file = os.path.join(myoutput_dir, "data", mytaxa + config.c_gene_extension)
+			func_file = os.path.join(myoutput_dir, "data", mytaxa + config.c_ann_extension)
 			mylog = os.path.join(myoutput_dir, mytaxa + ".fugassem.log")
 			final_func_file = os.path.join(preprocess_dir, mybasename + ".final_funcs.tsv")
 			final_func_smp_file = os.path.join(preprocess_dir, mybasename + ".final_funcs.simple.tsv")
 			final_funclist_file = os.path.join(preprocess_dir, mybasename + ".final_funclist.txt")
 			feature_list_file = os.path.join(preprocess_dir, mybasename + ".feature_list.txt")
-			final_pred_file = os.path.join(predict_dir, "finalized", mybasename + ".finalized_ML.prediction.tsv")
+			#final_pred_file = os.path.join(predict_dir, "finalized", mybasename + ".finalized_ML.prediction.tsv")
+			final_pred_file = os.path.join(myoutput_dir, mybasename + ".finalized_ML.prediction.tsv")
+			merged_final_files.append(final_pred_file)
 
 			args_list = [mytaxa,
 		               mybasename,
@@ -361,6 +372,22 @@ def fugassem_main (workflow):
 				mem = args.memory,
 				name = "fugassem_process")
 		# foreach taxon
+
+		# combined files
+		out_list_file =  os.path.join(output_dir_merged, basename +  ".finalized_ML.prediction.list.txt")
+		outfile = os.path.join(output_dir_merged, basename +  ".finalized_ML.prediction.tsv")
+		mymatch = os.path.join(output_dir_merged, basename + ".feature_maps.txt")
+		mylog = os.path.join(output_dir_merged, "merged_finalized_prediction.log")
+		utilities.array_to_file (merged_final_files, out_list_file)
+		workflow.add_task(
+			"fugassem_merged_prediction --input [depends[0]] --basename [args[0]] --output [targets[0]] > [args[1]] 2>&1",
+			depends = utilities.add_to_list (out_list_file, TrackedExecutable("fugassem_merged_prediction")) + merged_final_files,
+			targets = [outfile, mymatch],
+			args = [basename, mylog],
+			cores = args.threads,
+			time = args.time,
+			mem = args.memory,
+			name = "fugassem_merged_prediction")
 	# if run process module
 
 	## start the workflow
