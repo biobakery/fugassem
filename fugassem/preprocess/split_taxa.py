@@ -58,7 +58,7 @@ def parse_arguments():
 	parser.add_argument(
 		"-t", "--taxon",
 		help = "[REQUIRED] taxonomic level\n",
-		choices = ["MSP", "Species", "Genus", "Family", "Order", "Class", "Phylum"],
+		choices = ["MSP", "Terminal", "Species", "Genus", "Family", "Order", "Class", "Phylum"],
 		required = True)
 	parser.add_argument(
 		"-p", "--prev",
@@ -256,7 +256,7 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, min_nu
 	config.logger.info ('split_taxa_info')
 
 	# taxa maps
-	taxa = {"MSP": "msp__", "Species": "s__", "Genus": "g__", "Family": "f__", "Order": "o__", "Class": "c__", "Phylum": "p__"}
+	taxa = {"MSP": "msp__", "Terminal": "t__", "Species": "s__", "Genus": "g__", "Family": "f__", "Order": "o__", "Class": "c__", "Phylum": "p__"}
 	taxon_level = taxa[taxon_level]
 
 	## collect info
@@ -289,7 +289,7 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, min_nu
 		myabunds = taxa_info[mytaxon]
 		pass_flag = True
 		if min_prev:
-			myabunds = filter_low_prev_gene (myabunds, min_cov, min_prev)
+			myabunds = filter_low_prev_gene (myabunds, min_abund, min_prev)
 		if min_num:
 			try:
 				min_num = float(min_num)
@@ -321,7 +321,7 @@ def split_taxa_info (funcs, header, abunds, min_abund, min_prev, min_cov, min_nu
 		else:
 			pass_flag = True
 		if pass_flag:
-			mypath = os.path.join(out_path, mytaxon)
+			mypath = os.path.join(out_path, mytaxon, "data")
 			if not os.path.isdir(mypath):
 				os.system("mkdir -p " + mypath)
 			myout1 = os.path.join(mypath, mytaxon + config.c_abund_extension)
