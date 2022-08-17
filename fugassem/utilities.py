@@ -109,6 +109,17 @@ def dict_to_file(dict_data, outfile):
 	open_out.close()
 
 
+def array_to_file(array_data, outfile):
+	"""
+	write data in array into file
+	"""
+
+	open_out = open(outfile, "w")
+	for mydata in sorted(array_data):
+		open_out.write(mydata + "\n")
+	open_out.close()
+
+
 def is_file_exist(file_path):
 	""" Check if file is not empty by confirming if its size is more than 0 bytes"""
 	# Check if file exist and it is not empty
