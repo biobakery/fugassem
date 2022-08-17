@@ -76,7 +76,7 @@ import re
 import time
 
 
-VERSION = "0.3.2"
+VERSION = "0.3.3"
 AUTHOR = "FUGAsseM Development Team"
 MAINTAINER = "Yancong Zhang"
 MAINTAINER_EMAIL = "zhangyc201211@gmail.com"
@@ -247,6 +247,7 @@ setuptools.setup(
 			'fugassem_predict_function = fugassem.predict.predict_function:main',
 			'fugassem_prepare_nextlayer_ml = fugassem.predict.prepare_nextlayer_ml:main',
 			'fugassem_select_feature = fugassem.predict.select_feature:main',
+			'fugassem_merged_prediction = fugassem.predict.merged_prediction:main',
 
 			'fugassem_generate_stratified_mtx_input = fugassem.tools.generate_stratified_mtx_input:main',
 			'fugassem_generate_annotation_input= fugassem.tools.generate_annotation_input:main',

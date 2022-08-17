@@ -1,6 +1,12 @@
 
 # FUGAsseM History #
 
+## v0.3.3 2022-08-16 ##
+* Reorganize output folders
+* Added a finalized combined results file
+* Added stratified option for 'Terminal' or 'Strain' level
+* Fixed issue when filtering based on prevalence
+
 ## v0.3.2 2022-04-08 ##
 * Added option for prediction using universal GO set 
 * Added option for prediction using global GO set
