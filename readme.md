@@ -232,15 +232,15 @@ When FUGAsseM is run, the merged prediction files of all taxa will be created at
 
 **1. Finalized prediction file**
 		
-	```
-	taxon   feature func    category        score   raw_ann
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0000155      GO      0.97    1
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003700      GO      0.97    1
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.29    0
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.77    1
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0005887      GO      0.85    1
-	...
-	```
+```
+taxon   feature func    category        score   raw_ann
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0000155      GO      0.97    1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003700      GO      0.97    1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.29    0
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.77    1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0005887      GO      0.85    1
+...
+```
 	
 * File name: `$$OUTPUT_DIR/merged/$BASENAME.finalized_ML.prediction.tsv`
 * This file includes the finalized predictions by integrating multiple machine learning (ML) classifier (TSV format file).
@@ -251,15 +251,15 @@ When FUGAsseM is run, the merged prediction files of all taxa will be created at
 			
 **2. Prediction file for each type of evidence**
 		
-	```
-	taxon   feature func    category        score   raw_ann
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0000155      GO      0.75    1
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003700      GO      0.73    1
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.22    0
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.8     1
-	Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0005887      GO      0.77    1
-	...
-	```
+```
+taxon   feature func    category        score   raw_ann
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0000155      GO      0.75    1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003700      GO      0.73    1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.22    0
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.8     1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0005887      GO      0.77    1
+...
+```
 	
 * File name: `$OUTPUT_DIR/merged/$BASENAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
 * This file includes the predictions based on individual type of evidence (TSV format file).
