@@ -57,7 +57,7 @@ def get_args ():
 						required = True)
 	parser.add_argument('-r', 
 						help = 'specify taxonomic level', 
-						choices = ["Species", "MSP"],
+						choices = ["Species", "Terminal", "MSP"],
 						default = "Species")
 	parser.add_argument('-t', 
 						help = 'threshold for taxon presence (e.g. >X percent of genes non-zero values)', 
@@ -146,6 +146,7 @@ def collect_taxa_info (taxa_file, taxa_level):
 			if taxa_level == "Species":
 				if re.search("s__", mylineage):
 					mytaxa = re.sub("\.t__[\s\S]+", "", mylineage)
+					mytaxa = re.sub("\.msp__[\s\S]+", "", mytaxa)
 			if taxa_level == "Genus":
 				if re.search("g__", mylineage):
 					mytaxa = re.sub("\.s__[\s\S]+", "", mylineage)

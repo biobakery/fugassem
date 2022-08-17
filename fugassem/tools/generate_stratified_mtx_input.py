@@ -64,7 +64,7 @@ def parse_cli_arguments():
 	                      default = ".fastq.gz")
 	workflow.add_argument("taxon-level",
 	                      desc = "taxonomic level used for stratification [ Default: Species ]",
-	                      choices = ["MSP", "Species"],
+	                      choices = ["MSP", "Species", "Terminal"],
 	                      default = "Species")
 	workflow.add_argument("taxon-prevalence",
 	                      desc = "minimum prevalence of each taxon [ Default: None ]",
