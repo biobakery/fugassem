@@ -31,10 +31,17 @@ If you have questions about FUGAsseM, please direct it to [the FUGAsseM channel]
     	* [Install FUGAsseM](#install-fugassem)
 * [How to run](#how-to-run)
     * [Basic usage](#basic-usage)
-    * [Demo runs](#demo-run)
-    	* [Input files](#input-files)
-    	* [Demo run of FUGAsseM](#demo-run-of-fugassem)
-    * [Output files](#output-files)
+    * [Demo runs](#demo-runs)
+    	* [Demo run of canonical prediction](#demo-run-of-canonical-prediction) 
+    		* [Input files](#input-files)
+    		* [Running command](#runing-command)
+    		* [Run FUGAsseM-MTX model](#run-fugassem-mtx-model)
+    		* [Output files](#output-files)
+    	* [Demo run of integrated prediction](#demo-run-of-integrated-prediction) 
+    		* [Input files](#input-files)
+    		* [Running command](#runing-command)
+    		* [Run FUGAsseM-full model](#run-fugassem-full-model)
+    		* [Output files](#output-files)
 * [Guides to FUGAsseM Utilities](#guides-to-fugassem-utilities)
 	* [Preparing stratified MTX-based abundance input](#preparing-stratified-mtx-based-abundance-input)
 		* [Input files for preparing MTX abundance](#input-files-preparing-MTX-abundance)
@@ -205,7 +212,83 @@ You only need to do **any one** of the following options to install the FUGAsseM
 
 
 ### Demo runs
-#### Input files
+#### Demo run of canonical prediction
+
+A standard workflow of FUGAsseM using MTX model by taking MTX coexpression profiles and raw GO annotations as inputs, which (1) preparing protein families and annotations, (2) building coexpression profiles of proteins within each taxon, and (3) building a machine learning classifier for function prediction.
+
+##### Input files
+* normalized MTX-based abundance table stratified by taxa (TSV format file), e.g. [demo\_proteinfamilies\_rna\_CPM.stratified\_Species_mtx.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies_rna_CPM.stratified_Species_mtx.tsv)
+* raw annotations for protein families (TSV format file), e.g. [demo_proteinfamilies.GO.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies.GO.simple.tsv)
+	
+##### Running command
+	
+```
+$ fugassem --basename $BASENAME \ 
+--input $INPUT_MTX \
+--input-annotation $INPUT_annotation \ 
+--output $OUTPUT_DIR
+```
+
+* The command replaces `$INPUT_MTX `, `$INPUT_annotation` with two input files, `$OUTPUT_DIR` with the path to the folder to write output files. See the section on **parallelization options** to optimize the run based on your computing resources. 
+* This runs with the default settings to run all modules. These settings will work for most data sets. However, if you need to customize your settings to modify the default settings. You can customize which modules you want to run in your own local configuration file.
+	
+##### Run FUGAsseM-MTX model
+
+```
+$ fugassem --basename $BASENAME \ 
+--input input/demo_proteinfamilies_rna_CPM.stratified_Species_mtx.tsv \ 
+--input-annotation input/demo_proteinfamilies.GO.simple.tsv \ 
+--output $OUTPUT_DIR
+```
+
+##### Output files
+When FUGAsseM is run, the merged prediction files of all taxa will be created at `$OUTPUT_DIR/merged`:
+
+**1. Merged finalized prediction file**
+		
+```
+taxon   feature func    category        score   raw_ann
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0000155      GO      0.75    1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003700      GO      0.73    1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.22    0
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.8     1
+...
+Escherichia_coli        Cluster_100559  GO:0000271      GO      0.45    0
+Escherichia_coli        Cluster_100559  GO:0003677      GO      0.35    0
+Escherichia_coli        Cluster_100559  GO:0003700      GO      0.61    0
+Escherichia_coli        Cluster_100559  GO:0003979      GO      0.34    0
+...
+```
+	
+* File name: `$OUTPUT_DIR/merged/$BASENAME.finalized_ML.prediction.tsv`
+* This file includes the finalized predictions by MTX coexpression (TSV format file).
+* `$OUTPUT_DIR` = the output folder
+* `$BASENAME` = the basename of output files
+* This file details the prediction of each protein family per each function per taxon.
+* The predictions for each protein family combined by coexpression from MTX
+
+**2. Finalized Prediction file of each taxon**
+
+```	
+taxon   feature func    category        score   raw_ann
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0000155      GO      0.75    1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003700      GO      0.73    1
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.22    0
+Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.8     1
+...
+```
+				
+* The finalized prediction results using integrated evidence per taxon are in the file: `$OUTPUT_DIR/main/$TAXONNAME/prediction/finalized/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`.
+* `$OUTPUT_DIR` = the output folder
+* `$TAXONNAME ` = taxon name
+* `$BASENAME` = the basename of output files
+
+
+#### Demo run of integrated prediction
+
+When other community-wide data are available, FUGAsseM can be run using integrated model. This includes: (1) preparing protein families and annotations, (2) building co-expression profiles of proteins within each taxon, (3) building individual machine learning classifiers for function prediction per type of evidence data, and (4) integration to generate an ensemble classifier for final function prediction. Evidences such as homology between protein families, gene neighborhood, and domain-domain interactions may be included.
+
+##### Input files
 * normalized MTX-based abundance table stratified by taxa (TSV format file), e.g. [demo\_proteinfamilies\_rna\_CPM.stratified\_Species_mtx.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies_rna_CPM.stratified_Species_mtx.tsv)
 * raw annotations for protein families (TSV format file), e.g. [demo_proteinfamilies.GO.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies.GO.simple.tsv)
 * vector-based evidence file (TSV format file), e.g. [demo_proteinfamilies.GO.homology.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies.GO.homology.tsv)
@@ -213,21 +296,30 @@ You only need to do **any one** of the following options to install the FUGAsseM
 	* [demo_proteinfamilies.pfam.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/demo_proteinfamilies.pfam.simple.tsv): Pfam domain annotations used for building co-pfam network for prediction
 	* [demo_proteinfamilies.DDI.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/demo_proteinfamilies.DDI.simple.tsv): Domain-Domian interactions for building DDI network for prediction
 	* [demo_proteinfamilies.contig.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/demo_proteinfamilies.contig.simple.tsv): Souce MGX-based contigs of protein families for building co-contig network for prediction
-	
 
-#### Running command
+##### Running command
 	
-	`$ fugassem --basename $output_basename --input $INPUT_MTX --input-annotation $INPUT_annotation --output $OUTPUT_DIR`
+```
+$ fugassem --basename $BASENAME --input $INPUT_MTX \ 
+--input-annotation $INPUT_annotation \ 
+--vector-list $VECTOR_list --matrix-list $METRIX_list \ 
+--output $OUTPUT_DIR
+```
 
 * The command replaces `$INPUT_MTX `, `$INPUT_annotation` with two input files, `$OUTPUT_DIR` with the path to the folder to write output files. See the section on **parallelization options** to optimize the run based on your computing resources. 
 * This runs with the default settings to run all modules. These settings will work for most data sets. However, if you need to customize your settings to modify the default settings. You can customize which modules you want to run in your own local configuration file.
 	
-#### Demo run of FUGAsseM
+##### Run FUGAsseM-full model
 
-	`$ fugassem --basename $BASENAME --input input/demo_proteinfamilies_rna_CPM.stratified_Species_mtx.tsv --input-annotation input/demo_proteinfamilies.GO.simple.tsv --output $OUTPUT_DIR`
+```
+$ fugassem --basename $BASENAME --input input/demo_proteinfamilies_rna_CPM.stratified_Species_mtx.tsv \
+--vector-list input/demo_proteinfamilies.GO.homology.tsv \
+--matrix-list input/demo_proteinfamilies.pfam.simple.tsv,input/demo_proteinfamilies.DDI.simple.tsv,input/demo_proteinfamilies.contig.simple.tsv \
+--input-annotation input/demo_proteinfamilies.GO.simple.tsv \
+--output $OUTPUT_DIR
+```
 
-
-### Output files
+##### Output files
 When FUGAsseM is run, the merged prediction files of all taxa will be created at `$OUTPUT_DIR/merged`:
 
 **1. Finalized prediction file**
@@ -238,11 +330,15 @@ Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0000155      GO      0.97    
 Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003700      GO      0.97    1
 Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.29    0
 Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.77    1
-Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0005887      GO      0.85    1
+...
+Escherichia_coli        Cluster_100559  GO:0000271      GO      0.12    0
+Escherichia_coli        Cluster_100559  GO:0003677      GO      0.14    0
+Escherichia_coli        Cluster_100559  GO:0003700      GO      0.33    0
+Escherichia_coli        Cluster_100559  GO:0003979      GO      0.12    0
 ...
 ```
 	
-* File name: `$$OUTPUT_DIR/merged/$BASENAME.finalized_ML.prediction.tsv`
+* File name: `$OUTPUT_DIR/merged/$BASENAME.finalized_ML.prediction.tsv`
 * This file includes the finalized predictions by integrating multiple machine learning (ML) classifier (TSV format file).
 * `$OUTPUT_DIR` = the output folder
 * `$BASENAME` = the basename of output files
@@ -259,6 +355,11 @@ Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0003824      GO      0.22    
 Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.8     1
 Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0005887      GO      0.77    1
 ...
+Escherichia_coli        Cluster_100559  GO:0000271      GO      0.45    0
+Escherichia_coli        Cluster_100559  GO:0003677      GO      0.35    0
+Escherichia_coli        Cluster_100559  GO:0003700      GO      0.61    0
+Escherichia_coli        Cluster_100559  GO:0003979      GO      0.34    0
+...
 ```
 	
 * File name: `$OUTPUT_DIR/merged/$BASENAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
@@ -268,16 +369,19 @@ Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0005887      GO      0.77    
 * This file details the prediction of each protein family per each function per taxon.
 * The predictions for each protein family using one type of evidence data to build the ML classifer.
 
+**3. Prediction file for each taxon**
 
-**2. Intermediate output files**
-	
-* Preprocessing features of each taxon
-	* FUGAsseM preprocesses input evidence data and prepare feature tables for machine learning per taxon. Each type of features will be used to build a ML classifier.
-	* All intermediate results are in the folder per taxon: `$OUTPUT_DIR/main/$TAXONNAME/preprocessing/`.
 * Predictions of each taxon
 	* FUGAsseM predicts functions based on input evidence data.
 	* The finalized prediction results using integrated evidence per taxon are in the file: `$OUTPUT_DIR/main/$TAXONNAME/prediction/finalized/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`.
 	* The prediction results by using individual evidence per taxon are in the file: `$OUTPUT_DIR/$TAXONNAME/prediction/$EVIDENCE_TYPE/$BASENAME.$TAXONNAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
+
+**4. Intermediate output files**
+	
+* Preprocessing features of each taxon
+	* FUGAsseM preprocesses input evidence data and prepare feature tables for machine learning per taxon. Each type of features will be used to build a ML classifier.
+	* All intermediate results are in the folder per taxon: `$OUTPUT_DIR/main/$TAXONNAME/preprocessing/`.
+
 
 
 ## Guides to FUGAsseM Utilities
@@ -361,7 +465,15 @@ FUGAsseM takes a MTX-based abundance (that is normalized within each taxon) tabl
 	
 	#### Demo run of preprearing MTX abundance utility
 	
-	`$ fugassem_generate_stratified_mtx_input --taxon-level Species --gene-catalog input/demo_genecatalogs.clstr --gene-catalog-seq raw_input/demo_genecatalogs.centroid.fna --protein-family raw_input/demo_proteinfamilies.clstr --family-taxonomy raw_input/demo_proteinfamilies_annotation.taxonomy.tsv --basename $BASENMAE --input raw_reads --output $OUTPUT_DIR`
+	```
+	$ fugassem_generate_stratified_mtx_input --taxon-level Species \
+	--gene-catalog input/demo_genecatalogs.clstr \ 
+	--gene-catalog-seq raw_input/demo_genecatalogs.centroid.fna \ 
+	--protein-family raw_input/demo_proteinfamilies.clstr \ 
+	--family-taxonomy raw_input/demo_proteinfamilies_annotation.taxonomy.tsv \ 
+	--basename $BASENMAE --input raw_reads \
+	--output $OUTPUT_DIR
+	```
 	
 	#### Output files of preparing MTX abundance utility
 	
@@ -450,7 +562,14 @@ usage: fugassem_generate_annotation_input [-h] [--version]
 	
 #### Demo run of preparing evidence utility
 	
-`$ fugassem_generate_annotation_input --clust-file raw_input/demo_proteinfamilies.clstr --contig --gene-info raw_input/demo_gene_info.tsv --homology --homology-ann raw_input/demo_map_proteinfamilies.ident50.tsv --basename demo_proteinfamilies --input raw_input/demo_proteinfamilies_annotation.tsv --output $OUTPUT_DIR`
+```
+$ fugassem_generate_annotation_input --clust-file raw_input/demo_proteinfamilies.clstr \ 
+--contig --gene-info raw_input/demo_gene_info.tsv \ 
+--homology --homology-ann raw_input/demo_map_proteinfamilies.ident50.tsv \ 
+--basename demo_proteinfamilies \ 
+--input raw_input/demo_proteinfamilies_annotation.tsv \ 
+--output $OUTPUT_DIR
+```
 	
 #### Output files of preparing evidence utility
 	
