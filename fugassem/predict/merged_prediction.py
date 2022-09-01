@@ -85,6 +85,7 @@ def merge_pred_info (list_file, basename, outfile):
 	maps = {}
 	open_out = open(outfile, "w")
 	for myfile in lists:
+		each_f = 0
 		mypath = os.path.dirname (myfile)
 		mybase = os.path.basename (myfile)
 		mytaxon = re.sub(basename + ".", "", mybase)
@@ -93,9 +94,11 @@ def merge_pred_info (list_file, basename, outfile):
 			line = line.strip()
 			if not len(line):
 				continue
-			if flag_t == 0:
-				flag_t = 1
-				open_out.write("taxon" + "\t" + line + "\n")
+			if each_f == 0:
+				each_f = 1
+				if flag_t == 0:
+					flag_t = 1
+					open_out.write("taxon" + "\t" + line + "\n")
 				continue
 			open_out.write(mytaxon + "\t" + line + "\n")
 		mymatch = os.path.join(mypath, "feature_maps.txt")
@@ -118,6 +121,7 @@ def merge_pred_info (list_file, basename, outfile):
 		flag_t = 0
 		open_out = open(outfile1, "w")
 		for myfile in lists:
+			each_f = 0
 			myfile = re.sub("finalized_ML.prediction.tsv", mytype + "_ML.prediction.tsv", myfile)
 			if not os.path.isfile(myfile):
 				config.logger.info("WARNING! This prediction file doesn't exist: " + myfile)
@@ -129,9 +133,11 @@ def merge_pred_info (list_file, basename, outfile):
 				line = line.strip()
 				if not len(line):
 					continue
-				if flag_t == 0:
-					flag_t = 1
-					open_out.write("taxon" + "\t" + line + "\n")
+				if each_f == 0:
+					each_f = 1
+					if flag_t == 0:
+						flag_t = 1
+						open_out.write("taxon" + "\t" + line + "\n")
 					continue
 				open_out.write(mytaxon + "\t" + line + "\n")
 		open_out.close()
