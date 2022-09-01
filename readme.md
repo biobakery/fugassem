@@ -44,11 +44,11 @@ If you have questions about FUGAsseM, please direct it to [the FUGAsseM channel]
     		* [Output files](#output-files)
 * [Guides to FUGAsseM Utilities](#guides-to-fugassem-utilities)
 	* [Preparing stratified MTX-based abundance input](#preparing-stratified-mtx-based-abundance-input)
-		* [Input files for preparing MTX abundance utility](#input-files-preparing-MTX-abundance-utility)
+		* [Input files of preparing MTX abundance utility](#input-files-of-preparing-MTX-abundance-utility)
 		* [Demo run of preparing MTX abundance utility](#demo-run-of-preparing-MTX-abundance-utility) 
 		* [Output files of preparing MTX abundance utility](#output-files-of-preparing-MTX-abundance-utility)
 	* [Preparing evidence input](#preparing-evidence-input)
-		* [Input files for preparing evidence utility](#input-files-preparing-evidence-utility)
+		* [Input files of preparing evidence utility](#input-files-of-preparing-evidence-utility)
 		* [Demo run of preparing evidence utility](#demo-run-of-preparing-evidence-utility) 
 		* [Output files of preparing evidence utility](#output-files-of-preparing-evidence-utility)
     	
@@ -463,7 +463,7 @@ FUGAsseM takes a MTX-based abundance (that is normalized within each taxon) tabl
 	* The workflow runs with the default settings for all main tool subtasks. If you need to customize your workflow settings for the preprocessing workflow to modify the default settings, you can change the parameter settings.
 		* For example, `--extension-paired "$R1_suffix,$R2_suffix"`, `--extension "$fastq_suffix"` (what are the following part after `$SAMPLE` in the input file names) will modify the default settings when running the assembly task.
 	
-	#### Demo run of preprearing MTX abundance utility
+	#### Demo run of prepraring MTX abundance utility
 	
 	```
 	$ fugassem_generate_stratified_mtx_input --taxon-level Species \
