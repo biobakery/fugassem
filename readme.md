@@ -278,7 +278,7 @@ Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.8     
 ...
 ```
 				
-* The finalized prediction results using integrated evidence per taxon are in the file: `$OUTPUT_DIR/main/$TAXONNAME/prediction/finalized/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`.
+* The finalized prediction results using integrated evidence per taxon are in the file: `$OUTPUT_DIR/main/$TAXONNAME/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`.
 * `$OUTPUT_DIR` = the output folder
 * `$TAXONNAME ` = taxon name
 * `$BASENAME` = the basename of output files
@@ -373,14 +373,15 @@ Escherichia_coli        Cluster_100559  GO:0003979      GO      0.34    0
 
 * Predictions of each taxon
 	* FUGAsseM predicts functions based on input evidence data.
-	* The finalized prediction results using integrated evidence per taxon are in the file: `$OUTPUT_DIR/main/$TAXONNAME/prediction/finalized/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`.
-	* The prediction results by using individual evidence per taxon are in the file: `$OUTPUT_DIR/$TAXONNAME/prediction/$EVIDENCE_TYPE/$BASENAME.$TAXONNAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
+	* The finalized prediction results using integrated evidence per taxon are in the file: `$OUTPUT_DIR/main/$TAXONNAME/$BASENAME.$TAXONNAME.finalized_ML.prediction.tsv`.
+	* The prediction results by using individual evidence per taxon are in the file: `$OUTPUT_DIR/$TAXONNAME/$BASENAME.$TAXONNAME.$EVIDENCE_TYPE_ML.prediction.tsv` (where `$EVIDENCE_TYPE` = the basename of each evidence).
 
 **4. Intermediate output files**
 	
 * Preprocessing features of each taxon
-	* FUGAsseM preprocesses input evidence data and prepare feature tables for machine learning per taxon. Each type of features will be used to build a ML classifier.
-	* All intermediate results are in the folder per taxon: `$OUTPUT_DIR/main/$TAXONNAME/preprocessing/`.
+	* FUGAsseM preprocesses input evidence data and prepare feature tables for machine learning per taxon. Each type of features will be used to build a ML classifier. These input data are in the folder: `$OUTPUT_DIR/main/$TAXONNAME/data/`.
+	* All intermediate preprocessing results are in the folder: `$OUTPUT_DIR/main/$TAXONNAME/preprocessing/`.
+	* All intermediate prediction results are in the folder per taxon: `$OUTPUT_DIR/main/$TAXONNAME/prediction/`.
 
 
 
