@@ -389,7 +389,7 @@ Escherichia_coli        Cluster_100559  GO:0003979      GO      0.34    0
 
 ### Preparing stratified MTX-based abundance input
 
-FUGAsseM takes a MTX-based abundance (that is normalized within each taxon) table of protein families as the input. Users may provide this table using their own analysis or use one of two options as fellow:
+FUGAsseM takes a MTX-based abundance (that is normalized within each taxon) table of protein families as the input. Users may provide this table using their own analysis or use one of two options as below:
 
 * **Option 1: Reference-based approach**
 	
