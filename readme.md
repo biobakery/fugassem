@@ -102,7 +102,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
 	
 	* Option 1: Latest Release (Recommended)
 	
-		Download [fugassem.tar.gz](https://pypi.org/project/fugassem/) and unpack the latested release of FUGAsseM.
+		Download [fugassem.zip](https://github.com/biobakery/fugassem/archive/master.zip) and unpack the latested release of FUGAsseM.
 	
 	* Option 2: Development Version
 	
@@ -217,8 +217,8 @@ You only need to do **any one** of the following options to install the FUGAsseM
 A standard workflow of FUGAsseM using MTX model by taking MTX coexpression profiles and raw GO annotations as inputs, which (1) preparing protein families and annotations, (2) building coexpression profiles of proteins within each taxon, and (3) building a machine learning classifier for function prediction.
 
 ##### Input files
-* normalized MTX-based abundance table stratified by taxa (TSV format file), e.g. [demo\_proteinfamilies\_rna\_CPM.stratified\_Species_mtx.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies_rna_CPM.stratified_Species_mtx.tsv)
-* raw annotations for protein families (TSV format file), e.g. [demo_proteinfamilies.GO.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies.GO.simple.tsv)
+* normalized MTX-based abundance table stratified by taxa (TSV format file), e.g. [demo\_proteinfamilies\_rna\_CPM.stratified\_Species_mtx.tsv](https://github.com/biobakery/fugassem/blob/master/examples/input/demo_proteinfamilies_rna_CPM.stratified_Species_mtx.tsv)
+* raw annotations for protein families (TSV format file), e.g. [demo_proteinfamilies.GO.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/input/demo_proteinfamilies.GO.simple.tsv)
 	
 ##### Running command
 	
@@ -289,13 +289,13 @@ Bacteroides_thetaiotaomicron    Cluster_1024034 GO:0004673      GO      0.8     
 When other community-wide data are available, FUGAsseM can be run using integrated model. This includes: (1) preparing protein families and annotations, (2) building co-expression profiles of proteins within each taxon, (3) building individual machine learning classifiers for function prediction per type of evidence data, and (4) integration to generate an ensemble classifier for final function prediction. Evidences such as homology between protein families, gene neighborhood, and domain-domain interactions may be included.
 
 ##### Input files
-* normalized MTX-based abundance table stratified by taxa (TSV format file), e.g. [demo\_proteinfamilies\_rna\_CPM.stratified\_Species_mtx.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies_rna_CPM.stratified_Species_mtx.tsv)
-* raw annotations for protein families (TSV format file), e.g. [demo_proteinfamilies.GO.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies.GO.simple.tsv)
-* vector-based evidence file (TSV format file), e.g. [demo_proteinfamilies.GO.homology.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/input/demo_proteinfamilies.GO.homology.tsv)
+* normalized MTX-based abundance table stratified by taxa (TSV format file), e.g. [demo\_proteinfamilies\_rna\_CPM.stratified\_Species_mtx.tsv](https://github.com/biobakery/fugassem/tree/master/examples/input/demo_proteinfamilies_rna_CPM.stratified_Species_mtx.tsv)
+* raw annotations for protein families (TSV format file), e.g. [demo_proteinfamilies.GO.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/input/demo_proteinfamilies.GO.simple.tsv)
+* vector-based evidence file (TSV format file), e.g. [demo_proteinfamilies.GO.homology.tsv](https://github.com/biobakery/fugassem/tree/master/examples/input/demo_proteinfamilies.GO.homology.tsv)
 * matrix-based evidence files (TSV format file), e.g. 
-	* [demo_proteinfamilies.pfam.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/demo_proteinfamilies.pfam.simple.tsv): Pfam domain annotations used for building co-pfam network for prediction
-	* [demo_proteinfamilies.DDI.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/demo_proteinfamilies.DDI.simple.tsv): Domain-Domian interactions for building DDI network for prediction
-	* [demo_proteinfamilies.contig.simple.tsv](https://raw.githubusercontent.com/biobakery/fugassem/master/examples/demo_proteinfamilies.contig.simple.tsv): Souce MGX-based contigs of protein families for building co-contig network for prediction
+	* [demo_proteinfamilies.pfam.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/demo_proteinfamilies.pfam.simple.tsv): Pfam domain annotations used for building co-pfam network for prediction
+	* [demo_proteinfamilies.DDI.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/demo_proteinfamilies.DDI.simple.tsv): Domain-Domian interactions for building DDI network for prediction
+	* [demo_proteinfamilies.contig.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/demo_proteinfamilies.contig.simple.tsv): Souce MGX-based contigs of protein families for building co-contig network for prediction
 
 ##### Running command
 	
@@ -452,10 +452,10 @@ FUGAsseM takes a MTX-based abundance (that is normalized within each taxon) tabl
 	
 	#### Input files of preparing MTX abundance utility
 	* QC'ed shotgun sequencing metatranscriptome file (fastq, fastq.gz, fasta, or fasta.gz format), e.g. "raw_input" folder including:
-		- [sample1_R1.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample1_R1.fastq.gz)
-		- [sample1_R2.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample1_R2.fastq.gz)
-		- [sample2_R1.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample2_R1.fastq.gz)
-		- [sample2_R2.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample2_R2.fastq.gz)
+		- [sample1.R1.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample1.R1.fastq.gz)
+		- [sample1.R2.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample1.R2.fastq.gz)
+		- [sample2.R1.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample2.R1.fastq.gz)
+		- [sample2.R2.fastq.gz](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/sample2.R2.fastq.gz)
 	* clustering file of non-redundant gene catalogs (extended-fasta format): [demo_genecatalogs.clstr](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_genecatalogs.clstr)
 	* nucleotide sequences of representatives for non-redundant gene catalogs (fasta format): [demo_genecatalogs.centroid.fna](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_genecatalogs.centroid.fna)
 	* clustering file of protein families clustered by non-redundant gene catalogs (extended-fasta format): [demo_proteinfamilies.clstr](https://github.com/biobakery/fugassem/raw/master/examples/raw_input/demo_proteinfamilies.clstr)
