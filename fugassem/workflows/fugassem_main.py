@@ -95,9 +95,9 @@ def parse_cli_arguments ():
 	                             "<all>: keep all terms",
 	                      default = "none")
 	workflow.add_argument("go-mode",
-	                      desc = "mode of GO set used for prediction: [bug-specific] bug-specific informative terms, [universal] universal informative terms, [union] merged bug informative terms for overall prediction",
-	                      choices = ["bug-specific", "universal", "union"],
-	                      default = "bug-specific")
+	                      desc = "mode of GO set used for prediction: [taxon-specific] taxon-specific informative terms, [universal] universal informative terms, [union] merged taxon informative terms for overall prediction",
+	                      choices = ["taxon-specific", "universal", "union"],
+	                      default = "taxon-specific")
 	workflow.add_argument("func-type",
 	                      desc = "GO category used for prediction [ Default: GO ]",
 	                      choices = ["GO", "BP", "CC", "MF"],
@@ -231,7 +231,7 @@ def fugassem_main (workflow):
 	else:
 		pair_flag = "no"
 
-	if args.go_mode == "bug-specific":
+	if args.go_mode == "taxon-specific":
 		universal_flag = "no"
 		go_level_flag = args.go_level
 	else:

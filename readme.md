@@ -119,7 +119,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
  
 
 ## How to run
-### Basic usages
+### Basic usage
 * For a list of command line options, run:
 
 	`$ fugassem --help`
@@ -138,7 +138,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
                         [--covariate-taxon COVARIATE_TAXON]
                         [--correlation-method {Pearson,Spearman,Kendall,Pearson_SE}]
                         [--go-level GO_LEVEL]
-                        [--go-mode {bug-specific,universal,union}]
+                        [--go-mode {taxon-specific,universal,union}]
                         [--func-type {GO,BP,CC,MF}] [--ml-type {RF,NB,DT}]
                         [--vector-list VECTOR_LIST]
                         [--matrix-list MATRIX_LIST] [--matrix-pair]
@@ -166,9 +166,9 @@ You only need to do **any one** of the following options to install the FUGAsseM
 	
 	Mode of Gene Ontolog (GO) set used for prediction:
 	
-	* "bug-specific": bug-specific informative terms (where "informative" term is defined as a term that contains >X genes and all of its child terms contain < X genes)
+	* "taxon-specific": taxon-specific informative terms (where "informative" term is defined as a term that contains >X genes and all of its children terms contain < X genes)
 	* "universal": universal informative terms 
-	* "union": merged bug informative terms for overall prediction *[Recommended]*
+	* "union": merged taxon-specific informative terms for overall prediction *[Recommended]*
                        
 
 * **Option: --go-level** 
