@@ -1,6 +1,9 @@
 
 # FUGAsseM History #
 
+## v0.3.4 2022-11-11 ##
+* Rename options for '--go-mode'
+
 ## v0.3.3 2022-08-16 ##
 * Reorganize output folders
 * Added a finalized combined results file
