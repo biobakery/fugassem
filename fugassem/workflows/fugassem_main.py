@@ -134,6 +134,9 @@ def parse_cli_arguments ():
 	workflow.add_argument("bypass-mtx",
 	                      desc = "do not integrate MTX for finalized predicting functions",
 	                      action = "store_true")
+	workflow.add_argument("bypass-coexp",
+	                      desc = "do not calculate MTX-based coexpression",
+	                      action = "store_true")
 	workflow.add_argument("threads",
 	                      desc = "number of threads/cores for each task to use",
 	                      default = 1)
@@ -353,7 +356,8 @@ def fugassem_main (workflow):
 		               myoutput_dir,
 		               mylog,
 					   pair_flag,
-			           args.go_mode]
+			           args.go_mode,
+					   args.bypass_coexp]
 			target_list = [final_func_file, final_func_smp_file, final_funclist_file, feature_list_file, final_pred_file]
 			workflow.add_task_gridable(
 				"fugassem_process --input [depends[0]] --gene [depends[1]] --function [depends[2]] "
@@ -361,7 +365,7 @@ def fugassem_main (workflow):
 				"--minimum-prevalence [args[2]] --minimum-abundance [args[3]] --minimum-detected [args[4]] --filtering-zero [args[5]] --covariate-taxon [args[6]] "
 				"--correlation-method [args[7]] --go-level [args[8]] --go-mode [args[22]] --func-type [args[9]] --ml-type [args[10]] "
 				"--vector-list [args[11]] --matrix-list [args[12]] --pair-flag [args[21]] "
-				"--bypass-preprocessing [args[13]] --bypass-prediction [args[14]] --bypass-mtx [args[15]] "
+				"--bypass-preprocessing [args[13]] --bypass-prediction [args[14]] --bypass-mtx [args[15]] --bypass-coexp [args[23]] "
 				"--threads [args[16]] --memory [args[17]] --time [args[18]] "
 				"--output [args[19]] > [args[20]] 2>&1",
 				depends = [abund_file, gene_file, func_file, TrackedExecutable("fugassem_process")],

@@ -130,6 +130,8 @@ def get_args():
 	                      desc = "do not run the module for predicting functions")
 	workflow.add_argument("bypass-mtx",
 	                      desc = "do not integrate MTX for finalized predicting functions")
+	workflow.add_argument("bypass-coexp",
+	                      desc = "do not calculate MTX-based coexpression")
 	workflow.add_argument("threads",
 	                      desc = "number of threads/cores for each task to use",
 	                      default = 1)
@@ -211,7 +213,7 @@ def process (workflow, vector_list, matrix_list):
 				args.correlation_method,
 				vector_list, matrix_list, args.pair_flag,
 				preprocess_dir, mybasename, feature_list, feature_list_file,
-				workflow, args.threads, args.time, args.memory)
+				workflow, args.threads, args.time, args.memory, args.bypass_coexp)
 		else:
 			config.logger.info("WARNING! Bypass module: preprocessing module is skipped......" + args.taxon)
 	else:

@@ -3,6 +3,7 @@
 
 ## v0.3.4 2022-11-11 ##
 * Rename options for '--go-mode'
+* Added 'bypass-coexp' option to skip calculating coexpression
 
 ## v0.3.3 2022-08-16 ##
 * Reorganize output folders

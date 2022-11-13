@@ -73,6 +73,8 @@ Bypass options:
 	* do not run the module for predicting functions
 * --bypass-mtx
 	* do not integrate MTX for finalized predicting functions
+* --bypass-coexp
+	* do not calculate MTX-based coexpression
 
 
 ## Install FUGAsseM
@@ -145,7 +147,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
                         [--basename BASENAME] --input-annotation
                         INPUT_ANNOTATION [--bypass-preparing-taxa]
                         [--bypass-preprocessing] [--bypass-prediction]
-                        [--bypass-mtx] [--threads THREADS] [--memory MEMORY]
+                        [--bypass-mtx] [--bypass-coexp] [--threads THREADS] [--memory MEMORY]
                         [--time TIME] [--output OUTPUT] [-i INPUT]
                         [--config CONFIG] [--local-jobs JOBS]
                         [--grid-jobs GRID_JOBS] [--grid GRID]

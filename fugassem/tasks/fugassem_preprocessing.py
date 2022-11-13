@@ -926,7 +926,7 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
                 min_prev, min_abund, min_detected, zero_flt, taxa_abund_file, corr_method,
                 vector_list, matrix_list, pair_flag,
                 output_folder, basename, feature_list, feature_list_file,
-                workflow, threads, time_equation, mem_equation):
+                workflow, threads, time_equation, mem_equation, bypass_coexp):
 	"""
 	Preprocess annotated function and evidences for a list of genes per taxon
 
@@ -1030,7 +1030,11 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 	                workflow, threads, time_equation, mem_equation)
 
 	## calculate co-variation
-	calculate_covariation (refined_abund_file, corr_method, main_folder, final_corr_file, final_abund_file,
+	if bypass_coexp:
+		if not "exp" in evidence_list:
+			evidence_list["exp"] = final_corr_file
+	else:
+		calculate_covariation (refined_abund_file, corr_method, main_folder, final_corr_file, final_abund_file,
 	                      evidence_list, "exp",
 	                      workflow, threads, time_equation, mem_equation)
 	#evidence_type = "exp"
