@@ -32,6 +32,7 @@ import subprocess
 import tempfile
 import re
 import numpy as np
+import math
 import logging
 from goatools.base import get_godag
 from goatools.gosubdag.gosubdag import GoSubDag
@@ -62,6 +63,11 @@ def parse_arguments():
 		help = "[OPTIONAL] type of sequence similarity info [Default: homology]\n",
 		default = "homology")
 	parser.add_argument(
+		"-d", "--vector",
+		help = "[OPTIONAL] type of vector encoding [Default: count]\n",
+		choices = ["count", "jaccard", "cosine"],
+		default = "count")
+	parser.add_argument(
 		"-m", "--method",
 		help = "[OPTIONAL] function type [Default: GO]\n",
 		default = "GO")
@@ -87,6 +93,9 @@ def collect_families (family_file):
 	Input: the file name of protein family
 	Output: families = {cluster1, cluster2, ...}
 	"""
+	
+	config.logger.info ("collect_families process......")
+	
 	families = {}
 	flag = 0
 	for line in utilities.gzip_bzip2_biom_open_readlines (family_file):
@@ -102,12 +111,33 @@ def collect_families (family_file):
 	return families
 
 
-def collect_similarity_unit (simi_file):
+# define Jaccard Similarity function
+def Jaccard (vec1, vec2):
+	intersection = len(list(set(vec1).intersection(vec2)))
+	union = (len(vec1) + len(vec2)) - intersection
+	return float(intersection) / union
+
+# define Cosine Similarity function
+def VectorSize (vec):
+	return math.sqrt(sum(math.pow(v,2) for v in vec))
+
+def InnerProduct (vec1, vec2):
+	return sum(v1*v2 for v1,v2 in zip(vec1,vec2))
+
+def Cosine (vec1, vec2):
+	return InnerProduct(vec1, vec2) / (VectorSize(vec1) * VectorSize(vec2))
+
+# calculate similarity
+def collect_similarity_unit (simi_file, dist_type):
 	"""
-	Collect sequence similarity based on grouped units
-	Input: the file name of sequence similarity
+	Collect sequence similarity based on Jaccard index
+	Input:
+		simi_file: the file name of sequence similarity
+		dist_type: type of similarity
 	Output: pair = {{c1:c2}, ...}
 	"""
+	config.logger.info ("collect_similarity_unit process......")
+	
 	units = {}
 	maps = {}
 	pairs = {}
@@ -125,17 +155,89 @@ def collect_similarity_unit (simi_file):
 			units[myu] = {}
 		units[myu][myid] = ""
 
-	for myid1 in maps.keys():
-		for myu in maps[myid1].keys():
-			if myu in units:
-				for myid2 in units[myu].keys():
-					if myid1 != myid2:
-						if not myid1 in pairs:
-							pairs[myid1] = {}
-						if not myid2 in pairs[myid1]:
-							pairs[myid1][myid2] = 1
-						else:
-							pairs[myid1][myid2] += 1
+	if dist_type == "count":
+		for myid1 in maps.keys():
+			for myu in maps[myid1].keys():
+				if myu in units:
+					for myid2 in units[myu].keys():
+						if myid1 != myid2:
+							if not myid1 in pairs:
+								pairs[myid1] = {}
+							if not myid2 in pairs[myid1]:
+								pairs[myid1][myid2] = 1
+							else:
+								pairs[myid1][myid2] += 1
+
+	if dist_type == "jaccard":
+		for myid1 in maps.keys():
+			for myu in maps[myid1].keys():
+				if myu in units:
+					for myid2 in units[myu].keys():
+						if myid1 == myid2:
+							continue
+						if not myid2 in maps:
+							continue
+						if myid1 in pairs:
+							if myid2 in pairs[myid1]:
+								continue
+						if myid2 in pairs:
+							if myid1 in pairs[myid2]:
+								continue
+						vec1 = list(maps[myid1].keys())
+						vec2 = list(maps[myid2].keys())
+						try:
+							sim = Jaccard (vec1, vec2)
+							if not myid1 in pairs:
+								pairs[myid1] = {}
+							if not myid2 in pairs[myid1]:
+								pairs[myid1][myid2] = sim
+							if not myid2 in pairs:
+								pairs[myid2] = {}
+							if not myid1 in pairs[myid2]:
+								pairs[myid2][myid1] = sim
+						except ValueError:
+							config.logger ("Failed in calculating Jaccard similarity for " + myid1 + "\t" + myid2)
+
+	if dist_type == "cosine":
+		for myid1 in maps.keys():
+			for myu in maps[myid1].keys():
+				if myu in units:
+					for myid2 in units[myu].keys():
+						if myid1 == myid2:
+							continue
+						if not myid2 in maps:
+							continue
+						if myid1 in pairs:
+							if myid2 in pairs[myid1]:
+								continue
+						if myid2 in pairs:
+							if myid1 in pairs[myid2]:
+								continue
+						vec1 = []
+						vec2 = []
+						myunits = set(list(maps[myid1].keys()) + list(maps[myid2].keys()))
+						for i in myunits:
+							if i in maps[myid1]:
+								vec1.append(1)
+							else:
+								vec1.append(0)
+							if i in maps[myid2]:
+								vec2.append(1)
+							else:
+								vec2.append(0)
+						try:
+							sim = Cosine (vec1, vec2)
+							if not myid1 in pairs:
+								pairs[myid1] = {}
+							if not myid2 in pairs[myid1]:
+								pairs[myid1][myid2] = sim
+							if not myid2 in pairs:
+								pairs[myid2] = {}
+							if not myid1 in pairs[myid2]:
+								pairs[myid2][myid1] = sim
+						except ValueError:
+							config.logger("Failed in calculating Cosine similarity for " + myid1 + "\t" + myid2)
+
 	maps = {}
 	units = {}
 
@@ -145,9 +247,13 @@ def collect_similarity_unit (simi_file):
 def collect_function (func_file, func_type):
 	"""
 	Collect function maps
-	Input: the file name of function annotation
+	Input:
+		the file name of function annotation
 	Output: func = {{f1: c1, c2}, ...}
 	"""
+	
+	config.logger.info ("collect_function process......")
+	
 	go_types = ["GO", "BP", "MF", "CC"]
 	if func_type in go_types:
 		try:
@@ -181,15 +287,18 @@ def collect_function (func_file, func_type):
 	return funcs
 
 
-def build_function_matrix (families, pairs, funcs, outfile):
+def build_function_matrix (families, pairs, funcs, dist_type, outfile):
 	"""
 	Build function association matrix based on sequence similarity
-	Input: families, pairs, funcs
+	Input: families, pairs, funcs, dist_type
 	Output: output function association info file
 	"""
+	
+	config.logger.info ("build_function_matrix process......")
 
 	anns = {}
 	myfuncs = {}
+	# requiring at least two annotated members in the co-unit if annotated member is labeled as non-zero value
 	for myid in families.keys():
 		#if myid in funcs:
 		#	if not myid in anns:
@@ -197,22 +306,45 @@ def build_function_matrix (families, pairs, funcs, outfile):
 		#	for myf in funcs[myid].keys():
 		#		myfuncs[myf] = ""
 		#		anns[myid][myf] = 1
-		if myid in pairs:
-			for myid2 in pairs[myid].keys():
-				if myid == myid2:
-					continue
-				myv = float(pairs[myid][myid2])
-				if myid2 in funcs:
-					for myf in funcs[myid2].keys():
+		if dist_type == "count":
+			if myid in pairs:
+				for myid2 in pairs[myid].keys():
+					if myid == myid2:
+						continue
+					myv = float(pairs[myid][myid2])
+					if myid2 in funcs:
+						for myf in funcs[myid2].keys():
+							if not myid in anns:
+								anns[myid] = {}
+							if not myf in anns[myid]:
+								myfuncs[myf] = ""
+								anns[myid][myf] = myv
+							if float(anns[myid][myf]) < float(myv):
+								anns[myid][myf] = myv
+				# foreach pair
+			# if exits pair
+		else:
+			if myid in pairs:
+				sim = {}
+				# collect similarity
+				for myid2 in pairs[myid].keys():
+					if myid == myid2:
+						continue
+					myv = float(pairs[myid][myid2])
+					if myid2 in funcs:
+						for myf in funcs[myid2].keys():
+							if not myf in sim:
+								sim[myf] = []
+							sim[myf].append(myv)
+				# average similarity per function
+				if len(sim.keys()) > 0:
+					for myf in sim.keys():
+						myfuncs[myf] = ""
+						myv = sum(sim[myf]) * 1.0 / len(sim[myf])
 						if not myid in anns:
 							anns[myid] = {}
 						if not myf in anns[myid]:
-							myfuncs[myf] = ""
 							anns[myid][myf] = myv
-						if float(anns[myid][myf]) < float(myv):
-							anns[myid][myf] = myv
-			# foreach pair
-		# if exits pair
 	# foreach protein family
 
 	# write info into file
@@ -248,9 +380,9 @@ def main():
 
 	#units = ["pfam", "uniref50", "contig", "DDI", "homology"]
 	paris = {}
-	#if args_value.type in units:
-	pairs = collect_similarity_unit (args_value.similarity)
-	build_function_matrix(families, pairs, funcs, args_value.output)
+	pairs = collect_similarity_unit (args_value.similarity, args_value.vector)
+
+	build_function_matrix(families, pairs, funcs, args_value.vector, args_value.output)
 
 	config.logger.info("Successfully finished prepare_seqSimilarity process!")
 
