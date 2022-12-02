@@ -88,24 +88,26 @@ def collect_raw_feature (infile):
 	config.logger.info('collect_raw_feature')
 
 	funcs = {}
-	open_file = open(infile, "r")
-	title = open_file.readline().strip()
 	titles = {}
-	info = title.split("\t")
-	for i in info:
-		titles[i] = info.index(i)
-	for line in open_file:
+	title = ""
+	head_t = 0
+	for line in utilities.gzip_bzip2_biom_open_readlines (infile):
 		line = line.strip()
 		if not len(line):
 			continue
+		info = line.split("\t")
+		if head_t == 0:
+			head_t = 1
+			title = line
+			for i in info:
+				titles[i] = info.index(i)
+			continue
 		if re.search("^Feature\t", line):
 			break
-		info = line.split("\t")
 		myid = info[0]
 		if re.search("__", myid):
 			continue
 		funcs[myid] = line
-	open_file.close()
 
 	return title, funcs
 
