@@ -1,6 +1,6 @@
 # FUGAsseM User Manual
 
-**FUGAsseM** (**F**unction predictor of **U**ncharacterized **G**ene products by **Asse**ssing high-dimensional community data in **M**icrobiome) is a computational tool based on a “guilt by association” approach to predict functions of novel gene products in the context of microbial communities. It uses machine learning methods to predict functions of microbial proteins by integrating multiple types of community-based data, such as co-expression patterns from metatranscriptomics (MTX), co-localization patterns from metagenomic (MGX) assemblies, homologous-based annotation, domain-based annotations, etc.
+**FUGAsseM** (**F**unction predictor of **U**ncharacterized **G**ene products by **Asse**ssing high-dimensional community data in **M**icrobiomes) is a computational tool based on a “guilt by association” approach to predict functions of novel gene products in the context of microbial communities. It uses machine learning methods to predict functions of microbial proteins by integrating multiple types of community-based data, such as co-expression patterns from metatranscriptomics (MTX), co-localization patterns from metagenomic (MGX) assemblies, homologous-based annotation, domain-based annotations, etc.
 
 
 
