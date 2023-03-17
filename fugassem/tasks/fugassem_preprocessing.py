@@ -1030,13 +1030,13 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 	                workflow, threads, time_equation, mem_equation)
 
 	## calculate co-variation
-	if bypass_coexp:
-		if not "exp" in evidence_list:
-			evidence_list["exp"] = final_corr_file
-	else:
+	if not bypass_coexp or bypass_coexp == "False":
 		calculate_covariation (refined_abund_file, corr_method, main_folder, final_corr_file, final_abund_file,
 	                      evidence_list, "exp",
 	                      workflow, threads, time_equation, mem_equation)
+	else:	
+		if not "exp" in evidence_list:
+			evidence_list["exp"] = final_corr_file
 	#evidence_type = "exp"
 	#if not evidence_type in feature_list:
 	#	feature_list[evidence_type] = final_corr_file
