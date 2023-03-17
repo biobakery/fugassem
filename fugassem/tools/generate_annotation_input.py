@@ -63,8 +63,8 @@ def parse_cli_arguments():
                 			"UniRef90_KEGG-KOs", "InterProScan_PfamDomain", "Denovo_transmembrane", "Denovo_signaling", "DOMINE_interaction"],
 	                      default = "GO")
 	workflow.add_argument("pfam",
-	                      desc = "if specified, will extract pfam annotation of that type, [ Default: InterProScan_PfamDomain",
-	                      default = "InterProScan_PfamDomain")
+	                      desc = "if specified, will extract pfam annotation of that type, [ Default: None ]",
+	                      default = None)
 	workflow.add_argument("ddi",
 	                      desc = "if specified, will extract DDI annotation of that type, [ Default: DOMINE_interaction ]",
 	                      default = "DOMINE_interaction")
