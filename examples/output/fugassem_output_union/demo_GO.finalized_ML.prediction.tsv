@@ -1,1106 +1,1105 @@
 taxon	feature	func	category	score	raw_ann
-Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.98	1
-Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.99	1
-Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0005886:[CC] plasma membrane	CC	0.82	1
-Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0006793:[BP] phosphorus metabolic process	BP	0.86	1
-Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.16	0
-Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0016854:[MF] racemase and epimerase activity	MF	0.15	0
-Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0043565:[MF] sequence-specific DNA binding	MF	0.97	1
-Bacteroides_thetaiotaomicron	Cluster_1024034	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.88	1
-Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.98	0
-Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.99	0
-Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0005886:[CC] plasma membrane	CC	0.79	0
-Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0006793:[BP] phosphorus metabolic process	BP	0.86	0
-Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.26	0
-Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0016854:[MF] racemase and epimerase activity	MF	0.26	0
-Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0043565:[MF] sequence-specific DNA binding	MF	0.97	0
-Bacteroides_thetaiotaomicron	Cluster_1024216	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.82	0
-Bacteroides_thetaiotaomicron	Cluster_10250	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.13	0
-Bacteroides_thetaiotaomicron	Cluster_10250	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.18	0
-Bacteroides_thetaiotaomicron	Cluster_10250	GO:0005886:[CC] plasma membrane	CC	0.47	0
-Bacteroides_thetaiotaomicron	Cluster_10250	GO:0006793:[BP] phosphorus metabolic process	BP	0.53	0
-Bacteroides_thetaiotaomicron	Cluster_10250	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.62	0
-Bacteroides_thetaiotaomicron	Cluster_10250	GO:0016854:[MF] racemase and epimerase activity	MF	0.55	0
+Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.99	1
+Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.95	1
+Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0005886:[CC] plasma membrane	CC	0.92	1
+Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0006793:[BP] phosphorus metabolic process	BP	0.92	1
+Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.45	0
+Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0016854:[MF] racemase and epimerase activity	MF	0.28	0
+Bacteroides_thetaiotaomicron	Cluster_1024034	GO:0043565:[MF] sequence-specific DNA binding	MF	0.98	1
+Bacteroides_thetaiotaomicron	Cluster_1024034	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.73	1
+Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.99	0
+Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.95	0
+Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0005886:[CC] plasma membrane	CC	0.92	0
+Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0006793:[BP] phosphorus metabolic process	BP	0.84	0
+Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.6	0
+Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0016854:[MF] racemase and epimerase activity	MF	0.43	0
+Bacteroides_thetaiotaomicron	Cluster_1024216	GO:0043565:[MF] sequence-specific DNA binding	MF	0.98	0
+Bacteroides_thetaiotaomicron	Cluster_1024216	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.68	0
+Bacteroides_thetaiotaomicron	Cluster_10250	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.19	0
+Bacteroides_thetaiotaomicron	Cluster_10250	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.07	0
+Bacteroides_thetaiotaomicron	Cluster_10250	GO:0005886:[CC] plasma membrane	CC	0.42	0
+Bacteroides_thetaiotaomicron	Cluster_10250	GO:0006793:[BP] phosphorus metabolic process	BP	0.63	0
+Bacteroides_thetaiotaomicron	Cluster_10250	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.58	0
+Bacteroides_thetaiotaomicron	Cluster_10250	GO:0016854:[MF] racemase and epimerase activity	MF	0.79	0
 Bacteroides_thetaiotaomicron	Cluster_10250	GO:0043565:[MF] sequence-specific DNA binding	MF	0.01	0
-Bacteroides_thetaiotaomicron	Cluster_10250	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.68	0
+Bacteroides_thetaiotaomicron	Cluster_10250	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.46	0
 Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.99	1
-Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.93	1
-Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0005886:[CC] plasma membrane	CC	0.92	1
-Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0006793:[BP] phosphorus metabolic process	BP	0.42	1
-Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.45	0
-Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0016854:[MF] racemase and epimerase activity	MF	0.3	0
-Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0043565:[MF] sequence-specific DNA binding	MF	0.98	1
-Bacteroides_thetaiotaomicron	Cluster_1155588	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.57	1
-Bacteroides_thetaiotaomicron	Cluster_184127	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.02	0
-Bacteroides_thetaiotaomicron	Cluster_184127	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.06	0
-Bacteroides_thetaiotaomicron	Cluster_184127	GO:0005886:[CC] plasma membrane	CC	0.32	0
-Bacteroides_thetaiotaomicron	Cluster_184127	GO:0006793:[BP] phosphorus metabolic process	BP	0.51	0
-Bacteroides_thetaiotaomicron	Cluster_184127	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.83	1
-Bacteroides_thetaiotaomicron	Cluster_184127	GO:0016854:[MF] racemase and epimerase activity	MF	0.81	1
+Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.89	1
+Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0005886:[CC] plasma membrane	CC	0.5	1
+Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0006793:[BP] phosphorus metabolic process	BP	0.85	1
+Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.23	0
+Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0016854:[MF] racemase and epimerase activity	MF	0.13	0
+Bacteroides_thetaiotaomicron	Cluster_1155588	GO:0043565:[MF] sequence-specific DNA binding	MF	0.99	1
+Bacteroides_thetaiotaomicron	Cluster_1155588	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.36	1
+Bacteroides_thetaiotaomicron	Cluster_184127	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.01	0
+Bacteroides_thetaiotaomicron	Cluster_184127	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.11	0
+Bacteroides_thetaiotaomicron	Cluster_184127	GO:0005886:[CC] plasma membrane	CC	0.36	0
+Bacteroides_thetaiotaomicron	Cluster_184127	GO:0006793:[BP] phosphorus metabolic process	BP	0.63	0
+Bacteroides_thetaiotaomicron	Cluster_184127	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.71	1
+Bacteroides_thetaiotaomicron	Cluster_184127	GO:0016854:[MF] racemase and epimerase activity	MF	0.9	1
 Bacteroides_thetaiotaomicron	Cluster_184127	GO:0043565:[MF] sequence-specific DNA binding	MF	0.01	0
-Bacteroides_thetaiotaomicron	Cluster_184127	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.06	0
-Bacteroides_thetaiotaomicron	Cluster_184714	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.22	0
-Bacteroides_thetaiotaomicron	Cluster_184714	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.26	0
-Bacteroides_thetaiotaomicron	Cluster_184714	GO:0005886:[CC] plasma membrane	CC	0.41	0
-Bacteroides_thetaiotaomicron	Cluster_184714	GO:0006793:[BP] phosphorus metabolic process	BP	0.45	0
-Bacteroides_thetaiotaomicron	Cluster_184714	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.71	1
-Bacteroides_thetaiotaomicron	Cluster_184714	GO:0016854:[MF] racemase and epimerase activity	MF	0.58	1
-Bacteroides_thetaiotaomicron	Cluster_184714	GO:0043565:[MF] sequence-specific DNA binding	MF	0.21	0
-Bacteroides_thetaiotaomicron	Cluster_184714	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.06	0
-Bacteroides_thetaiotaomicron	Cluster_33900	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.04	0
-Bacteroides_thetaiotaomicron	Cluster_33900	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.06	0
-Bacteroides_thetaiotaomicron	Cluster_33900	GO:0005886:[CC] plasma membrane	CC	0.55	0
-Bacteroides_thetaiotaomicron	Cluster_33900	GO:0006793:[BP] phosphorus metabolic process	BP	0.54	0
-Bacteroides_thetaiotaomicron	Cluster_33900	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.24	0
-Bacteroides_thetaiotaomicron	Cluster_33900	GO:0016854:[MF] racemase and epimerase activity	MF	0.42	0
-Bacteroides_thetaiotaomicron	Cluster_33900	GO:0043565:[MF] sequence-specific DNA binding	MF	0.07	0
-Bacteroides_thetaiotaomicron	Cluster_33900	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.38	0
-Bacteroides_thetaiotaomicron	Cluster_43546	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.93	1
-Bacteroides_thetaiotaomicron	Cluster_43546	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.82	1
-Bacteroides_thetaiotaomicron	Cluster_43546	GO:0005886:[CC] plasma membrane	CC	0.63	1
-Bacteroides_thetaiotaomicron	Cluster_43546	GO:0006793:[BP] phosphorus metabolic process	BP	0.79	1
-Bacteroides_thetaiotaomicron	Cluster_43546	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.21	0
-Bacteroides_thetaiotaomicron	Cluster_43546	GO:0016854:[MF] racemase and epimerase activity	MF	0.42	0
-Bacteroides_thetaiotaomicron	Cluster_43546	GO:0043565:[MF] sequence-specific DNA binding	MF	0.94	1
-Bacteroides_thetaiotaomicron	Cluster_43546	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.82	1
-Bacteroides_thetaiotaomicron	Cluster_463797	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.08	0
-Bacteroides_thetaiotaomicron	Cluster_463797	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.04	0
-Bacteroides_thetaiotaomicron	Cluster_463797	GO:0005886:[CC] plasma membrane	CC	0.55	0
-Bacteroides_thetaiotaomicron	Cluster_463797	GO:0006793:[BP] phosphorus metabolic process	BP	0.54	0
-Bacteroides_thetaiotaomicron	Cluster_463797	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.67	0
-Bacteroides_thetaiotaomicron	Cluster_463797	GO:0016854:[MF] racemase and epimerase activity	MF	0.16	0
-Bacteroides_thetaiotaomicron	Cluster_463797	GO:0043565:[MF] sequence-specific DNA binding	MF	0.01	0
-Bacteroides_thetaiotaomicron	Cluster_463797	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.53	0
-Bacteroides_thetaiotaomicron	Cluster_632417	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.01	0
-Bacteroides_thetaiotaomicron	Cluster_632417	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.12	0
-Bacteroides_thetaiotaomicron	Cluster_632417	GO:0005886:[CC] plasma membrane	CC	0.13	0
-Bacteroides_thetaiotaomicron	Cluster_632417	GO:0006793:[BP] phosphorus metabolic process	BP	0.24	0
-Bacteroides_thetaiotaomicron	Cluster_632417	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.43	1
-Bacteroides_thetaiotaomicron	Cluster_632417	GO:0016854:[MF] racemase and epimerase activity	MF	0.39	1
+Bacteroides_thetaiotaomicron	Cluster_184127	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.27	0
+Bacteroides_thetaiotaomicron	Cluster_184714	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.25	0
+Bacteroides_thetaiotaomicron	Cluster_184714	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.3	0
+Bacteroides_thetaiotaomicron	Cluster_184714	GO:0005886:[CC] plasma membrane	CC	0.36	0
+Bacteroides_thetaiotaomicron	Cluster_184714	GO:0006793:[BP] phosphorus metabolic process	BP	0.68	0
+Bacteroides_thetaiotaomicron	Cluster_184714	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.63	1
+Bacteroides_thetaiotaomicron	Cluster_184714	GO:0016854:[MF] racemase and epimerase activity	MF	0.48	1
+Bacteroides_thetaiotaomicron	Cluster_184714	GO:0043565:[MF] sequence-specific DNA binding	MF	0.26	0
+Bacteroides_thetaiotaomicron	Cluster_184714	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.27	0
+Bacteroides_thetaiotaomicron	Cluster_33900	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.11	0
+Bacteroides_thetaiotaomicron	Cluster_33900	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.07	0
+Bacteroides_thetaiotaomicron	Cluster_33900	GO:0005886:[CC] plasma membrane	CC	0.36	0
+Bacteroides_thetaiotaomicron	Cluster_33900	GO:0006793:[BP] phosphorus metabolic process	BP	0.33	0
+Bacteroides_thetaiotaomicron	Cluster_33900	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.69	0
+Bacteroides_thetaiotaomicron	Cluster_33900	GO:0016854:[MF] racemase and epimerase activity	MF	0.35	0
+Bacteroides_thetaiotaomicron	Cluster_33900	GO:0043565:[MF] sequence-specific DNA binding	MF	0.06	0
+Bacteroides_thetaiotaomicron	Cluster_33900	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.54	0
+Bacteroides_thetaiotaomicron	Cluster_43546	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.81	1
+Bacteroides_thetaiotaomicron	Cluster_43546	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.58	1
+Bacteroides_thetaiotaomicron	Cluster_43546	GO:0005886:[CC] plasma membrane	CC	0.71	1
+Bacteroides_thetaiotaomicron	Cluster_43546	GO:0006793:[BP] phosphorus metabolic process	BP	0.55	1
+Bacteroides_thetaiotaomicron	Cluster_43546	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.52	0
+Bacteroides_thetaiotaomicron	Cluster_43546	GO:0016854:[MF] racemase and epimerase activity	MF	0.24	0
+Bacteroides_thetaiotaomicron	Cluster_43546	GO:0043565:[MF] sequence-specific DNA binding	MF	0.69	1
+Bacteroides_thetaiotaomicron	Cluster_43546	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.85	1
+Bacteroides_thetaiotaomicron	Cluster_463797	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.11	0
+Bacteroides_thetaiotaomicron	Cluster_463797	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.11	0
+Bacteroides_thetaiotaomicron	Cluster_463797	GO:0005886:[CC] plasma membrane	CC	0.36	0
+Bacteroides_thetaiotaomicron	Cluster_463797	GO:0006793:[BP] phosphorus metabolic process	BP	0.33	0
+Bacteroides_thetaiotaomicron	Cluster_463797	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.18	0
+Bacteroides_thetaiotaomicron	Cluster_463797	GO:0016854:[MF] racemase and epimerase activity	MF	0.13	0
+Bacteroides_thetaiotaomicron	Cluster_463797	GO:0043565:[MF] sequence-specific DNA binding	MF	0.06	0
+Bacteroides_thetaiotaomicron	Cluster_463797	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.84	0
+Bacteroides_thetaiotaomicron	Cluster_632417	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.14	0
+Bacteroides_thetaiotaomicron	Cluster_632417	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.02	0
+Bacteroides_thetaiotaomicron	Cluster_632417	GO:0005886:[CC] plasma membrane	CC	0.04	0
+Bacteroides_thetaiotaomicron	Cluster_632417	GO:0006793:[BP] phosphorus metabolic process	BP	0.1	0
+Bacteroides_thetaiotaomicron	Cluster_632417	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.42	1
+Bacteroides_thetaiotaomicron	Cluster_632417	GO:0016854:[MF] racemase and epimerase activity	MF	0.35	1
 Bacteroides_thetaiotaomicron	Cluster_632417	GO:0043565:[MF] sequence-specific DNA binding	MF	0.04	0
-Bacteroides_thetaiotaomicron	Cluster_632417	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.12	0
-Bacteroides_thetaiotaomicron	Cluster_65473	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.98	1
-Bacteroides_thetaiotaomicron	Cluster_65473	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.63	1
-Bacteroides_thetaiotaomicron	Cluster_65473	GO:0005886:[CC] plasma membrane	CC	0.56	0
-Bacteroides_thetaiotaomicron	Cluster_65473	GO:0006793:[BP] phosphorus metabolic process	BP	0.73	0
-Bacteroides_thetaiotaomicron	Cluster_65473	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.04	0
-Bacteroides_thetaiotaomicron	Cluster_65473	GO:0016854:[MF] racemase and epimerase activity	MF	0.27	0
-Bacteroides_thetaiotaomicron	Cluster_65473	GO:0043565:[MF] sequence-specific DNA binding	MF	0.75	1
-Bacteroides_thetaiotaomicron	Cluster_65473	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.76	0
-Bacteroides_thetaiotaomicron	Cluster_737179	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.8	1
-Bacteroides_thetaiotaomicron	Cluster_737179	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.67	1
-Bacteroides_thetaiotaomicron	Cluster_737179	GO:0005886:[CC] plasma membrane	CC	0.52	0
-Bacteroides_thetaiotaomicron	Cluster_737179	GO:0006793:[BP] phosphorus metabolic process	BP	0.43	0
-Bacteroides_thetaiotaomicron	Cluster_737179	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.16	0
-Bacteroides_thetaiotaomicron	Cluster_737179	GO:0016854:[MF] racemase and epimerase activity	MF	0.09	0
-Bacteroides_thetaiotaomicron	Cluster_737179	GO:0043565:[MF] sequence-specific DNA binding	MF	0.78	1
-Bacteroides_thetaiotaomicron	Cluster_737179	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.48	0
-Bacteroides_thetaiotaomicron	Cluster_972087	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.06	0
+Bacteroides_thetaiotaomicron	Cluster_632417	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.11	0
+Bacteroides_thetaiotaomicron	Cluster_65473	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.92	1
+Bacteroides_thetaiotaomicron	Cluster_65473	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.96	1
+Bacteroides_thetaiotaomicron	Cluster_65473	GO:0005886:[CC] plasma membrane	CC	0.44	0
+Bacteroides_thetaiotaomicron	Cluster_65473	GO:0006793:[BP] phosphorus metabolic process	BP	0.29	0
+Bacteroides_thetaiotaomicron	Cluster_65473	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.09	0
+Bacteroides_thetaiotaomicron	Cluster_65473	GO:0016854:[MF] racemase and epimerase activity	MF	0.23	0
+Bacteroides_thetaiotaomicron	Cluster_65473	GO:0043565:[MF] sequence-specific DNA binding	MF	0.92	1
+Bacteroides_thetaiotaomicron	Cluster_65473	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.88	0
+Bacteroides_thetaiotaomicron	Cluster_737179	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.75	1
+Bacteroides_thetaiotaomicron	Cluster_737179	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.6	1
+Bacteroides_thetaiotaomicron	Cluster_737179	GO:0005886:[CC] plasma membrane	CC	0.32	0
+Bacteroides_thetaiotaomicron	Cluster_737179	GO:0006793:[BP] phosphorus metabolic process	BP	0.24	0
+Bacteroides_thetaiotaomicron	Cluster_737179	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.36	0
+Bacteroides_thetaiotaomicron	Cluster_737179	GO:0016854:[MF] racemase and epimerase activity	MF	0.06	0
+Bacteroides_thetaiotaomicron	Cluster_737179	GO:0043565:[MF] sequence-specific DNA binding	MF	0.61	1
+Bacteroides_thetaiotaomicron	Cluster_737179	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.34	0
+Bacteroides_thetaiotaomicron	Cluster_972087	GO:0000155:[MF] phosphorelay sensor kinase activity	MF	0.01	0
 Bacteroides_thetaiotaomicron	Cluster_972087	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.01	0
-Bacteroides_thetaiotaomicron	Cluster_972087	GO:0005886:[CC] plasma membrane	CC	0.26	0
-Bacteroides_thetaiotaomicron	Cluster_972087	GO:0006793:[BP] phosphorus metabolic process	BP	0.45	0
-Bacteroides_thetaiotaomicron	Cluster_972087	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
-Bacteroides_thetaiotaomicron	Cluster_972087	GO:0016854:[MF] racemase and epimerase activity	MF	0.09	0
-Bacteroides_thetaiotaomicron	Cluster_972087	GO:0043565:[MF] sequence-specific DNA binding	MF	0.01	0
-Bacteroides_thetaiotaomicron	Cluster_972087	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.3	0
-Escherichia_coli	feature	func	category	score	raw_ann
-Escherichia_coli	Cluster_100559	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
+Bacteroides_thetaiotaomicron	Cluster_972087	GO:0005886:[CC] plasma membrane	CC	0.17	0
+Bacteroides_thetaiotaomicron	Cluster_972087	GO:0006793:[BP] phosphorus metabolic process	BP	0.21	0
+Bacteroides_thetaiotaomicron	Cluster_972087	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.48	0
+Bacteroides_thetaiotaomicron	Cluster_972087	GO:0016854:[MF] racemase and epimerase activity	MF	0.06	0
+Bacteroides_thetaiotaomicron	Cluster_972087	GO:0043565:[MF] sequence-specific DNA binding	MF	0.03	0
+Bacteroides_thetaiotaomicron	Cluster_972087	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.11	0
+Escherichia_coli	Cluster_100559	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
 Escherichia_coli	Cluster_100559	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.22	0
-Escherichia_coli	Cluster_100559	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.08	0
-Escherichia_coli	Cluster_100559	GO:0005737:[CC] cytoplasm	CC	0.38	0
-Escherichia_coli	Cluster_100559	GO:0005886:[CC] plasma membrane	CC	0.25	0
-Escherichia_coli	Cluster_100559	GO:0006793:[BP] phosphorus metabolic process	BP	0.3	0
-Escherichia_coli	Cluster_100559	GO:0006811:[BP] ion transport	BP	0.0	0
-Escherichia_coli	Cluster_100559	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
-Escherichia_coli	Cluster_100559	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.08	0
-Escherichia_coli	Cluster_100559	GO:0009279:[CC] cell outer membrane	CC	0.1	0
-Escherichia_coli	Cluster_100559	GO:0015288:[MF] porin activity	MF	0.02	0
-Escherichia_coli	Cluster_100559	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
-Escherichia_coli	Cluster_100559	GO:0016787:[MF] hydrolase activity	MF	0.89	1
-Escherichia_coli	Cluster_100559	GO:0016836:[MF] hydro-lyase activity	MF	0.34	0
-Escherichia_coli	Cluster_100559	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
-Escherichia_coli	Cluster_100559	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.14	0
-Escherichia_coli	Cluster_100559	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.11	0
-Escherichia_coli	Cluster_100559	GO:0046930:[CC] pore complex	CC	0.0	0
+Escherichia_coli	Cluster_100559	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Escherichia_coli	Cluster_100559	GO:0005737:[CC] cytoplasm	CC	0.43	0
+Escherichia_coli	Cluster_100559	GO:0005886:[CC] plasma membrane	CC	0.14	0
+Escherichia_coli	Cluster_100559	GO:0006793:[BP] phosphorus metabolic process	BP	0.84	0
+Escherichia_coli	Cluster_100559	GO:0006811:[BP] ion transport	BP	0.02	0
+Escherichia_coli	Cluster_100559	GO:0006855:[BP] drug transmembrane transport	BP	0.67	0
+Escherichia_coli	Cluster_100559	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.5	0
+Escherichia_coli	Cluster_100559	GO:0009279:[CC] cell outer membrane	CC	0.22	0
+Escherichia_coli	Cluster_100559	GO:0015288:[MF] porin activity	MF	0.04	0
+Escherichia_coli	Cluster_100559	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_100559	GO:0016787:[MF] hydrolase activity	MF	0.6	1
+Escherichia_coli	Cluster_100559	GO:0016836:[MF] hydro-lyase activity	MF	0.78	0
+Escherichia_coli	Cluster_100559	GO:0016854:[MF] racemase and epimerase activity	MF	0.54	0
+Escherichia_coli	Cluster_100559	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.42	0
+Escherichia_coli	Cluster_100559	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.79	0
+Escherichia_coli	Cluster_100559	GO:0046930:[CC] pore complex	CC	0.03	0
 Escherichia_coli	Cluster_100559	GO:0051287:[MF] NAD binding	MF	0.0	0
-Escherichia_coli	Cluster_100559	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.91	0
-Escherichia_coli	Cluster_100569	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
+Escherichia_coli	Cluster_100559	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.27	0
+Escherichia_coli	Cluster_100569	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.2	0
 Escherichia_coli	Cluster_100569	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.14	0
-Escherichia_coli	Cluster_100569	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.12	0
-Escherichia_coli	Cluster_100569	GO:0005737:[CC] cytoplasm	CC	0.29	0
-Escherichia_coli	Cluster_100569	GO:0005886:[CC] plasma membrane	CC	0.31	0
-Escherichia_coli	Cluster_100569	GO:0006793:[BP] phosphorus metabolic process	BP	0.45	0
-Escherichia_coli	Cluster_100569	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_100569	GO:0006855:[BP] drug transmembrane transport	BP	0.33	0
-Escherichia_coli	Cluster_100569	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.01	0
-Escherichia_coli	Cluster_100569	GO:0009279:[CC] cell outer membrane	CC	0.03	0
-Escherichia_coli	Cluster_100569	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_100569	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.31	0
-Escherichia_coli	Cluster_100569	GO:0016787:[MF] hydrolase activity	MF	0.42	0
+Escherichia_coli	Cluster_100569	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Escherichia_coli	Cluster_100569	GO:0005737:[CC] cytoplasm	CC	0.42	0
+Escherichia_coli	Cluster_100569	GO:0005886:[CC] plasma membrane	CC	0.63	0
+Escherichia_coli	Cluster_100569	GO:0006793:[BP] phosphorus metabolic process	BP	0.8	0
+Escherichia_coli	Cluster_100569	GO:0006811:[BP] ion transport	BP	0.0	0
+Escherichia_coli	Cluster_100569	GO:0006855:[BP] drug transmembrane transport	BP	0.23	0
+Escherichia_coli	Cluster_100569	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_100569	GO:0009279:[CC] cell outer membrane	CC	0.11	0
+Escherichia_coli	Cluster_100569	GO:0015288:[MF] porin activity	MF	0.04	0
+Escherichia_coli	Cluster_100569	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.14	0
+Escherichia_coli	Cluster_100569	GO:0016787:[MF] hydrolase activity	MF	0.5	0
 Escherichia_coli	Cluster_100569	GO:0016836:[MF] hydro-lyase activity	MF	0.59	0
-Escherichia_coli	Cluster_100569	GO:0016854:[MF] racemase and epimerase activity	MF	0.22	0
-Escherichia_coli	Cluster_100569	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.3	0
-Escherichia_coli	Cluster_100569	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
-Escherichia_coli	Cluster_100569	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_100569	GO:0051287:[MF] NAD binding	MF	0.3	0
-Escherichia_coli	Cluster_100569	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.63	0
-Escherichia_coli	Cluster_1008935	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
-Escherichia_coli	Cluster_1008935	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.29	0
-Escherichia_coli	Cluster_1008935	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
-Escherichia_coli	Cluster_1008935	GO:0005737:[CC] cytoplasm	CC	0.67	1
-Escherichia_coli	Cluster_1008935	GO:0005886:[CC] plasma membrane	CC	0.12	0
-Escherichia_coli	Cluster_1008935	GO:0006793:[BP] phosphorus metabolic process	BP	0.34	0
+Escherichia_coli	Cluster_100569	GO:0016854:[MF] racemase and epimerase activity	MF	0.26	0
+Escherichia_coli	Cluster_100569	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.52	0
+Escherichia_coli	Cluster_100569	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.49999999999999994	0
+Escherichia_coli	Cluster_100569	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_100569	GO:0051287:[MF] NAD binding	MF	0.16	0
+Escherichia_coli	Cluster_100569	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.53	0
+Escherichia_coli	Cluster_1008935	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.13	0
+Escherichia_coli	Cluster_1008935	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.18	0
+Escherichia_coli	Cluster_1008935	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.07	0
+Escherichia_coli	Cluster_1008935	GO:0005737:[CC] cytoplasm	CC	0.51	1
+Escherichia_coli	Cluster_1008935	GO:0005886:[CC] plasma membrane	CC	0.03	0
+Escherichia_coli	Cluster_1008935	GO:0006793:[BP] phosphorus metabolic process	BP	0.84	0
 Escherichia_coli	Cluster_1008935	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_1008935	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
-Escherichia_coli	Cluster_1008935	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.06	0
-Escherichia_coli	Cluster_1008935	GO:0009279:[CC] cell outer membrane	CC	0.07	0
-Escherichia_coli	Cluster_1008935	GO:0015288:[MF] porin activity	MF	0.03	0
-Escherichia_coli	Cluster_1008935	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
-Escherichia_coli	Cluster_1008935	GO:0016787:[MF] hydrolase activity	MF	0.93	1
-Escherichia_coli	Cluster_1008935	GO:0016836:[MF] hydro-lyase activity	MF	0.61	0
-Escherichia_coli	Cluster_1008935	GO:0016854:[MF] racemase and epimerase activity	MF	0.35	0
-Escherichia_coli	Cluster_1008935	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.34	0
-Escherichia_coli	Cluster_1008935	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.74	1
-Escherichia_coli	Cluster_1008935	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_1008935	GO:0051287:[MF] NAD binding	MF	0.3	0
-Escherichia_coli	Cluster_1008935	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.95	0
-Escherichia_coli	Cluster_101048	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.98	1
-Escherichia_coli	Cluster_101048	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.25	0
-Escherichia_coli	Cluster_101048	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.97	1
-Escherichia_coli	Cluster_101048	GO:0005737:[CC] cytoplasm	CC	0.27	0
+Escherichia_coli	Cluster_1008935	GO:0006855:[BP] drug transmembrane transport	BP	0.18	0
+Escherichia_coli	Cluster_1008935	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.32	0
+Escherichia_coli	Cluster_1008935	GO:0009279:[CC] cell outer membrane	CC	0.11	0
+Escherichia_coli	Cluster_1008935	GO:0015288:[MF] porin activity	MF	0.0	0
+Escherichia_coli	Cluster_1008935	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_1008935	GO:0016787:[MF] hydrolase activity	MF	0.5	1
+Escherichia_coli	Cluster_1008935	GO:0016836:[MF] hydro-lyase activity	MF	0.72	0
+Escherichia_coli	Cluster_1008935	GO:0016854:[MF] racemase and epimerase activity	MF	0.54	0
+Escherichia_coli	Cluster_1008935	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.56	0
+Escherichia_coli	Cluster_1008935	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.4481666666666666	1
+Escherichia_coli	Cluster_1008935	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_1008935	GO:0051287:[MF] NAD binding	MF	0.02	0
+Escherichia_coli	Cluster_1008935	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.26	0
+Escherichia_coli	Cluster_101048	GO:0000271:[BP] polysaccharide biosynthetic process	BP	1.0	1
+Escherichia_coli	Cluster_101048	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.17	0
+Escherichia_coli	Cluster_101048	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.99	1
+Escherichia_coli	Cluster_101048	GO:0005737:[CC] cytoplasm	CC	0.08	0
 Escherichia_coli	Cluster_101048	GO:0005886:[CC] plasma membrane	CC	0.06	0
-Escherichia_coli	Cluster_101048	GO:0006793:[BP] phosphorus metabolic process	BP	0.88	0
-Escherichia_coli	Cluster_101048	GO:0006811:[BP] ion transport	BP	0.0	0
-Escherichia_coli	Cluster_101048	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
-Escherichia_coli	Cluster_101048	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.97	0
-Escherichia_coli	Cluster_101048	GO:0009279:[CC] cell outer membrane	CC	0.0	0
-Escherichia_coli	Cluster_101048	GO:0015288:[MF] porin activity	MF	0.02	0
-Escherichia_coli	Cluster_101048	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
-Escherichia_coli	Cluster_101048	GO:0016787:[MF] hydrolase activity	MF	0.39	0
-Escherichia_coli	Cluster_101048	GO:0016836:[MF] hydro-lyase activity	MF	0.08	0
-Escherichia_coli	Cluster_101048	GO:0016854:[MF] racemase and epimerase activity	MF	0.2	0
-Escherichia_coli	Cluster_101048	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.91	0
-Escherichia_coli	Cluster_101048	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.83	0
+Escherichia_coli	Cluster_101048	GO:0006793:[BP] phosphorus metabolic process	BP	0.83	0
+Escherichia_coli	Cluster_101048	GO:0006811:[BP] ion transport	BP	0.02	0
+Escherichia_coli	Cluster_101048	GO:0006855:[BP] drug transmembrane transport	BP	0.13	0
+Escherichia_coli	Cluster_101048	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.91	0
+Escherichia_coli	Cluster_101048	GO:0009279:[CC] cell outer membrane	CC	0.05	0
+Escherichia_coli	Cluster_101048	GO:0015288:[MF] porin activity	MF	0.04	0
+Escherichia_coli	Cluster_101048	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_101048	GO:0016787:[MF] hydrolase activity	MF	0.42	0
+Escherichia_coli	Cluster_101048	GO:0016836:[MF] hydro-lyase activity	MF	0.38	0
+Escherichia_coli	Cluster_101048	GO:0016854:[MF] racemase and epimerase activity	MF	0.56	0
+Escherichia_coli	Cluster_101048	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.79	0
+Escherichia_coli	Cluster_101048	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.5499999999999999	0
 Escherichia_coli	Cluster_101048	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_101048	GO:0051287:[MF] NAD binding	MF	0.73	1
-Escherichia_coli	Cluster_101048	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.46	0
-Escherichia_coli	Cluster_1011278	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_1011278	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.14	0
-Escherichia_coli	Cluster_1011278	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.12	0
-Escherichia_coli	Cluster_1011278	GO:0005737:[CC] cytoplasm	CC	0.26	1
-Escherichia_coli	Cluster_1011278	GO:0005886:[CC] plasma membrane	CC	0.14	0
-Escherichia_coli	Cluster_1011278	GO:0006793:[BP] phosphorus metabolic process	BP	0.27	0
-Escherichia_coli	Cluster_1011278	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_1011278	GO:0006855:[BP] drug transmembrane transport	BP	0.32	0
-Escherichia_coli	Cluster_1011278	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.01	0
-Escherichia_coli	Cluster_1011278	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Escherichia_coli	Cluster_101048	GO:0051287:[MF] NAD binding	MF	0.58	1
+Escherichia_coli	Cluster_101048	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.23	0
+Escherichia_coli	Cluster_1011278	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.09	0
+Escherichia_coli	Cluster_1011278	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.16	0
+Escherichia_coli	Cluster_1011278	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Escherichia_coli	Cluster_1011278	GO:0005737:[CC] cytoplasm	CC	0.71	1
+Escherichia_coli	Cluster_1011278	GO:0005886:[CC] plasma membrane	CC	0.35	0
+Escherichia_coli	Cluster_1011278	GO:0006793:[BP] phosphorus metabolic process	BP	0.07	0
+Escherichia_coli	Cluster_1011278	GO:0006811:[BP] ion transport	BP	0.0	0
+Escherichia_coli	Cluster_1011278	GO:0006855:[BP] drug transmembrane transport	BP	0.26	0
+Escherichia_coli	Cluster_1011278	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_1011278	GO:0009279:[CC] cell outer membrane	CC	0.1	0
 Escherichia_coli	Cluster_1011278	GO:0015288:[MF] porin activity	MF	0.0	0
-Escherichia_coli	Cluster_1011278	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.09	0
-Escherichia_coli	Cluster_1011278	GO:0016787:[MF] hydrolase activity	MF	0.9	1
+Escherichia_coli	Cluster_1011278	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
+Escherichia_coli	Cluster_1011278	GO:0016787:[MF] hydrolase activity	MF	0.38	1
 Escherichia_coli	Cluster_1011278	GO:0016836:[MF] hydro-lyase activity	MF	0.59	0
-Escherichia_coli	Cluster_1011278	GO:0016854:[MF] racemase and epimerase activity	MF	0.29	0
-Escherichia_coli	Cluster_1011278	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.35	0
-Escherichia_coli	Cluster_1011278	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.67	1
-Escherichia_coli	Cluster_1011278	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_1011278	GO:0051287:[MF] NAD binding	MF	0.29	0
-Escherichia_coli	Cluster_1011278	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.63	0
-Escherichia_coli	Cluster_101968	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_101968	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.22	0
-Escherichia_coli	Cluster_101968	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.08	0
-Escherichia_coli	Cluster_101968	GO:0005737:[CC] cytoplasm	CC	0.35	0
-Escherichia_coli	Cluster_101968	GO:0005886:[CC] plasma membrane	CC	0.12	0
-Escherichia_coli	Cluster_101968	GO:0006793:[BP] phosphorus metabolic process	BP	0.31	0
-Escherichia_coli	Cluster_101968	GO:0006811:[BP] ion transport	BP	0.99	1
-Escherichia_coli	Cluster_101968	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
-Escherichia_coli	Cluster_101968	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.02	0
-Escherichia_coli	Cluster_101968	GO:0009279:[CC] cell outer membrane	CC	0.9	1
-Escherichia_coli	Cluster_101968	GO:0015288:[MF] porin activity	MF	1.0	1
-Escherichia_coli	Cluster_101968	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
-Escherichia_coli	Cluster_101968	GO:0016787:[MF] hydrolase activity	MF	0.27	0
-Escherichia_coli	Cluster_101968	GO:0016836:[MF] hydro-lyase activity	MF	0.36	0
-Escherichia_coli	Cluster_101968	GO:0016854:[MF] racemase and epimerase activity	MF	0.12	0
-Escherichia_coli	Cluster_101968	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.34	0
-Escherichia_coli	Cluster_101968	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.26	0
-Escherichia_coli	Cluster_101968	GO:0046930:[CC] pore complex	CC	0.97	1
+Escherichia_coli	Cluster_1011278	GO:0016854:[MF] racemase and epimerase activity	MF	0.57	0
+Escherichia_coli	Cluster_1011278	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.56	0
+Escherichia_coli	Cluster_1011278	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.71	1
+Escherichia_coli	Cluster_1011278	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_1011278	GO:0051287:[MF] NAD binding	MF	0.02	0
+Escherichia_coli	Cluster_1011278	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.26	0
+Escherichia_coli	Cluster_101968	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Escherichia_coli	Cluster_101968	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.17	0
+Escherichia_coli	Cluster_101968	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Escherichia_coli	Cluster_101968	GO:0005737:[CC] cytoplasm	CC	0.64	0
+Escherichia_coli	Cluster_101968	GO:0005886:[CC] plasma membrane	CC	0.06	0
+Escherichia_coli	Cluster_101968	GO:0006793:[BP] phosphorus metabolic process	BP	0.84	0
+Escherichia_coli	Cluster_101968	GO:0006811:[BP] ion transport	BP	0.95	1
+Escherichia_coli	Cluster_101968	GO:0006855:[BP] drug transmembrane transport	BP	0.28	0
+Escherichia_coli	Cluster_101968	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_101968	GO:0009279:[CC] cell outer membrane	CC	0.96	1
+Escherichia_coli	Cluster_101968	GO:0015288:[MF] porin activity	MF	0.94	1
+Escherichia_coli	Cluster_101968	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_101968	GO:0016787:[MF] hydrolase activity	MF	0.6	0
+Escherichia_coli	Cluster_101968	GO:0016836:[MF] hydro-lyase activity	MF	0.3	0
+Escherichia_coli	Cluster_101968	GO:0016854:[MF] racemase and epimerase activity	MF	0.34	0
+Escherichia_coli	Cluster_101968	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.47	0
+Escherichia_coli	Cluster_101968	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.78	0
+Escherichia_coli	Cluster_101968	GO:0046930:[CC] pore complex	CC	0.92	1
 Escherichia_coli	Cluster_101968	GO:0051287:[MF] NAD binding	MF	0.0	0
-Escherichia_coli	Cluster_101968	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.18	0
-Escherichia_coli	Cluster_10199	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_10199	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.21	0
-Escherichia_coli	Cluster_10199	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
-Escherichia_coli	Cluster_10199	GO:0005737:[CC] cytoplasm	CC	0.38	0
-Escherichia_coli	Cluster_10199	GO:0005886:[CC] plasma membrane	CC	0.49	1
-Escherichia_coli	Cluster_10199	GO:0006793:[BP] phosphorus metabolic process	BP	0.42	0
-Escherichia_coli	Cluster_10199	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_10199	GO:0006855:[BP] drug transmembrane transport	BP	0.73	1
+Escherichia_coli	Cluster_101968	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.15	0
+Escherichia_coli	Cluster_10199	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.09	0
+Escherichia_coli	Cluster_10199	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.22	0
+Escherichia_coli	Cluster_10199	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Escherichia_coli	Cluster_10199	GO:0005737:[CC] cytoplasm	CC	0.43	0
+Escherichia_coli	Cluster_10199	GO:0005886:[CC] plasma membrane	CC	0.28	1
+Escherichia_coli	Cluster_10199	GO:0006793:[BP] phosphorus metabolic process	BP	0.07	0
+Escherichia_coli	Cluster_10199	GO:0006811:[BP] ion transport	BP	0.0	0
+Escherichia_coli	Cluster_10199	GO:0006855:[BP] drug transmembrane transport	BP	0.65	1
 Escherichia_coli	Cluster_10199	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
-Escherichia_coli	Cluster_10199	GO:0009279:[CC] cell outer membrane	CC	0.03	0
-Escherichia_coli	Cluster_10199	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_10199	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.7	1
-Escherichia_coli	Cluster_10199	GO:0016787:[MF] hydrolase activity	MF	0.28	0
-Escherichia_coli	Cluster_10199	GO:0016836:[MF] hydro-lyase activity	MF	0.59	0
-Escherichia_coli	Cluster_10199	GO:0016854:[MF] racemase and epimerase activity	MF	0.22	0
-Escherichia_coli	Cluster_10199	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.47	0
-Escherichia_coli	Cluster_10199	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
-Escherichia_coli	Cluster_10199	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_10199	GO:0051287:[MF] NAD binding	MF	0.3	0
-Escherichia_coli	Cluster_10199	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.63	0
-Escherichia_coli	Cluster_1022788	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.98	1
-Escherichia_coli	Cluster_1022788	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.25	0
-Escherichia_coli	Cluster_1022788	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.99	1
-Escherichia_coli	Cluster_1022788	GO:0005737:[CC] cytoplasm	CC	0.19	0
+Escherichia_coli	Cluster_10199	GO:0009279:[CC] cell outer membrane	CC	0.1	0
+Escherichia_coli	Cluster_10199	GO:0015288:[MF] porin activity	MF	0.02	0
+Escherichia_coli	Cluster_10199	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.74	1
+Escherichia_coli	Cluster_10199	GO:0016787:[MF] hydrolase activity	MF	0.33	0
+Escherichia_coli	Cluster_10199	GO:0016836:[MF] hydro-lyase activity	MF	0.74	0
+Escherichia_coli	Cluster_10199	GO:0016854:[MF] racemase and epimerase activity	MF	0.25	0
+Escherichia_coli	Cluster_10199	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.56	0
+Escherichia_coli	Cluster_10199	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.2843333333333333	0
+Escherichia_coli	Cluster_10199	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_10199	GO:0051287:[MF] NAD binding	MF	0.41	0
+Escherichia_coli	Cluster_10199	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.24	0
+Escherichia_coli	Cluster_1022788	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.58	1
+Escherichia_coli	Cluster_1022788	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.11	0
+Escherichia_coli	Cluster_1022788	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	1.0	1
+Escherichia_coli	Cluster_1022788	GO:0005737:[CC] cytoplasm	CC	0.08	0
 Escherichia_coli	Cluster_1022788	GO:0005886:[CC] plasma membrane	CC	0.06	0
-Escherichia_coli	Cluster_1022788	GO:0006793:[BP] phosphorus metabolic process	BP	0.63	0
-Escherichia_coli	Cluster_1022788	GO:0006811:[BP] ion transport	BP	0.02	0
-Escherichia_coli	Cluster_1022788	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
-Escherichia_coli	Cluster_1022788	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.89	0
-Escherichia_coli	Cluster_1022788	GO:0009279:[CC] cell outer membrane	CC	0.0	0
-Escherichia_coli	Cluster_1022788	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1022788	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
-Escherichia_coli	Cluster_1022788	GO:0016787:[MF] hydrolase activity	MF	0.39	0
-Escherichia_coli	Cluster_1022788	GO:0016836:[MF] hydro-lyase activity	MF	0.36	0
-Escherichia_coli	Cluster_1022788	GO:0016854:[MF] racemase and epimerase activity	MF	0.2	0
-Escherichia_coli	Cluster_1022788	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.84	0
-Escherichia_coli	Cluster_1022788	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.95	0
-Escherichia_coli	Cluster_1022788	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_1022788	GO:0051287:[MF] NAD binding	MF	0.98	1
-Escherichia_coli	Cluster_1022788	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.24	0
-Escherichia_coli	Cluster_1022791	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_1022791	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.28	0
-Escherichia_coli	Cluster_1022791	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
-Escherichia_coli	Cluster_1022791	GO:0005737:[CC] cytoplasm	CC	0.41	0
-Escherichia_coli	Cluster_1022791	GO:0005886:[CC] plasma membrane	CC	0.06	0
-Escherichia_coli	Cluster_1022791	GO:0006793:[BP] phosphorus metabolic process	BP	0.1	0
+Escherichia_coli	Cluster_1022788	GO:0006793:[BP] phosphorus metabolic process	BP	0.83	0
+Escherichia_coli	Cluster_1022788	GO:0006811:[BP] ion transport	BP	0.01	0
+Escherichia_coli	Cluster_1022788	GO:0006855:[BP] drug transmembrane transport	BP	0.13	0
+Escherichia_coli	Cluster_1022788	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.56	0
+Escherichia_coli	Cluster_1022788	GO:0009279:[CC] cell outer membrane	CC	0.05	0
+Escherichia_coli	Cluster_1022788	GO:0015288:[MF] porin activity	MF	0.02	0
+Escherichia_coli	Cluster_1022788	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_1022788	GO:0016787:[MF] hydrolase activity	MF	0.5	0
+Escherichia_coli	Cluster_1022788	GO:0016836:[MF] hydro-lyase activity	MF	0.3	0
+Escherichia_coli	Cluster_1022788	GO:0016854:[MF] racemase and epimerase activity	MF	0.49	0
+Escherichia_coli	Cluster_1022788	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.78	0
+Escherichia_coli	Cluster_1022788	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.7725	0
+Escherichia_coli	Cluster_1022788	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_1022788	GO:0051287:[MF] NAD binding	MF	0.99	1
+Escherichia_coli	Cluster_1022788	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.26	0
+Escherichia_coli	Cluster_1022791	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Escherichia_coli	Cluster_1022791	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.06	0
+Escherichia_coli	Cluster_1022791	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.08	0
+Escherichia_coli	Cluster_1022791	GO:0005737:[CC] cytoplasm	CC	0.08	0
+Escherichia_coli	Cluster_1022791	GO:0005886:[CC] plasma membrane	CC	0.03	0
+Escherichia_coli	Cluster_1022791	GO:0006793:[BP] phosphorus metabolic process	BP	0.31	0
 Escherichia_coli	Cluster_1022791	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_1022791	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
-Escherichia_coli	Cluster_1022791	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.01	0
-Escherichia_coli	Cluster_1022791	GO:0009279:[CC] cell outer membrane	CC	0.02	0
+Escherichia_coli	Cluster_1022791	GO:0006855:[BP] drug transmembrane transport	BP	0.18	0
+Escherichia_coli	Cluster_1022791	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
+Escherichia_coli	Cluster_1022791	GO:0009279:[CC] cell outer membrane	CC	0.1	0
 Escherichia_coli	Cluster_1022791	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1022791	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
-Escherichia_coli	Cluster_1022791	GO:0016787:[MF] hydrolase activity	MF	0.39	0
-Escherichia_coli	Cluster_1022791	GO:0016836:[MF] hydro-lyase activity	MF	0.59	1
-Escherichia_coli	Cluster_1022791	GO:0016854:[MF] racemase and epimerase activity	MF	0.26	0
-Escherichia_coli	Cluster_1022791	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.34	0
-Escherichia_coli	Cluster_1022791	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.13	0
-Escherichia_coli	Cluster_1022791	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_1022791	GO:0051287:[MF] NAD binding	MF	0.09	0
-Escherichia_coli	Cluster_1022791	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.63	0
-Escherichia_coli	Cluster_1022793	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
+Escherichia_coli	Cluster_1022791	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_1022791	GO:0016787:[MF] hydrolase activity	MF	0.6	0
+Escherichia_coli	Cluster_1022791	GO:0016836:[MF] hydro-lyase activity	MF	0.72	1
+Escherichia_coli	Cluster_1022791	GO:0016854:[MF] racemase and epimerase activity	MF	0.54	0
+Escherichia_coli	Cluster_1022791	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.56	0
+Escherichia_coli	Cluster_1022791	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.6991666666666667	0
+Escherichia_coli	Cluster_1022791	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_1022791	GO:0051287:[MF] NAD binding	MF	0.01	0
+Escherichia_coli	Cluster_1022791	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.26	0
+Escherichia_coli	Cluster_1022793	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
 Escherichia_coli	Cluster_1022793	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.14	0
-Escherichia_coli	Cluster_1022793	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
-Escherichia_coli	Cluster_1022793	GO:0005737:[CC] cytoplasm	CC	0.18	0
-Escherichia_coli	Cluster_1022793	GO:0005886:[CC] plasma membrane	CC	0.06	0
-Escherichia_coli	Cluster_1022793	GO:0006793:[BP] phosphorus metabolic process	BP	0.42	0
+Escherichia_coli	Cluster_1022793	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.08	0
+Escherichia_coli	Cluster_1022793	GO:0005737:[CC] cytoplasm	CC	0.08	0
+Escherichia_coli	Cluster_1022793	GO:0005886:[CC] plasma membrane	CC	0.07	0
+Escherichia_coli	Cluster_1022793	GO:0006793:[BP] phosphorus metabolic process	BP	0.79	0
 Escherichia_coli	Cluster_1022793	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_1022793	GO:0006855:[BP] drug transmembrane transport	BP	0.14	0
-Escherichia_coli	Cluster_1022793	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.89	1
-Escherichia_coli	Cluster_1022793	GO:0009279:[CC] cell outer membrane	CC	0.0	0
+Escherichia_coli	Cluster_1022793	GO:0006855:[BP] drug transmembrane transport	BP	0.67	0
+Escherichia_coli	Cluster_1022793	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.56	1
+Escherichia_coli	Cluster_1022793	GO:0009279:[CC] cell outer membrane	CC	0.07	0
 Escherichia_coli	Cluster_1022793	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1022793	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Escherichia_coli	Cluster_1022793	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
 Escherichia_coli	Cluster_1022793	GO:0016787:[MF] hydrolase activity	MF	0.39	0
-Escherichia_coli	Cluster_1022793	GO:0016836:[MF] hydro-lyase activity	MF	0.4	0
+Escherichia_coli	Cluster_1022793	GO:0016836:[MF] hydro-lyase activity	MF	0.52	0
 Escherichia_coli	Cluster_1022793	GO:0016854:[MF] racemase and epimerase activity	MF	0.83	1
-Escherichia_coli	Cluster_1022793	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.09	0
-Escherichia_coli	Cluster_1022793	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.15	0
+Escherichia_coli	Cluster_1022793	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.42	0
+Escherichia_coli	Cluster_1022793	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.78	0
 Escherichia_coli	Cluster_1022793	GO:0046930:[CC] pore complex	CC	0.0	0
 Escherichia_coli	Cluster_1022793	GO:0051287:[MF] NAD binding	MF	0.01	0
-Escherichia_coli	Cluster_1022793	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.82	0
-Escherichia_coli	Cluster_1023215	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
+Escherichia_coli	Cluster_1022793	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
+Escherichia_coli	Cluster_1023215	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
 Escherichia_coli	Cluster_1023215	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.2	0
-Escherichia_coli	Cluster_1023215	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
-Escherichia_coli	Cluster_1023215	GO:0005737:[CC] cytoplasm	CC	0.21	0
-Escherichia_coli	Cluster_1023215	GO:0005886:[CC] plasma membrane	CC	0.19	0
-Escherichia_coli	Cluster_1023215	GO:0006793:[BP] phosphorus metabolic process	BP	0.42	0
-Escherichia_coli	Cluster_1023215	GO:0006811:[BP] ion transport	BP	0.06	0
-Escherichia_coli	Cluster_1023215	GO:0006855:[BP] drug transmembrane transport	BP	0.04	0
-Escherichia_coli	Cluster_1023215	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
-Escherichia_coli	Cluster_1023215	GO:0009279:[CC] cell outer membrane	CC	0.85	1
-Escherichia_coli	Cluster_1023215	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1023215	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
-Escherichia_coli	Cluster_1023215	GO:0016787:[MF] hydrolase activity	MF	0.28	0
-Escherichia_coli	Cluster_1023215	GO:0016836:[MF] hydro-lyase activity	MF	0.57	0
+Escherichia_coli	Cluster_1023215	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Escherichia_coli	Cluster_1023215	GO:0005737:[CC] cytoplasm	CC	0.43	0
+Escherichia_coli	Cluster_1023215	GO:0005886:[CC] plasma membrane	CC	0.02	0
+Escherichia_coli	Cluster_1023215	GO:0006793:[BP] phosphorus metabolic process	BP	0.51	0
+Escherichia_coli	Cluster_1023215	GO:0006811:[BP] ion transport	BP	0.04	0
+Escherichia_coli	Cluster_1023215	GO:0006855:[BP] drug transmembrane transport	BP	0.06	0
+Escherichia_coli	Cluster_1023215	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.15	0
+Escherichia_coli	Cluster_1023215	GO:0009279:[CC] cell outer membrane	CC	0.75	1
+Escherichia_coli	Cluster_1023215	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_1023215	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_1023215	GO:0016787:[MF] hydrolase activity	MF	0.42	0
+Escherichia_coli	Cluster_1023215	GO:0016836:[MF] hydro-lyase activity	MF	0.67	0
 Escherichia_coli	Cluster_1023215	GO:0016854:[MF] racemase and epimerase activity	MF	0.15	0
-Escherichia_coli	Cluster_1023215	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.2	0
-Escherichia_coli	Cluster_1023215	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.29	0
-Escherichia_coli	Cluster_1023215	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_1023215	GO:0051287:[MF] NAD binding	MF	0.3	0
-Escherichia_coli	Cluster_1023215	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.83	0
-Escherichia_coli	Cluster_102328	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
-Escherichia_coli	Cluster_102328	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.77	1
-Escherichia_coli	Cluster_102328	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
-Escherichia_coli	Cluster_102328	GO:0005737:[CC] cytoplasm	CC	0.21	0
-Escherichia_coli	Cluster_102328	GO:0005886:[CC] plasma membrane	CC	0.64	0
-Escherichia_coli	Cluster_102328	GO:0006793:[BP] phosphorus metabolic process	BP	0.57	0
-Escherichia_coli	Cluster_102328	GO:0006811:[BP] ion transport	BP	0.06	0
-Escherichia_coli	Cluster_102328	GO:0006855:[BP] drug transmembrane transport	BP	0.22	0
-Escherichia_coli	Cluster_102328	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
-Escherichia_coli	Cluster_102328	GO:0009279:[CC] cell outer membrane	CC	0.01	0
-Escherichia_coli	Cluster_102328	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_102328	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.19	0
-Escherichia_coli	Cluster_102328	GO:0016787:[MF] hydrolase activity	MF	0.31	0
-Escherichia_coli	Cluster_102328	GO:0016836:[MF] hydro-lyase activity	MF	0.77	0
-Escherichia_coli	Cluster_102328	GO:0016854:[MF] racemase and epimerase activity	MF	0.26	0
-Escherichia_coli	Cluster_102328	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.25	1
-Escherichia_coli	Cluster_102328	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.11	0
-Escherichia_coli	Cluster_102328	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_102328	GO:0051287:[MF] NAD binding	MF	0.04	0
-Escherichia_coli	Cluster_102328	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.63	1
-Escherichia_coli	Cluster_1025619	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_1025619	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.33	0
-Escherichia_coli	Cluster_1025619	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.0	0
-Escherichia_coli	Cluster_1025619	GO:0005737:[CC] cytoplasm	CC	0.21	0
-Escherichia_coli	Cluster_1025619	GO:0005886:[CC] plasma membrane	CC	0.64	0
-Escherichia_coli	Cluster_1025619	GO:0006793:[BP] phosphorus metabolic process	BP	0.91	1
-Escherichia_coli	Cluster_1025619	GO:0006811:[BP] ion transport	BP	0.06	0
-Escherichia_coli	Cluster_1025619	GO:0006855:[BP] drug transmembrane transport	BP	0.22	0
-Escherichia_coli	Cluster_1025619	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.16	0
-Escherichia_coli	Cluster_1025619	GO:0009279:[CC] cell outer membrane	CC	0.03	0
-Escherichia_coli	Cluster_1025619	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1025619	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.19	0
-Escherichia_coli	Cluster_1025619	GO:0016787:[MF] hydrolase activity	MF	0.31	0
-Escherichia_coli	Cluster_1025619	GO:0016836:[MF] hydro-lyase activity	MF	0.92	1
-Escherichia_coli	Cluster_1025619	GO:0016854:[MF] racemase and epimerase activity	MF	0.71	1
-Escherichia_coli	Cluster_1025619	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.69	0
-Escherichia_coli	Cluster_1025619	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.24	0
+Escherichia_coli	Cluster_1023215	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.54	0
+Escherichia_coli	Cluster_1023215	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.6991666666666667	0
+Escherichia_coli	Cluster_1023215	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_1023215	GO:0051287:[MF] NAD binding	MF	0.0	0
+Escherichia_coli	Cluster_1023215	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
+Escherichia_coli	Cluster_102328	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.41	0
+Escherichia_coli	Cluster_102328	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.66	1
+Escherichia_coli	Cluster_102328	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Escherichia_coli	Cluster_102328	GO:0005737:[CC] cytoplasm	CC	0.39	0
+Escherichia_coli	Cluster_102328	GO:0005886:[CC] plasma membrane	CC	0.23	0
+Escherichia_coli	Cluster_102328	GO:0006793:[BP] phosphorus metabolic process	BP	0.69	0
+Escherichia_coli	Cluster_102328	GO:0006811:[BP] ion transport	BP	0.04	0
+Escherichia_coli	Cluster_102328	GO:0006855:[BP] drug transmembrane transport	BP	0.15	0
+Escherichia_coli	Cluster_102328	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.1	0
+Escherichia_coli	Cluster_102328	GO:0009279:[CC] cell outer membrane	CC	0.07	0
+Escherichia_coli	Cluster_102328	GO:0015288:[MF] porin activity	MF	0.02	0
+Escherichia_coli	Cluster_102328	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.22	0
+Escherichia_coli	Cluster_102328	GO:0016787:[MF] hydrolase activity	MF	0.49	0
+Escherichia_coli	Cluster_102328	GO:0016836:[MF] hydro-lyase activity	MF	0.84	0
+Escherichia_coli	Cluster_102328	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
+Escherichia_coli	Cluster_102328	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.56	1
+Escherichia_coli	Cluster_102328	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.67	0
+Escherichia_coli	Cluster_102328	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_102328	GO:0051287:[MF] NAD binding	MF	0.08	0
+Escherichia_coli	Cluster_102328	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.32	1
+Escherichia_coli	Cluster_1025619	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.41	0
+Escherichia_coli	Cluster_1025619	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.21	0
+Escherichia_coli	Cluster_1025619	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Escherichia_coli	Cluster_1025619	GO:0005737:[CC] cytoplasm	CC	0.39	0
+Escherichia_coli	Cluster_1025619	GO:0005886:[CC] plasma membrane	CC	0.43	0
+Escherichia_coli	Cluster_1025619	GO:0006793:[BP] phosphorus metabolic process	BP	0.84	1
+Escherichia_coli	Cluster_1025619	GO:0006811:[BP] ion transport	BP	0.03	0
+Escherichia_coli	Cluster_1025619	GO:0006855:[BP] drug transmembrane transport	BP	0.15	0
+Escherichia_coli	Cluster_1025619	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.1	0
+Escherichia_coli	Cluster_1025619	GO:0009279:[CC] cell outer membrane	CC	0.08	0
+Escherichia_coli	Cluster_1025619	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_1025619	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.22	0
+Escherichia_coli	Cluster_1025619	GO:0016787:[MF] hydrolase activity	MF	0.38	0
+Escherichia_coli	Cluster_1025619	GO:0016836:[MF] hydro-lyase activity	MF	0.69	1
+Escherichia_coli	Cluster_1025619	GO:0016854:[MF] racemase and epimerase activity	MF	0.26	1
+Escherichia_coli	Cluster_1025619	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.4	0
+Escherichia_coli	Cluster_1025619	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.72	0
 Escherichia_coli	Cluster_1025619	GO:0046930:[CC] pore complex	CC	0.03	0
-Escherichia_coli	Cluster_1025619	GO:0051287:[MF] NAD binding	MF	0.04	0
-Escherichia_coli	Cluster_1025619	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.89	1
-Escherichia_coli	Cluster_1027272	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_1027272	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.31	0
-Escherichia_coli	Cluster_1027272	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
-Escherichia_coli	Cluster_1027272	GO:0005737:[CC] cytoplasm	CC	0.21	0
-Escherichia_coli	Cluster_1027272	GO:0005886:[CC] plasma membrane	CC	0.64	1
-Escherichia_coli	Cluster_1027272	GO:0006793:[BP] phosphorus metabolic process	BP	0.4	0
-Escherichia_coli	Cluster_1027272	GO:0006811:[BP] ion transport	BP	0.07	0
-Escherichia_coli	Cluster_1027272	GO:0006855:[BP] drug transmembrane transport	BP	0.22	0
-Escherichia_coli	Cluster_1027272	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.18	0
-Escherichia_coli	Cluster_1027272	GO:0009279:[CC] cell outer membrane	CC	0.01	0
-Escherichia_coli	Cluster_1027272	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1027272	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.19	0
-Escherichia_coli	Cluster_1027272	GO:0016787:[MF] hydrolase activity	MF	0.33	0
-Escherichia_coli	Cluster_1027272	GO:0016836:[MF] hydro-lyase activity	MF	0.5	0
+Escherichia_coli	Cluster_1025619	GO:0051287:[MF] NAD binding	MF	0.07	0
+Escherichia_coli	Cluster_1025619	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	1
+Escherichia_coli	Cluster_1027272	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.41	0
+Escherichia_coli	Cluster_1027272	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.21	0
+Escherichia_coli	Cluster_1027272	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Escherichia_coli	Cluster_1027272	GO:0005737:[CC] cytoplasm	CC	0.35	0
+Escherichia_coli	Cluster_1027272	GO:0005886:[CC] plasma membrane	CC	0.06	1
+Escherichia_coli	Cluster_1027272	GO:0006793:[BP] phosphorus metabolic process	BP	0.26	0
+Escherichia_coli	Cluster_1027272	GO:0006811:[BP] ion transport	BP	0.04	0
+Escherichia_coli	Cluster_1027272	GO:0006855:[BP] drug transmembrane transport	BP	0.15	0
+Escherichia_coli	Cluster_1027272	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.41	0
+Escherichia_coli	Cluster_1027272	GO:0009279:[CC] cell outer membrane	CC	0.11	0
+Escherichia_coli	Cluster_1027272	GO:0015288:[MF] porin activity	MF	0.07	0
+Escherichia_coli	Cluster_1027272	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.22	0
+Escherichia_coli	Cluster_1027272	GO:0016787:[MF] hydrolase activity	MF	0.38	0
+Escherichia_coli	Cluster_1027272	GO:0016836:[MF] hydro-lyase activity	MF	0.53	0
 Escherichia_coli	Cluster_1027272	GO:0016854:[MF] racemase and epimerase activity	MF	0.26	0
-Escherichia_coli	Cluster_1027272	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.69	0
-Escherichia_coli	Cluster_1027272	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.27	0
-Escherichia_coli	Cluster_1027272	GO:0046930:[CC] pore complex	CC	0.04	0
-Escherichia_coli	Cluster_1027272	GO:0051287:[MF] NAD binding	MF	0.04	0
-Escherichia_coli	Cluster_1027272	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.89	0
-Escherichia_coli	Cluster_1029475	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_1029475	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.33	0
-Escherichia_coli	Cluster_1029475	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
-Escherichia_coli	Cluster_1029475	GO:0005737:[CC] cytoplasm	CC	0.66	1
-Escherichia_coli	Cluster_1029475	GO:0005886:[CC] plasma membrane	CC	0.64	0
-Escherichia_coli	Cluster_1029475	GO:0006793:[BP] phosphorus metabolic process	BP	0.4	0
-Escherichia_coli	Cluster_1029475	GO:0006811:[BP] ion transport	BP	0.06	0
-Escherichia_coli	Cluster_1029475	GO:0006855:[BP] drug transmembrane transport	BP	0.22	0
-Escherichia_coli	Cluster_1029475	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.18	0
-Escherichia_coli	Cluster_1029475	GO:0009279:[CC] cell outer membrane	CC	0.03	0
-Escherichia_coli	Cluster_1029475	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1029475	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.19	0
+Escherichia_coli	Cluster_1027272	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.73	0
+Escherichia_coli	Cluster_1027272	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.56	0
+Escherichia_coli	Cluster_1027272	GO:0046930:[CC] pore complex	CC	0.14	0
+Escherichia_coli	Cluster_1027272	GO:0051287:[MF] NAD binding	MF	0.07	0
+Escherichia_coli	Cluster_1027272	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
+Escherichia_coli	Cluster_1029475	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.41	0
+Escherichia_coli	Cluster_1029475	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.21	0
+Escherichia_coli	Cluster_1029475	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Escherichia_coli	Cluster_1029475	GO:0005737:[CC] cytoplasm	CC	0.6	1
+Escherichia_coli	Cluster_1029475	GO:0005886:[CC] plasma membrane	CC	0.24	0
+Escherichia_coli	Cluster_1029475	GO:0006793:[BP] phosphorus metabolic process	BP	0.22	0
+Escherichia_coli	Cluster_1029475	GO:0006811:[BP] ion transport	BP	0.04	0
+Escherichia_coli	Cluster_1029475	GO:0006855:[BP] drug transmembrane transport	BP	0.15	0
+Escherichia_coli	Cluster_1029475	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.09	0
+Escherichia_coli	Cluster_1029475	GO:0009279:[CC] cell outer membrane	CC	0.09	0
+Escherichia_coli	Cluster_1029475	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_1029475	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.22	0
 Escherichia_coli	Cluster_1029475	GO:0016787:[MF] hydrolase activity	MF	0.38	0
-Escherichia_coli	Cluster_1029475	GO:0016836:[MF] hydro-lyase activity	MF	0.52	0
+Escherichia_coli	Cluster_1029475	GO:0016836:[MF] hydro-lyase activity	MF	0.53	0
 Escherichia_coli	Cluster_1029475	GO:0016854:[MF] racemase and epimerase activity	MF	0.26	0
-Escherichia_coli	Cluster_1029475	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.69	0
-Escherichia_coli	Cluster_1029475	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.24	0
+Escherichia_coli	Cluster_1029475	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.4	0
+Escherichia_coli	Cluster_1029475	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.56	0
 Escherichia_coli	Cluster_1029475	GO:0046930:[CC] pore complex	CC	0.03	0
-Escherichia_coli	Cluster_1029475	GO:0051287:[MF] NAD binding	MF	0.05	0
-Escherichia_coli	Cluster_1029475	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.89	0
-Escherichia_coli	Cluster_1063175	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_1063175	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.33	0
-Escherichia_coli	Cluster_1063175	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
-Escherichia_coli	Cluster_1063175	GO:0005737:[CC] cytoplasm	CC	0.21	0
-Escherichia_coli	Cluster_1063175	GO:0005886:[CC] plasma membrane	CC	0.95	1
-Escherichia_coli	Cluster_1063175	GO:0006793:[BP] phosphorus metabolic process	BP	0.55	0
-Escherichia_coli	Cluster_1063175	GO:0006811:[BP] ion transport	BP	0.06	0
-Escherichia_coli	Cluster_1063175	GO:0006855:[BP] drug transmembrane transport	BP	0.98	1
-Escherichia_coli	Cluster_1063175	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.16	0
-Escherichia_coli	Cluster_1063175	GO:0009279:[CC] cell outer membrane	CC	0.03	0
-Escherichia_coli	Cluster_1063175	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1063175	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.99	1
-Escherichia_coli	Cluster_1063175	GO:0016787:[MF] hydrolase activity	MF	0.31	0
-Escherichia_coli	Cluster_1063175	GO:0016836:[MF] hydro-lyase activity	MF	0.55	0
-Escherichia_coli	Cluster_1063175	GO:0016854:[MF] racemase and epimerase activity	MF	0.26	0
-Escherichia_coli	Cluster_1063175	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.72	0
-Escherichia_coli	Cluster_1063175	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.07	0
-Escherichia_coli	Cluster_1063175	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_1063175	GO:0051287:[MF] NAD binding	MF	0.05	0
-Escherichia_coli	Cluster_1063175	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.39	0
+Escherichia_coli	Cluster_1029475	GO:0051287:[MF] NAD binding	MF	0.07	0
+Escherichia_coli	Cluster_1029475	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
+Escherichia_coli	Cluster_1063175	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.41	0
+Escherichia_coli	Cluster_1063175	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.14	0
+Escherichia_coli	Cluster_1063175	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Escherichia_coli	Cluster_1063175	GO:0005737:[CC] cytoplasm	CC	0.15	0
+Escherichia_coli	Cluster_1063175	GO:0005886:[CC] plasma membrane	CC	0.99	1
+Escherichia_coli	Cluster_1063175	GO:0006793:[BP] phosphorus metabolic process	BP	0.47	0
+Escherichia_coli	Cluster_1063175	GO:0006811:[BP] ion transport	BP	0.04	0
+Escherichia_coli	Cluster_1063175	GO:0006855:[BP] drug transmembrane transport	BP	0.74	1
+Escherichia_coli	Cluster_1063175	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.1	0
+Escherichia_coli	Cluster_1063175	GO:0009279:[CC] cell outer membrane	CC	0.01	0
+Escherichia_coli	Cluster_1063175	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_1063175	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.98	1
+Escherichia_coli	Cluster_1063175	GO:0016787:[MF] hydrolase activity	MF	0.19	0
+Escherichia_coli	Cluster_1063175	GO:0016836:[MF] hydro-lyase activity	MF	0.3	0
+Escherichia_coli	Cluster_1063175	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
+Escherichia_coli	Cluster_1063175	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.73	0
+Escherichia_coli	Cluster_1063175	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.69	0
+Escherichia_coli	Cluster_1063175	GO:0046930:[CC] pore complex	CC	0.04	0
+Escherichia_coli	Cluster_1063175	GO:0051287:[MF] NAD binding	MF	0.08	0
+Escherichia_coli	Cluster_1063175	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
 Escherichia_coli	Cluster_1125377	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_1125377	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.21	0
-Escherichia_coli	Cluster_1125377	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.08	0
-Escherichia_coli	Cluster_1125377	GO:0005737:[CC] cytoplasm	CC	0.21	0
-Escherichia_coli	Cluster_1125377	GO:0005886:[CC] plasma membrane	CC	0.27	0
-Escherichia_coli	Cluster_1125377	GO:0006793:[BP] phosphorus metabolic process	BP	0.42	0
-Escherichia_coli	Cluster_1125377	GO:0006811:[BP] ion transport	BP	0.07	0
-Escherichia_coli	Cluster_1125377	GO:0006855:[BP] drug transmembrane transport	BP	0.1	0
-Escherichia_coli	Cluster_1125377	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.89	1
-Escherichia_coli	Cluster_1125377	GO:0009279:[CC] cell outer membrane	CC	0.15	0
-Escherichia_coli	Cluster_1125377	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1125377	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
-Escherichia_coli	Cluster_1125377	GO:0016787:[MF] hydrolase activity	MF	0.37	0
-Escherichia_coli	Cluster_1125377	GO:0016836:[MF] hydro-lyase activity	MF	0.22	0
-Escherichia_coli	Cluster_1125377	GO:0016854:[MF] racemase and epimerase activity	MF	0.89	1
-Escherichia_coli	Cluster_1125377	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.08	0
-Escherichia_coli	Cluster_1125377	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.27	0
+Escherichia_coli	Cluster_1125377	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.19	0
+Escherichia_coli	Cluster_1125377	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.0	0
+Escherichia_coli	Cluster_1125377	GO:0005737:[CC] cytoplasm	CC	0.39	0
+Escherichia_coli	Cluster_1125377	GO:0005886:[CC] plasma membrane	CC	0.04	0
+Escherichia_coli	Cluster_1125377	GO:0006793:[BP] phosphorus metabolic process	BP	0.51	0
+Escherichia_coli	Cluster_1125377	GO:0006811:[BP] ion transport	BP	0.04	0
+Escherichia_coli	Cluster_1125377	GO:0006855:[BP] drug transmembrane transport	BP	0.17	0
+Escherichia_coli	Cluster_1125377	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.88	1
+Escherichia_coli	Cluster_1125377	GO:0009279:[CC] cell outer membrane	CC	0.0	0
+Escherichia_coli	Cluster_1125377	GO:0015288:[MF] porin activity	MF	0.05	0
+Escherichia_coli	Cluster_1125377	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_1125377	GO:0016787:[MF] hydrolase activity	MF	0.53	0
+Escherichia_coli	Cluster_1125377	GO:0016836:[MF] hydro-lyase activity	MF	0.53	0
+Escherichia_coli	Cluster_1125377	GO:0016854:[MF] racemase and epimerase activity	MF	0.86	1
+Escherichia_coli	Cluster_1125377	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.36	0
+Escherichia_coli	Cluster_1125377	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.79	0
 Escherichia_coli	Cluster_1125377	GO:0046930:[CC] pore complex	CC	0.04	0
-Escherichia_coli	Cluster_1125377	GO:0051287:[MF] NAD binding	MF	0.04	0
-Escherichia_coli	Cluster_1125377	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.84	0
+Escherichia_coli	Cluster_1125377	GO:0051287:[MF] NAD binding	MF	0.1	0
+Escherichia_coli	Cluster_1125377	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.47	0
 Escherichia_coli	Cluster_114268	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_114268	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.21	0
-Escherichia_coli	Cluster_114268	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.0	0
-Escherichia_coli	Cluster_114268	GO:0005737:[CC] cytoplasm	CC	0.21	0
-Escherichia_coli	Cluster_114268	GO:0005886:[CC] plasma membrane	CC	0.19	0
-Escherichia_coli	Cluster_114268	GO:0006793:[BP] phosphorus metabolic process	BP	0.19	0
-Escherichia_coli	Cluster_114268	GO:0006811:[BP] ion transport	BP	1.0	1
-Escherichia_coli	Cluster_114268	GO:0006855:[BP] drug transmembrane transport	BP	0.08	1
-Escherichia_coli	Cluster_114268	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.15	0
-Escherichia_coli	Cluster_114268	GO:0009279:[CC] cell outer membrane	CC	1.0	1
-Escherichia_coli	Cluster_114268	GO:0015288:[MF] porin activity	MF	0.95	1
-Escherichia_coli	Cluster_114268	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.19	0
-Escherichia_coli	Cluster_114268	GO:0016787:[MF] hydrolase activity	MF	0.15	0
-Escherichia_coli	Cluster_114268	GO:0016836:[MF] hydro-lyase activity	MF	0.11	0
-Escherichia_coli	Cluster_114268	GO:0016854:[MF] racemase and epimerase activity	MF	0.21	0
-Escherichia_coli	Cluster_114268	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.62	0
-Escherichia_coli	Cluster_114268	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.27	0
-Escherichia_coli	Cluster_114268	GO:0046930:[CC] pore complex	CC	0.99	1
-Escherichia_coli	Cluster_114268	GO:0051287:[MF] NAD binding	MF	0.04	0
-Escherichia_coli	Cluster_114268	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.3	0
-Escherichia_coli	Cluster_1204487	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.08	0
-Escherichia_coli	Cluster_1204487	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.07	0
-Escherichia_coli	Cluster_1204487	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
-Escherichia_coli	Cluster_1204487	GO:0005737:[CC] cytoplasm	CC	0.44	0
-Escherichia_coli	Cluster_1204487	GO:0005886:[CC] plasma membrane	CC	0.19	0
-Escherichia_coli	Cluster_1204487	GO:0006793:[BP] phosphorus metabolic process	BP	0.07	0
-Escherichia_coli	Cluster_1204487	GO:0006811:[BP] ion transport	BP	0.88	0
-Escherichia_coli	Cluster_1204487	GO:0006855:[BP] drug transmembrane transport	BP	0.52	0
-Escherichia_coli	Cluster_1204487	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.13	0
-Escherichia_coli	Cluster_1204487	GO:0009279:[CC] cell outer membrane	CC	0.96	0
-Escherichia_coli	Cluster_1204487	GO:0015288:[MF] porin activity	MF	1.0	1
+Escherichia_coli	Cluster_114268	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.15	0
+Escherichia_coli	Cluster_114268	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Escherichia_coli	Cluster_114268	GO:0005737:[CC] cytoplasm	CC	0.39	0
+Escherichia_coli	Cluster_114268	GO:0005886:[CC] plasma membrane	CC	0.04	0
+Escherichia_coli	Cluster_114268	GO:0006793:[BP] phosphorus metabolic process	BP	0.69	0
+Escherichia_coli	Cluster_114268	GO:0006811:[BP] ion transport	BP	0.97	1
+Escherichia_coli	Cluster_114268	GO:0006855:[BP] drug transmembrane transport	BP	0.07	1
+Escherichia_coli	Cluster_114268	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.41	0
+Escherichia_coli	Cluster_114268	GO:0009279:[CC] cell outer membrane	CC	0.97	1
+Escherichia_coli	Cluster_114268	GO:0015288:[MF] porin activity	MF	1.0	1
+Escherichia_coli	Cluster_114268	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
+Escherichia_coli	Cluster_114268	GO:0016787:[MF] hydrolase activity	MF	0.53	0
+Escherichia_coli	Cluster_114268	GO:0016836:[MF] hydro-lyase activity	MF	0.21	0
+Escherichia_coli	Cluster_114268	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
+Escherichia_coli	Cluster_114268	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.15	0
+Escherichia_coli	Cluster_114268	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.79	0
+Escherichia_coli	Cluster_114268	GO:0046930:[CC] pore complex	CC	0.98	1
+Escherichia_coli	Cluster_114268	GO:0051287:[MF] NAD binding	MF	0.08	0
+Escherichia_coli	Cluster_114268	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
+Escherichia_coli	Cluster_1204487	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.03	0
+Escherichia_coli	Cluster_1204487	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.2	0
+Escherichia_coli	Cluster_1204487	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
+Escherichia_coli	Cluster_1204487	GO:0005737:[CC] cytoplasm	CC	0.77	0
+Escherichia_coli	Cluster_1204487	GO:0005886:[CC] plasma membrane	CC	0.05	0
+Escherichia_coli	Cluster_1204487	GO:0006793:[BP] phosphorus metabolic process	BP	0.51	0
+Escherichia_coli	Cluster_1204487	GO:0006811:[BP] ion transport	BP	0.91	0
+Escherichia_coli	Cluster_1204487	GO:0006855:[BP] drug transmembrane transport	BP	0.27	0
+Escherichia_coli	Cluster_1204487	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
+Escherichia_coli	Cluster_1204487	GO:0009279:[CC] cell outer membrane	CC	0.95	0
+Escherichia_coli	Cluster_1204487	GO:0015288:[MF] porin activity	MF	0.97	1
 Escherichia_coli	Cluster_1204487	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
-Escherichia_coli	Cluster_1204487	GO:0016787:[MF] hydrolase activity	MF	0.08	0
-Escherichia_coli	Cluster_1204487	GO:0016836:[MF] hydro-lyase activity	MF	0.55	0
-Escherichia_coli	Cluster_1204487	GO:0016854:[MF] racemase and epimerase activity	MF	0.04	0
-Escherichia_coli	Cluster_1204487	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.09	0
-Escherichia_coli	Cluster_1204487	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.11	0
-Escherichia_coli	Cluster_1204487	GO:0046930:[CC] pore complex	CC	0.98	0
-Escherichia_coli	Cluster_1204487	GO:0051287:[MF] NAD binding	MF	0.04	0
-Escherichia_coli	Cluster_1204487	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.22	0
-Escherichia_coli	Cluster_12531	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
-Escherichia_coli	Cluster_12531	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.33	0
-Escherichia_coli	Cluster_12531	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
-Escherichia_coli	Cluster_12531	GO:0005737:[CC] cytoplasm	CC	0.21	0
-Escherichia_coli	Cluster_12531	GO:0005886:[CC] plasma membrane	CC	0.9	1
-Escherichia_coli	Cluster_12531	GO:0006793:[BP] phosphorus metabolic process	BP	0.22	0
-Escherichia_coli	Cluster_12531	GO:0006811:[BP] ion transport	BP	0.06	0
-Escherichia_coli	Cluster_12531	GO:0006855:[BP] drug transmembrane transport	BP	0.98	1
+Escherichia_coli	Cluster_1204487	GO:0016787:[MF] hydrolase activity	MF	0.21	0
+Escherichia_coli	Cluster_1204487	GO:0016836:[MF] hydro-lyase activity	MF	0.52	0
+Escherichia_coli	Cluster_1204487	GO:0016854:[MF] racemase and epimerase activity	MF	0.21	0
+Escherichia_coli	Cluster_1204487	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.54	0
+Escherichia_coli	Cluster_1204487	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.67	0
+Escherichia_coli	Cluster_1204487	GO:0046930:[CC] pore complex	CC	0.92	0
+Escherichia_coli	Cluster_1204487	GO:0051287:[MF] NAD binding	MF	0.1	0
+Escherichia_coli	Cluster_1204487	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
+Escherichia_coli	Cluster_12531	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.41	0
+Escherichia_coli	Cluster_12531	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.2	0
+Escherichia_coli	Cluster_12531	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Escherichia_coli	Cluster_12531	GO:0005737:[CC] cytoplasm	CC	0.15	0
+Escherichia_coli	Cluster_12531	GO:0005886:[CC] plasma membrane	CC	0.85	1
+Escherichia_coli	Cluster_12531	GO:0006793:[BP] phosphorus metabolic process	BP	0.23916666666666667	0
+Escherichia_coli	Cluster_12531	GO:0006811:[BP] ion transport	BP	0.03	0
+Escherichia_coli	Cluster_12531	GO:0006855:[BP] drug transmembrane transport	BP	0.85	1
 Escherichia_coli	Cluster_12531	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
-Escherichia_coli	Cluster_12531	GO:0009279:[CC] cell outer membrane	CC	0.03	0
-Escherichia_coli	Cluster_12531	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_12531	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.95	1
-Escherichia_coli	Cluster_12531	GO:0016787:[MF] hydrolase activity	MF	0.31	0
-Escherichia_coli	Cluster_12531	GO:0016836:[MF] hydro-lyase activity	MF	0.55	0
-Escherichia_coli	Cluster_12531	GO:0016854:[MF] racemase and epimerase activity	MF	0.26	0
-Escherichia_coli	Cluster_12531	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.33	0
-Escherichia_coli	Cluster_12531	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.07	0
-Escherichia_coli	Cluster_12531	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_12531	GO:0051287:[MF] NAD binding	MF	0.05	0
-Escherichia_coli	Cluster_12531	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.35	0
-Escherichia_coli	Cluster_129010	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
-Escherichia_coli	Cluster_129010	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.19	0
-Escherichia_coli	Cluster_129010	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.0	0
-Escherichia_coli	Cluster_129010	GO:0005737:[CC] cytoplasm	CC	0.44	0
-Escherichia_coli	Cluster_129010	GO:0005886:[CC] plasma membrane	CC	0.25	0
-Escherichia_coli	Cluster_129010	GO:0006793:[BP] phosphorus metabolic process	BP	0.18	0
-Escherichia_coli	Cluster_129010	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_129010	GO:0006855:[BP] drug transmembrane transport	BP	0.04	0
-Escherichia_coli	Cluster_129010	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.27	0
-Escherichia_coli	Cluster_129010	GO:0009279:[CC] cell outer membrane	CC	0.2	0
-Escherichia_coli	Cluster_129010	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_129010	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
-Escherichia_coli	Cluster_129010	GO:0016787:[MF] hydrolase activity	MF	0.29	0
-Escherichia_coli	Cluster_129010	GO:0016836:[MF] hydro-lyase activity	MF	0.67	0
-Escherichia_coli	Cluster_129010	GO:0016854:[MF] racemase and epimerase activity	MF	0.17	0
-Escherichia_coli	Cluster_129010	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.34	0
-Escherichia_coli	Cluster_129010	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.42	0
+Escherichia_coli	Cluster_12531	GO:0009279:[CC] cell outer membrane	CC	0.02	0
+Escherichia_coli	Cluster_12531	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_12531	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.98	1
+Escherichia_coli	Cluster_12531	GO:0016787:[MF] hydrolase activity	MF	0.19	0
+Escherichia_coli	Cluster_12531	GO:0016836:[MF] hydro-lyase activity	MF	0.3	0
+Escherichia_coli	Cluster_12531	GO:0016854:[MF] racemase and epimerase activity	MF	0.34	0
+Escherichia_coli	Cluster_12531	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.94	0
+Escherichia_coli	Cluster_12531	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.71	0
+Escherichia_coli	Cluster_12531	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_12531	GO:0051287:[MF] NAD binding	MF	0.07	0
+Escherichia_coli	Cluster_12531	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
+Escherichia_coli	Cluster_129010	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_129010	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.21	0
+Escherichia_coli	Cluster_129010	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Escherichia_coli	Cluster_129010	GO:0005737:[CC] cytoplasm	CC	0.9	0
+Escherichia_coli	Cluster_129010	GO:0005886:[CC] plasma membrane	CC	0.57	0
+Escherichia_coli	Cluster_129010	GO:0006793:[BP] phosphorus metabolic process	BP	0.37200000000000005	0
+Escherichia_coli	Cluster_129010	GO:0006811:[BP] ion transport	BP	0.2	0
+Escherichia_coli	Cluster_129010	GO:0006855:[BP] drug transmembrane transport	BP	0.06	0
+Escherichia_coli	Cluster_129010	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.08	0
+Escherichia_coli	Cluster_129010	GO:0009279:[CC] cell outer membrane	CC	0.1	0
+Escherichia_coli	Cluster_129010	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_129010	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_129010	GO:0016787:[MF] hydrolase activity	MF	0.2	0
+Escherichia_coli	Cluster_129010	GO:0016836:[MF] hydro-lyase activity	MF	0.57	0
+Escherichia_coli	Cluster_129010	GO:0016854:[MF] racemase and epimerase activity	MF	0.15	0
+Escherichia_coli	Cluster_129010	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.48	0
+Escherichia_coli	Cluster_129010	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.22933333333333336	0
 Escherichia_coli	Cluster_129010	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_129010	GO:0051287:[MF] NAD binding	MF	0.03	0
-Escherichia_coli	Cluster_129010	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.72	0
-Escherichia_coli	Cluster_1291294	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
-Escherichia_coli	Cluster_1291294	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.46	0
+Escherichia_coli	Cluster_129010	GO:0051287:[MF] NAD binding	MF	0.01	0
+Escherichia_coli	Cluster_129010	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.1	0
+Escherichia_coli	Cluster_1291294	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_1291294	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.41	0
 Escherichia_coli	Cluster_1291294	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
-Escherichia_coli	Cluster_1291294	GO:0005737:[CC] cytoplasm	CC	0.77	1
-Escherichia_coli	Cluster_1291294	GO:0005886:[CC] plasma membrane	CC	0.27	0
-Escherichia_coli	Cluster_1291294	GO:0006793:[BP] phosphorus metabolic process	BP	0.09	0
-Escherichia_coli	Cluster_1291294	GO:0006811:[BP] ion transport	BP	0.02	0
-Escherichia_coli	Cluster_1291294	GO:0006855:[BP] drug transmembrane transport	BP	0.16	0
-Escherichia_coli	Cluster_1291294	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.3	0
-Escherichia_coli	Cluster_1291294	GO:0009279:[CC] cell outer membrane	CC	0.16	0
+Escherichia_coli	Cluster_1291294	GO:0005737:[CC] cytoplasm	CC	0.76	1
+Escherichia_coli	Cluster_1291294	GO:0005886:[CC] plasma membrane	CC	0.06	0
+Escherichia_coli	Cluster_1291294	GO:0006793:[BP] phosphorus metabolic process	BP	0.8361666666666666	0
+Escherichia_coli	Cluster_1291294	GO:0006811:[BP] ion transport	BP	0.2	0
+Escherichia_coli	Cluster_1291294	GO:0006855:[BP] drug transmembrane transport	BP	0.02	0
+Escherichia_coli	Cluster_1291294	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.4	0
+Escherichia_coli	Cluster_1291294	GO:0009279:[CC] cell outer membrane	CC	0.1	0
 Escherichia_coli	Cluster_1291294	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_1291294	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
-Escherichia_coli	Cluster_1291294	GO:0016787:[MF] hydrolase activity	MF	0.76	1
-Escherichia_coli	Cluster_1291294	GO:0016836:[MF] hydro-lyase activity	MF	0.28	0
-Escherichia_coli	Cluster_1291294	GO:0016854:[MF] racemase and epimerase activity	MF	0.79	0
-Escherichia_coli	Cluster_1291294	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.24	0
-Escherichia_coli	Cluster_1291294	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.82	1
-Escherichia_coli	Cluster_1291294	GO:0046930:[CC] pore complex	CC	0.01	0
-Escherichia_coli	Cluster_1291294	GO:0051287:[MF] NAD binding	MF	0.05	0
-Escherichia_coli	Cluster_1291294	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.52	0
-Escherichia_coli	Cluster_1420011	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
-Escherichia_coli	Cluster_1420011	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.46	0
-Escherichia_coli	Cluster_1420011	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.12	0
-Escherichia_coli	Cluster_1420011	GO:0005737:[CC] cytoplasm	CC	0.38	0
-Escherichia_coli	Cluster_1420011	GO:0005886:[CC] plasma membrane	CC	0.9	1
-Escherichia_coli	Cluster_1420011	GO:0006793:[BP] phosphorus metabolic process	BP	0.18	0
-Escherichia_coli	Cluster_1420011	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_1420011	GO:0006855:[BP] drug transmembrane transport	BP	0.88	1
-Escherichia_coli	Cluster_1420011	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.1	0
-Escherichia_coli	Cluster_1420011	GO:0009279:[CC] cell outer membrane	CC	0.07	0
-Escherichia_coli	Cluster_1420011	GO:0015288:[MF] porin activity	MF	0.03	0
-Escherichia_coli	Cluster_1420011	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.98	1
-Escherichia_coli	Cluster_1420011	GO:0016787:[MF] hydrolase activity	MF	0.14	0
-Escherichia_coli	Cluster_1420011	GO:0016836:[MF] hydro-lyase activity	MF	0.82	0
-Escherichia_coli	Cluster_1420011	GO:0016854:[MF] racemase and epimerase activity	MF	0.8	0
-Escherichia_coli	Cluster_1420011	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.31	0
-Escherichia_coli	Cluster_1420011	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.1	0
-Escherichia_coli	Cluster_1420011	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_1420011	GO:0051287:[MF] NAD binding	MF	0.01	0
-Escherichia_coli	Cluster_1420011	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.5	0
-Escherichia_coli	Cluster_149291	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
-Escherichia_coli	Cluster_149291	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.44	0
-Escherichia_coli	Cluster_149291	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.0	0
-Escherichia_coli	Cluster_149291	GO:0005737:[CC] cytoplasm	CC	0.61	0
-Escherichia_coli	Cluster_149291	GO:0005886:[CC] plasma membrane	CC	0.71	0
-Escherichia_coli	Cluster_149291	GO:0006793:[BP] phosphorus metabolic process	BP	0.6	1
-Escherichia_coli	Cluster_149291	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_149291	GO:0006855:[BP] drug transmembrane transport	BP	0.25	0
+Escherichia_coli	Cluster_1291294	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.07	0
+Escherichia_coli	Cluster_1291294	GO:0016787:[MF] hydrolase activity	MF	0.5	1
+Escherichia_coli	Cluster_1291294	GO:0016836:[MF] hydro-lyase activity	MF	0.75	0
+Escherichia_coli	Cluster_1291294	GO:0016854:[MF] racemase and epimerase activity	MF	0.86	0
+Escherichia_coli	Cluster_1291294	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.93	0
+Escherichia_coli	Cluster_1291294	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.3546666666666667	1
+Escherichia_coli	Cluster_1291294	GO:0046930:[CC] pore complex	CC	0.11	0
+Escherichia_coli	Cluster_1291294	GO:0051287:[MF] NAD binding	MF	0.04	0
+Escherichia_coli	Cluster_1291294	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.39	0
+Escherichia_coli	Cluster_1420011	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_1420011	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.31	0
+Escherichia_coli	Cluster_1420011	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.28	0
+Escherichia_coli	Cluster_1420011	GO:0005737:[CC] cytoplasm	CC	0.6	0
+Escherichia_coli	Cluster_1420011	GO:0005886:[CC] plasma membrane	CC	0.85	1
+Escherichia_coli	Cluster_1420011	GO:0006793:[BP] phosphorus metabolic process	BP	0.23916666666666667	0
+Escherichia_coli	Cluster_1420011	GO:0006811:[BP] ion transport	BP	0.07	0
+Escherichia_coli	Cluster_1420011	GO:0006855:[BP] drug transmembrane transport	BP	0.69	1
+Escherichia_coli	Cluster_1420011	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_1420011	GO:0009279:[CC] cell outer membrane	CC	0.1	0
+Escherichia_coli	Cluster_1420011	GO:0015288:[MF] porin activity	MF	0.0	0
+Escherichia_coli	Cluster_1420011	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.99	1
+Escherichia_coli	Cluster_1420011	GO:0016787:[MF] hydrolase activity	MF	0.31	0
+Escherichia_coli	Cluster_1420011	GO:0016836:[MF] hydro-lyase activity	MF	0.5	0
+Escherichia_coli	Cluster_1420011	GO:0016854:[MF] racemase and epimerase activity	MF	0.32	0
+Escherichia_coli	Cluster_1420011	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.94	0
+Escherichia_coli	Cluster_1420011	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.18833333333333332	0
+Escherichia_coli	Cluster_1420011	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_1420011	GO:0051287:[MF] NAD binding	MF	0.2	0
+Escherichia_coli	Cluster_1420011	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.22	0
+Escherichia_coli	Cluster_149291	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_149291	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.31	0
+Escherichia_coli	Cluster_149291	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.12	0
+Escherichia_coli	Cluster_149291	GO:0005737:[CC] cytoplasm	CC	0.19	0
+Escherichia_coli	Cluster_149291	GO:0005886:[CC] plasma membrane	CC	0.68	0
+Escherichia_coli	Cluster_149291	GO:0006793:[BP] phosphorus metabolic process	BP	0.69	1
+Escherichia_coli	Cluster_149291	GO:0006811:[BP] ion transport	BP	0.07	0
+Escherichia_coli	Cluster_149291	GO:0006855:[BP] drug transmembrane transport	BP	0.23	0
 Escherichia_coli	Cluster_149291	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.06	0
-Escherichia_coli	Cluster_149291	GO:0009279:[CC] cell outer membrane	CC	0.16	0
-Escherichia_coli	Cluster_149291	GO:0015288:[MF] porin activity	MF	0.01	0
+Escherichia_coli	Cluster_149291	GO:0009279:[CC] cell outer membrane	CC	0.08	0
+Escherichia_coli	Cluster_149291	GO:0015288:[MF] porin activity	MF	0.03	0
 Escherichia_coli	Cluster_149291	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
-Escherichia_coli	Cluster_149291	GO:0016787:[MF] hydrolase activity	MF	0.35	0
-Escherichia_coli	Cluster_149291	GO:0016836:[MF] hydro-lyase activity	MF	0.93	1
-Escherichia_coli	Cluster_149291	GO:0016854:[MF] racemase and epimerase activity	MF	0.34	1
-Escherichia_coli	Cluster_149291	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.34	0
-Escherichia_coli	Cluster_149291	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.35	0
-Escherichia_coli	Cluster_149291	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_149291	GO:0016787:[MF] hydrolase activity	MF	0.49	0
+Escherichia_coli	Cluster_149291	GO:0016836:[MF] hydro-lyase activity	MF	0.74	1
+Escherichia_coli	Cluster_149291	GO:0016854:[MF] racemase and epimerase activity	MF	0.08	1
+Escherichia_coli	Cluster_149291	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.81	0
+Escherichia_coli	Cluster_149291	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.45766666666666667	0
+Escherichia_coli	Cluster_149291	GO:0046930:[CC] pore complex	CC	0.02	0
 Escherichia_coli	Cluster_149291	GO:0051287:[MF] NAD binding	MF	0.01	0
-Escherichia_coli	Cluster_149291	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.74	1
-Escherichia_coli	Cluster_164544	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.97	1
-Escherichia_coli	Cluster_164544	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.44	0
-Escherichia_coli	Cluster_164544	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.84	1
-Escherichia_coli	Cluster_164544	GO:0005737:[CC] cytoplasm	CC	0.59	0
-Escherichia_coli	Cluster_164544	GO:0005886:[CC] plasma membrane	CC	0.12	0
-Escherichia_coli	Cluster_164544	GO:0006793:[BP] phosphorus metabolic process	BP	0.93	1
-Escherichia_coli	Cluster_164544	GO:0006811:[BP] ion transport	BP	0.09	0
+Escherichia_coli	Cluster_149291	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.1	1
+Escherichia_coli	Cluster_164544	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.98	1
+Escherichia_coli	Cluster_164544	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.4	0
+Escherichia_coli	Cluster_164544	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	1.0	1
+Escherichia_coli	Cluster_164544	GO:0005737:[CC] cytoplasm	CC	0.42	0
+Escherichia_coli	Cluster_164544	GO:0005886:[CC] plasma membrane	CC	0.06	0
+Escherichia_coli	Cluster_164544	GO:0006793:[BP] phosphorus metabolic process	BP	0.8361666666666666	1
+Escherichia_coli	Cluster_164544	GO:0006811:[BP] ion transport	BP	0.25	0
 Escherichia_coli	Cluster_164544	GO:0006855:[BP] drug transmembrane transport	BP	0.08	0
-Escherichia_coli	Cluster_164544	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.93	1
-Escherichia_coli	Cluster_164544	GO:0009279:[CC] cell outer membrane	CC	0.02	0
-Escherichia_coli	Cluster_164544	GO:0015288:[MF] porin activity	MF	0.0	0
+Escherichia_coli	Cluster_164544	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.65	1
+Escherichia_coli	Cluster_164544	GO:0009279:[CC] cell outer membrane	CC	0.08	0
+Escherichia_coli	Cluster_164544	GO:0015288:[MF] porin activity	MF	0.06	0
 Escherichia_coli	Cluster_164544	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
-Escherichia_coli	Cluster_164544	GO:0016787:[MF] hydrolase activity	MF	0.27	0
-Escherichia_coli	Cluster_164544	GO:0016836:[MF] hydro-lyase activity	MF	0.5	0
-Escherichia_coli	Cluster_164544	GO:0016854:[MF] racemase and epimerase activity	MF	0.94	0
-Escherichia_coli	Cluster_164544	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.48	1
-Escherichia_coli	Cluster_164544	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.83	1
+Escherichia_coli	Cluster_164544	GO:0016787:[MF] hydrolase activity	MF	0.39	0
+Escherichia_coli	Cluster_164544	GO:0016836:[MF] hydro-lyase activity	MF	0.32	0
+Escherichia_coli	Cluster_164544	GO:0016854:[MF] racemase and epimerase activity	MF	0.33	0
+Escherichia_coli	Cluster_164544	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.74	1
+Escherichia_coli	Cluster_164544	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.54	1
 Escherichia_coli	Cluster_164544	GO:0046930:[CC] pore complex	CC	0.01	0
-Escherichia_coli	Cluster_164544	GO:0051287:[MF] NAD binding	MF	0.92	1
-Escherichia_coli	Cluster_164544	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.48	0
-Escherichia_coli	Cluster_1647061	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
-Escherichia_coli	Cluster_1647061	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.37	0
-Escherichia_coli	Cluster_1647061	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.0	0
-Escherichia_coli	Cluster_1647061	GO:0005737:[CC] cytoplasm	CC	0.63	0
-Escherichia_coli	Cluster_1647061	GO:0005886:[CC] plasma membrane	CC	0.09	0
-Escherichia_coli	Cluster_1647061	GO:0006793:[BP] phosphorus metabolic process	BP	0.82	1
-Escherichia_coli	Cluster_1647061	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_1647061	GO:0006855:[BP] drug transmembrane transport	BP	0.08	0
-Escherichia_coli	Cluster_1647061	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
-Escherichia_coli	Cluster_1647061	GO:0009279:[CC] cell outer membrane	CC	0.17	0
+Escherichia_coli	Cluster_164544	GO:0051287:[MF] NAD binding	MF	0.93	1
+Escherichia_coli	Cluster_164544	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.22	0
+Escherichia_coli	Cluster_1647061	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.1	0
+Escherichia_coli	Cluster_1647061	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.32	0
+Escherichia_coli	Cluster_1647061	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Escherichia_coli	Cluster_1647061	GO:0005737:[CC] cytoplasm	CC	0.37	0
+Escherichia_coli	Cluster_1647061	GO:0005886:[CC] plasma membrane	CC	0.25	0
+Escherichia_coli	Cluster_1647061	GO:0006793:[BP] phosphorus metabolic process	BP	0.3	1
+Escherichia_coli	Cluster_1647061	GO:0006811:[BP] ion transport	BP	0.2	0
+Escherichia_coli	Cluster_1647061	GO:0006855:[BP] drug transmembrane transport	BP	0.13	0
+Escherichia_coli	Cluster_1647061	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.08	0
+Escherichia_coli	Cluster_1647061	GO:0009279:[CC] cell outer membrane	CC	0.1	0
 Escherichia_coli	Cluster_1647061	GO:0015288:[MF] porin activity	MF	0.0	0
-Escherichia_coli	Cluster_1647061	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
-Escherichia_coli	Cluster_1647061	GO:0016787:[MF] hydrolase activity	MF	0.35	0
-Escherichia_coli	Cluster_1647061	GO:0016836:[MF] hydro-lyase activity	MF	0.72	1
-Escherichia_coli	Cluster_1647061	GO:0016854:[MF] racemase and epimerase activity	MF	0.25	1
-Escherichia_coli	Cluster_1647061	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.23	0
-Escherichia_coli	Cluster_1647061	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.39	0
+Escherichia_coli	Cluster_1647061	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Escherichia_coli	Cluster_1647061	GO:0016787:[MF] hydrolase activity	MF	0.5	0
+Escherichia_coli	Cluster_1647061	GO:0016836:[MF] hydro-lyase activity	MF	0.46	1
+Escherichia_coli	Cluster_1647061	GO:0016854:[MF] racemase and epimerase activity	MF	0.07	1
+Escherichia_coli	Cluster_1647061	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.48	0
+Escherichia_coli	Cluster_1647061	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.45766666666666667	0
 Escherichia_coli	Cluster_1647061	GO:0046930:[CC] pore complex	CC	0.01	0
-Escherichia_coli	Cluster_1647061	GO:0051287:[MF] NAD binding	MF	0.04	0
-Escherichia_coli	Cluster_1647061	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.83	1
-Escherichia_coli	Cluster_17929	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.95	1
-Escherichia_coli	Cluster_17929	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.44	0
-Escherichia_coli	Cluster_17929	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.92	1
-Escherichia_coli	Cluster_17929	GO:0005737:[CC] cytoplasm	CC	0.27	0
-Escherichia_coli	Cluster_17929	GO:0005886:[CC] plasma membrane	CC	0.11	0
-Escherichia_coli	Cluster_17929	GO:0006793:[BP] phosphorus metabolic process	BP	0.89	0
-Escherichia_coli	Cluster_17929	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_17929	GO:0006855:[BP] drug transmembrane transport	BP	0.25	0
-Escherichia_coli	Cluster_17929	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.79	0
-Escherichia_coli	Cluster_17929	GO:0009279:[CC] cell outer membrane	CC	0.14	0
-Escherichia_coli	Cluster_17929	GO:0015288:[MF] porin activity	MF	0.02	0
+Escherichia_coli	Cluster_1647061	GO:0051287:[MF] NAD binding	MF	0.07	0
+Escherichia_coli	Cluster_1647061	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.69	1
+Escherichia_coli	Cluster_17929	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.93	1
+Escherichia_coli	Cluster_17929	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.32	0
+Escherichia_coli	Cluster_17929	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.77	1
+Escherichia_coli	Cluster_17929	GO:0005737:[CC] cytoplasm	CC	0.17	0
+Escherichia_coli	Cluster_17929	GO:0005886:[CC] plasma membrane	CC	0.77	0
+Escherichia_coli	Cluster_17929	GO:0006793:[BP] phosphorus metabolic process	BP	0.8361666666666666	0
+Escherichia_coli	Cluster_17929	GO:0006811:[BP] ion transport	BP	0.07	0
+Escherichia_coli	Cluster_17929	GO:0006855:[BP] drug transmembrane transport	BP	0.23	0
+Escherichia_coli	Cluster_17929	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.65	0
+Escherichia_coli	Cluster_17929	GO:0009279:[CC] cell outer membrane	CC	0.1	0
+Escherichia_coli	Cluster_17929	GO:0015288:[MF] porin activity	MF	0.01	0
 Escherichia_coli	Cluster_17929	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
-Escherichia_coli	Cluster_17929	GO:0016787:[MF] hydrolase activity	MF	0.35	0
-Escherichia_coli	Cluster_17929	GO:0016836:[MF] hydro-lyase activity	MF	0.84	0
-Escherichia_coli	Cluster_17929	GO:0016854:[MF] racemase and epimerase activity	MF	0.85	0
-Escherichia_coli	Cluster_17929	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.76	0
-Escherichia_coli	Cluster_17929	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.52	0
-Escherichia_coli	Cluster_17929	GO:0046930:[CC] pore complex	CC	0.0	0
-Escherichia_coli	Cluster_17929	GO:0051287:[MF] NAD binding	MF	0.99	1
-Escherichia_coli	Cluster_17929	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.54	0
-Escherichia_coli	Cluster_188439	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
-Escherichia_coli	Cluster_188439	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.37	0
-Escherichia_coli	Cluster_188439	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
-Escherichia_coli	Cluster_188439	GO:0005737:[CC] cytoplasm	CC	0.09	0
-Escherichia_coli	Cluster_188439	GO:0005886:[CC] plasma membrane	CC	0.06	0
-Escherichia_coli	Cluster_188439	GO:0006793:[BP] phosphorus metabolic process	BP	0.09	0
-Escherichia_coli	Cluster_188439	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_188439	GO:0006855:[BP] drug transmembrane transport	BP	0.08	0
-Escherichia_coli	Cluster_188439	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.89	1
-Escherichia_coli	Cluster_188439	GO:0009279:[CC] cell outer membrane	CC	0.16	0
-Escherichia_coli	Cluster_188439	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_188439	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
-Escherichia_coli	Cluster_188439	GO:0016787:[MF] hydrolase activity	MF	0.3	0
-Escherichia_coli	Cluster_188439	GO:0016836:[MF] hydro-lyase activity	MF	0.23	0
-Escherichia_coli	Cluster_188439	GO:0016854:[MF] racemase and epimerase activity	MF	0.68	1
-Escherichia_coli	Cluster_188439	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.2	0
-Escherichia_coli	Cluster_188439	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.38	0
-Escherichia_coli	Cluster_188439	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_188439	GO:0051287:[MF] NAD binding	MF	0.05	0
-Escherichia_coli	Cluster_188439	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.54	0
+Escherichia_coli	Cluster_17929	GO:0016787:[MF] hydrolase activity	MF	0.41	0
+Escherichia_coli	Cluster_17929	GO:0016836:[MF] hydro-lyase activity	MF	0.29	0
+Escherichia_coli	Cluster_17929	GO:0016854:[MF] racemase and epimerase activity	MF	0.24	0
+Escherichia_coli	Cluster_17929	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.55	0
+Escherichia_coli	Cluster_17929	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.7675	0
+Escherichia_coli	Cluster_17929	GO:0046930:[CC] pore complex	CC	0.02	0
+Escherichia_coli	Cluster_17929	GO:0051287:[MF] NAD binding	MF	1.0	1
+Escherichia_coli	Cluster_17929	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.4	0
+Escherichia_coli	Cluster_188439	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_188439	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.41	0
+Escherichia_coli	Cluster_188439	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
+Escherichia_coli	Cluster_188439	GO:0005737:[CC] cytoplasm	CC	0.28	0
+Escherichia_coli	Cluster_188439	GO:0005886:[CC] plasma membrane	CC	0.04	0
+Escherichia_coli	Cluster_188439	GO:0006793:[BP] phosphorus metabolic process	BP	0.575	0
+Escherichia_coli	Cluster_188439	GO:0006811:[BP] ion transport	BP	0.07	0
+Escherichia_coli	Cluster_188439	GO:0006855:[BP] drug transmembrane transport	BP	0.09	0
+Escherichia_coli	Cluster_188439	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.84	1
+Escherichia_coli	Cluster_188439	GO:0009279:[CC] cell outer membrane	CC	0.08	0
+Escherichia_coli	Cluster_188439	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_188439	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.07	0
+Escherichia_coli	Cluster_188439	GO:0016787:[MF] hydrolase activity	MF	0.5	0
+Escherichia_coli	Cluster_188439	GO:0016836:[MF] hydro-lyase activity	MF	0.75	0
+Escherichia_coli	Cluster_188439	GO:0016854:[MF] racemase and epimerase activity	MF	0.47	1
+Escherichia_coli	Cluster_188439	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.93	0
+Escherichia_coli	Cluster_188439	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.2575	0
+Escherichia_coli	Cluster_188439	GO:0046930:[CC] pore complex	CC	0.05	0
+Escherichia_coli	Cluster_188439	GO:0051287:[MF] NAD binding	MF	0.04	0
+Escherichia_coli	Cluster_188439	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.71	0
 Escherichia_coli	Cluster_196258	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.06	0
-Escherichia_coli	Cluster_196258	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.44	0
+Escherichia_coli	Cluster_196258	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.4	0
 Escherichia_coli	Cluster_196258	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
-Escherichia_coli	Cluster_196258	GO:0005737:[CC] cytoplasm	CC	0.67	0
-Escherichia_coli	Cluster_196258	GO:0005886:[CC] plasma membrane	CC	0.09	0
-Escherichia_coli	Cluster_196258	GO:0006793:[BP] phosphorus metabolic process	BP	0.09	0
-Escherichia_coli	Cluster_196258	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_196258	GO:0006855:[BP] drug transmembrane transport	BP	0.19	0
-Escherichia_coli	Cluster_196258	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.06	0
-Escherichia_coli	Cluster_196258	GO:0009279:[CC] cell outer membrane	CC	0.01	0
-Escherichia_coli	Cluster_196258	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_196258	GO:0005737:[CC] cytoplasm	CC	0.28	0
+Escherichia_coli	Cluster_196258	GO:0005886:[CC] plasma membrane	CC	0.18	0
+Escherichia_coli	Cluster_196258	GO:0006793:[BP] phosphorus metabolic process	BP	0.675	0
+Escherichia_coli	Cluster_196258	GO:0006811:[BP] ion transport	BP	0.05	0
+Escherichia_coli	Cluster_196258	GO:0006855:[BP] drug transmembrane transport	BP	0.23	0
+Escherichia_coli	Cluster_196258	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.08	0
+Escherichia_coli	Cluster_196258	GO:0009279:[CC] cell outer membrane	CC	0.07	0
+Escherichia_coli	Cluster_196258	GO:0015288:[MF] porin activity	MF	0.05	0
 Escherichia_coli	Cluster_196258	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
-Escherichia_coli	Cluster_196258	GO:0016787:[MF] hydrolase activity	MF	0.2	0
-Escherichia_coli	Cluster_196258	GO:0016836:[MF] hydro-lyase activity	MF	0.53	0
-Escherichia_coli	Cluster_196258	GO:0016854:[MF] racemase and epimerase activity	MF	0.21	0
-Escherichia_coli	Cluster_196258	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.34	0
-Escherichia_coli	Cluster_196258	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.42	0
-Escherichia_coli	Cluster_196258	GO:0046930:[CC] pore complex	CC	0.01	0
-Escherichia_coli	Cluster_196258	GO:0051287:[MF] NAD binding	MF	0.06	0
-Escherichia_coli	Cluster_196258	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.52	0
-Escherichia_coli	Cluster_208492	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
-Escherichia_coli	Cluster_208492	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.44	0
-Escherichia_coli	Cluster_208492	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
-Escherichia_coli	Cluster_208492	GO:0005737:[CC] cytoplasm	CC	0.27	0
-Escherichia_coli	Cluster_208492	GO:0005886:[CC] plasma membrane	CC	0.07	0
-Escherichia_coli	Cluster_208492	GO:0006793:[BP] phosphorus metabolic process	BP	0.11	0
-Escherichia_coli	Cluster_208492	GO:0006811:[BP] ion transport	BP	0.95	1
-Escherichia_coli	Cluster_208492	GO:0006855:[BP] drug transmembrane transport	BP	0.33	0
+Escherichia_coli	Cluster_196258	GO:0016787:[MF] hydrolase activity	MF	0.5	0
+Escherichia_coli	Cluster_196258	GO:0016836:[MF] hydro-lyase activity	MF	0.74	0
+Escherichia_coli	Cluster_196258	GO:0016854:[MF] racemase and epimerase activity	MF	0.78	0
+Escherichia_coli	Cluster_196258	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.81	0
+Escherichia_coli	Cluster_196258	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.3463333333333334	0
+Escherichia_coli	Cluster_196258	GO:0046930:[CC] pore complex	CC	0.02	0
+Escherichia_coli	Cluster_196258	GO:0051287:[MF] NAD binding	MF	0.01	0
+Escherichia_coli	Cluster_196258	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.59	0
+Escherichia_coli	Cluster_208492	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.06	0
+Escherichia_coli	Cluster_208492	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.35	0
+Escherichia_coli	Cluster_208492	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Escherichia_coli	Cluster_208492	GO:0005737:[CC] cytoplasm	CC	0.33	0
+Escherichia_coli	Cluster_208492	GO:0005886:[CC] plasma membrane	CC	0.75	0
+Escherichia_coli	Cluster_208492	GO:0006793:[BP] phosphorus metabolic process	BP	0.09333333333333334	0
+Escherichia_coli	Cluster_208492	GO:0006811:[BP] ion transport	BP	0.83	1
+Escherichia_coli	Cluster_208492	GO:0006855:[BP] drug transmembrane transport	BP	0.41	0
 Escherichia_coli	Cluster_208492	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.06	0
-Escherichia_coli	Cluster_208492	GO:0009279:[CC] cell outer membrane	CC	0.3	1
-Escherichia_coli	Cluster_208492	GO:0015288:[MF] porin activity	MF	1.0	1
-Escherichia_coli	Cluster_208492	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
-Escherichia_coli	Cluster_208492	GO:0016787:[MF] hydrolase activity	MF	0.37	0
-Escherichia_coli	Cluster_208492	GO:0016836:[MF] hydro-lyase activity	MF	0.48	0
-Escherichia_coli	Cluster_208492	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
-Escherichia_coli	Cluster_208492	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.13	0
-Escherichia_coli	Cluster_208492	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.17	0
-Escherichia_coli	Cluster_208492	GO:0046930:[CC] pore complex	CC	1.0	1
-Escherichia_coli	Cluster_208492	GO:0051287:[MF] NAD binding	MF	0.05	0
-Escherichia_coli	Cluster_208492	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.72	0
-Escherichia_coli	Cluster_213820	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
-Escherichia_coli	Cluster_213820	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.49	0
-Escherichia_coli	Cluster_213820	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.0	0
-Escherichia_coli	Cluster_213820	GO:0005737:[CC] cytoplasm	CC	0.67	0
-Escherichia_coli	Cluster_213820	GO:0005886:[CC] plasma membrane	CC	0.09	0
-Escherichia_coli	Cluster_213820	GO:0006793:[BP] phosphorus metabolic process	BP	0.09	0
-Escherichia_coli	Cluster_213820	GO:0006811:[BP] ion transport	BP	0.03	0
+Escherichia_coli	Cluster_208492	GO:0009279:[CC] cell outer membrane	CC	0.51	1
+Escherichia_coli	Cluster_208492	GO:0015288:[MF] porin activity	MF	0.97	1
+Escherichia_coli	Cluster_208492	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_208492	GO:0016787:[MF] hydrolase activity	MF	0.33	0
+Escherichia_coli	Cluster_208492	GO:0016836:[MF] hydro-lyase activity	MF	0.33	0
+Escherichia_coli	Cluster_208492	GO:0016854:[MF] racemase and epimerase activity	MF	0.49	0
+Escherichia_coli	Cluster_208492	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.36	0
+Escherichia_coli	Cluster_208492	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.3546666666666667	0
+Escherichia_coli	Cluster_208492	GO:0046930:[CC] pore complex	CC	0.95	1
+Escherichia_coli	Cluster_208492	GO:0051287:[MF] NAD binding	MF	0.06	0
+Escherichia_coli	Cluster_208492	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.22	0
+Escherichia_coli	Cluster_213820	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.12	0
+Escherichia_coli	Cluster_213820	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.4	0
+Escherichia_coli	Cluster_213820	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.02	0
+Escherichia_coli	Cluster_213820	GO:0005737:[CC] cytoplasm	CC	0.53	0
+Escherichia_coli	Cluster_213820	GO:0005886:[CC] plasma membrane	CC	0.2	0
+Escherichia_coli	Cluster_213820	GO:0006793:[BP] phosphorus metabolic process	BP	0.285	0
+Escherichia_coli	Cluster_213820	GO:0006811:[BP] ion transport	BP	0.05	0
 Escherichia_coli	Cluster_213820	GO:0006855:[BP] drug transmembrane transport	BP	0.07	0
-Escherichia_coli	Cluster_213820	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.26	0
-Escherichia_coli	Cluster_213820	GO:0009279:[CC] cell outer membrane	CC	0.03	0
-Escherichia_coli	Cluster_213820	GO:0015288:[MF] porin activity	MF	0.0	0
-Escherichia_coli	Cluster_213820	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
-Escherichia_coli	Cluster_213820	GO:0016787:[MF] hydrolase activity	MF	0.38	0
-Escherichia_coli	Cluster_213820	GO:0016836:[MF] hydro-lyase activity	MF	0.84	0
-Escherichia_coli	Cluster_213820	GO:0016854:[MF] racemase and epimerase activity	MF	0.96	0
-Escherichia_coli	Cluster_213820	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.52	0
-Escherichia_coli	Cluster_213820	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.39	0
-Escherichia_coli	Cluster_213820	GO:0046930:[CC] pore complex	CC	0.05	0
-Escherichia_coli	Cluster_213820	GO:0051287:[MF] NAD binding	MF	0.01	0
-Escherichia_coli	Cluster_213820	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.48	0
-Escherichia_coli	Cluster_26001	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
-Escherichia_coli	Cluster_26001	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.49	0
-Escherichia_coli	Cluster_26001	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
-Escherichia_coli	Cluster_26001	GO:0005737:[CC] cytoplasm	CC	0.68	0
-Escherichia_coli	Cluster_26001	GO:0005886:[CC] plasma membrane	CC	0.09	0
-Escherichia_coli	Cluster_26001	GO:0006793:[BP] phosphorus metabolic process	BP	0.4	0
-Escherichia_coli	Cluster_26001	GO:0006811:[BP] ion transport	BP	0.0	0
-Escherichia_coli	Cluster_26001	GO:0006855:[BP] drug transmembrane transport	BP	0.19	0
-Escherichia_coli	Cluster_26001	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
-Escherichia_coli	Cluster_26001	GO:0009279:[CC] cell outer membrane	CC	0.01	0
-Escherichia_coli	Cluster_26001	GO:0015288:[MF] porin activity	MF	0.03	0
-Escherichia_coli	Cluster_26001	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.08	0
-Escherichia_coli	Cluster_26001	GO:0016787:[MF] hydrolase activity	MF	0.38	0
-Escherichia_coli	Cluster_26001	GO:0016836:[MF] hydro-lyase activity	MF	0.3	0
-Escherichia_coli	Cluster_26001	GO:0016854:[MF] racemase and epimerase activity	MF	0.92	0
-Escherichia_coli	Cluster_26001	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.16	0
-Escherichia_coli	Cluster_26001	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.11	0
-Escherichia_coli	Cluster_26001	GO:0046930:[CC] pore complex	CC	0.01	0
-Escherichia_coli	Cluster_26001	GO:0051287:[MF] NAD binding	MF	0.22	0
-Escherichia_coli	Cluster_26001	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.53	0
-Escherichia_coli	Cluster_27624	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
-Escherichia_coli	Cluster_27624	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.49	0
-Escherichia_coli	Cluster_27624	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.11	0
-Escherichia_coli	Cluster_27624	GO:0005737:[CC] cytoplasm	CC	0.75	0
-Escherichia_coli	Cluster_27624	GO:0005886:[CC] plasma membrane	CC	0.66	0
-Escherichia_coli	Cluster_27624	GO:0006793:[BP] phosphorus metabolic process	BP	0.26	0
-Escherichia_coli	Cluster_27624	GO:0006811:[BP] ion transport	BP	0.08	0
-Escherichia_coli	Cluster_27624	GO:0006855:[BP] drug transmembrane transport	BP	0.33	0
-Escherichia_coli	Cluster_27624	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
-Escherichia_coli	Cluster_27624	GO:0009279:[CC] cell outer membrane	CC	0.04	0
-Escherichia_coli	Cluster_27624	GO:0015288:[MF] porin activity	MF	0.0	0
-Escherichia_coli	Cluster_27624	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.15	0
-Escherichia_coli	Cluster_27624	GO:0016787:[MF] hydrolase activity	MF	0.29	0
-Escherichia_coli	Cluster_27624	GO:0016836:[MF] hydro-lyase activity	MF	0.52	1
-Escherichia_coli	Cluster_27624	GO:0016854:[MF] racemase and epimerase activity	MF	0.92	0
-Escherichia_coli	Cluster_27624	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.52	0
-Escherichia_coli	Cluster_27624	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.07	0
-Escherichia_coli	Cluster_27624	GO:0046930:[CC] pore complex	CC	0.05	0
-Escherichia_coli	Cluster_27624	GO:0051287:[MF] NAD binding	MF	0.01	0
-Escherichia_coli	Cluster_27624	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
-Escherichia_coli	Cluster_276414	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_276414	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.49	0
-Escherichia_coli	Cluster_276414	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
-Escherichia_coli	Cluster_276414	GO:0005737:[CC] cytoplasm	CC	0.66	0
-Escherichia_coli	Cluster_276414	GO:0005886:[CC] plasma membrane	CC	0.52	0
-Escherichia_coli	Cluster_276414	GO:0006793:[BP] phosphorus metabolic process	BP	0.4	0
-Escherichia_coli	Cluster_276414	GO:0006811:[BP] ion transport	BP	0.04	0
-Escherichia_coli	Cluster_276414	GO:0006855:[BP] drug transmembrane transport	BP	0.26	0
-Escherichia_coli	Cluster_276414	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.2	0
-Escherichia_coli	Cluster_276414	GO:0009279:[CC] cell outer membrane	CC	0.86	1
-Escherichia_coli	Cluster_276414	GO:0015288:[MF] porin activity	MF	0.0	0
-Escherichia_coli	Cluster_276414	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.05	0
-Escherichia_coli	Cluster_276414	GO:0016787:[MF] hydrolase activity	MF	0.25	0
-Escherichia_coli	Cluster_276414	GO:0016836:[MF] hydro-lyase activity	MF	0.69	0
-Escherichia_coli	Cluster_276414	GO:0016854:[MF] racemase and epimerase activity	MF	0.1	0
-Escherichia_coli	Cluster_276414	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.19	0
-Escherichia_coli	Cluster_276414	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.07	0
-Escherichia_coli	Cluster_276414	GO:0046930:[CC] pore complex	CC	0.05	0
-Escherichia_coli	Cluster_276414	GO:0051287:[MF] NAD binding	MF	0.22	0
-Escherichia_coli	Cluster_276414	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
-Escherichia_coli	Cluster_30007	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
-Escherichia_coli	Cluster_30007	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.49	0
-Escherichia_coli	Cluster_30007	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
-Escherichia_coli	Cluster_30007	GO:0005737:[CC] cytoplasm	CC	0.68	0
-Escherichia_coli	Cluster_30007	GO:0005886:[CC] plasma membrane	CC	0.61	0
-Escherichia_coli	Cluster_30007	GO:0006793:[BP] phosphorus metabolic process	BP	0.39	0
-Escherichia_coli	Cluster_30007	GO:0006811:[BP] ion transport	BP	0.01	0
-Escherichia_coli	Cluster_30007	GO:0006855:[BP] drug transmembrane transport	BP	0.27	0
-Escherichia_coli	Cluster_30007	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
-Escherichia_coli	Cluster_30007	GO:0009279:[CC] cell outer membrane	CC	0.96	1
-Escherichia_coli	Cluster_30007	GO:0015288:[MF] porin activity	MF	0.04	0
-Escherichia_coli	Cluster_30007	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.15	0
-Escherichia_coli	Cluster_30007	GO:0016787:[MF] hydrolase activity	MF	0.34	0
-Escherichia_coli	Cluster_30007	GO:0016836:[MF] hydro-lyase activity	MF	0.68	0
-Escherichia_coli	Cluster_30007	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
-Escherichia_coli	Cluster_30007	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.16	0
-Escherichia_coli	Cluster_30007	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.12	0
-Escherichia_coli	Cluster_30007	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_30007	GO:0051287:[MF] NAD binding	MF	0.22	0
-Escherichia_coli	Cluster_30007	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.74	0
-Escherichia_coli	Cluster_30066	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
-Escherichia_coli	Cluster_30066	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.49	0
-Escherichia_coli	Cluster_30066	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
-Escherichia_coli	Cluster_30066	GO:0005737:[CC] cytoplasm	CC	0.68	0
-Escherichia_coli	Cluster_30066	GO:0005886:[CC] plasma membrane	CC	0.57	0
-Escherichia_coli	Cluster_30066	GO:0006793:[BP] phosphorus metabolic process	BP	0.4	0
-Escherichia_coli	Cluster_30066	GO:0006811:[BP] ion transport	BP	0.0	0
-Escherichia_coli	Cluster_30066	GO:0006855:[BP] drug transmembrane transport	BP	0.29	0
-Escherichia_coli	Cluster_30066	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.25	0
-Escherichia_coli	Cluster_30066	GO:0009279:[CC] cell outer membrane	CC	0.0	0
-Escherichia_coli	Cluster_30066	GO:0015288:[MF] porin activity	MF	0.03	0
-Escherichia_coli	Cluster_30066	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.08	0
-Escherichia_coli	Cluster_30066	GO:0016787:[MF] hydrolase activity	MF	0.37	0
-Escherichia_coli	Cluster_30066	GO:0016836:[MF] hydro-lyase activity	MF	0.68	0
-Escherichia_coli	Cluster_30066	GO:0016854:[MF] racemase and epimerase activity	MF	0.14	0
-Escherichia_coli	Cluster_30066	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.16	0
-Escherichia_coli	Cluster_30066	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.08	0
+Escherichia_coli	Cluster_213820	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.11	0
+Escherichia_coli	Cluster_213820	GO:0009279:[CC] cell outer membrane	CC	0.17	0
+Escherichia_coli	Cluster_213820	GO:0015288:[MF] porin activity	MF	0.01	0
+Escherichia_coli	Cluster_213820	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.07	0
+Escherichia_coli	Cluster_213820	GO:0016787:[MF] hydrolase activity	MF	0.7333333333333333	0
+Escherichia_coli	Cluster_213820	GO:0016836:[MF] hydro-lyase activity	MF	0.57	0
+Escherichia_coli	Cluster_213820	GO:0016854:[MF] racemase and epimerase activity	MF	0.68	0
+Escherichia_coli	Cluster_213820	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.6	0
+Escherichia_coli	Cluster_213820	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.3471666666666667	0
+Escherichia_coli	Cluster_213820	GO:0046930:[CC] pore complex	CC	0.02	0
+Escherichia_coli	Cluster_213820	GO:0051287:[MF] NAD binding	MF	0.07	0
+Escherichia_coli	Cluster_213820	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.39	0
+Escherichia_coli	Cluster_26001	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.02	0
+Escherichia_coli	Cluster_26001	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.4	0
+Escherichia_coli	Cluster_26001	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Escherichia_coli	Cluster_26001	GO:0005737:[CC] cytoplasm	CC	0.35	0
+Escherichia_coli	Cluster_26001	GO:0005886:[CC] plasma membrane	CC	0.18	0
+Escherichia_coli	Cluster_26001	GO:0006793:[BP] phosphorus metabolic process	BP	0.32	0
+Escherichia_coli	Cluster_26001	GO:0006811:[BP] ion transport	BP	0.05	0
+Escherichia_coli	Cluster_26001	GO:0006855:[BP] drug transmembrane transport	BP	0.23	0
+Escherichia_coli	Cluster_26001	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.24	0
+Escherichia_coli	Cluster_26001	GO:0009279:[CC] cell outer membrane	CC	0.07	0
+Escherichia_coli	Cluster_26001	GO:0015288:[MF] porin activity	MF	0.02	0
+Escherichia_coli	Cluster_26001	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_26001	GO:0016787:[MF] hydrolase activity	MF	0.7333333333333333	0
+Escherichia_coli	Cluster_26001	GO:0016836:[MF] hydro-lyase activity	MF	0.51	0
+Escherichia_coli	Cluster_26001	GO:0016854:[MF] racemase and epimerase activity	MF	0.78	0
+Escherichia_coli	Cluster_26001	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.65	0
+Escherichia_coli	Cluster_26001	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.56	0
+Escherichia_coli	Cluster_26001	GO:0046930:[CC] pore complex	CC	0.02	0
+Escherichia_coli	Cluster_26001	GO:0051287:[MF] NAD binding	MF	0.3	0
+Escherichia_coli	Cluster_26001	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.69	0
+Escherichia_coli	Cluster_27624	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.04	0
+Escherichia_coli	Cluster_27624	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.48	0
+Escherichia_coli	Cluster_27624	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.14	0
+Escherichia_coli	Cluster_27624	GO:0005737:[CC] cytoplasm	CC	0.48	0
+Escherichia_coli	Cluster_27624	GO:0005886:[CC] plasma membrane	CC	0.38	0
+Escherichia_coli	Cluster_27624	GO:0006793:[BP] phosphorus metabolic process	BP	0.19	0
+Escherichia_coli	Cluster_27624	GO:0006811:[BP] ion transport	BP	0.07	0
+Escherichia_coli	Cluster_27624	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
+Escherichia_coli	Cluster_27624	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.3	0
+Escherichia_coli	Cluster_27624	GO:0009279:[CC] cell outer membrane	CC	0.16	0
+Escherichia_coli	Cluster_27624	GO:0015288:[MF] porin activity	MF	0.05	0
+Escherichia_coli	Cluster_27624	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.26	0
+Escherichia_coli	Cluster_27624	GO:0016787:[MF] hydrolase activity	MF	0.6241666666666668	0
+Escherichia_coli	Cluster_27624	GO:0016836:[MF] hydro-lyase activity	MF	0.27	1
+Escherichia_coli	Cluster_27624	GO:0016854:[MF] racemase and epimerase activity	MF	0.86	0
+Escherichia_coli	Cluster_27624	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.6	0
+Escherichia_coli	Cluster_27624	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.51	0
+Escherichia_coli	Cluster_27624	GO:0046930:[CC] pore complex	CC	0.06	0
+Escherichia_coli	Cluster_27624	GO:0051287:[MF] NAD binding	MF	0.02	0
+Escherichia_coli	Cluster_27624	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.24	0
+Escherichia_coli	Cluster_276414	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.04	0
+Escherichia_coli	Cluster_276414	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.4	0
+Escherichia_coli	Cluster_276414	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Escherichia_coli	Cluster_276414	GO:0005737:[CC] cytoplasm	CC	0.54	0
+Escherichia_coli	Cluster_276414	GO:0005886:[CC] plasma membrane	CC	0.38	0
+Escherichia_coli	Cluster_276414	GO:0006793:[BP] phosphorus metabolic process	BP	0.22	0
+Escherichia_coli	Cluster_276414	GO:0006811:[BP] ion transport	BP	0.02	0
+Escherichia_coli	Cluster_276414	GO:0006855:[BP] drug transmembrane transport	BP	0.09	0
+Escherichia_coli	Cluster_276414	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.3	0
+Escherichia_coli	Cluster_276414	GO:0009279:[CC] cell outer membrane	CC	0.64	1
+Escherichia_coli	Cluster_276414	GO:0015288:[MF] porin activity	MF	0.05	0
+Escherichia_coli	Cluster_276414	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
+Escherichia_coli	Cluster_276414	GO:0016787:[MF] hydrolase activity	MF	0.7333333333333333	0
+Escherichia_coli	Cluster_276414	GO:0016836:[MF] hydro-lyase activity	MF	0.46	0
+Escherichia_coli	Cluster_276414	GO:0016854:[MF] racemase and epimerase activity	MF	0.07	0
+Escherichia_coli	Cluster_276414	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.65	0
+Escherichia_coli	Cluster_276414	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.8	0
+Escherichia_coli	Cluster_276414	GO:0046930:[CC] pore complex	CC	0.03	0
+Escherichia_coli	Cluster_276414	GO:0051287:[MF] NAD binding	MF	0.03	0
+Escherichia_coli	Cluster_276414	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.69	0
+Escherichia_coli	Cluster_30007	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.02	0
+Escherichia_coli	Cluster_30007	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.4	0
+Escherichia_coli	Cluster_30007	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Escherichia_coli	Cluster_30007	GO:0005737:[CC] cytoplasm	CC	0.3	0
+Escherichia_coli	Cluster_30007	GO:0005886:[CC] plasma membrane	CC	0.55	0
+Escherichia_coli	Cluster_30007	GO:0006793:[BP] phosphorus metabolic process	BP	0.19	0
+Escherichia_coli	Cluster_30007	GO:0006811:[BP] ion transport	BP	0.06	0
+Escherichia_coli	Cluster_30007	GO:0006855:[BP] drug transmembrane transport	BP	0.11	0
+Escherichia_coli	Cluster_30007	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.24	0
+Escherichia_coli	Cluster_30007	GO:0009279:[CC] cell outer membrane	CC	0.78	1
+Escherichia_coli	Cluster_30007	GO:0015288:[MF] porin activity	MF	0.02	0
+Escherichia_coli	Cluster_30007	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Escherichia_coli	Cluster_30007	GO:0016787:[MF] hydrolase activity	MF	0.7333333333333333	0
+Escherichia_coli	Cluster_30007	GO:0016836:[MF] hydro-lyase activity	MF	0.46	0
+Escherichia_coli	Cluster_30007	GO:0016854:[MF] racemase and epimerase activity	MF	0.08	0
+Escherichia_coli	Cluster_30007	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.55	0
+Escherichia_coli	Cluster_30007	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.84	0
+Escherichia_coli	Cluster_30007	GO:0046930:[CC] pore complex	CC	0.03	0
+Escherichia_coli	Cluster_30007	GO:0051287:[MF] NAD binding	MF	0.28	0
+Escherichia_coli	Cluster_30007	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.72	0
+Escherichia_coli	Cluster_30066	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.02	0
+Escherichia_coli	Cluster_30066	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.4	0
+Escherichia_coli	Cluster_30066	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Escherichia_coli	Cluster_30066	GO:0005737:[CC] cytoplasm	CC	0.35	0
+Escherichia_coli	Cluster_30066	GO:0005886:[CC] plasma membrane	CC	0.85	0
+Escherichia_coli	Cluster_30066	GO:0006793:[BP] phosphorus metabolic process	BP	0.19	0
+Escherichia_coli	Cluster_30066	GO:0006811:[BP] ion transport	BP	0.05	0
+Escherichia_coli	Cluster_30066	GO:0006855:[BP] drug transmembrane transport	BP	0.06	0
+Escherichia_coli	Cluster_30066	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.28	0
+Escherichia_coli	Cluster_30066	GO:0009279:[CC] cell outer membrane	CC	0.05	0
+Escherichia_coli	Cluster_30066	GO:0015288:[MF] porin activity	MF	0.02	0
+Escherichia_coli	Cluster_30066	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Escherichia_coli	Cluster_30066	GO:0016787:[MF] hydrolase activity	MF	0.7333333333333333	0
+Escherichia_coli	Cluster_30066	GO:0016836:[MF] hydro-lyase activity	MF	0.44	0
+Escherichia_coli	Cluster_30066	GO:0016854:[MF] racemase and epimerase activity	MF	0.08	0
+Escherichia_coli	Cluster_30066	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.65	0
+Escherichia_coli	Cluster_30066	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.67	0
 Escherichia_coli	Cluster_30066	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_30066	GO:0051287:[MF] NAD binding	MF	0.22	0
-Escherichia_coli	Cluster_30066	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.74	0
-Escherichia_coli	Cluster_439334	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
-Escherichia_coli	Cluster_439334	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.37	0
-Escherichia_coli	Cluster_439334	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
-Escherichia_coli	Cluster_439334	GO:0005737:[CC] cytoplasm	CC	0.75	0
-Escherichia_coli	Cluster_439334	GO:0005886:[CC] plasma membrane	CC	0.28	0
-Escherichia_coli	Cluster_439334	GO:0006793:[BP] phosphorus metabolic process	BP	0.04	0
-Escherichia_coli	Cluster_439334	GO:0006811:[BP] ion transport	BP	0.95	1
-Escherichia_coli	Cluster_439334	GO:0006855:[BP] drug transmembrane transport	BP	0.37	0
-Escherichia_coli	Cluster_439334	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
-Escherichia_coli	Cluster_439334	GO:0009279:[CC] cell outer membrane	CC	1.0	1
-Escherichia_coli	Cluster_439334	GO:0015288:[MF] porin activity	MF	1.0	1
-Escherichia_coli	Cluster_439334	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.08	0
-Escherichia_coli	Cluster_439334	GO:0016787:[MF] hydrolase activity	MF	0.24	0
-Escherichia_coli	Cluster_439334	GO:0016836:[MF] hydro-lyase activity	MF	0.65	0
-Escherichia_coli	Cluster_439334	GO:0016854:[MF] racemase and epimerase activity	MF	0.21	0
-Escherichia_coli	Cluster_439334	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.43	0
-Escherichia_coli	Cluster_439334	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.11	0
-Escherichia_coli	Cluster_439334	GO:0046930:[CC] pore complex	CC	1.0	1
+Escherichia_coli	Cluster_30066	GO:0051287:[MF] NAD binding	MF	0.3	0
+Escherichia_coli	Cluster_30066	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.87	0
+Escherichia_coli	Cluster_439334	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.02	0
+Escherichia_coli	Cluster_439334	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.4	0
+Escherichia_coli	Cluster_439334	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Escherichia_coli	Cluster_439334	GO:0005737:[CC] cytoplasm	CC	0.48	0
+Escherichia_coli	Cluster_439334	GO:0005886:[CC] plasma membrane	CC	0.21	0
+Escherichia_coli	Cluster_439334	GO:0006793:[BP] phosphorus metabolic process	BP	0.19	0
+Escherichia_coli	Cluster_439334	GO:0006811:[BP] ion transport	BP	0.91	1
+Escherichia_coli	Cluster_439334	GO:0006855:[BP] drug transmembrane transport	BP	0.47	0
+Escherichia_coli	Cluster_439334	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.3	0
+Escherichia_coli	Cluster_439334	GO:0009279:[CC] cell outer membrane	CC	0.7	1
+Escherichia_coli	Cluster_439334	GO:0015288:[MF] porin activity	MF	0.98	1
+Escherichia_coli	Cluster_439334	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Escherichia_coli	Cluster_439334	GO:0016787:[MF] hydrolase activity	MF	0.4825	0
+Escherichia_coli	Cluster_439334	GO:0016836:[MF] hydro-lyase activity	MF	0.45	0
+Escherichia_coli	Cluster_439334	GO:0016854:[MF] racemase and epimerase activity	MF	0.06	0
+Escherichia_coli	Cluster_439334	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.63	0
+Escherichia_coli	Cluster_439334	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.56	0
+Escherichia_coli	Cluster_439334	GO:0046930:[CC] pore complex	CC	0.96	1
 Escherichia_coli	Cluster_439334	GO:0051287:[MF] NAD binding	MF	0.01	0
-Escherichia_coli	Cluster_439334	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.33	0
-Escherichia_coli	Cluster_46096	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_46096	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.49	0
-Escherichia_coli	Cluster_46096	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.04	0
-Escherichia_coli	Cluster_46096	GO:0005737:[CC] cytoplasm	CC	0.66	0
-Escherichia_coli	Cluster_46096	GO:0005886:[CC] plasma membrane	CC	0.52	0
-Escherichia_coli	Cluster_46096	GO:0006793:[BP] phosphorus metabolic process	BP	0.26	0
-Escherichia_coli	Cluster_46096	GO:0006811:[BP] ion transport	BP	0.03	0
-Escherichia_coli	Cluster_46096	GO:0006855:[BP] drug transmembrane transport	BP	0.26	0
-Escherichia_coli	Cluster_46096	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
-Escherichia_coli	Cluster_46096	GO:0009279:[CC] cell outer membrane	CC	0.03	0
-Escherichia_coli	Cluster_46096	GO:0015288:[MF] porin activity	MF	0.0	0
+Escherichia_coli	Cluster_439334	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.18	0
+Escherichia_coli	Cluster_46096	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.04	0
+Escherichia_coli	Cluster_46096	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.4	0
+Escherichia_coli	Cluster_46096	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Escherichia_coli	Cluster_46096	GO:0005737:[CC] cytoplasm	CC	0.54	0
+Escherichia_coli	Cluster_46096	GO:0005886:[CC] plasma membrane	CC	0.31	0
+Escherichia_coli	Cluster_46096	GO:0006793:[BP] phosphorus metabolic process	BP	0.32	0
+Escherichia_coli	Cluster_46096	GO:0006811:[BP] ion transport	BP	0.05	0
+Escherichia_coli	Cluster_46096	GO:0006855:[BP] drug transmembrane transport	BP	0.25	0
+Escherichia_coli	Cluster_46096	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.33	0
+Escherichia_coli	Cluster_46096	GO:0009279:[CC] cell outer membrane	CC	0.14	0
+Escherichia_coli	Cluster_46096	GO:0015288:[MF] porin activity	MF	0.04	0
 Escherichia_coli	Cluster_46096	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.05	0
-Escherichia_coli	Cluster_46096	GO:0016787:[MF] hydrolase activity	MF	0.25	0
-Escherichia_coli	Cluster_46096	GO:0016836:[MF] hydro-lyase activity	MF	0.73	0
-Escherichia_coli	Cluster_46096	GO:0016854:[MF] racemase and epimerase activity	MF	0.1	0
-Escherichia_coli	Cluster_46096	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.42	0
-Escherichia_coli	Cluster_46096	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.07	0
-Escherichia_coli	Cluster_46096	GO:0046930:[CC] pore complex	CC	0.05	0
-Escherichia_coli	Cluster_46096	GO:0051287:[MF] NAD binding	MF	0.22	0
-Escherichia_coli	Cluster_46096	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.62	0
-Escherichia_coli	Cluster_49870	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.0	0
-Escherichia_coli	Cluster_49870	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.23	0
-Escherichia_coli	Cluster_49870	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.08	0
-Escherichia_coli	Cluster_49870	GO:0005737:[CC] cytoplasm	CC	0.62	0
-Escherichia_coli	Cluster_49870	GO:0005886:[CC] plasma membrane	CC	0.29	0
-Escherichia_coli	Cluster_49870	GO:0006793:[BP] phosphorus metabolic process	BP	0.26	0
-Escherichia_coli	Cluster_49870	GO:0006811:[BP] ion transport	BP	0.1	0
-Escherichia_coli	Cluster_49870	GO:0006855:[BP] drug transmembrane transport	BP	0.31	0
-Escherichia_coli	Cluster_49870	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.84	1
-Escherichia_coli	Cluster_49870	GO:0009279:[CC] cell outer membrane	CC	0.03	0
-Escherichia_coli	Cluster_49870	GO:0015288:[MF] porin activity	MF	0.0	0
-Escherichia_coli	Cluster_49870	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
-Escherichia_coli	Cluster_49870	GO:0016787:[MF] hydrolase activity	MF	0.24	0
-Escherichia_coli	Cluster_49870	GO:0016836:[MF] hydro-lyase activity	MF	0.19	0
-Escherichia_coli	Cluster_49870	GO:0016854:[MF] racemase and epimerase activity	MF	0.67	1
-Escherichia_coli	Cluster_49870	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.44	0
-Escherichia_coli	Cluster_49870	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.25	0
-Escherichia_coli	Cluster_49870	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_49870	GO:0051287:[MF] NAD binding	MF	0.06	0
-Escherichia_coli	Cluster_49870	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.42	0
-Escherichia_coli	Cluster_51361	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
-Escherichia_coli	Cluster_51361	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.2	0
-Escherichia_coli	Cluster_51361	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.11	0
-Escherichia_coli	Cluster_51361	GO:0005737:[CC] cytoplasm	CC	0.6	0
-Escherichia_coli	Cluster_51361	GO:0005886:[CC] plasma membrane	CC	0.45	0
-Escherichia_coli	Cluster_51361	GO:0006793:[BP] phosphorus metabolic process	BP	0.04	0
-Escherichia_coli	Cluster_51361	GO:0006811:[BP] ion transport	BP	1.0	1
-Escherichia_coli	Cluster_51361	GO:0006855:[BP] drug transmembrane transport	BP	0.44	0
-Escherichia_coli	Cluster_51361	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.2	0
-Escherichia_coli	Cluster_51361	GO:0009279:[CC] cell outer membrane	CC	0.95	1
-Escherichia_coli	Cluster_51361	GO:0015288:[MF] porin activity	MF	1.0	1
-Escherichia_coli	Cluster_51361	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.08	0
-Escherichia_coli	Cluster_51361	GO:0016787:[MF] hydrolase activity	MF	0.14	0
-Escherichia_coli	Cluster_51361	GO:0016836:[MF] hydro-lyase activity	MF	0.65	0
-Escherichia_coli	Cluster_51361	GO:0016854:[MF] racemase and epimerase activity	MF	0.34	0
-Escherichia_coli	Cluster_51361	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.48	0
-Escherichia_coli	Cluster_51361	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.22	0
-Escherichia_coli	Cluster_51361	GO:0046930:[CC] pore complex	CC	1.0	1
-Escherichia_coli	Cluster_51361	GO:0051287:[MF] NAD binding	MF	0.22	0
-Escherichia_coli	Cluster_51361	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.34	0
-Escherichia_coli	Cluster_533836	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.08	0
-Escherichia_coli	Cluster_533836	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.23	0
-Escherichia_coli	Cluster_533836	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.15	0
-Escherichia_coli	Cluster_533836	GO:0005737:[CC] cytoplasm	CC	0.39	0
-Escherichia_coli	Cluster_533836	GO:0005886:[CC] plasma membrane	CC	0.27	0
-Escherichia_coli	Cluster_533836	GO:0006793:[BP] phosphorus metabolic process	BP	0.33	0
-Escherichia_coli	Cluster_533836	GO:0006811:[BP] ion transport	BP	0.99	1
+Escherichia_coli	Cluster_46096	GO:0016787:[MF] hydrolase activity	MF	0.7333333333333333	0
+Escherichia_coli	Cluster_46096	GO:0016836:[MF] hydro-lyase activity	MF	0.46	0
+Escherichia_coli	Cluster_46096	GO:0016854:[MF] racemase and epimerase activity	MF	0.05	0
+Escherichia_coli	Cluster_46096	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.65	0
+Escherichia_coli	Cluster_46096	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.51	0
+Escherichia_coli	Cluster_46096	GO:0046930:[CC] pore complex	CC	0.01	0
+Escherichia_coli	Cluster_46096	GO:0051287:[MF] NAD binding	MF	0.03	0
+Escherichia_coli	Cluster_46096	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.69	0
+Escherichia_coli	Cluster_49870	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.04	0
+Escherichia_coli	Cluster_49870	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.47	0
+Escherichia_coli	Cluster_49870	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.01	0
+Escherichia_coli	Cluster_49870	GO:0005737:[CC] cytoplasm	CC	0.58	0
+Escherichia_coli	Cluster_49870	GO:0005886:[CC] plasma membrane	CC	0.49	0
+Escherichia_coli	Cluster_49870	GO:0006793:[BP] phosphorus metabolic process	BP	0.78	0
+Escherichia_coli	Cluster_49870	GO:0006811:[BP] ion transport	BP	0.01	0
+Escherichia_coli	Cluster_49870	GO:0006855:[BP] drug transmembrane transport	BP	0.04	0
+Escherichia_coli	Cluster_49870	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.75	1
+Escherichia_coli	Cluster_49870	GO:0009279:[CC] cell outer membrane	CC	0.17	0
+Escherichia_coli	Cluster_49870	GO:0015288:[MF] porin activity	MF	0.14	0
+Escherichia_coli	Cluster_49870	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.05	0
+Escherichia_coli	Cluster_49870	GO:0016787:[MF] hydrolase activity	MF	0.6541666666666667	0
+Escherichia_coli	Cluster_49870	GO:0016836:[MF] hydro-lyase activity	MF	0.89	0
+Escherichia_coli	Cluster_49870	GO:0016854:[MF] racemase and epimerase activity	MF	0.38	1
+Escherichia_coli	Cluster_49870	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.38	0
+Escherichia_coli	Cluster_49870	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.67	0
+Escherichia_coli	Cluster_49870	GO:0046930:[CC] pore complex	CC	0.12	0
+Escherichia_coli	Cluster_49870	GO:0051287:[MF] NAD binding	MF	0.03	0
+Escherichia_coli	Cluster_49870	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.81	0
+Escherichia_coli	Cluster_51361	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.04	0
+Escherichia_coli	Cluster_51361	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.42	0
+Escherichia_coli	Cluster_51361	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.13	0
+Escherichia_coli	Cluster_51361	GO:0005737:[CC] cytoplasm	CC	0.28	0
+Escherichia_coli	Cluster_51361	GO:0005886:[CC] plasma membrane	CC	0.46	0
+Escherichia_coli	Cluster_51361	GO:0006793:[BP] phosphorus metabolic process	BP	0.22	0
+Escherichia_coli	Cluster_51361	GO:0006811:[BP] ion transport	BP	0.94	1
+Escherichia_coli	Cluster_51361	GO:0006855:[BP] drug transmembrane transport	BP	0.51	0
+Escherichia_coli	Cluster_51361	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.24	0
+Escherichia_coli	Cluster_51361	GO:0009279:[CC] cell outer membrane	CC	0.69	1
+Escherichia_coli	Cluster_51361	GO:0015288:[MF] porin activity	MF	0.94	1
+Escherichia_coli	Cluster_51361	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.02	0
+Escherichia_coli	Cluster_51361	GO:0016787:[MF] hydrolase activity	MF	0.1	0
+Escherichia_coli	Cluster_51361	GO:0016836:[MF] hydro-lyase activity	MF	0.72	0
+Escherichia_coli	Cluster_51361	GO:0016854:[MF] racemase and epimerase activity	MF	0.07	0
+Escherichia_coli	Cluster_51361	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.16	0
+Escherichia_coli	Cluster_51361	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.39	0
+Escherichia_coli	Cluster_51361	GO:0046930:[CC] pore complex	CC	0.98	1
+Escherichia_coli	Cluster_51361	GO:0051287:[MF] NAD binding	MF	0.02	0
+Escherichia_coli	Cluster_51361	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.21	0
+Escherichia_coli	Cluster_533836	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Escherichia_coli	Cluster_533836	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.55	0
+Escherichia_coli	Cluster_533836	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.27	0
+Escherichia_coli	Cluster_533836	GO:0005737:[CC] cytoplasm	CC	0.37	0
+Escherichia_coli	Cluster_533836	GO:0005886:[CC] plasma membrane	CC	0.14	0
+Escherichia_coli	Cluster_533836	GO:0006793:[BP] phosphorus metabolic process	BP	0.88	0
+Escherichia_coli	Cluster_533836	GO:0006811:[BP] ion transport	BP	0.96	1
 Escherichia_coli	Cluster_533836	GO:0006855:[BP] drug transmembrane transport	BP	0.36	0
-Escherichia_coli	Cluster_533836	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.17	0
-Escherichia_coli	Cluster_533836	GO:0009279:[CC] cell outer membrane	CC	0.99	0
-Escherichia_coli	Cluster_533836	GO:0015288:[MF] porin activity	MF	1.0	1
-Escherichia_coli	Cluster_533836	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
-Escherichia_coli	Cluster_533836	GO:0016787:[MF] hydrolase activity	MF	0.05	0
-Escherichia_coli	Cluster_533836	GO:0016836:[MF] hydro-lyase activity	MF	0.31	0
-Escherichia_coli	Cluster_533836	GO:0016854:[MF] racemase and epimerase activity	MF	0.34	0
-Escherichia_coli	Cluster_533836	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.44	0
-Escherichia_coli	Cluster_533836	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.23	0
-Escherichia_coli	Cluster_533836	GO:0046930:[CC] pore complex	CC	1.0	1
-Escherichia_coli	Cluster_533836	GO:0051287:[MF] NAD binding	MF	0.03	0
-Escherichia_coli	Cluster_533836	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.29	0
-Escherichia_coli	Cluster_55131	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.96	1
-Escherichia_coli	Cluster_55131	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.32	0
-Escherichia_coli	Cluster_55131	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.93	1
+Escherichia_coli	Cluster_533836	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.46	0
+Escherichia_coli	Cluster_533836	GO:0009279:[CC] cell outer membrane	CC	0.67	0
+Escherichia_coli	Cluster_533836	GO:0015288:[MF] porin activity	MF	0.98	1
+Escherichia_coli	Cluster_533836	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_533836	GO:0016787:[MF] hydrolase activity	MF	0.34	0
+Escherichia_coli	Cluster_533836	GO:0016836:[MF] hydro-lyase activity	MF	0.72	0
+Escherichia_coli	Cluster_533836	GO:0016854:[MF] racemase and epimerase activity	MF	0.57	0
+Escherichia_coli	Cluster_533836	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.38	0
+Escherichia_coli	Cluster_533836	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.39	0
+Escherichia_coli	Cluster_533836	GO:0046930:[CC] pore complex	CC	0.99	1
+Escherichia_coli	Cluster_533836	GO:0051287:[MF] NAD binding	MF	0.19	0
+Escherichia_coli	Cluster_533836	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.5894999999999999	0
+Escherichia_coli	Cluster_55131	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.98	1
+Escherichia_coli	Cluster_55131	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.44	0
+Escherichia_coli	Cluster_55131	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.95	1
 Escherichia_coli	Cluster_55131	GO:0005737:[CC] cytoplasm	CC	0.42	0
-Escherichia_coli	Cluster_55131	GO:0005886:[CC] plasma membrane	CC	0.45	0
-Escherichia_coli	Cluster_55131	GO:0006793:[BP] phosphorus metabolic process	BP	0.65	1
-Escherichia_coli	Cluster_55131	GO:0006811:[BP] ion transport	BP	0.13	0
-Escherichia_coli	Cluster_55131	GO:0006855:[BP] drug transmembrane transport	BP	0.37	0
-Escherichia_coli	Cluster_55131	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.68	1
-Escherichia_coli	Cluster_55131	GO:0009279:[CC] cell outer membrane	CC	0.0	0
-Escherichia_coli	Cluster_55131	GO:0015288:[MF] porin activity	MF	0.0	0
-Escherichia_coli	Cluster_55131	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
-Escherichia_coli	Cluster_55131	GO:0016787:[MF] hydrolase activity	MF	0.11	0
-Escherichia_coli	Cluster_55131	GO:0016836:[MF] hydro-lyase activity	MF	0.23	0
-Escherichia_coli	Cluster_55131	GO:0016854:[MF] racemase and epimerase activity	MF	0.34	0
-Escherichia_coli	Cluster_55131	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.82	1
-Escherichia_coli	Cluster_55131	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.74	1
-Escherichia_coli	Cluster_55131	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_55131	GO:0051287:[MF] NAD binding	MF	0.9	1
-Escherichia_coli	Cluster_55131	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.27	0
-Escherichia_coli	Cluster_614647	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
-Escherichia_coli	Cluster_614647	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.3	0
-Escherichia_coli	Cluster_614647	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.14	0
-Escherichia_coli	Cluster_614647	GO:0005737:[CC] cytoplasm	CC	0.27	0
-Escherichia_coli	Cluster_614647	GO:0005886:[CC] plasma membrane	CC	0.46	0
-Escherichia_coli	Cluster_614647	GO:0006793:[BP] phosphorus metabolic process	BP	0.84	0
-Escherichia_coli	Cluster_614647	GO:0006811:[BP] ion transport	BP	0.0	0
-Escherichia_coli	Cluster_614647	GO:0006855:[BP] drug transmembrane transport	BP	0.43	0
-Escherichia_coli	Cluster_614647	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.19	0
-Escherichia_coli	Cluster_614647	GO:0009279:[CC] cell outer membrane	CC	0.15	0
-Escherichia_coli	Cluster_614647	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_614647	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.11	0
-Escherichia_coli	Cluster_614647	GO:0016787:[MF] hydrolase activity	MF	0.93	1
-Escherichia_coli	Cluster_614647	GO:0016836:[MF] hydro-lyase activity	MF	0.31	0
-Escherichia_coli	Cluster_614647	GO:0016854:[MF] racemase and epimerase activity	MF	0.21	0
-Escherichia_coli	Cluster_614647	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.23	0
-Escherichia_coli	Cluster_614647	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.19	0
-Escherichia_coli	Cluster_614647	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_614647	GO:0051287:[MF] NAD binding	MF	0.09	0
-Escherichia_coli	Cluster_614647	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.48	0
-Escherichia_coli	Cluster_62081	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.92	1
-Escherichia_coli	Cluster_62081	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.32	0
-Escherichia_coli	Cluster_62081	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.93	1
-Escherichia_coli	Cluster_62081	GO:0005737:[CC] cytoplasm	CC	0.39	0
-Escherichia_coli	Cluster_62081	GO:0005886:[CC] plasma membrane	CC	0.45	0
-Escherichia_coli	Cluster_62081	GO:0006793:[BP] phosphorus metabolic process	BP	0.45	1
-Escherichia_coli	Cluster_62081	GO:0006811:[BP] ion transport	BP	0.13	0
-Escherichia_coli	Cluster_62081	GO:0006855:[BP] drug transmembrane transport	BP	0.44	0
-Escherichia_coli	Cluster_62081	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.68	1
-Escherichia_coli	Cluster_62081	GO:0009279:[CC] cell outer membrane	CC	0.01	0
-Escherichia_coli	Cluster_62081	GO:0015288:[MF] porin activity	MF	0.0	0
-Escherichia_coli	Cluster_62081	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.11	0
-Escherichia_coli	Cluster_62081	GO:0016787:[MF] hydrolase activity	MF	0.05	0
-Escherichia_coli	Cluster_62081	GO:0016836:[MF] hydro-lyase activity	MF	0.2	0
-Escherichia_coli	Cluster_62081	GO:0016854:[MF] racemase and epimerase activity	MF	0.19	0
-Escherichia_coli	Cluster_62081	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.71	1
-Escherichia_coli	Cluster_62081	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.76	1
-Escherichia_coli	Cluster_62081	GO:0046930:[CC] pore complex	CC	0.03	0
-Escherichia_coli	Cluster_62081	GO:0051287:[MF] NAD binding	MF	0.92	1
-Escherichia_coli	Cluster_62081	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.27	0
-Escherichia_coli	Cluster_62157	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
-Escherichia_coli	Cluster_62157	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.87	1
-Escherichia_coli	Cluster_62157	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.12	0
-Escherichia_coli	Cluster_62157	GO:0005737:[CC] cytoplasm	CC	0.81	0
-Escherichia_coli	Cluster_62157	GO:0005886:[CC] plasma membrane	CC	0.33	0
-Escherichia_coli	Cluster_62157	GO:0006793:[BP] phosphorus metabolic process	BP	0.55	0
-Escherichia_coli	Cluster_62157	GO:0006811:[BP] ion transport	BP	0.1	0
-Escherichia_coli	Cluster_62157	GO:0006855:[BP] drug transmembrane transport	BP	0.5	0
-Escherichia_coli	Cluster_62157	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.19	0
-Escherichia_coli	Cluster_62157	GO:0009279:[CC] cell outer membrane	CC	0.12	0
-Escherichia_coli	Cluster_62157	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_62157	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
-Escherichia_coli	Cluster_62157	GO:0016787:[MF] hydrolase activity	MF	0.32	0
-Escherichia_coli	Cluster_62157	GO:0016836:[MF] hydro-lyase activity	MF	0.31	0
-Escherichia_coli	Cluster_62157	GO:0016854:[MF] racemase and epimerase activity	MF	0.23	0
-Escherichia_coli	Cluster_62157	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.09	0
-Escherichia_coli	Cluster_62157	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.16	0
-Escherichia_coli	Cluster_62157	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_62157	GO:0051287:[MF] NAD binding	MF	0.01	0
-Escherichia_coli	Cluster_62157	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.69	0
-Escherichia_coli	Cluster_646479	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.29	0
-Escherichia_coli	Cluster_646479	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.27	0
-Escherichia_coli	Cluster_646479	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.15	0
-Escherichia_coli	Cluster_646479	GO:0005737:[CC] cytoplasm	CC	0.39	0
-Escherichia_coli	Cluster_646479	GO:0005886:[CC] plasma membrane	CC	0.4	0
-Escherichia_coli	Cluster_646479	GO:0006793:[BP] phosphorus metabolic process	BP	0.36	0
-Escherichia_coli	Cluster_646479	GO:0006811:[BP] ion transport	BP	1.0	1
-Escherichia_coli	Cluster_646479	GO:0006855:[BP] drug transmembrane transport	BP	0.87	0
-Escherichia_coli	Cluster_646479	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.05	0
-Escherichia_coli	Cluster_646479	GO:0009279:[CC] cell outer membrane	CC	0.94	1
-Escherichia_coli	Cluster_646479	GO:0015288:[MF] porin activity	MF	0.99	1
-Escherichia_coli	Cluster_646479	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.13	0
-Escherichia_coli	Cluster_646479	GO:0016787:[MF] hydrolase activity	MF	0.14	0
-Escherichia_coli	Cluster_646479	GO:0016836:[MF] hydro-lyase activity	MF	0.37	0
-Escherichia_coli	Cluster_646479	GO:0016854:[MF] racemase and epimerase activity	MF	0.2	0
-Escherichia_coli	Cluster_646479	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.44	0
-Escherichia_coli	Cluster_646479	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.29	0
-Escherichia_coli	Cluster_646479	GO:0046930:[CC] pore complex	CC	0.98	1
-Escherichia_coli	Cluster_646479	GO:0051287:[MF] NAD binding	MF	0.05	0
-Escherichia_coli	Cluster_646479	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.24	0
-Escherichia_coli	Cluster_715116	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
-Escherichia_coli	Cluster_715116	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.82	1
-Escherichia_coli	Cluster_715116	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.15	0
-Escherichia_coli	Cluster_715116	GO:0005737:[CC] cytoplasm	CC	0.38	0
-Escherichia_coli	Cluster_715116	GO:0005886:[CC] plasma membrane	CC	0.33	0
-Escherichia_coli	Cluster_715116	GO:0006793:[BP] phosphorus metabolic process	BP	0.84	0
-Escherichia_coli	Cluster_715116	GO:0006811:[BP] ion transport	BP	0.0	0
-Escherichia_coli	Cluster_715116	GO:0006855:[BP] drug transmembrane transport	BP	0.51	0
-Escherichia_coli	Cluster_715116	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.19	0
-Escherichia_coli	Cluster_715116	GO:0009279:[CC] cell outer membrane	CC	0.13	0
+Escherichia_coli	Cluster_55131	GO:0005886:[CC] plasma membrane	CC	0.64	0
+Escherichia_coli	Cluster_55131	GO:0006793:[BP] phosphorus metabolic process	BP	0.7	1
+Escherichia_coli	Cluster_55131	GO:0006811:[BP] ion transport	BP	0.01	0
+Escherichia_coli	Cluster_55131	GO:0006855:[BP] drug transmembrane transport	BP	0.24	0
+Escherichia_coli	Cluster_55131	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.74	1
+Escherichia_coli	Cluster_55131	GO:0009279:[CC] cell outer membrane	CC	0.24	0
+Escherichia_coli	Cluster_55131	GO:0015288:[MF] porin activity	MF	0.14	0
+Escherichia_coli	Cluster_55131	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_55131	GO:0016787:[MF] hydrolase activity	MF	0.1	0
+Escherichia_coli	Cluster_55131	GO:0016836:[MF] hydro-lyase activity	MF	0.14	0
+Escherichia_coli	Cluster_55131	GO:0016854:[MF] racemase and epimerase activity	MF	0.07	0
+Escherichia_coli	Cluster_55131	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.85	1
+Escherichia_coli	Cluster_55131	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.51	1
+Escherichia_coli	Cluster_55131	GO:0046930:[CC] pore complex	CC	0.11	0
+Escherichia_coli	Cluster_55131	GO:0051287:[MF] NAD binding	MF	0.99	1
+Escherichia_coli	Cluster_55131	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.46516666666666656	0
+Escherichia_coli	Cluster_614647	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.04	0
+Escherichia_coli	Cluster_614647	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.42	0
+Escherichia_coli	Cluster_614647	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Escherichia_coli	Cluster_614647	GO:0005737:[CC] cytoplasm	CC	0.28	0
+Escherichia_coli	Cluster_614647	GO:0005886:[CC] plasma membrane	CC	0.66	0
+Escherichia_coli	Cluster_614647	GO:0006793:[BP] phosphorus metabolic process	BP	0.78	0
+Escherichia_coli	Cluster_614647	GO:0006811:[BP] ion transport	BP	0.04	0
+Escherichia_coli	Cluster_614647	GO:0006855:[BP] drug transmembrane transport	BP	0.28	0
+Escherichia_coli	Cluster_614647	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.16	0
+Escherichia_coli	Cluster_614647	GO:0009279:[CC] cell outer membrane	CC	0.35	0
+Escherichia_coli	Cluster_614647	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_614647	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.26	0
+Escherichia_coli	Cluster_614647	GO:0016787:[MF] hydrolase activity	MF	0.7333333333333333	1
+Escherichia_coli	Cluster_614647	GO:0016836:[MF] hydro-lyase activity	MF	0.27	0
+Escherichia_coli	Cluster_614647	GO:0016854:[MF] racemase and epimerase activity	MF	0.29	0
+Escherichia_coli	Cluster_614647	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.38	0
+Escherichia_coli	Cluster_614647	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.37	0
+Escherichia_coli	Cluster_614647	GO:0046930:[CC] pore complex	CC	0.06	0
+Escherichia_coli	Cluster_614647	GO:0051287:[MF] NAD binding	MF	0.14	0
+Escherichia_coli	Cluster_614647	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.5055	0
+Escherichia_coli	Cluster_62081	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.95	1
+Escherichia_coli	Cluster_62081	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.57	0
+Escherichia_coli	Cluster_62081	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.95	1
+Escherichia_coli	Cluster_62081	GO:0005737:[CC] cytoplasm	CC	0.37	0
+Escherichia_coli	Cluster_62081	GO:0005886:[CC] plasma membrane	CC	0.51	0
+Escherichia_coli	Cluster_62081	GO:0006793:[BP] phosphorus metabolic process	BP	0.79	1
+Escherichia_coli	Cluster_62081	GO:0006811:[BP] ion transport	BP	0.01	0
+Escherichia_coli	Cluster_62081	GO:0006855:[BP] drug transmembrane transport	BP	0.22	0
+Escherichia_coli	Cluster_62081	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.6	1
+Escherichia_coli	Cluster_62081	GO:0009279:[CC] cell outer membrane	CC	0.24	0
+Escherichia_coli	Cluster_62081	GO:0015288:[MF] porin activity	MF	0.14	0
+Escherichia_coli	Cluster_62081	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_62081	GO:0016787:[MF] hydrolase activity	MF	0.14	0
+Escherichia_coli	Cluster_62081	GO:0016836:[MF] hydro-lyase activity	MF	0.26	0
+Escherichia_coli	Cluster_62081	GO:0016854:[MF] racemase and epimerase activity	MF	0.55	0
+Escherichia_coli	Cluster_62081	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.38	1
+Escherichia_coli	Cluster_62081	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.51	1
+Escherichia_coli	Cluster_62081	GO:0046930:[CC] pore complex	CC	0.12	0
+Escherichia_coli	Cluster_62081	GO:0051287:[MF] NAD binding	MF	0.99	1
+Escherichia_coli	Cluster_62081	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.5894999999999999	0
+Escherichia_coli	Cluster_62157	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Escherichia_coli	Cluster_62157	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.62	1
+Escherichia_coli	Cluster_62157	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Escherichia_coli	Cluster_62157	GO:0005737:[CC] cytoplasm	CC	0.36	0
+Escherichia_coli	Cluster_62157	GO:0005886:[CC] plasma membrane	CC	0.13	0
+Escherichia_coli	Cluster_62157	GO:0006793:[BP] phosphorus metabolic process	BP	0.41	0
+Escherichia_coli	Cluster_62157	GO:0006811:[BP] ion transport	BP	0.06	0
+Escherichia_coli	Cluster_62157	GO:0006855:[BP] drug transmembrane transport	BP	0.24	0
+Escherichia_coli	Cluster_62157	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.07	0
+Escherichia_coli	Cluster_62157	GO:0009279:[CC] cell outer membrane	CC	0.29	0
+Escherichia_coli	Cluster_62157	GO:0015288:[MF] porin activity	MF	0.14	0
+Escherichia_coli	Cluster_62157	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_62157	GO:0016787:[MF] hydrolase activity	MF	0.17	0
+Escherichia_coli	Cluster_62157	GO:0016836:[MF] hydro-lyase activity	MF	0.66	0
+Escherichia_coli	Cluster_62157	GO:0016854:[MF] racemase and epimerase activity	MF	0.56	0
+Escherichia_coli	Cluster_62157	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.38	0
+Escherichia_coli	Cluster_62157	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.52	0
+Escherichia_coli	Cluster_62157	GO:0046930:[CC] pore complex	CC	0.06	0
+Escherichia_coli	Cluster_62157	GO:0051287:[MF] NAD binding	MF	0.19	0
+Escherichia_coli	Cluster_62157	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.5055	0
+Escherichia_coli	Cluster_646479	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.1	0
+Escherichia_coli	Cluster_646479	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.16	0
+Escherichia_coli	Cluster_646479	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.32	0
+Escherichia_coli	Cluster_646479	GO:0005737:[CC] cytoplasm	CC	0.37	0
+Escherichia_coli	Cluster_646479	GO:0005886:[CC] plasma membrane	CC	0.64	0
+Escherichia_coli	Cluster_646479	GO:0006793:[BP] phosphorus metabolic process	BP	0.75	0
+Escherichia_coli	Cluster_646479	GO:0006811:[BP] ion transport	BP	0.93	1
+Escherichia_coli	Cluster_646479	GO:0006855:[BP] drug transmembrane transport	BP	0.71	0
+Escherichia_coli	Cluster_646479	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.16	0
+Escherichia_coli	Cluster_646479	GO:0009279:[CC] cell outer membrane	CC	0.69	1
+Escherichia_coli	Cluster_646479	GO:0015288:[MF] porin activity	MF	0.95	1
+Escherichia_coli	Cluster_646479	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.26	0
+Escherichia_coli	Cluster_646479	GO:0016787:[MF] hydrolase activity	MF	0.1	0
+Escherichia_coli	Cluster_646479	GO:0016836:[MF] hydro-lyase activity	MF	0.26	0
+Escherichia_coli	Cluster_646479	GO:0016854:[MF] racemase and epimerase activity	MF	0.7	0
+Escherichia_coli	Cluster_646479	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.3	0
+Escherichia_coli	Cluster_646479	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.39	0
+Escherichia_coli	Cluster_646479	GO:0046930:[CC] pore complex	CC	0.94	1
+Escherichia_coli	Cluster_646479	GO:0051287:[MF] NAD binding	MF	0.31	0
+Escherichia_coli	Cluster_646479	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.38683333333333336	0
+Escherichia_coli	Cluster_715116	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.07	0
+Escherichia_coli	Cluster_715116	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.75	1
+Escherichia_coli	Cluster_715116	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.1	0
+Escherichia_coli	Cluster_715116	GO:0005737:[CC] cytoplasm	CC	0.37	0
+Escherichia_coli	Cluster_715116	GO:0005886:[CC] plasma membrane	CC	0.17	0
+Escherichia_coli	Cluster_715116	GO:0006793:[BP] phosphorus metabolic process	BP	0.78	0
+Escherichia_coli	Cluster_715116	GO:0006811:[BP] ion transport	BP	0.06	0
+Escherichia_coli	Cluster_715116	GO:0006855:[BP] drug transmembrane transport	BP	0.24	0
+Escherichia_coli	Cluster_715116	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.16	0
+Escherichia_coli	Cluster_715116	GO:0009279:[CC] cell outer membrane	CC	0.23	0
 Escherichia_coli	Cluster_715116	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_715116	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
-Escherichia_coli	Cluster_715116	GO:0016787:[MF] hydrolase activity	MF	0.33	0
-Escherichia_coli	Cluster_715116	GO:0016836:[MF] hydro-lyase activity	MF	0.41	0
-Escherichia_coli	Cluster_715116	GO:0016854:[MF] racemase and epimerase activity	MF	0.19	0
-Escherichia_coli	Cluster_715116	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.05	0
-Escherichia_coli	Cluster_715116	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.13	0
-Escherichia_coli	Cluster_715116	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_715116	GO:0051287:[MF] NAD binding	MF	0.05	0
-Escherichia_coli	Cluster_715116	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.77	0
-Escherichia_coli	Cluster_727946	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.01	0
-Escherichia_coli	Cluster_727946	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.23	0
-Escherichia_coli	Cluster_727946	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.14	0
-Escherichia_coli	Cluster_727946	GO:0005737:[CC] cytoplasm	CC	0.39	0
-Escherichia_coli	Cluster_727946	GO:0005886:[CC] plasma membrane	CC	0.18	0
-Escherichia_coli	Cluster_727946	GO:0006793:[BP] phosphorus metabolic process	BP	0.3	0
-Escherichia_coli	Cluster_727946	GO:0006811:[BP] ion transport	BP	0.87	1
-Escherichia_coli	Cluster_727946	GO:0006855:[BP] drug transmembrane transport	BP	0.83	0
-Escherichia_coli	Cluster_727946	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.19	0
-Escherichia_coli	Cluster_727946	GO:0009279:[CC] cell outer membrane	CC	0.96	0
+Escherichia_coli	Cluster_715116	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.03	0
+Escherichia_coli	Cluster_715116	GO:0016787:[MF] hydrolase activity	MF	0.75	0
+Escherichia_coli	Cluster_715116	GO:0016836:[MF] hydro-lyase activity	MF	0.26	0
+Escherichia_coli	Cluster_715116	GO:0016854:[MF] racemase and epimerase activity	MF	0.39	0
+Escherichia_coli	Cluster_715116	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.38	0
+Escherichia_coli	Cluster_715116	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.07	0
+Escherichia_coli	Cluster_715116	GO:0046930:[CC] pore complex	CC	0.07	0
+Escherichia_coli	Cluster_715116	GO:0051287:[MF] NAD binding	MF	0.14	0
+Escherichia_coli	Cluster_715116	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.5388333333333333	0
+Escherichia_coli	Cluster_727946	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.05	0
+Escherichia_coli	Cluster_727946	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.55	0
+Escherichia_coli	Cluster_727946	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.03	0
+Escherichia_coli	Cluster_727946	GO:0005737:[CC] cytoplasm	CC	0.37	0
+Escherichia_coli	Cluster_727946	GO:0005886:[CC] plasma membrane	CC	0.17	0
+Escherichia_coli	Cluster_727946	GO:0006793:[BP] phosphorus metabolic process	BP	0.88	0
+Escherichia_coli	Cluster_727946	GO:0006811:[BP] ion transport	BP	1.0	1
+Escherichia_coli	Cluster_727946	GO:0006855:[BP] drug transmembrane transport	BP	0.72	0
+Escherichia_coli	Cluster_727946	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.43	0
+Escherichia_coli	Cluster_727946	GO:0009279:[CC] cell outer membrane	CC	0.98	0
 Escherichia_coli	Cluster_727946	GO:0015288:[MF] porin activity	MF	1.0	1
-Escherichia_coli	Cluster_727946	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
-Escherichia_coli	Cluster_727946	GO:0016787:[MF] hydrolase activity	MF	0.05	0
-Escherichia_coli	Cluster_727946	GO:0016836:[MF] hydro-lyase activity	MF	0.21	0
-Escherichia_coli	Cluster_727946	GO:0016854:[MF] racemase and epimerase activity	MF	0.16	0
-Escherichia_coli	Cluster_727946	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.09	0
-Escherichia_coli	Cluster_727946	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.23	0
+Escherichia_coli	Cluster_727946	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_727946	GO:0016787:[MF] hydrolase activity	MF	0.14	0
+Escherichia_coli	Cluster_727946	GO:0016836:[MF] hydro-lyase activity	MF	0.26	0
+Escherichia_coli	Cluster_727946	GO:0016854:[MF] racemase and epimerase activity	MF	0.59	0
+Escherichia_coli	Cluster_727946	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.38	0
+Escherichia_coli	Cluster_727946	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.39	0
 Escherichia_coli	Cluster_727946	GO:0046930:[CC] pore complex	CC	1.0	1
-Escherichia_coli	Cluster_727946	GO:0051287:[MF] NAD binding	MF	0.03	0
-Escherichia_coli	Cluster_727946	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.3	0
-Escherichia_coli	Cluster_7792	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.22	0
-Escherichia_coli	Cluster_7792	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.29	0
-Escherichia_coli	Cluster_7792	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.15	0
-Escherichia_coli	Cluster_7792	GO:0005737:[CC] cytoplasm	CC	0.27	0
-Escherichia_coli	Cluster_7792	GO:0005886:[CC] plasma membrane	CC	0.96	1
-Escherichia_coli	Cluster_7792	GO:0006793:[BP] phosphorus metabolic process	BP	0.8	0
-Escherichia_coli	Cluster_7792	GO:0006811:[BP] ion transport	BP	0.12	0
-Escherichia_coli	Cluster_7792	GO:0006855:[BP] drug transmembrane transport	BP	0.87	1
-Escherichia_coli	Cluster_7792	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.05	0
-Escherichia_coli	Cluster_7792	GO:0009279:[CC] cell outer membrane	CC	0.0	0
-Escherichia_coli	Cluster_7792	GO:0015288:[MF] porin activity	MF	0.01	0
-Escherichia_coli	Cluster_7792	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.97	1
-Escherichia_coli	Cluster_7792	GO:0016787:[MF] hydrolase activity	MF	0.23	0
-Escherichia_coli	Cluster_7792	GO:0016836:[MF] hydro-lyase activity	MF	0.37	0
-Escherichia_coli	Cluster_7792	GO:0016854:[MF] racemase and epimerase activity	MF	0.22	0
-Escherichia_coli	Cluster_7792	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.44	0
-Escherichia_coli	Cluster_7792	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.22	0
-Escherichia_coli	Cluster_7792	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_7792	GO:0051287:[MF] NAD binding	MF	0.05	0
-Escherichia_coli	Cluster_7792	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.32	0
-Escherichia_coli	Cluster_917127	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.29	0
-Escherichia_coli	Cluster_917127	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.22	0
-Escherichia_coli	Cluster_917127	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.15	0
-Escherichia_coli	Cluster_917127	GO:0005737:[CC] cytoplasm	CC	0.8	1
-Escherichia_coli	Cluster_917127	GO:0005886:[CC] plasma membrane	CC	0.13	1
-Escherichia_coli	Cluster_917127	GO:0006793:[BP] phosphorus metabolic process	BP	0.86	0
-Escherichia_coli	Cluster_917127	GO:0006811:[BP] ion transport	BP	0.13	0
-Escherichia_coli	Cluster_917127	GO:0006855:[BP] drug transmembrane transport	BP	0.51	0
+Escherichia_coli	Cluster_727946	GO:0051287:[MF] NAD binding	MF	0.31	0
+Escherichia_coli	Cluster_727946	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.3605	0
+Escherichia_coli	Cluster_7792	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.1	0
+Escherichia_coli	Cluster_7792	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.16	0
+Escherichia_coli	Cluster_7792	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.32	0
+Escherichia_coli	Cluster_7792	GO:0005737:[CC] cytoplasm	CC	0.37	0
+Escherichia_coli	Cluster_7792	GO:0005886:[CC] plasma membrane	CC	0.97	1
+Escherichia_coli	Cluster_7792	GO:0006793:[BP] phosphorus metabolic process	BP	0.69	0
+Escherichia_coli	Cluster_7792	GO:0006811:[BP] ion transport	BP	0.03	0
+Escherichia_coli	Cluster_7792	GO:0006855:[BP] drug transmembrane transport	BP	0.71	1
+Escherichia_coli	Cluster_7792	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.16	0
+Escherichia_coli	Cluster_7792	GO:0009279:[CC] cell outer membrane	CC	0.24	0
+Escherichia_coli	Cluster_7792	GO:0015288:[MF] porin activity	MF	0.03	0
+Escherichia_coli	Cluster_7792	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.98	1
+Escherichia_coli	Cluster_7792	GO:0016787:[MF] hydrolase activity	MF	0.17	0
+Escherichia_coli	Cluster_7792	GO:0016836:[MF] hydro-lyase activity	MF	0.27	0
+Escherichia_coli	Cluster_7792	GO:0016854:[MF] racemase and epimerase activity	MF	0.71	0
+Escherichia_coli	Cluster_7792	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.67	0
+Escherichia_coli	Cluster_7792	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.39	0
+Escherichia_coli	Cluster_7792	GO:0046930:[CC] pore complex	CC	0.06	0
+Escherichia_coli	Cluster_7792	GO:0051287:[MF] NAD binding	MF	0.31	0
+Escherichia_coli	Cluster_7792	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.4921666666666667	0
+Escherichia_coli	Cluster_917127	GO:0000271:[BP] polysaccharide biosynthetic process	BP	0.1	0
+Escherichia_coli	Cluster_917127	GO:0003700:[MF] DNA-binding transcription factor activity	MF	0.42	0
+Escherichia_coli	Cluster_917127	GO:0003979:[MF] UDP-glucose 6-dehydrogenase activity	MF	0.32	0
+Escherichia_coli	Cluster_917127	GO:0005737:[CC] cytoplasm	CC	0.42	1
+Escherichia_coli	Cluster_917127	GO:0005886:[CC] plasma membrane	CC	0.64	1
+Escherichia_coli	Cluster_917127	GO:0006793:[BP] phosphorus metabolic process	BP	0.78	0
+Escherichia_coli	Cluster_917127	GO:0006811:[BP] ion transport	BP	0.02	0
+Escherichia_coli	Cluster_917127	GO:0006855:[BP] drug transmembrane transport	BP	0.22	0
 Escherichia_coli	Cluster_917127	GO:0009226:[BP] nucleotide-sugar biosynthetic process	BP	0.05	0
-Escherichia_coli	Cluster_917127	GO:0009279:[CC] cell outer membrane	CC	0.13	0
-Escherichia_coli	Cluster_917127	GO:0015288:[MF] porin activity	MF	0.0	0
-Escherichia_coli	Cluster_917127	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.1	0
-Escherichia_coli	Cluster_917127	GO:0016787:[MF] hydrolase activity	MF	0.92	1
-Escherichia_coli	Cluster_917127	GO:0016836:[MF] hydro-lyase activity	MF	0.28	0
-Escherichia_coli	Cluster_917127	GO:0016854:[MF] racemase and epimerase activity	MF	0.18	0
-Escherichia_coli	Cluster_917127	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.48	1
-Escherichia_coli	Cluster_917127	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.2	0
-Escherichia_coli	Cluster_917127	GO:0046930:[CC] pore complex	CC	0.02	0
-Escherichia_coli	Cluster_917127	GO:0051287:[MF] NAD binding	MF	0.03	0
-Escherichia_coli	Cluster_917127	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.56	1
+Escherichia_coli	Cluster_917127	GO:0009279:[CC] cell outer membrane	CC	0.25	0
+Escherichia_coli	Cluster_917127	GO:0015288:[MF] porin activity	MF	0.14	0
+Escherichia_coli	Cluster_917127	GO:0015562:[MF] efflux transmembrane transporter activity	MF	0.01	0
+Escherichia_coli	Cluster_917127	GO:0016787:[MF] hydrolase activity	MF	0.33	1
+Escherichia_coli	Cluster_917127	GO:0016836:[MF] hydro-lyase activity	MF	0.26	0
+Escherichia_coli	Cluster_917127	GO:0016854:[MF] racemase and epimerase activity	MF	0.55	0
+Escherichia_coli	Cluster_917127	GO:0019752:[BP] carboxylic acid metabolic process	BP	0.21	1
+Escherichia_coli	Cluster_917127	GO:0044262:[BP] cellular carbohydrate metabolic process	BP	0.38	0
+Escherichia_coli	Cluster_917127	GO:0046930:[CC] pore complex	CC	0.07	0
+Escherichia_coli	Cluster_917127	GO:0051287:[MF] NAD binding	MF	0.31	0
+Escherichia_coli	Cluster_917127	GO:1901564:[BP] organonitrogen compound metabolic process	BP	0.5288333333333334	1

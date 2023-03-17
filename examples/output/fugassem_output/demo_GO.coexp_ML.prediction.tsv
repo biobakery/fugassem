@@ -142,7 +142,6 @@ Bacteroides_thetaiotaomicron	Cluster_972087	GO:0016021	GO	0.33	0
 Bacteroides_thetaiotaomicron	Cluster_972087	GO:0019305	GO	0.75	0
 Bacteroides_thetaiotaomicron	Cluster_972087	GO:0043565	GO	0.26	0
 Bacteroides_thetaiotaomicron	Cluster_972087	GO:0046777	GO	0.37	0
-Escherichia_coli	feature	func	category	score	raw_ann
 Escherichia_coli	Cluster_100559	GO:0000271	GO	0.45	0
 Escherichia_coli	Cluster_100559	GO:0003677	GO	0.35	0
 Escherichia_coli	Cluster_100559	GO:0003700	GO	0.61	0
