@@ -34,7 +34,7 @@ import subprocess
 # import the workflow class from anadama2
 from anadama2 import Workflow
 
-VERSION = "0.3.4"
+VERSION = "0.3.5"
 
 WORKFLOW_FOLDER = "workflows"
 WORKFLOW_EXTENSION = ".py"

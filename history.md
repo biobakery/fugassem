@@ -1,6 +1,11 @@
 
 # FUGAsseM History #
 
+## v0.3.5 2023-03-17 ##
+* Fixed issue when using '--bypass-coexp' option
+* Tweaked default options for fugassem_generate_annotation_input utility
+* Update demo run
+
 ## v0.3.4 2022-11-11 ##
 * Renamed options for '--go-mode'
 * Added 'bypass-coexp' option to skip calculating coexpression
