@@ -38,7 +38,7 @@ VERSION = "0.3.5"
 
 WORKFLOW_FOLDER = "workflows"
 WORKFLOW_EXTENSION = ".py"
-WORKFLOW_DEFAULT = "fugassem_main"
+WORKFLOW_DEFAULT = "fugassem_workflow"
 
 
 def find_workflows():

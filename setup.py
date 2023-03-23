@@ -230,7 +230,7 @@ setuptools.setup(
 	entry_points={
 		'console_scripts': [
 			'fugassem = fugassem.fugassem:main',
-			'fugassem_main = fugassem.workflows.fugassem_main:main',
+			#'fugassem_main = fugassem.workflows.fugassem:main',
 			'fugassem_process = fugassem.tasks.fugassem_process:main',
 			'fugassem_calculate_correlation = fugassem.preprocess.calculate_correlation:main',
 			'fugassem_collect_features = fugassem.preprocess.collect_features:main',
