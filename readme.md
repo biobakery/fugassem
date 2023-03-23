@@ -128,7 +128,7 @@ You only need to do **any one** of the following options to install the FUGAsseM
 	This command yields:
 
 	```
-	usage: fugassem_main.py [-h] [--version]
+	usage: fugassem_workflow.py [-h] [--version]
                         [--taxon-level {MSP,Terminal,Species,Genus,Family,Order,Class,Phylum}]
                         [--minimum-prevalence MINIMUM_PREVALENCE]
                         [--minimum-abundance MINIMUM_ABUNDANCE]
