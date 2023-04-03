@@ -7,12 +7,11 @@
 
 **If you use FUGAsseM, please cite our manuscript:**
 
-"Predicting functions of uncharacterized gene products in microbiomes." *[In prep]*.
+Yancong Zhang, Amrisha Bhosle, Sena Bae, Kelly Eckenrode, Xueying (Sonia) Huang, Jingjing Tang, Danylo Lavrentovich, Lana Awad, Ji Hua, Xochitl C. Morgan, Andy Krueger, Wendy S. Garrett, Eric A. Franzosa\*, Curtis Huttenhower\*. "Predicting functions of uncharacterized gene products in microbiomes" *[in preparation]*.
 
-**And feel free to link to FUGAsseM in your Methods:**
+**Please add the software link in your Methods if you cite FUGAsseM:**
 
 [http://huttenhower.sph.harvard.edu/fugassem](http://huttenhower.sph.harvard.edu/fugassem)
-
 
 **For additional information, read the [FUGAsseM Tutorial](https://github.com/biobakery/fugassem/wiki/fugassem)**
 
