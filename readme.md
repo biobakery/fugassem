@@ -7,7 +7,7 @@
 
 **If you use FUGAsseM, please cite our manuscript:**
 
-Yancong Zhang, Amrisha Bhosle, Sena Bae, Kelly Eckenrode, Xueying (Sonia) Huang, Jingjing Tang, Danylo Lavrentovich, Lana Awad, Ji Hua, Xochitl C. Morgan, Andy Krueger, Wendy S. Garrett, Eric A. Franzosa\*, Curtis Huttenhower\*. "Predicting functions of uncharacterized gene products in microbiomes" *[in preparation]*.
+Yancong Zhang, Amrisha Bhosle, Sena Bae, Kelly Eckenrode, Xueying (Sonia) Huang, Jingjing Tang, Danylo Lavrentovich, Lana Awad, Ji Hua, Xochitl C. Morgan, Andy Krueger, Wendy S. Garrett, Eric A. Franzosa\*, Curtis Huttenhower\*. "Predicting functions of uncharacterized gene products in microbiomes" *[In preparation]*.
 
 **Please add the software link in your Methods if you cite FUGAsseM:**
 
