@@ -6,6 +6,7 @@
 * Tweaked default options for fugassem_generate_annotation_input utility
 * Update demo run
 * Tweaked workflow name
+* Release v0.3.5
 
 ## v0.3.4 2022-11-11 ##
 * Renamed options for '--go-mode'
