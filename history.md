@@ -1,7 +1,7 @@
 
 # FUGAsseM History #
 
-## v0.3.5 2023-03-17 ##
+## v0.3.5 2023-10-17 ##
 * Fixed issue when using '--bypass-coexp' option
 * Tweaked default options for fugassem_generate_annotation_input utility
 * Update demo run
