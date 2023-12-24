@@ -100,7 +100,6 @@ def parse_cli_arguments ():
 	                      default = "taxon-specific")
 	workflow.add_argument("func-type",
 	                      desc = "GO category used for prediction [ Default: GO ]",
-	                      choices = ["GO", "BP", "CC", "MF"],
 	                      default = "GO")
 	workflow.add_argument("ml-type",
 	                      desc = "machine learning method for function prediction [ Default: RF ]:\n"
@@ -312,7 +311,7 @@ def fugassem_main (workflow):
 		taxa = utilities.file_to_dict (taxa_file)
 	
 	if args.bypass_preprocessing and args.bypass_prediction:
-		config.logger.info("WARNING! Bypass module: main fugassem modules is skipped......")
+		config.logger.info("WARNING! Bypass module: main fugassem modules are skipped......")
 	else:
 		merged_final_files = []
 		## add tasks to the workflow
@@ -358,7 +357,10 @@ def fugassem_main (workflow):
 					   pair_flag,
 			           args.go_mode,
 					   args.bypass_coexp]
-			target_list = [final_func_file, final_func_smp_file, final_funclist_file, feature_list_file, final_pred_file]
+			if not args.bypass_prediction:
+				target_list = [final_func_file, final_func_smp_file, final_funclist_file, feature_list_file, final_pred_file]
+			else:
+				target_list = [final_func_file, final_func_smp_file, final_funclist_file, feature_list_file]
 			workflow.add_task_gridable(
 				"fugassem_process --input [depends[0]] --gene [depends[1]] --function [depends[2]] "
 				"--taxon [args[0]] --basename [args[1]] "
@@ -378,20 +380,21 @@ def fugassem_main (workflow):
 		# foreach taxon
 
 		# combined files
-		out_list_file =  os.path.join(output_dir_merged, basename +  ".finalized_ML.prediction.list.txt")
-		outfile = os.path.join(output_dir_merged, basename +  ".finalized_ML.prediction.tsv")
-		mymatch = os.path.join(output_dir_merged, basename + ".feature_maps.txt")
-		mylog = os.path.join(output_dir_merged, "merged_finalized_prediction.log")
-		utilities.array_to_file (merged_final_files, out_list_file)
-		workflow.add_task(
-			"fugassem_merged_prediction --input [depends[0]] --basename [args[0]] --output [targets[0]] > [args[1]] 2>&1",
-			depends = utilities.add_to_list (out_list_file, TrackedExecutable("fugassem_merged_prediction")) + merged_final_files,
-			targets = [outfile, mymatch],
-			args = [basename, mylog],
-			cores = args.threads,
-			time = args.time,
-			mem = args.memory,
-			name = "fugassem_merged_prediction")
+		if not args.bypass_prediction:
+			out_list_file =  os.path.join(output_dir_merged, basename +  ".finalized_ML.prediction.list.txt")
+			outfile = os.path.join(output_dir_merged, basename +  ".finalized_ML.prediction.tsv")
+			mymatch = os.path.join(output_dir_merged, basename + ".feature_maps.txt")
+			mylog = os.path.join(output_dir_merged, "merged_finalized_prediction.log")
+			utilities.array_to_file (merged_final_files, out_list_file)
+			workflow.add_task(
+				"fugassem_merged_prediction --input [depends[0]] --basename [args[0]] --output [targets[0]] > [args[1]] 2>&1",
+				depends = utilities.add_to_list (out_list_file, TrackedExecutable("fugassem_merged_prediction")) + merged_final_files,
+				targets = [outfile, mymatch],
+				args = [basename, mylog],
+				cores = args.threads,
+				time = args.time,
+				mem = args.memory,
+				name = "fugassem_merged_prediction")
 	# if run process module
 
 	## start the workflow

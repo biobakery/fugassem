@@ -96,7 +96,6 @@ def get_args():
 	                      default = "taxon-specific")
 	workflow.add_argument("func-type",
 	                      desc = "GO category used for prediction [ Default: GO ]",
-	                      choices = ["GO", "BP", "CC", "MF"],
 	                      default = "GO")
 	workflow.add_argument("ml-type",
 	                      desc = "machine learning method for function prediction [ Default: RF ]:\n"

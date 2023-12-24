@@ -62,8 +62,8 @@ def parse_arguments():
 		"-t", "--type",
 		help = "[REQUIRED] annotation type\n",
         choices = ["GO", "BP", "MF", "CC",
-				"UniRef90_GO", "UniRef90_GO_BP", "UniRef90_GO_CC", "UniRef90_GO_MF", "UniRef90_COG", "UniRef90_eggNOG",
-          		"UniRef90_KEGG-KOs", "InterProScan_PfamDomain", "Denovo_transmembrane", "Denovo_signaling", "DOMINE_interaction"],
+				"UniRef90_GO", "UniRef90_GO_BP", "UniRef90_GO_CC", "UniRef90_GO_MF", "UniRef90_COG", "UniRef90_eggNOG", ""
+          		"UniRef90_KEGG-KOs", "UniRef90_Level4EC", "InterProScan_PfamDomain", "Denovo_transmembrane", "Denovo_signaling", "DOMINE_interaction"],
 		required = True)
 	parser.add_argument(
 		"-o", "--output",
@@ -115,6 +115,8 @@ def collect_name_map (map_file):
 		if not len(line):
 			continue
 		info = line.split("\t")
+		if len(info) < 2:
+			continue
 		names[info[0]] = info[1]
 
 	return names
