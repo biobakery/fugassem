@@ -125,7 +125,7 @@ def update_user_edit_config_file_single_item(section, name, value):
 
 	update_user_edit_config_file(new_config_items)
 
-	print("MetaWIBELE configuration file updated: " + section + " : " + name + " = " + str(value))
+	print("FUGAsseM configuration file updated: " + section + " : " + name + " = " + str(value))
 
 
 def update_user_edit_config_file(new_config_items):
@@ -167,7 +167,7 @@ def update_user_edit_config_file(new_config_items):
 		config.write(file_handle)
 		file_handle.close()
 	except EnvironmentError:
-		sys.exit("Unable to write to the MetaWIBELE config file.")
+		sys.exit("Unable to write to the FUGAsseM config file.")
 
 
 def read_user_edit_config_file(full_path_user_edit_config_file):
@@ -233,7 +233,7 @@ def get_item(config_items, section, name, type=None):
 	return value
 
 
-## default option for MetaWIBELE ##
+## default option for FUGAsseM ##
 version = '0.3.5'
 log_level_choices = ["DEBUG","INFO","WARNING","ERROR","CRITICAL"]
 log_level = log_level_choices[1]
