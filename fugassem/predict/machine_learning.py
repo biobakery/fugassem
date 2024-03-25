@@ -36,8 +36,7 @@ from itertools import repeat
 import multiprocessing as mp
 #from multiprocessing import Pool
 from multiprocessing.dummy import Pool as ThreadPool
-
-
+import joblib
 import numpy as np
 from numpy import array as a
 from numpy import mean, std, log10
@@ -47,6 +46,7 @@ from sklearn.tree import DecisionTreeClassifier as dtc
 from sklearn.naive_bayes import GaussianNB as nbc
 from sklearn.model_selection import StratifiedKFold as skf
 from sklearn.impute import SimpleImputer
+from sklearn.model_selection import RandomizedSearchCV as rsc
 
 try:
 	from fugassem.common import table2
@@ -63,7 +63,6 @@ except:
 description = """
 Train and predict machine learner for function prediction
 """
-
 
 def get_args():
 	parser = argparse.ArgumentParser(
@@ -101,6 +100,9 @@ def get_args():
 	parser.add_argument("--importance", "-i",
 						help = "[OPTIONAL] minimum prediction importance of features from 1st round prediction for filtering less importance features in training set [ Default: None ]\n",
 						default = None)
+	parser.add_argument("--hyperpara", "-x",
+	                    help='[OPTIONAL] do hyperparameter tuning for Random Forest',
+	                    action = "store_true")
 	parser.add_argument("--imppath", "-p",
 	                    help = "[OPTIONAL] path for prediction importance files. It should be customized when '--importance' parameter is used [ Default: None ]\n",
 						default = None)
@@ -173,6 +175,54 @@ def prepare_data(p_features, perm, func_name, vector_name):
 # ---------------------------------------------------------------
 # cross validate
 # ---------------------------------------------------------------
+def hyperpara_tuning (rf, X_train, y_train, cores):
+	"""
+	Use hyperparameter tuning algorithms that help to fine-tune the Machine learning models
+	"""
+	# number of trees
+	n_estimators = [int(x) for x in np.linspace(start=100, stop=2000, num=10)]
+	# number of features to consider at every split
+	max_features = ['sqrt', 'log2', None]
+	# maximum number of levels in tree
+	max_depth = [int(x) for x in np.linspace(10, 110, num=11)]
+	max_depth.append(None)
+	# minimum number of samples required to split a node
+	#min_samples_split = [2, 5, 10]
+	# minimum number of samples required at each leaf node
+	#min_samples_leaf = [1, 2, 4]
+	# method of selecting samples for training each tree
+	#bootstrap = [True, False]
+	# create the random grid
+	param_grid = {'n_estimators': n_estimators,
+				  'max_features': max_features,
+				  'max_depth': max_depth}
+
+	# random search of parameters, using five fold cross validation, search across 100 different combinations, and use specified cores
+	min_num = 5
+	y_members = {}
+	for i in y_train:
+		if not i in y_members:
+			y_members[i] = 1
+		else:
+			y_members[i] + 1
+	y_members = min([y_members[i] for i in y_members.keys()])
+	if y_members < min_num:
+		min_num = y_members 
+	if min_num < 2:
+		return rf
+
+	random_search = rsc (estimator = rf, param_distributions = param_grid, cv = min_num)
+	random_search.fit(X_train, y_train)
+	best_estimator = random_search.best_estimator_
+
+	# Update the model
+	updated_rf = rfc (n_estimators = best_estimator["n_estimators"],
+					  max_features = best_estimator["max_features"],
+					  max_depth =  best_estimator["max_depth"])
+
+	return updated_rf
+
+
 def fetch_genes (index, features):
 	""" collect gene names """
 	genes = {features.colheads[i]: i for i in index}
@@ -273,7 +323,7 @@ def select_impt_feature(features, train, func_name, imp_level, imp_file):
 	return features
 
 
-def learning(ml_type, func_name, features, funcs, X1, y1, redu_level, corr_method, cores, imp_level, imp_file):
+def learning(ml_type, func_name, features, funcs, X1, y1, redu_level, corr_method, cores, imp_level, imp_file, hyper):
 	conf = {}
 	for e in y1:
 		for o in y1:
@@ -329,6 +379,11 @@ def learning(ml_type, func_name, features, funcs, X1, y1, redu_level, corr_metho
 
 		# with balancing
 		train = balance_train(train, myfeatures, funcs)
+		if hyper and ml_type == "RF":
+			try:
+				r = hyperpara_tuning (r, X1[train], y1[train], cores)
+			except:
+				config.logger.info ("Error to run RandomizedSearchCV to tune parameters")
 		try:
 			r.fit( X1[train], y1[train] )
 		except:
@@ -337,20 +392,8 @@ def learning(ml_type, func_name, features, funcs, X1, y1, redu_level, corr_metho
 		config.logger.info ("Label summary in training set:")
 		config.logger.info ({k: list(y1[train]).count(k) for k in set(y1[train])})
 
-		# Impute our data, then train
-		#imp = SimpleImputer(missing_values=np.nan, strategy='mean')
-		#imp = imp.fit(X1[train])
-		#X_train_imp = imp.transform(X1[train])
-		#r.fit(X_train_imp, y1[train])
-		#imp = SimpleImputer(missing_values=np.nan, strategy='mean')
-		#imp = imp.fit(X1[test])
-		#X1[test] = imp.transform(X1[test])
 
-		# with weighting
-		"""
-		r.fit( X1[train], y1[train], sample_weight=weight_train( y1[train] ) )
-		"""
-		
+		# output info
 		for e, o in zip(y1[test], r.predict(X1[test])):
 			conf[(e, o)] += 1
 		mygenes = fetch_genes (test, myfeatures)
@@ -397,7 +440,7 @@ def write_cross_validation(conf, roc, imp, outdir, prefix):
 # ---------------------------------------------------------------
 # write out feature importance from the full model
 # ---------------------------------------------------------------
-def write_importance_results(ml_type, features, funcs, X1, y1, outdir, prefix):
+def write_importance_results(ml_type, features, funcs, X1, y1, outdir, prefix, cores, hyper):
 	# run full model
 	if ml_type == "RF":
 		mysize = utilities.c_trees * (int(len(features.rowheads) / 1000) + 1)
@@ -407,11 +450,20 @@ def write_importance_results(ml_type, features, funcs, X1, y1, outdir, prefix):
 
 	# with balancing
 	index = a(balance_train(range(len(y1)), features, funcs))
+	if hyper and ml_type == "RF":
+		try:
+			r = hyperpara_tuning(r, X1[index], y1[index], cores)
+		except:
+			config.logger.info ("Error to run RandomizedSearchCV to tune parameters")
 	try:
 		r.fit(X1[index], y1[index])
 	except:
 		config.logger.info ("Error for fitting model for overall functions")
 		return None
+
+	# save model
+	mymodel = os.path.join(outdir, prefix + ".random_forest.joblib")
+	joblib.dump(r, mymodel)
 
 	# output
 	myfile = os.path.join(outdir, prefix + ".importance.tsv")
@@ -425,7 +477,7 @@ def write_importance_results(ml_type, features, funcs, X1, y1, outdir, prefix):
 # ---------------------------------------------------------------
 # process each function
 # ---------------------------------------------------------------
-def process_function (ml_type, myfunc, vector, suffix, imppath, p_features, perm, redu_level, corr_method, cores, imp_level, outdir):
+def process_function (ml_type, myfunc, vector, suffix, imppath, p_features, perm, redu_level, corr_method, cores, imp_level, hyper, outdir):
 	myout = re.sub(":", "_", myfunc)
 	config.logger.info("----" + myfunc + "----")
 	config.logger.info("Prepare data for learning")
@@ -445,12 +497,12 @@ def process_function (ml_type, myfunc, vector, suffix, imppath, p_features, perm
 		config.logger.info("WARNING: skip this function since no data available! " + myfunc)
 		return None
 	config.logger.info("Learning by cross validation")
-	conf, roc, imp = learning(ml_type, myfunc, features, funcs, X1, y1, redu_level, corr_method, cores, imp_level, imp_file)
+	conf, roc, imp = learning(ml_type, myfunc, features, funcs, X1, y1, redu_level, corr_method, cores, imp_level, imp_file, hyper)
 	config.logger.info("Write out cross-validation results")
 	write_cross_validation(conf, roc, imp, outdir, myout)
 	if ml_type != "NB":
 		config.logger.info("Write out feature importance from the full model")
-		write_importance_results(ml_type, features, funcs, X1, y1, outdir, myout)
+		write_importance_results(ml_type, features, funcs, X1, y1, outdir, myout, cores, hyper)
 
 
 # ==============================================================
@@ -461,6 +513,10 @@ def main():
 	args = get_args()
 	if not args.perm:
 		random.seed(utilities.c_rseed)
+	if args.hyperpara:
+		hyper = True
+	else:
+		hyper = False
 
 	p_features = args.feature
 	ml_type = args.type
@@ -479,9 +535,7 @@ def main():
 	func_list = collect_list(args.list)
 
 	config.logger.info("Start ML process")
-	
 	config.logger.info("ML type: " + ml_type)
-
 	if not os.path.isdir(outdir):
 		os.system("mkdir -p " + outdir)
 	try:
@@ -491,7 +545,7 @@ def main():
 	pool = ThreadPool(cores)
 	pool.starmap(process_function, zip(repeat(ml_type), func_list.keys(), repeat(vector), repeat(suffix), repeat(imppath),
 	                                   repeat(p_features), repeat(perm), repeat(redu_level), repeat(corr_method),
-	                                   repeat(cores), repeat(imp_level), repeat(outdir)))
+	                                   repeat(cores), repeat(imp_level), repeat(hyper), repeat(outdir)))
 	pool.close()
 	pool.join()
 	
