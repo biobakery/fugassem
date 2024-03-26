@@ -184,8 +184,8 @@ def hyperpara_tuning (rf, X_train, y_train, cores):
 	# number of features to consider at every split
 	max_features = ['sqrt', 'log2', None]
 	# maximum number of levels in tree
-	max_depth = [int(x) for x in np.linspace(10, 110, num=11)]
-	max_depth.append(None)
+	#max_depth = [int(x) for x in np.linspace(10, 110, num=11)]
+	#max_depth.append(None)
 	# minimum number of samples required to split a node
 	#min_samples_split = [2, 5, 10]
 	# minimum number of samples required at each leaf node
@@ -194,8 +194,7 @@ def hyperpara_tuning (rf, X_train, y_train, cores):
 	#bootstrap = [True, False]
 	# create the random grid
 	param_grid = {'n_estimators': n_estimators,
-				  'max_features': max_features,
-				  'max_depth': max_depth}
+				  'max_features': max_features}
 
 	# random search of parameters, using five fold cross validation, search across 100 different combinations, and use specified cores
 	min_num = 5
@@ -204,21 +203,22 @@ def hyperpara_tuning (rf, X_train, y_train, cores):
 		if not i in y_members:
 			y_members[i] = 1
 		else:
-			y_members[i] + 1
+			y_members[i] = y_members[i] + 1
 	y_members = min([y_members[i] for i in y_members.keys()])
 	if y_members < min_num:
 		min_num = y_members 
 	if min_num < 2:
+		config.logger.info ("Warning: skip hyperparameter tuning due to lacking enough number samples for one class")
 		return rf
 
-	random_search = rsc (estimator = rf, param_distributions = param_grid, cv = min_num)
+	random_search = rsc (estimator = rf, param_distributions = param_grid, cv = min_num, random_state=utilities.c_rseed)
 	random_search.fit(X_train, y_train)
-	best_estimator = random_search.best_estimator_
-
+	best_estimator = random_search.best_params_
+	
 	# Update the model
 	updated_rf = rfc (n_estimators = best_estimator["n_estimators"],
 					  max_features = best_estimator["max_features"],
-					  max_depth =  best_estimator["max_depth"])
+					  random_state = utilities.c_rseed)
 
 	return updated_rf
 
@@ -379,11 +379,13 @@ def learning(ml_type, func_name, features, funcs, X1, y1, redu_level, corr_metho
 
 		# with balancing
 		train = balance_train(train, myfeatures, funcs)
+		'''
 		if hyper and ml_type == "RF":
 			try:
 				r = hyperpara_tuning (r, X1[train], y1[train], cores)
 			except:
 				config.logger.info ("Error to run RandomizedSearchCV to tune parameters")
+		'''
 		try:
 			r.fit( X1[train], y1[train] )
 		except:
