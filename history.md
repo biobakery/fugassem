@@ -1,16 +1,20 @@
 
 # FUGAsseM History #
 
-## v0.3.6 2024-03-25 ##
+
+## v0.3.7 2024-08-01 ##
+* Tweak nan imputation 
+* Improved correlation calculation
+
+## v0.3.6 2024-05-22 ##
 * Added option for hyperparameter tuning RF
 
-## v0.3.5 2023-10-17 ##
+## v0.3.5 2023-03-17 ##
 * Fixed issue when using '--bypass-coexp' option
 * Tweaked default options for fugassem_generate_annotation_input utility
-* Update demo run
+* Updated demo run
 * Tweaked workflow name
 * Updated prepare_annotation module
-* Release v0.3.5
 
 ## v0.3.4 2022-11-11 ##
 * Renamed options for '--go-mode'

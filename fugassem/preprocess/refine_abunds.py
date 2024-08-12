@@ -347,7 +347,12 @@ def output_abunds (abunds, header, outfile):
 	out_file.write(header + "\n")
 	for myid in sorted(abunds.keys()):
 		myline = abunds[myid]
+		info = myline.split("\t")
+		myid = info[0].split(utilities.c_strat_delim)
+		info[0] = myid[0]
+		myline = "\t".join(info)
 		out_file.write(myline + "\n")
+
 
 def main():
 	args_value = parse_arguments()

@@ -39,9 +39,9 @@ import math
 
 
 try:
-	from fugassem.common.nancorrmp import NaNCorrMp
+	from fugassem.common.corrmp import NaNCorrMp
 except:
-	sys.exit ("nancorrmp is not install!")
+	sys.exit ("corrmp is not install!")
 try:
 	from fugassem import utilities
 	from fugassem import config
@@ -67,7 +67,7 @@ def parse_arguments():
 	parser.add_argument(
 		"-m", "--method",
 		help = "[OPTIONAL] correlation methods, [ Default: Pearson ]\n",
-		choices = ["Pearson", "Spearman", "Kendall", "Pearson_SE"],
+		choices = ["Pearson", "Spearman", "Kendall"],
 		default = "Pearson")
 	parser.add_argument(
 		"-c", "--core",
@@ -154,16 +154,12 @@ def flt_redundant_feature (redu_level, features, genes, corr_method, cores):
 
 	# correlation
 	if corr_method == "Pearson":
-		corr, p_value = NaNCorrMp.calculate_with_p_value (feature_table, n_jobs = cores)
-		se = None
+		corr, p_value, se = NaNCorrMp.calculate_with_pvalue_se (feature_table, n_jobs=cores, zero="lenient", transform=False) 
 	else:
-		if corr_method == "Pearson_SE":
-			corr, p_value, se = NaNCorrMp.calculate_with_pvalue_se (feature_table, n_jobs=cores)
-		else:
-			corr_method = corr_method.lower()
-			corr = abunds_table.corr (method = corr_method)
-			p_value = None
-			se = None
+		corr_method = corr_method.lower()
+		corr = abunds_table.corr (method = corr_method)
+		p_value = None
+		se = None
 
 	# select features
 	mycorr = corr.to_dict() # {'col1': {'row1': 1, 'row2': 2}, 'col2': {'row1': 0.5, 'row2': 0.75}}

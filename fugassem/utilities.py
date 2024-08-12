@@ -41,10 +41,10 @@ c_topsort = {
 
 PROTEIN_FAMILY_ID = "familyID"
 PROTEIN_ID = "seqID"
-c_metedata_delim = "."	 # nested metadata, e.g. CD.dysbiosis
-c_strat_delim = "|" 	 # strantified item, e.g. Cluster_1000010|Bacteroides dorei
-c_taxon_delim = "."	 	 # taxonomic lineage, e.g. g__Faecalibacterium.s__Faecalibacterium_prausnitzii.t__Faecalibacterium_prausnitzii_A2-165
-c_multiname_delim = ";"	 # multiple ietms, e.g. PF00482;PF01841
+c_metedata_delim = "."  # nested metadata, e.g. CD.dysbiosis
+c_strat_delim = "|"  # strantified item, e.g. Cluster_1000010|Bacteroides dorei
+c_taxon_delim = "."  # taxonomic lineage, e.g. g__Faecalibacterium.s__Faecalibacterium_prausnitzii.t__Faecalibacterium_prausnitzii_A2-165
+c_multiname_delim = ";"  # multiple ietms, e.g. PF00482;PF01841
 c_name_delim = ": "
 c_msp_unknown = "msp_unknown"
 
@@ -56,10 +56,67 @@ c_rseed = 1201
 # setting for DT
 c_depth = 10
 
+
 # ---------------------------------------------------------------
 # utilities used for I/O data
 # ---------------------------------------------------------------
-def read_data_from_file(infile, header_flag="yes"):
+def read_data_from_file(infile, convert=False, header_flag="yes", refine="no"):
+	data = {}
+	if convert:
+		titles = {}
+		header = ""
+		data = {}
+		flag_t = 0
+		for line in gzip_bzip2_biom_open_readlines(infile):
+			line = line.strip()
+			if not len(line):
+				continue
+			info = line.split("\t")
+			if flag_t == 0:
+				flag_t = 1
+				for i in info:
+					titles[info.index(i)] = i
+					if info.index(i) == 0:
+						header = i
+					else:
+						data[i] = i
+				continue
+			if refine == "yes":
+				info[0] = info[0].split("|")[0]
+			header = header + "\t" + info[0]
+			myindex = 1
+			while myindex < len(info):
+				myt = titles[myindex]
+				myv = info[myindex]
+				if not myt in data:
+					data[myt] = myv
+				else:
+					data[myt] = data[myt] + "\t" + myv
+				myindex = myindex + 1
+	else:
+		flag_t = 0
+		for line in gzip_bzip2_biom_open_readlines(infile):
+			line = line.strip()
+			if not len(line):
+				continue
+			info = line.split("\t")
+			if refine == "yes":
+				info[0] = info[0].split("|")[0]
+				line = "\t".join(info)
+			if header_flag == "yes":
+				if flag_t == 0:
+					flag_t = 1
+					header = line
+					continue
+			else:
+				header = None
+			data[info[0]] = line
+	# foreach line
+
+	return data, header
+
+
+def read_data_from_file_simple(infile, header_flag="yes"):
 	data = {}
 	open_file = open(infile, "r")
 	if header_flag == "yes":
@@ -128,7 +185,6 @@ def is_file_exist(file_path):
 		if time.time() - os.stat(file_path).st_mtime > 60:
 			status = 1
 	return status
-
 
 
 def find_files(folder, extension=None, exit_if_not_found=None):
@@ -369,8 +425,8 @@ def process_gene_table_with_header(gene_table, allow_for_missing_header=None):
 
 	if not header and not allow_for_missing_header:
 		sys.exit("File does not have a required header: " + gene_table +
-		         " . Please add a header which includes the indicator: " +
-		         GENE_TABLE_COMMENT_LINE)
+				 " . Please add a header which includes the indicator: " +
+				 GENE_TABLE_COMMENT_LINE)
 
 	# provide the header, if one was found
 	if header:
@@ -384,7 +440,7 @@ def process_gene_table_with_header(gene_table, allow_for_missing_header=None):
 		yield line
 
 
-def sample_names (files, extension, pair_identifier = None):
+def sample_names(files, extension, pair_identifier=None):
 	""" Return the basenames of the files, without any extensions, as the sample names
 
 	Args:
@@ -405,7 +461,7 @@ def sample_names (files, extension, pair_identifier = None):
 	"""
 
 	# add period to extension if not included
-	#if not extension.startswith("."):
+	# if not extension.startswith("."):
 	#	extension = "." + extension
 
 	# if files is a string, convert to a list
@@ -420,7 +476,7 @@ def sample_names (files, extension, pair_identifier = None):
 	if pair_identifier:
 		# only remove the last instance of the pair identifier
 		samples = [pair_identifier.join(sample.split(pair_identifier)[:-1]) if pair_identifier in sample else sample for
-		           sample in samples]
+				   sample in samples]
 
 	if convert:
 		samples = samples[0]
@@ -432,7 +488,7 @@ def sample_names (files, extension, pair_identifier = None):
 # ---------------------------------------------------------------
 # utilities used by the rename, renorm, run tasks, etc. scripts
 # ---------------------------------------------------------------
-def run_task (command, **keywords):
+def run_task(command, **keywords):
 	""" Run the task command, formatting command with keywords. The command stdout
 		and stderr are written to the workflow log.
 
@@ -543,19 +599,19 @@ def write_biom(path, rows):
 		import biom
 	except ImportError:
 		sys.exit("Could not find the biom software." +
-		         " This software is required since the input file is a biom file.")
+				 " This software is required since the input file is a biom file.")
 
 	try:
 		import numpy
 	except ImportError:
 		sys.exit("Could not find the numpy software." +
-		         " This software is required since the input file is a biom file.")
+				 " This software is required since the input file is a biom file.")
 
 	try:
 		import h5py
 	except ImportError:
 		sys.exit("Could not find the h5py software." +
-		         " This software is required since the input file is a biom file.")
+				 " This software is required since the input file is a biom file.")
 
 	# reformat the rows into a biom table
 	samples = next(rows)[1:]
@@ -636,7 +692,7 @@ def read_biom_table(path):
 		import biom
 	except ImportError:
 		sys.exit("Could not find the biom software." +
-		         " This software is required since the input file is a biom file.")
+				 " This software is required since the input file is a biom file.")
 
 	try:
 		tsv_table = biom.load_table(path).to_tsv().split("\n")
@@ -758,7 +814,7 @@ def remove_duplicate(duplicate):
 	return final_list
 
 
-def refine_taxon (myt):
+def refine_taxon(myt):
 	myt = re.sub("\.", "", myt)
 	myt = re.sub("\(", "", myt)
 	myt = re.sub("\)", "", myt)

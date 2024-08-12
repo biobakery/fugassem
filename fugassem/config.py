@@ -234,7 +234,7 @@ def get_item(config_items, section, name, type=None):
 
 
 ## default option for FUGAsseM ##
-version = '0.3.6'
+version = '0.3.7'
 log_level_choices = ["DEBUG","INFO","WARNING","ERROR","CRITICAL"]
 log_level = log_level_choices[1]
 verbose = 'DEBUG'

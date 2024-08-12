@@ -81,9 +81,15 @@ def get_args():
 	                      desc = "covariate-taxon abundance table used for pre-filtering zeros [ Default: None ]",
 	                      default = None)
 	workflow.add_argument("correlation-method",
-	                      desc = "correlation method used for co-expression analysis [ Default: Pearson_SE ]",
-	                      choices = ["Pearson", "Spearman", "Kendall", "Pearson_SE"],
-	                      default = "Pearson_SE")
+	                      desc = "correlation method used for co-expression analysis [ Default: Pearson ]",
+	                      choices = ["Pearson", "Pearson_adv", "Spearman", "Spearman_adv", "Kendall"],
+	                      default = "Pearson")
+	workflow.add_argument("correlation-para",
+	                      desc = "other parameter setting for calculate_correlation function [ Default: "" ]",
+	                      default = "")
+	workflow.add_argument("nan-para",
+	                      desc = "other parameter settting for imputing NaN [ Default: \"-m zero -n 0.1\" ]",
+	                      default = "\"-m zero -n 0.1\"")
 	workflow.add_argument("go-level",
 	                      desc = "GO informative level used for trimming terms that are informative at a given level [ Default: 50 ]:\n"
 	                             "<number OR fraction of genes>: specify numeric level for trimming\n"
@@ -210,6 +216,8 @@ def process (workflow, vector_list, matrix_list):
 				args.filtering_zero,
 				args.covariate_taxon,
 				args.correlation_method,
+				args.correlation_para,
+				args.nan_para,
 				vector_list, matrix_list, args.pair_flag,
 				preprocess_dir, mybasename, feature_list, feature_list_file,
 				workflow, args.threads, args.time, args.memory, args.bypass_coexp)

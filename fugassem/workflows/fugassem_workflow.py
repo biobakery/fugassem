@@ -85,9 +85,15 @@ def parse_cli_arguments ():
 	                      desc = "covariate-taxon abundance table used for pre-filtering zeros [ Default: None ]",
 	                      default = None)
 	workflow.add_argument("correlation-method",
-	                      desc = "correlation method used for co-expression analysis [ Default: Pearson_SE ]",
-	                      choices = ["Pearson", "Spearman", "Kendall", "Pearson_SE"],
-	                      default = "Pearson_SE")
+	                      desc = "correlation method used for co-expression analysis [ Default: Pearson ]",
+	                      choices = ["Pearson", "Pearson_adv", "Spearman", "Spearman_adv", "Kendall"],
+	                      default = "Pearson")
+	workflow.add_argument("correlation-para",
+                          desc = "other parameter setting for calculate_correlation function [ Default: "" ]",
+                          default = "")
+	workflow.add_argument("nan-para",
+                          desc = "other parameter settting for imputing NaN [ Default: \"-m zero -n 0.1\" ]",
+						  default = "\"-m zero -n 0.1\"")
 	workflow.add_argument("go-level",
 	                      desc = "GO informative level used for trimming terms that are informative at a given level [ Default: none ]:\n"
 	                             "<number OR fraction of genes>: specify numeric level for trimming\n"
@@ -329,7 +335,6 @@ def fugassem_main (workflow):
 			final_func_smp_file = os.path.join(preprocess_dir, mybasename + ".final_funcs.simple.tsv")
 			final_funclist_file = os.path.join(preprocess_dir, mybasename + ".final_funclist.txt")
 			feature_list_file = os.path.join(preprocess_dir, mybasename + ".feature_list.txt")
-			#final_pred_file = os.path.join(predict_dir, "finalized", mybasename + ".finalized_ML.prediction.tsv")
 			final_pred_file = os.path.join(myoutput_dir, mybasename + ".finalized_ML.prediction.tsv")
 			merged_final_files.append(final_pred_file)
 
@@ -356,7 +361,8 @@ def fugassem_main (workflow):
 		               mylog,
 					   pair_flag,
 			           args.go_mode,
-					   args.bypass_coexp]
+					   args.bypass_coexp,
+					   args.correlation_para, args.nan_para]
 			if not args.bypass_prediction:
 				target_list = [final_func_file, final_func_smp_file, final_funclist_file, feature_list_file, final_pred_file]
 			else:
@@ -365,7 +371,7 @@ def fugassem_main (workflow):
 				"fugassem_process --input [depends[0]] --gene [depends[1]] --function [depends[2]] "
 				"--taxon [args[0]] --basename [args[1]] "
 				"--minimum-prevalence [args[2]] --minimum-abundance [args[3]] --minimum-detected [args[4]] --filtering-zero [args[5]] --covariate-taxon [args[6]] "
-				"--correlation-method [args[7]] --go-level [args[8]] --go-mode [args[22]] --func-type [args[9]] --ml-type [args[10]] "
+				"--correlation-method [args[7]] --correlation-para [args[24]] --nan-para [args[25]] --go-level [args[8]] --go-mode [args[22]] --func-type [args[9]] --ml-type [args[10]] "
 				"--vector-list [args[11]] --matrix-list [args[12]] --pair-flag [args[21]] "
 				"--bypass-preprocessing [args[13]] --bypass-prediction [args[14]] --bypass-mtx [args[15]] --bypass-coexp [args[23]] "
 				"--threads [args[16]] --memory [args[17]] --time [args[18]] "

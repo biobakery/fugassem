@@ -406,11 +406,12 @@ def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, 
 	raw_file = re.sub(".tsv$", ".raw.tsv", abund_file)
 	gene_file = os.path.join(main_folder, os.path.basename(gene_file))
 	abund_file = os.path.join(main_folder, os.path.basename(abund_file))
-	refined_file = os.path.join(main_folder, os.path.basename(re.sub(".tsv$", ".refined.tsv", abund_file)))
+	refined_file = os.path.join(main_folder, os.path.basename(re.sub(".tsv$", ".smooth_refined.tsv", abund_file)))
 	smoothed_file =  os.path.join(main_folder, os.path.basename(re.sub(".tsv$", ".smoothed.tsv", abund_file)))
-	transformed_file = os.path.join(main_folder, os.path.basename(re.sub(".tsv$", ".transformed.tsv", abund_file)))
+	transformed_file = os.path.join(main_folder, os.path.basename(re.sub(".tsv$", ".smooth_transformed.tsv", abund_file)))
 	final_gene_file = os.path.join(main_folder, os.path.basename(final_gene_file))
 	final_abund_file = os.path.join(main_folder, os.path.basename(final_abund_file))
+	final_abund_file_transfored = final_abund_file + ".transformed.tsv"
 	smoothing_log = final_abund_file + ".smoothing.log"
 	refining_log = final_abund_file + ".refining.log"
 
@@ -429,6 +430,7 @@ def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, 
 	        name = "mv__backup_abundance")
 	"""
 
+	'''
 	workflow.add_task (
 		"fugassem_abundance_smoothing -i [depends[0]] -t log -o [targets[0]] > [args[0]] 2>&1",
 		depends = [abund_file_raw, TrackedExecutable("fugassem_abundance_smoothing")],
@@ -452,8 +454,20 @@ def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, 
 
 	workflow.add_task (
 		"fugassem_refine_abunds -i [depends[0]] -r [depends[1]] -c [args[0]] -m [args[1]] "
-		"-p [args[2]] -a [args[3]] -d [args[4]] -o [targets[0]] > [args[5]] 2>&1",
+		"-p [args[2]] -a [args[3]] -d [args[4]] -o [targets[0]] >> [args[5]] 2>&1",
 		depends = [transformed_file, abund_file_raw, TrackedExecutable("fugassem_refine_abunds")],
+		targets = [final_abund_file_transfored],
+		args = [taxa_abund_file, zero_flt, min_prev, min_abund, min_detected, refining_log],
+		cores = 1,
+		time = time_equation,
+		mem = mem_equation,
+		name = "fugassem_refine_abunds_transfored")
+	'''
+
+	workflow.add_task (
+		"fugassem_refine_abunds -i [depends[0]] -r [depends[1]] -c [args[0]] -m [args[1]] "
+		"-p [args[2]] -a [args[3]] -d [args[4]] -o [targets[0]] > [args[5]] 2>&1",
+		depends = [abund_file_raw, abund_file_raw, TrackedExecutable("fugassem_refine_abunds")],
 		targets = [final_abund_file],
 		args = [taxa_abund_file, zero_flt, min_prev, min_abund, min_detected, refining_log],
 		cores = 1,
@@ -476,14 +490,16 @@ def refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, 
 	return final_abund_file, final_gene_file, final_family_file
 
 
-def calculate_covariation (abund_file, corr_method, output_folder, final_corr_file, final_abund_file, evidence_list, evidence_type,
+def calculate_covariation (abund_file, corr_method, corr_para, na_para, output_folder, final_corr_file, final_abund_file, evidence_list, evidence_type,
                            workflow, threads, time_equation, mem_equation):
 	"""
 	Calculate co-variation of abundance/expression per taxon
 
 	Args:
 		abund_file: refined abundance for one taxon.
-		corr_method: method for corrleation, e.g. Pearson_SE | Pearson | Spearman | Kendall
+		corr_method: method for corrleation, e.g. Pearson | Pearson_adv | Spearman | Spearman_adv | Kendall
+		corr_para: other parameter setting for correlation calculation, e.g. "-z strict"
+		na_para: other parameter settting for imputing NaN, e.g. "-m zero -n 0.1"
 		output_folder (string): The path of the output folder.
 		final_corr_file: finalized correlation without NaN file for one taxon.
 		final_abund_file: finalized abundance without NaN file for one taxon.
@@ -511,7 +527,9 @@ def calculate_covariation (abund_file, corr_method, output_folder, final_corr_fi
 		# add preprocess_function tasks
 		final_corr_file, final_abund_file = calculate_covariation (
 						abund_file,
-						corr_method = "Pearson_SE",
+						corr_method,
+						corr_para,
+						na_para,
 						output_dir,
 						final_corr_file,
 						final_abund_file,
@@ -539,30 +557,30 @@ def calculate_covariation (abund_file, corr_method, output_folder, final_corr_fi
 	abund_impute_log = final_abund_file + ".imputed_nan.log"
 
 	workflow.add_task(
-		"fugassem_calculate_correlation -i [depends[0]] -m [args[0]] -c [args[1]] -o [targets[0]] > [args[2]] 2>&1",
+		"fugassem_calculate_correlation -i [depends[0]] -m [args[0]] -c [args[1]] [args[2]] -o [targets[0]] > [args[3]] 2>&1",
 		depends = [abund_file, TrackedExecutable("fugassem_calculate_correlation")],
 		targets = [tmp_corr_file],
-		args = [corr_method, threads, corr_log],
+		args = [corr_method, threads, corr_para, corr_log],
 		cores = threads,
 		time = time_equation,
 		mem = mem_equation,
 		name = "fugassem_calculate_correlation")
 
 	workflow.add_task(
-		"fugassem_impute_nan -i [depends[0]] -m zero -o [targets[0]] > [args[0]] 2>&1",
+		"fugassem_impute_nan -i [depends[0]] [args[0]] -o [targets[0]] > [args[1]] 2>&1",
 		depends = [abund_file, TrackedExecutable("fugassem_impute_nan")],
 		targets = [final_abund_file],
-		args = [abund_impute_log],
+		args = [na_para, abund_impute_log],
 		cores = 1,
 		time = time_equation,
 		mem = mem_equation,
 		name = "fugassem_impute_nan")
 
 	workflow.add_task(
-		"fugassem_impute_nan -i [depends[0]] -m mean -o [targets[0]] > [args[0]] 2>&1",
+		"fugassem_impute_nan -i [depends[0]] [args[0]] -o [targets[0]] > [args[1]] 2>&1",
 		depends = [tmp_corr_file, TrackedExecutable("fugassem_impute_nan")],
 		targets = [final_corr_file],
-		args = [corr_impute_log],
+		args = [na_para, corr_impute_log],
 		cores = 1,
 		time = time_equation,
 		mem = mem_equation,
@@ -923,7 +941,7 @@ def preprocess_feature (raw_file, new_file, header, feature_type, output_folder,
 
 
 def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, go_obo,
-                min_prev, min_abund, min_detected, zero_flt, taxa_abund_file, corr_method,
+                min_prev, min_abund, min_detected, zero_flt, taxa_abund_file, corr_method, corr_para, na_para,
                 vector_list, matrix_list, pair_flag,
                 output_folder, basename, feature_list, feature_list_file,
                 workflow, threads, time_equation, mem_equation, bypass_coexp):
@@ -945,7 +963,9 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 		min_detected: the minimum detected value for each covariate feature [ Default: 0 ]
 		zero_flt: pre-filtering approach [ Default: None ], choices: ["lenient", "semi-strict", "strict", "None"]
 		taxa_abund_file: species abundance table used for technical-zero filtering [ Default: None ]
-		corr_method: method for corrleation, e.g. Pearson_SE | Pearson | Spearman | Kendall
+		corr_method: method for corrleation, e.g. Pearson | Pearson_adv | Spearman | Spearman_adv | Kendall
+		corr_para: other parameter setting for correlation calculation, e.g. "-z strict"
+		na_para: other paramter setting for imputing NaN, e.g. "-m zero -n 0.1"
 		vector_list: [string] comma separated list of vector-based evidence files
 		marix_list: [string] comma separated list of matrix-based evidence files
 		output_folder (string): The path of the output folder.
@@ -988,7 +1008,9 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 						min_detected = 0,
 						zero_flt = None,
 						taxa_abund_file = None,
-						corr_method = "Pearson_SE",
+						corr_method = "Pearson",
+						corr_para,
+						na_para
 						vector_list,
 						matrix_list,
 						pair_flag,
@@ -1031,7 +1053,706 @@ def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, g
 
 	## calculate co-variation
 	if not bypass_coexp or bypass_coexp == "False":
-		calculate_covariation (refined_abund_file, corr_method, main_folder, final_corr_file, final_abund_file,
+		calculate_covariation (refined_abund_file, corr_method, corr_para, na_para, main_folder, final_corr_file, final_abund_file,
+	                      evidence_list, "exp",
+	                      workflow, threads, time_equation, mem_equation)
+	else:	
+		if not "exp" in evidence_list:
+			evidence_list["exp"] = final_corr_file
+	#evidence_type = "exp"
+	#if not evidence_type in feature_list:
+	#	feature_list[evidence_type] = final_corr_file
+
+	## refine annotated function
+	refine_function (func_file, "no", go_level, func_type, go_obo, main_folder,
+	                final_func_file, final_func_smp_file, final_funclist_file,
+	                workflow, threads, time_equation, mem_equation)
+
+	## collect expression evidence
+	evidence_type = "coexp"
+	final_feature_file = os.path.join(main_folder, basename + "." + evidence_type + ".features.tsv")
+	final_feature_file_trans = re.sub(".tsv$", ".trans.tsv", final_feature_file)
+	preprocess_feature(final_corr_file, final_func_smp_file, None, "function", main_folder, final_feature_file,
+	                   workflow, threads, time_equation, mem_equation)
+	workflow.add_task(
+			"fugassem_transpose < [depends[0]] > [targets[0]]",
+			depends = [final_feature_file, TrackedExecutable("fugassem_transpose")],
+			targets = [final_feature_file_trans],
+			cores = 1,
+			time = time_equation,
+			mem = mem_equation,
+			name = "fugassem_transpose")
+	if not evidence_type in feature_list:
+		feature_list[evidence_type] = evidence_type + "\t" + final_feature_file_trans
+
+	## vector-based evidence files (gene-over-function type of file)
+	mynum = 0
+	if vector_list and vector_list != "None":
+		vectors = vector_list.split(",")
+		for vector_file in vectors:
+			vector_file = os.path.abspath(vector_file)
+			mynum = mynum + 1
+			evidence_type = "vector" + str(mynum)
+			config.logger.info("Preprocess vector evidence: " + evidence_type + "\t" + os.path.basename(vector_file))
+			final_evidence_file = os.path.join(main_folder, basename + "." + evidence_type + ".tsv")
+			preprocess_evidence (vector_file, final_gene_file, "yes", "no", main_folder, final_evidence_file,
+		                 evidence_list, evidence_type,
+		                 workflow, threads, time_equation, mem_equation)
+
+			final_feature_file = os.path.join(main_folder, basename + "." + evidence_type + ".features.tsv")
+			tmp_feature_file = final_feature_file + ".tmp"
+			final_feature_file_trans = re.sub(".tsv$", ".trans.tsv", final_feature_file)
+			preprocess_feature (final_family_file, final_evidence_file, "yes", "vector", main_folder, tmp_feature_file,
+			                   workflow, threads, time_equation, mem_equation)
+			preprocess_feature (tmp_feature_file, final_func_smp_file, None, "function", main_folder, final_feature_file,
+			                   workflow, threads, time_equation, mem_equation)
+			workflow.add_task(
+				"fugassem_transpose < [depends[0]] > [targets[0]]",
+				depends = [final_feature_file, TrackedExecutable("fugassem_transpose")],
+				targets = [final_feature_file_trans],
+				cores = 1,
+				time = time_equation,
+				mem = mem_equation,
+				name = "fugassem_transpose")
+			if not evidence_type in feature_list:
+				feature_list[evidence_type] = os.path.basename(vector_file) + "\t" + final_feature_file_trans
+		# foreach vector file
+	# if exists vector list
+
+	## matrix-based evidence files (gene-by-gene network type of file)
+	mynum = 0
+	if matrix_list and matrix_list != "None":
+		matrixs = matrix_list.split(",")
+		for matrix_file in matrixs:
+			matrix_file = os.path.abspath(matrix_file)
+			mynum = mynum + 1
+			evidence_type = "matrix" + str(mynum)
+			config.logger.info("Preprocess matrix evidence: " + evidence_type + "\t" + os.path.basename(matrix_file))
+			final_evidence_file = os.path.join(main_folder, basename + "." + evidence_type + ".tsv")
+			if pair_flag == "yes":
+				coann_flag = "pair"
+			else:
+				coann_flag = "vector"
+			preprocess_evidence (matrix_file, final_gene_file, "no", pair_flag, main_folder, final_evidence_file,
+		                        evidence_list, evidence_type,
+		                        workflow, threads, time_equation, mem_equation)
+
+			final_evidence_matrix = os.path.join(main_folder, basename + "." + evidence_type + ".matrix.tsv")
+			convert_log = final_evidence_matrix + ".log"
+			workflow.add_task(
+				"fugassem_convert_coann -i [depends[0]] -s [args[0]] -f [args[1]] -t [args[2]] -o [targets[0]] > [args[3]] 2>&1",
+				depends = [final_evidence_file, TrackedExecutable("fugassem_convert_coann")],
+				targets = [final_evidence_matrix],
+				args = [evidence_type, coann_flag, "no", convert_log],
+				cores = 1,
+				time = time_equation,
+				mem = mem_equation,
+				name = "fugassem_convert_coann")
+
+			final_feature_file = os.path.join(main_folder, basename + "." + evidence_type + ".features.tsv")
+			tmp_feature_file = final_feature_file + ".tmp"
+			final_feature_file_trans = re.sub(".tsv$", ".trans.tsv", final_feature_file)
+			preprocess_feature(final_family_file, final_evidence_matrix, "yes", "matrix", main_folder, tmp_feature_file,
+		                workflow, threads, time_equation, mem_equation)
+			preprocess_feature(tmp_feature_file, final_func_smp_file, None, "function", main_folder, final_feature_file,
+		                workflow, threads, time_equation, mem_equation)
+			workflow.add_task(
+				"fugassem_transpose < [depends[0]] > [targets[0]]",
+				depends = [final_feature_file, TrackedExecutable("fugassem_transpose")],
+				targets = [final_feature_file_trans],
+				cores = 1,
+				time = time_equation,
+				mem = mem_equation,
+				name = "fugassem_transpose")
+			if not evidence_type in feature_list:
+				feature_list[evidence_type] = os.path.basename(matrix_file) + "\t" + final_feature_file_trans
+		# foreach matrix file
+	# if exists matrix list
+
+	# write evidence-features files into a list file
+	utilities.dict_to_file(feature_list, feature_list_file)
+	
+	return feature_list, final_func_smp_file, final_func_file, final_funclist_file
+
+	workflow.add_task ('sed -e 1d [depends[0]] | awk -F \"\\t\" \'{print $1}\' > [targets[0]]',
+			depends = [final_abund_file],
+			targets = [final_gene_file],
+	        cores = 1,
+	        name = "collect__genelist")
+
+	workflow.add_task ('less [depends[0]] | awk -F \"\\t\" \'{print $1}\' > [targets[0]]',
+			depends = [final_abund_file],
+			targets = [final_family_file],
+	        cores = 1,
+	        name = "collect__familylist")
+
+	return final_abund_file, final_gene_file, final_family_file
+
+
+def calculate_covariation (abund_file, corr_method, corr_para, na_para, output_folder, final_corr_file, final_abund_file, evidence_list, evidence_type,
+                           workflow, threads, time_equation, mem_equation):
+	"""
+	Calculate co-variation of abundance/expression per taxon
+
+	Args:
+		abund_file: refined abundance for one taxon.
+		corr_method: method for corrleation, e.g. Pearson | Pearson_adv | Spearman | Spearman_adv | Kendall
+		corr_para: other parameter setting for correlation calculation, e.g. "-z strict"
+		na_para: other parameter settting for imputing NaN, e.g. "-m zero -n 0.1"
+		output_folder (string): The path of the output folder.
+		final_corr_file: finalized correlation without NaN file for one taxon.
+		final_abund_file: finalized abundance without NaN file for one taxon.
+		evidence_list: a dictionary recording files of evidences
+		evidence_type: type of evidence
+		workflow (anadama2.workflow): An instance of the workflow class.
+		threads (int): The number of threads/cores for clustering to use.
+		time_equation (int): requred number of hours defined in the workflow.
+		mem_equation (int): requred number of GB defined in the workflow.
+
+	Requires:
+		refined abundance file for one taxon
+
+	Returns:
+		string: the file of correlation file.
+		string: the file of imputed-nan abundance file.
+
+	Example:
+		from anadama2 import Workflow
+		from fugassem.tasks.preprocessing import calculate_covariation
+
+		# create an anadama2 workflow instance
+		workflow=Workflow()
+
+		# add preprocess_function tasks
+		final_corr_file, final_abund_file = calculate_covariation (
+						abund_file,
+						corr_method,
+						corr_para,
+						na_para,
+						output_dir,
+						final_corr_file,
+						final_abund_file,
+						evidence_list,
+						evidence_type,
+						workflow,
+                        args.threads,
+                        args.time_equation,
+                        args.mem_equation)
+		# run the workflow
+		workflow.go()
+	"""
+
+	config.logger.info("###### Start calculate_covariation module #####")
+
+	# prep I/O files
+	main_folder = output_folder
+	if not os.path.isdir(main_folder):
+		os.system("mkdir -p " + main_folder)
+	final_corr_file = os.path.join(main_folder, os.path.basename(final_corr_file))
+	tmp_corr_file = re.sub(".tsv$", ".raw_corr.tsv", final_corr_file)
+	final_abund_file = os.path.join(main_folder, os.path.basename(final_abund_file))
+	corr_log = tmp_corr_file + ".corr.log"
+	corr_impute_log = final_corr_file + ".imputed_nan.log"
+	abund_impute_log = final_abund_file + ".imputed_nan.log"
+
+	workflow.add_task(
+		"fugassem_calculate_correlation -i [depends[0]] -m [args[0]] -c [args[1]] [args[2]] -o [targets[0]] > [args[3]] 2>&1",
+		depends = [abund_file, TrackedExecutable("fugassem_calculate_correlation")],
+		targets = [tmp_corr_file],
+		args = [corr_method, threads, corr_para, corr_log],
+		cores = threads,
+		time = time_equation,
+		mem = mem_equation,
+		name = "fugassem_calculate_correlation")
+
+	workflow.add_task(
+		"fugassem_impute_nan -i [depends[0]] [args[0]] -o [targets[0]] > [args[1]] 2>&1",
+		depends = [abund_file, TrackedExecutable("fugassem_impute_nan")],
+		targets = [final_abund_file],
+		args = [na_para, abund_impute_log],
+		cores = 1,
+		time = time_equation,
+		mem = mem_equation,
+		name = "fugassem_impute_nan")
+
+	workflow.add_task(
+		"fugassem_impute_nan -i [depends[0]] [args[0]] -o [targets[0]] > [args[1]] 2>&1",
+		depends = [tmp_corr_file, TrackedExecutable("fugassem_impute_nan")],
+		targets = [final_corr_file],
+		args = [na_para, corr_impute_log],
+		cores = 1,
+		time = time_equation,
+		mem = mem_equation,
+		name = "fugassem_impute_nan")
+
+	if not evidence_type in evidence_list:
+		evidence_list[evidence_type] = final_corr_file
+
+	return final_corr_file, final_abund_file
+
+
+def preprocess_evidence (evi_file, gene_file, header, pair, output_folder, final_evidence_file, evidence_list, evidence_type,
+                      workflow, threads, time_equation, mem_equation):
+	"""
+	Preprocess evidence for a list of genes
+
+	Args:
+		evi_file: raw function file for one taxon.
+		gene_file: gene list file
+		header: whether raw function file includes header
+		pair: whether raw evidence file includes gene pairs
+		output_folder (string): The path of the output folder.
+		final_evidence_file: finalized function file for one taxon.
+		evidence_list: a dictionary recording files of evidences
+		evidence_type: type of evidence
+		workflow (anadama2.workflow): An instance of the workflow class.
+		threads (int): The number of threads/cores for clustering to use.
+		time_equation (int): requred number of hours defined in the workflow.
+		mem_equation (int): requred number of GB defined in the workflow.
+
+	Requires:
+		raw function file for one taxon
+		raw gene list file for one taxon
+
+	Returns:
+		string: the file of refined function file.
+
+	Example:
+		from anadama2 import Workflow
+		from fugassem.tasks.preprocessing import preprocess_evidence
+
+		# create an anadama2 workflow instance
+		workflow=Workflow()
+
+		# add preprocess_function tasks
+		final_evidence_file = preprocess_evidence (
+						evi_file,
+						gene_file,
+						header,
+						pair,
+						output_dir,
+						final_evidence_file,
+						evidence_list,
+						evidence_type,
+						workflow,
+                        args.threads,
+                        args.time_equation,
+                        args.mem_equation)
+		# run the workflow
+		workflow.go()
+	"""
+
+	config.logger.info("###### Start preprocess_evidence module #####")
+
+	# prep I/O files
+	main_folder = output_folder
+	if not os.path.isdir(main_folder):
+		os.system("mkdir -p " + main_folder)
+	final_evidence_file = os.path.join(main_folder, os.path.basename(final_evidence_file))
+	evidence_log = final_evidence_file + ".prep_evidence.log"
+	
+	if pair == "yes":
+		mycmd = "fugassem_extract_feature_subset -i [depends[0]] -l [depends[1]] -t [args[0]] -o [targets[0]] --pair > [args[1]] 2>&1"
+	else:
+		mycmd = "fugassem_extract_feature_subset -i [depends[0]] -l [depends[1]] -t [args[0]] -o [targets[0]] > [args[1]] 2>&1"	
+	workflow.add_task (mycmd,
+			depends = [evi_file, gene_file, TrackedExecutable("fugassem_extract_feature_subset")],
+			targets = [final_evidence_file],
+			args = [header, evidence_log],
+			cores = 1,
+			time = time_equation,
+			mem = mem_equation,
+			name = "fugassem_extract_feature_subset")
+
+	if not evidence_type in evidence_list:
+		evidence_list[evidence_type] = final_evidence_file
+
+	return final_evidence_file
+
+
+def preprocess_function (func_file, gene_file, header, output_folder, final_func_file,
+                      workflow, threads, time_equation, mem_equation):
+	"""
+	Preprocess function for a list of genes
+
+	Args:
+		func_file: raw function file for one taxon.
+		gene_file: gene list file
+		header: whether raw function file includes header
+		output_folder (string): The path of the output folder.
+		final_func_file: finalized function file for one taxon.
+		workflow (anadama2.workflow): An instance of the workflow class.
+		threads (int): The number of threads/cores for clustering to use.
+		time_equation (int): requred number of hours defined in the workflow.
+		mem_equation (int): requred number of GB defined in the workflow.
+
+	Requires:
+		raw function file for one taxon
+		raw gene list file for one taxon
+
+	Returns:
+		string: the file of refined function file.
+
+	Example:
+		from anadama2 import Workflow
+		from fugassem.tasks.preprocessing import preprocess_function
+
+		# create an anadama2 workflow instance
+		workflow=Workflow()
+
+		# add preprocess_function tasks
+		func_file = preprocess_function (
+						func_file,
+						gene_file,
+						header,
+						output_dir,
+						final_func_file,
+						workflow,
+                        args.threads,
+                        args.time_equation,
+                        args.mem_equation)
+		# run the workflow
+		workflow.go()
+	"""
+
+	config.logger.info("###### Start preprocess_function module #####")
+
+	# prep I/O files
+	main_folder = output_folder
+	if not os.path.isdir(main_folder):
+		os.system("mkdir -p " + main_folder)
+	final_func_file = os.path.join(main_folder, os.path.basename(final_func_file))
+	func_log = final_func_file + ".prep_func.log"
+
+	workflow.add_task (
+		"fugassem_extract_feature_subset -i [depends[0]] -l [depends[1]] -t [args[0]] -o [targets[0]] > [args[1]] 2>&1",
+		depends = [func_file, gene_file, TrackedExecutable("fugassem_extract_feature_subset")],
+		targets = [final_func_file],
+		args = [header, func_log],
+		cores = 1,
+		time = time_equation,
+		mem = mem_equation,
+		name = "fugassem_extract_feature_subset")
+
+	return final_func_file
+
+
+def refine_function (func_file, header, go_level, func_type, go_obo, output_folder, final_func_file, final_func_smp_file, final_funclist_file,
+                     workflow, threads, time_equation, mem_equation):
+	"""
+	Refine raw functional annotation
+
+	Args:
+		func_file: raw function file for one taxon.
+		header: whether raw function file includes header
+		go_level: trimming option, only terms that are informative at a given level
+				[number OR fraction of genes]: Default: 20
+				[none]: skip trimming
+				[all]: keep all terms
+		func_type: function category, e.g. GO | BP | CC | MF
+		go_obo: go-basic obo file
+		output_folder (string): The path of the output folder.
+		final_func_file: finalized function file for one taxon.
+		final_func_file: finalized simplified function file for one taxon.
+		final_funclist_file: list file of functions, e.g. BP_function_list.txt
+		workflow (anadama2.workflow): An instance of the workflow class.
+		threads (int): The number of threads/cores for clustering to use.
+		time_equation (int): requred number of hours defined in the workflow.
+		mem_equation (int): requred number of GB defined in the workflow.
+
+	Requires:
+		raw function file for one taxon
+
+
+	Returns:
+		string: the file of refined function file.
+		string: the file of refined simplified function file.
+		string: list file of functions
+
+	Example:
+		from anadama2 import Workflow
+		from fugassem.tasks.preprocessing import refine_function
+
+		# create an anadama2 workflow instance
+		workflow=Workflow()
+
+		# add preprocess_function tasks
+		final_func_file, final_func_smp_file, final_funclist_file = refine_function (
+						func_file,
+						header = "no,
+						go_level = 20,
+						func_type = "GO",
+						go_obo,
+						output_dir,
+						final_func_file,
+						final_func_smp_file,
+						final_funclist_file,
+						workflow,
+                        args.threads,
+                        args.time_equation,
+                        args.mem_equation)
+		# run the workflow
+		workflow.go()
+	"""
+
+	config.logger.info("###### Start refine_function module #####")
+
+	# prep I/O files
+	main_folder = output_folder
+	if not os.path.isdir(main_folder):
+		os.system("mkdir -p " + main_folder)
+	func_info_file = os.path.join(main_folder, os.path.basename(func_file)) + "." + func_type + "_list.tsv" 
+	final_func_file = os.path.join(main_folder, os.path.basename(final_func_file))
+	final_func_smp_file = os.path.join(main_folder, os.path.basename(final_func_smp_file))
+	final_funclist_file = os.path.join(main_folder, os.path.basename(final_funclist_file))
+	func_log1 = final_func_file + ".geneontology.log"
+	func_log2 = final_func_file + ".refined_func.log"
+
+	if go_level == "none":
+		func_log1 = final_func_file + ".format_func.log"
+		workflow.add_task("ln -fs [depends[0]] [targets[0]]",
+		                  depends = [func_file],
+		                  targets = [final_func_file],
+		                  cores = 1,
+		                  name = "ln__final_function_file")
+		workflow.add_task("fugassem_format_function -i [depends[0]] -o [targets[0]] > [args[0]] 2>&1",
+		                  depends = [func_file, TrackedExecutable("fugassem_format_function")],
+		                  targets = [final_func_smp_file],
+						  args = [func_log1],
+		                  cores = 1,
+		                  name = "fugassem_format_function")
+	else:
+		if go_level == "all":
+			if func_type == "GO":
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --outfile [targets[0]] > [args[1]] 2>&1"
+			else:
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --namespace [args[0]] --outfile [targets[0]] > [args[1]] 2>&1"
+			workflow.add_task (mycmd,
+				depends = [go_obo, func_file, TrackedExecutable("fugassem_geneontology")],
+				targets = [func_info_file],
+				args = [func_type, func_log1],
+				cores = threads,
+				time = time_equation,
+				mem = mem_equation,
+				name = "fugassem_geneontology")
+		else:
+			if func_type == "GO":
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --informative [args[1]] --outfile [targets[0]] > [args[2]] 2>&1"
+			else:
+				mycmd = "fugassem_geneontology [depends[0]] --mapping [depends[1]] --namespace [args[0]] --informative [args[1]] --outfile [targets[0]] > [args[2]] 2>&1"
+			workflow.add_task (mycmd,
+				depends = [go_obo, func_file, TrackedExecutable("fugassem_geneontology")],
+				targets = [func_info_file],
+				args = [func_type, go_level, func_log1],
+				cores = threads,
+				time = time_equation,
+				mem = mem_equation,
+				name = "fugassem_geneontology")
+
+		workflow.add_task(
+			"fugassem_refine_anns -a [depends[0]] -l [depends[1]] -t [args[0]] -o [targets[0]] > [args[1]] 2>&1",
+			depends = [func_file, func_info_file, TrackedExecutable("fugassem_refine_anns")],
+			targets =[final_func_file, final_func_smp_file],
+			args = [func_type, func_log2],
+			cores = 1,
+			time = time_equation,
+			mem = mem_equation,
+			name = "fugassem_refine_anns")
+
+	workflow.add_task(
+		'sed -e \'/familyID\\t/d\' [depends[0]] | awk -F \"\\t\" \'{print $2}\' | sort | uniq > [targets[0]]',
+		depends = [final_func_smp_file],
+		targets = [final_funclist_file],
+		cores = 1,
+		name = "collect__function_list")
+
+	return final_func_file, final_func_smp_file, final_funclist_file
+
+
+
+def preprocess_feature (raw_file, new_file, header, feature_type, output_folder, final_feature_file,
+                      workflow, threads, time_equation, mem_equation):
+	"""
+	Preprocess features for machine learning
+
+	Args:
+		func_file: raw feature file.
+		new_file: new feature file for combining.
+		header: whether the new-feature file has header or not [Default: None].
+		feature_type: data type of new feature, choices = ["matrix", "homology", "vector", "function"]
+		output_folder (string): The path of the output folder.
+		final_feature_file: finalized feature file.
+		workflow (anadama2.workflow): An instance of the workflow class.
+		threads (int): The number of threads/cores for clustering to use.
+		time_equation (int): requred number of hours defined in the workflow.
+		mem_equation (int): requred number of GB defined in the workflow.
+
+	Requires:
+		raw function file for one taxon
+		raw gene list file for one taxon
+
+	Returns:
+		string: the file of refined function file.
+
+	Example:
+		from anadama2 import Workflow
+		from fugassem.tasks.preprocessing import preprocess_feature
+
+		# create an anadama2 workflow instance
+		workflow=Workflow()
+
+		# add preprocess_function tasks
+		final_feaure_file = preprocess_feature (
+						raw_file,
+						new_file,
+						header,
+						feature_type,
+						output_dir,
+						final_feature_file,
+						workflow,
+                        args.threads,
+                        args.time_equation,
+                        args.mem_equation)
+		# run the workflow
+		workflow.go()
+	"""
+
+	config.logger.info("###### Start preprocess_feature module #####")
+
+	# prep I/O files
+	main_folder = output_folder
+	if not os.path.isdir(main_folder):
+		os.system("mkdir -p " + main_folder)
+	final_feature_file = os.path.join(main_folder, os.path.basename(final_feature_file))
+	feature_log = final_feature_file + ".prep_feature.log"
+
+	workflow.add_task (
+		"fugassem_collect_features -r [depends[0]] -n [depends[1]] -f [args[0]] -t [args[1]] -o [targets[0]] > [args[2]] 2>&1",
+		depends = [raw_file, new_file, TrackedExecutable("fugassem_collect_features")],
+		targets = [final_feature_file],
+		args = [feature_type, header, feature_log],
+		cores = 1,
+		time = time_equation,
+		mem = mem_equation,
+		name = "fugassem_collect_features")
+
+	return final_feature_file
+
+
+def preprocessing_task (abund_file, gene_file, func_file, go_level, func_type, go_obo,
+                min_prev, min_abund, min_detected, zero_flt, taxa_abund_file, corr_method, corr_para, na_para,
+                vector_list, matrix_list, pair_flag,
+                output_folder, basename, feature_list, feature_list_file,
+                workflow, threads, time_equation, mem_equation, bypass_coexp):
+	"""
+	Preprocess annotated function and evidences for a list of genes per taxon
+
+	Args:
+		abund_file: raw abundance file for one taxon.
+		gene_file: gene list file for one taxon.
+		func_file: raw function file for one taxon.
+		go_level: trimming option, only terms that are informative at a given level
+				[number OR fraction of genes]: Default: 20
+				[none]: skip trimming
+				[all]: keep all terms
+		func_type: function category, e.g. GO | BP | CC | MF
+		go_obo: go-basic obo file
+		min_prev: the minimum prevalence per gene [ Default: 0 ].
+		min_abund: the minimum detected abundance for each gene [ Default: 0 ].
+		min_detected: the minimum detected value for each covariate feature [ Default: 0 ]
+		zero_flt: pre-filtering approach [ Default: None ], choices: ["lenient", "semi-strict", "strict", "None"]
+		taxa_abund_file: species abundance table used for technical-zero filtering [ Default: None ]
+		corr_method: method for corrleation, e.g. Pearson | Pearson_adv | Spearman | Spearman_adv | Kendall
+		corr_para: other parameter setting for correlation calculation, e.g. "-z strict"
+		na_para: other paramter setting for imputing NaN, e.g. "-m zero -n 0.1"
+		vector_list: [string] comma separated list of vector-based evidence files
+		marix_list: [string] comma separated list of matrix-based evidence files
+		output_folder (string): The path of the output folder.
+		feature_list: a directory of feature files.
+		feature_list_file: a list file of features files.
+		basename: basename for output files.
+		workflow (anadama2.workflow): An instance of the workflow class.
+		threads (int): The number of threads/cores for clustering to use.
+		time_equation (int): requred number of hours defined in the workflow.
+		mem_equation (int): requred number of GB defined in the workflow.
+
+	Requires:
+		raw abundance file for one taxon
+		raw function file for one taxon
+		raw gene list file for one taxon
+
+	Returns:
+		string: the file of refined function file.
+		string: the file of refined simplified function file.
+		string: list file of functions
+		dict: a dictionary of finalized feature file for machine learning
+
+	Example:
+		from anadama2 import Workflow
+		from fugassem.tasks.preprocessing import preprocessing_task
+
+		# create an anadama2 workflow instance
+		workflow=Workflow()
+
+		# add preprocess_function tasks
+		feature_list, final_func_file, final_func_smp_file, final_funclist_file = preprocessing_task (
+						abund_file,
+						gene_file,
+						func_file,
+						go_level = 20,
+						func_type = "GO",
+						go_obo,
+						min_prev = 0,
+						min_abund = 0,
+						min_detected = 0,
+						zero_flt = None,
+						taxa_abund_file = None,
+						corr_method = "Pearson",
+						corr_para,
+						na_para
+						vector_list,
+						matrix_list,
+						pair_flag,
+						output_dir,
+						basename,
+						feature_list,
+						feature_list_file,
+						workflow,
+                        args.threads,
+                        args.time_equation,
+                        args.mem_equation)
+		# run the workflow
+		workflow.go()
+	"""
+
+	config.logger.info("###### Start preprocessing_task module #####")
+
+	## prep I/O files
+	main_folder = output_folder
+	if not os.path.isdir(main_folder):
+		os.system("mkdir -p " + main_folder)
+
+	# abundance
+	final_gene_file = os.path.join(main_folder, basename + ".final_genelist.txt")
+	refined_abund_file = os.path.join(main_folder, basename + ".refined_abunds.tsv")
+	final_abund_file = os.path.join(main_folder, basename + ".final_abunds.tsv")
+	final_corr_file = os.path.join(main_folder, basename + ".corr_abunds.tsv")
+	final_family_file = os.path.join(main_folder, basename + ".proteinfamilies.tsv")
+
+	# annotated function
+	final_func_file = os.path.join(main_folder, basename + ".final_funcs.tsv")
+	final_func_smp_file = os.path.join(main_folder, basename + ".final_funcs.simple.tsv")
+	final_funclist_file = os.path.join(main_folder, basename + ".final_funclist.txt")
+
+	evidence_list = {}
+	## refine abundance
+	refine_abundance (abund_file, gene_file, min_prev, min_abund, min_detected, zero_flt,
+	                taxa_abund_file, main_folder, refined_abund_file, final_gene_file, final_family_file,
+	                workflow, threads, time_equation, mem_equation)
+
+	## calculate co-variation
+	if not bypass_coexp or bypass_coexp == "False":
+		calculate_covariation (refined_abund_file, corr_method, corr_para, na_para, main_folder, final_corr_file, final_abund_file,
 	                      evidence_list, "exp",
 	                      workflow, threads, time_equation, mem_equation)
 	else:	

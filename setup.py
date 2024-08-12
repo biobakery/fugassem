@@ -76,7 +76,7 @@ import re
 import time
 
 
-VERSION = "0.3.6"
+VERSION = "0.3.7"
 AUTHOR = "FUGAsseM Development Team"
 MAINTAINER = "Yancong Zhang"
 MAINTAINER_EMAIL = "zhangyc201211@gmail.com"
