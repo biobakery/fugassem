@@ -57,8 +57,8 @@ def get_args ():
 	                    choices = ["zero", "mean"],
 						default = "zero")
 	parser.add_argument('-n', "--nonna",
-	                    help = '[OPTIONAL] minimum fraction of non-NA per feature [ Default: 0.1]',
-						default = 0.1)
+	                    help = '[OPTIONAL] minimum fraction of non-NA per feature [ Default: 0]',
+						default = 0)
 	parser.add_argument('-o', "--output",
 	                    help = 'output refined file',
 	                    required = True)

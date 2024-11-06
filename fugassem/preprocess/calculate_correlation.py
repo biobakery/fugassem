@@ -74,14 +74,14 @@ def parse_arguments():
 			   "lenient: ignore features that are zeros across all samples\n"
 			   "strict: ignore the samples where one of the paired features is zero\n",
 		choices = ["none", "lenient", "strict"],
-		default = "strict")
+		default = "none")
 	parser.add_argument(
 		"-t", "--transform",
 		help = "[OPTIONAL] transform into log-scale when doing correlation [ Default: True ]\n",
 		default = True)
 	parser.add_argument(
 		"-n", "--merge",
-		help = "[OPTIONAL] merge method for advanced correlation [ Default: harmonic_mean ]\n",
+		help = "[OPTIONAL] merge method for advanced correlation [ Default: arithmetic_mean ]\n",
 		choices = ["arithmetic_mean", "harmonic_mean", "median", "max", "min", "sum"],
 		default = "arithmetic_mean")
 	parser.add_argument(
