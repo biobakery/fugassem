@@ -74,9 +74,9 @@ def get_args():
 	                      desc = "minimum detected value for each covariate taxon [ Default: 0 ]",
 	                      default = 0)
 	workflow.add_argument("filtering-zero",
-	                      desc = "method for pre-filtering zeros in normalized-abund MTX [ Default: None ]",
-	                      choices = ["lenient", "semi-strict", "strict", "None"],
-	                      default = "None")
+	                      desc = "method for pre-filtering zeros in normalized-abund MTX [ Default: \"none\" ]",
+	                      choices = ["lenient", "semi-strict", "strict", "none", "None"],
+	                      default = "none")
 	workflow.add_argument("covariate-taxon",
 	                      desc = "covariate-taxon abundance table used for pre-filtering zeros [ Default: None ]",
 	                      default = None)
@@ -85,11 +85,11 @@ def get_args():
 	                      choices = ["Pearson", "Pearson_adv", "Spearman", "Spearman_adv", "Kendall"],
 	                      default = "Pearson")
 	workflow.add_argument("correlation-para",
-	                      desc = "other parameter setting for calculate_correlation function [ Default: "" ]",
-	                      default = "")
+	                      desc = "other parameter setting for calculate_correlation function [ Default: \"-z none\" ]",
+	                      default = "\"-z none\"")
 	workflow.add_argument("nan-para",
-	                      desc = "other parameter settting for imputing NaN [ Default: \"-m zero -n 0.1\" ]",
-	                      default = "\"-m zero -n 0.1\"")
+	                      desc = "other parameter settting for imputing NaN [ Default: \"-m zero -n 0\" ]",
+	                      default = "\"-m zero -n 0\"")
 	workflow.add_argument("go-level",
 	                      desc = "GO informative level used for trimming terms that are informative at a given level [ Default: 50 ]:\n"
 	                             "<number OR fraction of genes>: specify numeric level for trimming\n"

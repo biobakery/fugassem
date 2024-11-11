@@ -51,9 +51,7 @@ def remove_zero_values_log(x, y, method):
 	Given x and y all in numpy arrays, remove pairs that contain zero values and log transformed
 	'''
 	zeros = np.array([False for i in range(len(x))])
-	if method == "none":
-		return (x, y)
-	if method == "lenient":
+	if method == "none" or method == "lenient":
 		if np.logical_or(sum(x) == 0, sum(y) == 0):
 			return (np.array([]), np.array([]))
 	if method == "semi_strict":

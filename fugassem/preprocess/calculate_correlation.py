@@ -69,7 +69,7 @@ def parse_arguments():
 		default = "Pearson")
 	parser.add_argument(
 		"-z", "--zero",
-		help = "[OPTIONAL] method to handle zeros for correlation calculation [ Default: none ]:\n"
+		help = "[OPTIONAL] method to handle zeros for correlation calculation [ Default: \"none\" ]:\n"
 			   "none: do not apply filtering\n"
 			   "lenient: ignore features that are zeros across all samples\n"
 			   "strict: ignore the samples where one of the paired features is zero\n",
@@ -315,8 +315,8 @@ def main():
 	except ValueError:
 		config.logger.info ("Error! Please use valid number of threads!")
 		cores = 1
-	if args_value.zero == "none":
-		args_value.transform = False
+	#if args_value.zero == "none":
+	#	args_value.transform = False
 	if args_value.transform == "True":
 		args_value.transform = True
 	if args_value.transform == "False":

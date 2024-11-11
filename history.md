@@ -2,9 +2,10 @@
 # FUGAsseM History #
 
 
-## v0.3.7 2024-08-01 ##
-* Tweak nan imputation 
+## v0.3.7 2024-11-11 ##
+* Updated nan imputation 
 * Improved correlation calculation
+* Updated default setting
 
 ## v0.3.6 2024-05-22 ##
 * Added option for hyperparameter tuning RF

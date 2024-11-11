@@ -61,9 +61,9 @@ def parse_arguments():
 		default = None)
 	parser.add_argument(
 		"-m", "--method",
-		help = "[OPTIONAL] pre-filtering approach [ Default: None ] \n",
-		choices = ["lenient", "semi-strict", "strict", "None"],
-		default = "None")
+		help = "[OPTIONAL] pre-filtering approach [ Default: \"none\" ] \n",
+		choices = ["lenient", "semi-strict", "strict", "none", "None"],
+		default = "none")
 	parser.add_argument(
 		"-a", "--abund",
 		help = "[OPTIONAL] the minimum abundance for each feature [ Default: 0 ] \n",
@@ -202,7 +202,7 @@ def filter_non_detected_sample (header1, header2, header3, abunds, abunds_raw, a
 					refined_feature[myid[0]] = {}
 				for mys in raw_info[mykey].keys():
 					refined_feature[myid[0]][mys] = ""
-		if flt_method == "None" or not flt_method:	
+		if flt_method == "none" or flt_method == "None" or not flt_method:	
 			if not myid[0] in refined_feature:
 				refined_feature[myid[0]] = {}
 			for mys in raw_info[mykey].keys():
@@ -365,7 +365,7 @@ def main():
 	if args_value.prev:
 		abunds = filter_low_prevalent_feature (abunds, abunds_raw, args_value.abund, args_value.prev)
 	if args_value.method:
-		if args_value.covariate and args_value.covariate != "None":
+		if args_value.covariate and args_value.covariate != "None" and args_value.covariate != "none":
 			abunds_cov, header3 = utilities.read_data_from_file(args_value.covariate)
 		else:
 			config.logger.info ("WARNING! No covariate file is provied, so skip filtering genes based on covariate abundance.")
