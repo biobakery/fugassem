@@ -6,6 +6,7 @@
 * Updated nan imputation 
 * Improved correlation calculation
 * Updated default setting
+* Tweaked stratified_abundance function
 
 ## v0.3.6 2024-05-22 ##
 * Added option for hyperparameter tuning RF

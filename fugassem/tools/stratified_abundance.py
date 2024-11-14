@@ -30,7 +30,7 @@ import os
 import os.path
 import re
 import argparse
-
+import math
 
 try:
 	from fugassem import config
@@ -220,7 +220,10 @@ def sum_abundance (taxa, taxa_num, flt_presence, infile, outfile):
 			if re.search("\.", mycount):
 				outs[myclust][mys] = outs[myclust][mys] + float(mycount)
 			else:
-				outs[myclust][mys] = outs[myclust][mys] + int(mycount)
+				if not math.isnan(float(mycount)):
+					outs[myclust][mys] = outs[myclust][mys] + int(mycount)
+				else:
+					outs[myclust][mys] = mycount
 			myindex = myindex + 1
 		# foreach sample
 	# foreach line
