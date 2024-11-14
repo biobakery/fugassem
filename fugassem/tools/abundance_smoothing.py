@@ -148,9 +148,9 @@ def smooth_abundance (smooth_method, trans_method, prevalence_flt, abufile, fixe
 	
 	myname = os.path.basename(abufile)
 	mydir = os.path.dirname(outfile)
-	outfile1 = re.sub(".tsv", ".refined.tsv", outfile)
+	outfile1 = re.sub(".tsv", ".smooth_refined.tsv", outfile)
 	#outfile1 = os.path.join(mydir, outfile1)
-	outfile2 = re.sub(".tsv", ".transformed.tsv", outfile)
+	outfile2 = re.sub(".tsv", ".smooth_transformed.tsv", outfile)
 	open_file = open(abufile, "r")
 	open_out = open(outfile, "w")
 	open_out1 = open(outfile1, "w")
