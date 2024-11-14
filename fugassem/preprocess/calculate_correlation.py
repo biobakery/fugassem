@@ -77,8 +77,9 @@ def parse_arguments():
 		default = "none")
 	parser.add_argument(
 		"-t", "--transform",
-		help = "[OPTIONAL] transform into log-scale when doing correlation [ Default: True ]\n",
-		default = True)
+		help = "[OPTIONAL] transform into log-scale when doing correlation [ Default: log ]\n",
+		choices = ["log", "log2", "log10", "none"],
+		default = "log")
 	parser.add_argument(
 		"-n", "--merge",
 		help = "[OPTIONAL] merge method for advanced correlation [ Default: arithmetic_mean ]\n",
@@ -317,10 +318,10 @@ def main():
 		cores = 1
 	#if args_value.zero == "none":
 	#	args_value.transform = False
-	if args_value.transform == "True":
-		args_value.transform = True
-	if args_value.transform == "False":
-		args_value.transform = False
+	#if args_value.transform == "True":
+	#	args_value.transform = True
+	#if args_value.transform == "False":
+	#	args_value.transform = False
 	corr, p_value, se = pairwise_correlation (abunds, samples, args_value.method, args_value.merge, args_value.zero, args_value.transform, cores)
 
 	## rank correlation ##

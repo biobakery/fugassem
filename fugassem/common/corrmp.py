@@ -10,6 +10,7 @@ import math
 from scipy.stats import pearsonr
 from scipy.stats import spearmanr
 from sklearn.metrics.pairwise import pairwise_distances
+import math
 
 shared_variables_dictionary = {}
 
@@ -46,7 +47,7 @@ def remove_zero_values(x, y, method):
 	return (x, y)
 
 
-def remove_zero_values_log(x, y, method):
+def remove_zero_values_log(x, y, method, log_method="log"):
 	'''
 	Given x and y all in numpy arrays, remove pairs that contain zero values and log transformed
 	'''
@@ -70,7 +71,14 @@ def remove_zero_values_log(x, y, method):
 	y = np.where(y == 0, s_y, y)
 	if len(x) < 2 or len(y) < 2:
 		return (np.array([]), np.array([]))
-	return (np.log(x), np.log(y))
+	if log_method == "log":
+		return (np.log(x), np.log(y))
+	elif log_method == "log2":
+		return (np.log2(x), np.log2(y))
+	elif log_method == "log10":
+		return (np.log10(x), np.log10(y))
+	else:
+		return (np.log(x), np.log(y))
 
 
 def jaccard(x):
@@ -97,16 +105,16 @@ class NaNCorrMp:
 		shared_variables_dictionary['X_se_shape'] = X_corr_shape
 
 	@staticmethod
-	def calculate(X: ArrayLike, n_jobs: int = -1, chunks: int = 500, zero: str = "none", transform: bool = True, corr: str = "pearson") -> ArrayLike:
+	def calculate(X: ArrayLike, n_jobs: int = -1, chunks: int = 500, zero: str = "none", transform: str = "log", corr: str = "pearson") -> ArrayLike:
 		return NaNCorrMp._calculate(X=X, n_jobs=n_jobs, chunks=chunks, add_p_values=False, zero=zero, transform=transform, corr=corr)
 
 	@staticmethod
-	def calculate_with_pvalue(X: ArrayLike, n_jobs: int = -1, chunks: int = 500, zero: str = "none", transform: bool = True, corr: str = "pearson") -> Tuple[
+	def calculate_with_pvalue(X: ArrayLike, n_jobs: int = -1, chunks: int = 500, zero: str = "none", transform: str = "log", corr: str = "pearson") -> Tuple[
 		ArrayLike, ArrayLike]:
 		return NaNCorrMp._calculate(X=X, n_jobs=n_jobs, chunks=chunks, add_p_values=True, zero=zero, transform=transform, corr=corr)
 
 	@staticmethod
-	def _calculate(X: ArrayLike, n_jobs: int, chunks: int, add_p_values: bool, zero: str, transform: bool, corr: str) -> Union[
+	def _calculate(X: ArrayLike, n_jobs: int, chunks: int, add_p_values: bool, zero: str, transform: str, corr: str) -> Union[
 		ArrayLike, Tuple[ArrayLike, ArrayLike]]:
 		X_array = X.to_numpy(dtype=np.float64, copy=True).transpose() if type(X) == pd.DataFrame else X
 		X_raw = RawArray(ctypes.c_double, X_array.shape[0] * X_array.shape[1])
@@ -193,10 +201,10 @@ class NaNCorrMp:
 			return X_np, X_corr_np, finite_mask, X_p_value_np
 
 	@staticmethod
-	def _corr(x: np.ndarray, y: np.ndarray, zero: str, transform: bool, corr_m: str) -> Tuple[float, float, np.ndarray]:
+	def _corr(x: np.ndarray, y: np.ndarray, zero: str, transform: str, corr_m: str) -> Tuple[float, float, np.ndarray]:
 		x, y = remove_missing_values(x, y)
-		if transform:
-			x, y = remove_zero_values_log(x, y, zero)
+		if transform != "none":
+			x, y = remove_zero_values_log(x, y, zero, transform)
 		else:
 			x, y = remove_zero_values(x, y, zero)
 		if len(x) < 5:
@@ -222,7 +230,7 @@ class NaNCorrMp:
 		return corr, pval
 
 	@staticmethod
-	def _set_correlation_with_p_value(arguments: Tuple[int, int, str, bool, str]) -> None:
+	def _set_correlation_with_p_value(arguments: Tuple[int, int, str, str, str]) -> None:
 		j, i, zero, transform, corr_m = arguments
 		X_np, X_corr_np, finite_mask, X_p_value_np = NaNCorrMp._get_global_variables(get_p_value=True)
 		finites = finite_mask[i] & finite_mask[j]
@@ -250,12 +258,12 @@ class NaNCorrMp:
 
 	## new functions for correlation with corr, pvalue, SE
 	@staticmethod
-	def calculate_with_pvalue_se (X: ArrayLike, n_jobs: int = -1, chunks: int = 500, zero: str = "none", transform: bool = True, corr: str = "pearson") -> Tuple[
+	def calculate_with_pvalue_se (X: ArrayLike, n_jobs: int = -1, chunks: int = 500, zero: str = "none", transform: str = "log", corr: str = "pearson") -> Tuple[
 		ArrayLike, ArrayLike]:
 		return NaNCorrMp._calculate_se(X=X, n_jobs=n_jobs, chunks=chunks, add_p_values=True, zero=zero, transform=transform, corr=corr)
 
 	@staticmethod
-	def _calculate_se(X: ArrayLike, n_jobs: int, chunks: int, add_p_values: bool, zero: str, transform: bool, corr: str) -> Union[
+	def _calculate_se(X: ArrayLike, n_jobs: int, chunks: int, add_p_values: bool, zero: str, transform: str, corr: str) -> Union[
 		Tuple[ArrayLike, ArrayLike], Tuple[ArrayLike, ArrayLike, ArrayLike]]:
 		X_array = X.to_numpy(dtype=np.float64, copy=True).transpose() if type(X) == pd.DataFrame else X
 		X_raw = RawArray(ctypes.c_double, X_array.shape[0] * X_array.shape[1])
@@ -317,7 +325,7 @@ class NaNCorrMp:
 			return X_corr_np, X_se_np
 
 	@staticmethod
-	def _set_correlation_with_pvalue_se(arguments: Tuple[int, int, str, bool, bool]) -> None:
+	def _set_correlation_with_pvalue_se(arguments: Tuple[int, int, str, str, bool]) -> None:
 		j, i, zero, transform, add_p_values = arguments
 		X_np, X_corr_np, finite_mask, X_p_value_np, X_se_np = NaNCorrMp._get_global_variables_se(get_p_value=True)
 		finites = finite_mask[i] & finite_mask[j]
@@ -351,10 +359,10 @@ class NaNCorrMp:
 			return X_np, X_corr_np, finite_mask, X_p_value_np, X_se_np
 
 	@staticmethod
-	def _corr_linregress(x: np.ndarray, y: np.ndarray, zero: str, transform: bool) -> float:
+	def _corr_linregress(x: np.ndarray, y: np.ndarray, zero: str, transform: str) -> float:
 		x, y = remove_missing_values(x, y)
-		if transform:
-			x, y = remove_zero_values_log(x, y, zero)
+		if transform != "none":
+			x, y = remove_zero_values_log(x, y, zero, transform)
 		else:
 			x, y = remove_zero_values(x, y, zero)
 		if len(x) < 5:
