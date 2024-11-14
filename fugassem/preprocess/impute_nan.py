@@ -54,7 +54,7 @@ def get_args ():
 	                    required = True)
 	parser.add_argument('-m', "--method",
 	                    help = '[REQUIRED] methods for imputation',
-	                    choices = ["zero", "mean"],
+	                    choices = ["zero", "mean", "none"],
 						default = "zero")
 	parser.add_argument('-n', "--nonna",
 	                    help = '[OPTIONAL] minimum fraction of non-NA per feature [ Default: 0]',
