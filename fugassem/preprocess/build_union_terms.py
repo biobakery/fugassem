@@ -436,6 +436,16 @@ def main():
 		if len(args_value.namespace) == 1:
 			basename = args_value.namespace[0]
 
+	if args_value.prev:
+		if args_value.prev == "None" or args_value.prev == "none":
+			args_value.prev = None
+	if args_value.coverage:
+		if args_value.coverage == "None" or args_value.coverage == "none":
+			args_value.coverage = None
+	if args_value.number:
+		if args_value.number == "None" or args_value.number == "none":
+			args_value.number = None
+
 	config.logger.info ("Start build_union_terms process ......")
 	
 	## Get info ##

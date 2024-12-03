@@ -63,8 +63,8 @@ def parse_cli_arguments ():
 	                      choices = ["MSP", "Terminal", "Species", "Genus", "Family", "Order", "Class", "Phylum"],
 	                      default = "Species")
 	workflow.add_argument("minimum-prevalence",
-	                      desc = "minimum prevalence of each gene/protein family in normalized-abund MTX [ Default: 0 ]",
-	                      default = 0)
+	                      desc = "minimum prevalence of each gene/protein family in normalized-abund MTX [ Default: None ]",
+	                      default = None)
 	workflow.add_argument("minimum-abundance",
 	                      desc = "minimum abundance of each gene/protein family in normalized-abund MTX [ Default: 0 ]",
 	                      default = 0)
@@ -72,11 +72,11 @@ def parse_cli_arguments ():
 	                      desc = "minimum detected value for each covariate taxon [ Default: 0 ]",
 	                      default = 0)
 	workflow.add_argument("minimum-coverage",
-	                      desc = "minimum fraction of annotated genes per taxon [ Default: 0 ]",
-	                      default = 0)
+	                      desc = "minimum fraction of annotated genes per taxon [ Default: None ]",
+	                      default = None)
 	workflow.add_argument("minimum-number",
-	                      desc = "minimum number of total genes per taxon [ Default: 0 ]",
-	                      default = 0)
+	                      desc = "minimum number of total genes per taxon [ Default: None ]",
+	                      default = None)
 	workflow.add_argument("filtering-zero",
 	                      desc = "method for pre-filtering zeros in normalized-abund MTX [ Default: \"none\" ]",
 	                      choices = ["lenient", "semi-strict", "strict", "none", "None"],
@@ -197,10 +197,8 @@ def fugassem_main (workflow):
 		try:
 			args.minimum_prevalence = float(args.minimum_prevalence)
 		except:
-			config.logger.info ("Please provide valid number of minimum prevalence by --minimum-prevalence! Otherwise, will set it as 0.01")
-			args.minimum_prevalence = 0.01
-	else:
-		args.minimum_prevalence = 0.01
+			config.logger.info ("Please provide valid number of minimum prevalence by --minimum-prevalence! Otherwise, will set it as 0")
+			args.minimum_prevalence = 0
 	if args.minimum_abundance:
 		try:
 			args.minimum_abundance = float(args.minimum_abundance)
@@ -221,18 +219,14 @@ def fugassem_main (workflow):
 		try:
 			args.minimum_coverage = float(args.minimum_coverage)
 		except:
-			config.logger.info ("Please provide valid number of minimum coverage by --minimum-coverage! Otherwise, will set it as 0.01")
-			args.minimum_coverage = 0.01
-	else:
-		args.minimum_coverage = 0.01
+			config.logger.info ("Please provide valid number of minimum coverage by --minimum-coverage! Otherwise, will set it as 0")
+			args.minimum_coverage = 0
 	if args.minimum_number:
 		try:
 			args.minimum_number = int(args.minimum_number)
 		except:
-			config.logger.info ("Please provide valid number of minimum number by --minimum-number! Otherwise, will set it as 10")
-			args.minimum_number = 10
-	else:
-		args.minimum_number = 10
+			config.logger.info ("Please provide valid number of minimum number by --minimum-number! Otherwise, will set it as 0")
+			args.minimum_number = 0
 	
 	if args.matrix_pair:
 		pair_flag = "yes"

@@ -348,6 +348,16 @@ def main():
 	args_value = parse_arguments()
 
 	config.logger.info ("Start split_taxa process ......")
+    
+	if args_value.prev:
+		if args_value.prev == "None" or args_value.prev == "none":
+			args_value.prev = None
+	if args_value.coverage:
+		if args_value.coverage == "None" or args_value.coverage == "none":
+			args_value.coverage = None
+	if args_value.number:
+		if args_value.number == "None" or args_value.number == "none":
+			args_value.number = None
 
 	## Get info ##
 	abunds, header = utilities.read_data_from_file (args_value.input)

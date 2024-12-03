@@ -356,6 +356,13 @@ def output_abunds (abunds, header, outfile):
 
 def main():
 	args_value = parse_arguments()
+    
+	if args_value.prev:
+		if args_value.prev == "None" or args_value.prev == "none":
+			args_value.prev = None
+	if args_value.coverage:
+		if args_value.coverage == "None" or args_value.coverage == "none":
+			args_value.coverage = None
 
 	config.logger.info ("Start refine_abunds process ......")
 
