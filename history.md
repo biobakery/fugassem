@@ -1,13 +1,15 @@
 
 # FUGAsseM History #
 
+## v0.3.8 2025-03-20 ##
+* Fixed issues about the compatibility for python3.12 
+* Updated conda installation
 
 ## v0.3.7 2024-11-11 ##
 * Updated nan imputation 
 * Improved correlation calculation
 * Updated default setting
 * Tweaked stratified_abundance function
-* Updated conda installation
 
 ## v0.3.6 2024-05-22 ##
 * Added option for hyperparameter tuning RF

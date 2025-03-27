@@ -55,7 +55,10 @@ class table:
             self.source = "<list of lists>"
         else:
             with try_open( source ) if isinstance( source, str ) else sys.stdin as fh:
-                self.data = [row for row in csv.reader( fh, delimiter="\t", quotechar="", quoting=csv.QUOTE_NONE )]
+                try:
+                    self.data = [row for row in csv.reader( fh, delimiter="\t", quotechar="", quoting=csv.QUOTE_NONE )]
+                except:
+                    self.data = [row for row in csv.reader( fh, delimiter="\t", quotechar='"', quoting=csv.QUOTE_NONE )]
                 self.source = source if source is not None else "<stdin>"
         # track transposition status
         self.istransposed=False
