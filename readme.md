@@ -89,16 +89,16 @@ You only need to do **any one** of the following options to install the FUGAsseM
 
 * Step1： Add conda channels
 
-```
-conda config --add channels defaults
-conda config --add channels bioconda
-conda config --add channels conda-forge
-conda config --add channels biobakery
-```
+	```
+	conda config --add channels defaults
+	conda config --add channels bioconda
+	conda config --add channels conda-forge
+	conda config --add channels biobakery
+	```
 
 * Step2: Create a conda environment with fugassem installed
 
-`$ conda create -n fugassem_env biobakery::fugassem`
+	`$ conda create -n fugassem_env biobakery::fugassem`
 
 
 **Option 2: Installing with pip**
