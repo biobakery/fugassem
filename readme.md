@@ -77,8 +77,7 @@ Bypass options:
 
 ## Install FUGAsseM
 ### Requirements
-1. [Python](https://www.python.org/) (version >= 3.7, requiring numpy, pandas
-multiprocessing, sklearn, matplotlib, scipy, goatools, statistics python packages; *tested 3.7, 3,12*)
+1. [Python](https://www.python.org/) (version >= 3.7, requiring numpy, pandas, multiprocessing, sklearn, matplotlib, scipy, goatools, statistics, tying python packages; *tested 3.7, 3,12*)
 2. [AnADAMA2](https://huttenhower.sph.harvard.edu/anadama2) (version >= 0.8.0; *tested 0.8.0, 0.10.0*)
 
 
