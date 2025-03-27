@@ -7,7 +7,7 @@
 
 **If you use FUGAsseM, please cite our manuscript:**
 
-Yancong Zhang, Amrisha Bhosle, Sena Bae, Kelly Eckenrode, Xueying (Sonia) Huang, Jingjing Tang, Danylo Lavrentovich, Lana Awad, Ji Hua, Xochitl C. Morgan, Andy Krueger, Wendy S. Garrett, Eric A. Franzosa\*, Curtis Huttenhower\*. "Predicting functions of uncharacterized gene products in microbiomes" *[In preparation]*.
+Yancong Zhang\*, Amrisha Bhosle, Sena Bae, Kelly Eckenrode, Xueying (Sonia) Huang, Jingjing Tang, Danylo Lavrentovich, Lana Awad, Ji Hua, Xochitl C. Morgan, Andy Krueger, Wendy S. Garrett, Eric A. Franzosa\*, Curtis Huttenhower\*. "Predicting functions of uncharacterized gene products in microbiomes" *[In submission]*.
 
 **Please add the software link in your Methods if you cite FUGAsseM:**
 
@@ -78,8 +78,8 @@ Bypass options:
 ## Install FUGAsseM
 ### Requirements
 1. [Python](https://www.python.org/) (version >= 3.7, requiring numpy, pandas
-multiprocessing, sklearn, matplotlib, scipy, goatools, statistics python packages; *tested 3.7*)
-2. [AnADAMA2](https://huttenhower.sph.harvard.edu/anadama2) (version >= 0.8.0; *tested 0.8.0*)
+multiprocessing, sklearn, matplotlib, scipy, goatools, statistics python packages; *tested 3.7, 3,10*)
+2. [AnADAMA2](https://huttenhower.sph.harvard.edu/anadama2) (version >= 0.8.0; *tested 0.8.0, 0.10.0*)
 
 
 ### Installation
@@ -87,7 +87,19 @@ You only need to do **any one** of the following options to install the FUGAsseM
 
 **Option 1: Installing with conda**
 
-* `$ conda install -c biobakery fugassem`
+* Step1： Add conda channels
+
+```
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+conda config --add channels biobakery
+```
+
+* Step2: Create a conda environment with fugassem installed
+
+`$ conda create -n fugassem_env biobakery::fugassem`
+
 
 **Option 2: Installing with pip**
 
