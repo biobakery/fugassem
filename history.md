@@ -2,7 +2,7 @@
 # FUGAsseM History #
 
 ## v0.3.8 2025-03-20 ##
-* Fixed issues about the compatibility for python3.12 
+* Fixed issues about the compatibility for python3.10
 * Updated conda installation
 
 ## v0.3.7 2024-11-11 ##
