@@ -304,8 +304,8 @@ When other community-wide data are available, FUGAsseM can be run using an integ
 * raw annotations for protein families (TSV format file), e.g. [demo_proteinfamilies.GO.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/input/demo_proteinfamilies.GO.simple.tsv)
 * vector-based evidence file (TSV format file), e.g. [demo_proteinfamilies.GO.homology.tsv](https://github.com/biobakery/fugassem/tree/master/examples/input/demo_proteinfamilies.GO.homology.tsv)
 * matrix-based evidence files (TSV format file), e.g.
-	* [demo_proteinfamilies.DDI.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/demo_proteinfamilies.DDI.simple.tsv): Domain-domain interactions for building DDI network for prediction
-	* [demo_proteinfamilies.contig.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/demo_proteinfamilies.contig.simple.tsv): MGX-based contigs of protein families for building co-contig network for prediction
+	* [demo_proteinfamilies.DDI.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/input/demo_proteinfamilies.DDI.simple.tsv): Domain-domain interactions for building DDI network for prediction
+	* [demo_proteinfamilies.contig.simple.tsv](https://github.com/biobakery/fugassem/tree/master/examples/input/demo_proteinfamilies.contig.simple.tsv): MGX-based contigs of protein families for building co-contig network for prediction
 
 ##### Running command
 	
